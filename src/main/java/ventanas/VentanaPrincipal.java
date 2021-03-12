@@ -56,7 +56,6 @@ public class VentanaPrincipal extends JFrame {
         colocarPaneles();
         colocarEtiquetas();
         colocarBotones();
-    
     }
 
     private void colocarPaneles(){
