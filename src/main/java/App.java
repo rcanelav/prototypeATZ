@@ -1,5 +1,3 @@
-
-import ventanas.VentanaDeporte;
 import ventanas.VentanaPrincipal;
 
 
@@ -11,14 +9,12 @@ public class App {
                 createAndShowGUI();
             }
         });
-        
 
     }
 
     private static void createAndShowGUI() {
-
+        
         VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-        // VentanaDeporte ventanaDeporte = new VentanaDeporte();
            
     }
 }

@@ -38,14 +38,14 @@ public class Menu {
         //Ítem Identifición
         menuItem = new JMenuItem("Identificación");
         menu.add(menuItem);
-        ActionListener click = new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae){
+        // ActionListener click = new ActionListener(){
+        //     @Override
+        //     public void actionPerformed(ActionEvent ae){
+
                 
-                
-            }
-        };
-        menu.addActionListener(click);
+        //     }
+        // };
+        // menu.addActionListener(click);
 
         //Ítem Epígrafe con submenú desplegable
         menu.addSeparator();
