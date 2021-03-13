@@ -1,11 +1,24 @@
 
+import ventanas.VentanaDeporte;
 import ventanas.VentanaPrincipal;
 
 
 public class App {
     public static void main(String[] args) {
-        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+       
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
+        
 
-	//kaka
+    }
+
+    private static void createAndShowGUI() {
+
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+       	//kaka
+        // VentanaDeporte ventanaDeporte = new VentanaDeporte();
     }
 }
