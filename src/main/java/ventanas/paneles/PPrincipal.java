@@ -2,6 +2,8 @@ package ventanas.paneles;
 
 import javax.swing.JPanel;
 import ventanas.VentanaDeporte;
+import ventanas.VentanaPrincipal;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -13,13 +15,14 @@ import java.awt.*;
 
 
 public class PPrincipal extends JPanel{
-    
+
     public PPrincipal(){
         colocarEtiquetas();
         colocarBotones();
     }
 
     private void colocarEtiquetas(){
+    
         ImageIcon imagen = new ImageIcon("src/main/java/ventanas/prueba1.png");
         JLabel etiBanner = new JLabel();
         etiBanner.setBounds(40, 0, 1055, 90);
@@ -31,7 +34,7 @@ public class PPrincipal extends JPanel{
         etiPrincipal.setBounds(350, 100, 450, 35);
         etiPrincipal.setFont(etiPrincipal.getFont().deriveFont(24.0f));
         etiPrincipal.setForeground(Color.BLACK);
-        etiPrincipal.setOpaque(true);
+        etiPrincipal.setOpaque(false);
         // etiPrincipal.setBackground(Color.blue);
         this.add(etiPrincipal);
 
@@ -41,7 +44,6 @@ public class PPrincipal extends JPanel{
         // etiDeporte.setOpaque(true);
         // etiDeporte.setBackground(Color.BLACK);
         this.add(etiDeporte);
-
 
         JLabel etiMusica = new JLabel("Musical");
         etiMusica.setBounds(780, 165, 70, 30);
@@ -74,7 +76,6 @@ public class PPrincipal extends JPanel{
             }
         };
         boton1.addActionListener(listener);
-
 
         JButton boton2 = new JButton();
         boton2.setSize(alturaPantalla/2, anchoPantalla/8);
