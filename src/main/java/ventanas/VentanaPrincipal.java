@@ -4,6 +4,7 @@ import javax.swing.*;
 import ventanas.paneles.PPrincipal;
 import java.awt.*;
 
+
 public class VentanaPrincipal extends JFrame {
     PPrincipal pPrincipal = new PPrincipal();
 

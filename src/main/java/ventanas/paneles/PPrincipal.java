@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.*;
+
 
 public class PPrincipal extends JPanel{
     
@@ -51,11 +53,18 @@ public class PPrincipal extends JPanel{
     }
 
     private void colocarBotones(){
+
+        Toolkit miPantalla = Toolkit.getDefaultToolkit();
+        Dimension tamanoPantalla = miPantalla.getScreenSize();
+        int alturaPantalla = tamanoPantalla.height;
+        int anchoPantalla = tamanoPantalla.width;
+
         JButton boton1 = new JButton();
-        boton1.setBounds(220, 200, 190, 125);
+        boton1.setSize(alturaPantalla/2, anchoPantalla/8);
+        boton1.setLocation(alturaPantalla/4, anchoPantalla/8);
         ImageIcon deporteImg = new ImageIcon("src/main/java/ventanas/deporte1.jpg");
         boton1.setIcon(new ImageIcon(deporteImg.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH)));
-        this.add(boton1);
+        add(boton1);
         
         ActionListener listener = new ActionListener(){
             @Override
@@ -64,15 +73,28 @@ public class PPrincipal extends JPanel{
                 
             }
         };
-        
         boton1.addActionListener(listener);
 
 
         JButton boton2 = new JButton();
-        boton2.setBounds(720, 200, 190, 125);
+        boton2.setSize(alturaPantalla/2, anchoPantalla/8);
+        boton2.setLocation(alturaPantalla - alturaPantalla/20, anchoPantalla/8);
         ImageIcon conciertoImg = new ImageIcon("src/main/java/ventanas/musica.jpg");
         boton2.setIcon(new ImageIcon(conciertoImg.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH)));
 
-        this.add(boton2);
+        add(boton2);
+
+        JButton boton3 = new JButton();
+        boton3.setSize(alturaPantalla/2, anchoPantalla/8);
+        boton3.setLocation(alturaPantalla - alturaPantalla/20, anchoPantalla/3);
+
+        add(boton3);
+
+        JButton boton4 = new JButton();
+        boton4.setSize(alturaPantalla/2, anchoPantalla/8);
+        boton4.setLocation(alturaPantalla/4, anchoPantalla/3);
+
+        add(boton4);
     }
+
 }
