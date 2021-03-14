@@ -7,6 +7,8 @@ public class App {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
+
+		//prueba
             }
         });
 
