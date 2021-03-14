@@ -7,14 +7,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
 
 public class PPrincipal extends JPanel{
     
     public PPrincipal(){
         colocarEtiquetas();
-        colocarBotones();
+        // colocarBotones();
     }
 
     private void colocarEtiquetas(){
@@ -50,29 +49,4 @@ public class PPrincipal extends JPanel{
 
     }
 
-    private void colocarBotones(){
-        JButton boton1 = new JButton();
-        boton1.setBounds(220, 200, 190, 125);
-        ImageIcon deporteImg = new ImageIcon("src/main/java/ventanas/deporte1.jpg");
-        boton1.setIcon(new ImageIcon(deporteImg.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH)));
-        this.add(boton1);
-        
-        ActionListener listener = new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae){
-                VentanaDeporte ventanaDeporte = new VentanaDeporte();
-                
-            }
-        };
-        
-        boton1.addActionListener(listener);
-
-
-        JButton boton2 = new JButton();
-        boton2.setBounds(720, 200, 190, 125);
-        ImageIcon conciertoImg = new ImageIcon("src/main/java/ventanas/musica.jpg");
-        boton2.setIcon(new ImageIcon(conciertoImg.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH)));
-
-        this.add(boton2);
-    }
 }
