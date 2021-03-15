@@ -1,17 +1,13 @@
 package ventanas;
 
 import javax.swing.*;
-
-import ventanas.paneles.PFondo;
 import ventanas.paneles.PPrincipal;
 import java.awt.*;
 
 
 public class VentanaPrincipal extends JFrame {
     PPrincipal pPrincipal = new PPrincipal();
-    PFondo fondoPanel = new PFondo();
     
-
     public VentanaPrincipal(){
         //Obtener tamano de pantalla del usuario
         Toolkit miPantalla = Toolkit.getDefaultToolkit();
@@ -27,8 +23,6 @@ public class VentanaPrincipal extends JFrame {
         setResizable(true);
         setTitle("Espectaculos CFMMR");
         Image miIcono = miPantalla.getImage("src/main/java/ventanas/java1.gif");
-        // setContentPane(fondoPanel);
-    
         setIconImage(miIcono);
         setLocationRelativeTo(null);  //opcional
 
@@ -55,8 +49,6 @@ public class VentanaPrincipal extends JFrame {
 
     private void colocarPaneles(){
         //Posibilidad de modificar ubicacion de elementos setLayout
-        fondoPanel.setLayout(null);
-        this.getContentPane().add(fondoPanel);
         pPrincipal.setLayout(null);
         this.getContentPane().add(pPrincipal);
     }

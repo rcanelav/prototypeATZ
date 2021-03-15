@@ -1,20 +1,7 @@
 package ventanas;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JCheckBoxMenuItem;
-//import javax.swing.JRadioButtonMenuItem;
-//import javax.swing.ButtonGroup;
-import javax.swing.JMenuBar;
-//import javax.swing.KeyStroke;
-import javax.swing.ImageIcon;
-
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
 
 public class Menu {
     JTextArea output;
