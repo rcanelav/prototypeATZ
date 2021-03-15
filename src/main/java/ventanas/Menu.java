@@ -1,6 +1,19 @@
 package ventanas;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JCheckBoxMenuItem;
+//import javax.swing.JRadioButtonMenuItem;
+//import javax.swing.ButtonGroup;
+import javax.swing.JMenuBar;
+//import javax.swing.KeyStroke;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import ventanas.paneles.PJPromotores;
+import ventanas.paneles.PPPromotores;
 import javax.swing.*;
 
 public class Menu {
@@ -23,16 +36,31 @@ public class Menu {
         menuBar.add(menu);
 
         //Ítem Identifición
-        menuItem = new JMenuItem("Identificación");
+        menuItem = new JMenuItem("Persona Natural");
         menu.add(menuItem);
-        // ActionListener click = new ActionListener(){
-        //     @Override
-        //     public void actionPerformed(ActionEvent ae){
-
+        ActionListener click = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                PPPromotores ppPromotores = new PPPromotores();
+                ppPromotores.setVisible(true);
                 
-        //     }
-        // };
-        // menu.addActionListener(click);
+            }
+         };
+         menu.addActionListener(click);
+
+
+        menuItem =  new  JMenuItem ( "Jurídico" );
+        menu.add(menuItem);
+        
+            ActionListener listener = new ActionListener(){
+                @Override
+            public void actionPerformed(ActionEvent e){
+                PJPromotores pjPromotores = new PJPromotores();
+                pjPromotores.setVisible(true);
+                    }
+                };
+            menuItem.addActionListener(listener);   
+ 
 
         //Ítem Epígrafe con submenú desplegable
         menu.addSeparator();
@@ -204,4 +232,7 @@ public class Menu {
             return null;
         }
     }
+    
+    
+   
 }

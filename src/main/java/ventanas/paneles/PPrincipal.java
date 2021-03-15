@@ -13,7 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.*;
 
 public class PPrincipal extends JPanel{
-
+  
+    private static final long serialVersionUID = 1L;
+  
     public PPrincipal(){
         colocarEtiquetas();
         colocarBotones();
