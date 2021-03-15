@@ -15,6 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import ventanas.paneles.PJPromotores;
 
 public class Menu {
     JTextArea output;
@@ -46,6 +47,15 @@ public class Menu {
         //     }
         // };
         // menu.addActionListener(click);
+
+    ActionListener listener = new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            PJPromotores pjPromotores = new PJPromotores();
+               
+        }
+    };
+        menu.addActionListener(listener);
 
         //Ítem Epígrafe con submenú desplegable
         menu.addSeparator();
@@ -217,4 +227,7 @@ public class Menu {
             return null;
         }
     }
+    
+    
+   
 }
