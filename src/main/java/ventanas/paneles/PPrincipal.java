@@ -19,6 +19,14 @@ public class PPrincipal extends JPanel{
         colocarBotones();
     }
 
+    @Override
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+        ImageIcon img = new ImageIcon("src/main/java/ventanas/fondo.jpg");
+        g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
+    }
+
     private void colocarEtiquetas(){
 
         Toolkit miPantalla = Toolkit.getDefaultToolkit();
@@ -65,11 +73,6 @@ public class PPrincipal extends JPanel{
         etiOtros.setFont(etiOtros.getFont().deriveFont(20.0f));
         this.add(etiOtros);
 
-        JLabel fondo = new JLabel(new ImageIcon("src/main/java/ventanas/fondo.jpg"));
-        fondo.setVisible(true);
-        fondo.setIcon(new ImageIcon("src/main/java/ventanas/fondo.jpg"));
-        fondo.setSize(anchoPantalla, alturaPantalla);
-        this.add(fondo);
     }
 
     private void colocarBotones(){
