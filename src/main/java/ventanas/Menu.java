@@ -13,9 +13,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+
 import ventanas.paneles.PJPromotores;
+import ventanas.paneles.PPPromotores;
 
 public class Menu {
     JTextArea output;
@@ -37,19 +37,22 @@ public class Menu {
         menuBar.add(menu);
 
         //Ítem Identifición
-       // menuItem = new JMenuItem("Identificación");
-       // menu.add(menuItem);
-        // ActionListener click = new ActionListener(){
-        //     @Override
-        //     public void actionPerformed(ActionEvent ae){
-
-                
-        //     }
-        // };
-        // menu.addActionListener(click);
-
-        menuItem = new JMenuItem("Identificación");
+        menuItem = new JMenuItem("Persona Natural");
         menu.add(menuItem);
+        ActionListener click = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                PPPromotores ppPromotores = new PPPromotores();
+                ppPromotores.setVisible(true);
+                
+            }
+         };
+         menu.addActionListener(click);
+
+
+        menuItem =  new  JMenuItem ( "Jurídico" );
+        menu.add(menuItem);
+        
             ActionListener listener = new ActionListener(){
                 @Override
             public void actionPerformed(ActionEvent e){

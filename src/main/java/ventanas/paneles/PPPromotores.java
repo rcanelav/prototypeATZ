@@ -25,7 +25,7 @@ public class PPPromotores extends JFrame {
     //PAgregarPersona pAgregarPersona = new PAgregarPersona();
       setTitle("Persona");
       setBounds(400, 200, 800, 700);
-      setDefaultCloseOperation(EXIT_ON_CLOSE);
+     //setDefaultCloseOperation(EXIT_ON_CLOSE);
       //setVisible(true);
       contentPane = new JPanel();
       contentPane.setLayout(null);

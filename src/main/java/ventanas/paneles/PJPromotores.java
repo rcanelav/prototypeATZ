@@ -19,10 +19,10 @@ public class PJPromotores extends JFrame{
   
     public PJPromotores() {
       //PAgregarPersona pAgregarPersona = new PAgregarPersona();
-        setTitle("Persona");
+        setTitle("Persona Jurídica");
         setBounds(400, 200, 800, 700);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+        //setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //setVisible(true);
         contentPane = new JPanel();
         contentPane.setLayout(null);
         setContentPane(contentPane);
