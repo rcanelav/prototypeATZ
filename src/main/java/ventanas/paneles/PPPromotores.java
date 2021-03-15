@@ -26,7 +26,7 @@ public class PPPromotores extends JFrame {
       setTitle("Persona");
       setBounds(400, 200, 800, 700);
       setDefaultCloseOperation(EXIT_ON_CLOSE);
-      setVisible(true);
+      //setVisible(true);
       contentPane = new JPanel();
       contentPane.setLayout(null);
       setContentPane(contentPane);

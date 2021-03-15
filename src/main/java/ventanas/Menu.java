@@ -37,8 +37,8 @@ public class Menu {
         menuBar.add(menu);
 
         //Ítem Identifición
-        menuItem = new JMenuItem("Identificación");
-        menu.add(menuItem);
+       // menuItem = new JMenuItem("Identificación");
+       // menu.add(menuItem);
         // ActionListener click = new ActionListener(){
         //     @Override
         //     public void actionPerformed(ActionEvent ae){
@@ -48,14 +48,17 @@ public class Menu {
         // };
         // menu.addActionListener(click);
 
-    ActionListener listener = new ActionListener(){
-        @Override
-        public void actionPerformed(ActionEvent e){
-            PJPromotores pjPromotores = new PJPromotores();
-               
-        }
-    };
-        menu.addActionListener(listener);
+        menuItem = new JMenuItem("Identificación");
+        menu.add(menuItem);
+            ActionListener listener = new ActionListener(){
+                @Override
+            public void actionPerformed(ActionEvent e){
+                PJPromotores pjPromotores = new PJPromotores();
+                pjPromotores.setVisible(true);
+                    }
+                };
+            menuItem.addActionListener(listener);   
+ 
 
         //Ítem Epígrafe con submenú desplegable
         menu.addSeparator();
