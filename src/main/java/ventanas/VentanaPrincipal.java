@@ -7,15 +7,14 @@ import java.awt.*;
 
 public class VentanaPrincipal extends JFrame {
     PPrincipal pPrincipal = new PPrincipal();
-
-
+    
     public VentanaPrincipal(){
         //Obtener tamano de pantalla del usuario
         Toolkit miPantalla = Toolkit.getDefaultToolkit();
         Dimension tamanoPantalla = miPantalla.getScreenSize();
         int alturaPantalla = tamanoPantalla.height;
         int anchoPantalla = tamanoPantalla.width;
-
+        
         //Establecer tamano de pantalla y caracteristicas.
         // setSize(anchoPantalla/2+50, alturaPantalla/2);
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
@@ -24,15 +23,12 @@ public class VentanaPrincipal extends JFrame {
         setResizable(true);
         setTitle("Espectaculos CFMMR");
         Image miIcono = miPantalla.getImage("src/main/java/ventanas/java1.gif");
-        
-        setContentPane(new JLabel(new ImageIcon("src/main/java/ventanas/fondo.jpg")));
-        
         setIconImage(miIcono);
         setLocationRelativeTo(null);  //opcional
 
         //Creacion del menu
         crearMenu();
-       
+        
         //Funcion de entrada a los componentes
         iniciarComponentes();
         
@@ -43,8 +39,6 @@ public class VentanaPrincipal extends JFrame {
 
     private void iniciarComponentes(){
         colocarPaneles();
-        // colocarEtiquetas();
-        // colocarBotones();
     }
 
     private void crearMenu(){

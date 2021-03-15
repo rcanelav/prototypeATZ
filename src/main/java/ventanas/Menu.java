@@ -9,13 +9,12 @@ import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuBar;
 //import javax.swing.KeyStroke;
 import javax.swing.ImageIcon;
-
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
-
 import ventanas.paneles.PJPromotores;
 import ventanas.paneles.PPPromotores;
+import javax.swing.*;
 
 public class Menu {
     JTextArea output;
