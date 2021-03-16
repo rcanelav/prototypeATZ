@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import ventanas.paneles.PJPromotores;
 import ventanas.paneles.PPPromotores;
-import javax.swing.*;
+
 
 public class Menu {
     JTextArea output;
@@ -46,7 +46,7 @@ public class Menu {
                 
             }
          };
-         menu.addActionListener(click);
+         menuItem.addActionListener(click);
 
 
         menuItem =  new  JMenuItem ( "Jurídico" );
