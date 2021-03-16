@@ -122,100 +122,104 @@ public class PJPromotores extends JFrame{
           email = textEmail.getText();
           telf = textTlf.getText();
           movil = textMobil.getText();
-          boolean validado = false;
-  
-          if(textCif.getText().length() > 5){
-            JOptionPane.showMessageDialog(textCif, "El cif debe ser inferior a 4");
-            textCif.setBackground(Color.red);
-          }else{
-            validado = true;
-            textCif.setBackground(Color.white);
-          }
-          
-          if(textNombreEmp.getText().isBlank()){
-            JOptionPane.showMessageDialog(textNombreEmp, "Debe ingresar un nombre válido");
-            textNombreEmp.setBackground(Color.red);
-            validado = false;
-          }else{
-            validado = true;
-          }
 
-          if(textEnderezoEMp.getText().isBlank()){
-            JOptionPane.showMessageDialog(textEnderezoEMp, "Debe ingresar una direccion válida");
-            textEnderezoEMp.setBackground(Color.red);
-            validado = false;
-          }else{
-            validado = true;
-          }
-          
-          if(textEmail.getText().isBlank()){
-            JOptionPane.showMessageDialog(textEmail, "Debe ingresar un email válida");
-            textEmail.setBackground(Color.red);
-            validado = false;
-          }else{
-            boolean encontrado = false;
-            for(int i = 0; i < textEmail.getText().length(); i++){
-              if(email.charAt(i) == '@')
-                encontrado = true;
-            }
-            if(!encontrado){
-                JOptionPane.showMessageDialog(textEmail, "Debe ingresar un email válida");
-                textEmail.setBackground(Color.red);
-                validado = false;
-            }
-          }
-
-          if(textTlf.getText().isBlank() || textTlf.getText().length() < 9){
-            JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
-            textTlf.setBackground(Color.red);
-            validado = false;
-          }else{
-            boolean telfVerificado = false;
-            for(int i = 0; i < textTlf.getText().length(); i++){
-              if(telf.charAt(i) >= '0' && telf.charAt(i) <= '9')
-                telfVerificado = true;
-              else
-                telfVerificado = false;
-            }
-            if(!telfVerificado){
-              JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
-              textTlf.setBackground(Color.red);
-              validado = false;
-            }else
-              validado = true;
-          }
-
-          if(textMobil.getText().isBlank() || textMobil.getText().length() < 9){
-            JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
-            textMobil.setBackground(Color.red);
-            validado = false;
-          }else{
-            boolean telfVerificado = false;
-            for(int i = 0; i < textMobil.getText().length(); i++){
-              if(movil.charAt(i) >= '0' && movil.charAt(i) <= '9')
-                telfVerificado = true;
-              else
-                telfVerificado = false;
-            }
-            if(!telfVerificado){
-              JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
-              textMobil.setBackground(Color.red);
-              validado = false;
-            }else
-              validado = true;
-          }
-            
-          int opcionConfirmacion = JOptionPane.showConfirmDialog(btnAnadir, "¿Esta seguro de crear el evento", 
-          "Confirmacion", JOptionPane.YES_NO_CANCEL_OPTION);
-          if(opcionConfirmacion == JOptionPane.YES_OPTION && validado){
-            Empresa representanteJuridico = new Empresa(cif, razonSocial, direccionEmpresa, email, telf, movil);
-            System.out.println(representanteJuridico);
-          }else{
+          boolean validado = validarInput(cif, razonSocial, direccionEmpresa, email, telf, movil);
+          if(!validado){
             JOptionPane.showMessageDialog(btnAnadir, "Error en la creacion del evento");
+          }else{
+            
+            int opcionConfirmacion = JOptionPane.showConfirmDialog(btnAnadir, "¿Esta seguro de crear el evento", 
+                                     "Confirmacion", JOptionPane.YES_NO_CANCEL_OPTION);
+            if(opcionConfirmacion == JOptionPane.YES_OPTION){
+              Empresa representanteJuridico = new Empresa(cif, razonSocial, direccionEmpresa, email, telf, movil);
+              System.out.println(representanteJuridico);
+            }
           }
       }
-    };
+  };
     btnAnadir.addActionListener(click);
+  }
+    
+  private boolean validarInput(String cif, 
+                              String nombreEmpresa, 
+                              String direccionEmpresa, 
+                              String email, 
+                              String telf, 
+                              String movil){
+  
+    if(textCif.getText().length() > 7){
+      JOptionPane.showMessageDialog(textCif, "El CIF debe contener 7 digitos");
+      textCif.setBackground(Color.red);
+      return false;
+    }  
+    
+    if(textNombreEmp.getText().isBlank()){
+      JOptionPane.showMessageDialog(textNombreEmp, "Debe ingresar un nombre válido");
+      textNombreEmp.setBackground(Color.red);
+      return false;
+    }
 
+    if(textEnderezoEMp.getText().isBlank()){
+      JOptionPane.showMessageDialog(textEnderezoEMp, "Debe ingresar una direccion válida");
+      textEnderezoEMp.setBackground(Color.red);
+      return false;
+    }
+    
+    if(textEmail.getText().isBlank()){
+      JOptionPane.showMessageDialog(textEmail, "Debe ingresar un email válida");
+      textEmail.setBackground(Color.red);
+      return false;
+    }else{
+      boolean encontrado = false;
+      for(int i = 0; i < textEmail.getText().length(); i++){
+        if(email.charAt(i) == '@')
+          encontrado = true;
+      }
+      if(!encontrado){
+          JOptionPane.showMessageDialog(textEmail, "Debe ingresar un email válida");
+          textEmail.setBackground(Color.red);
+          return false;
+      }
+    }
+
+    if(textTlf.getText().isBlank() || textTlf.getText().length() < 9){
+      JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
+      textTlf.setBackground(Color.red);
+      return false;
+    }else{
+      boolean telfVerificado = false;
+      for(int i = 0; i < textTlf.getText().length(); i++){
+        if(telf.charAt(i) >= '0' && telf.charAt(i) <= '9')
+          telfVerificado = true;
+        else
+          telfVerificado = false;
+      }
+      if(!telfVerificado){
+        JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
+        textTlf.setBackground(Color.red);
+        return false;
+      }
+    }
+
+    if(textMobil.getText().isBlank() || textMobil.getText().length() < 9){
+      JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
+      textMobil.setBackground(Color.red);
+      return false;
+    }else{
+      boolean movilVerificado = false;
+      for(int i = 0; i < textMobil.getText().length(); i++){
+        if(movil.charAt(i) >= '0' && movil.charAt(i) <= '9')
+          movilVerificado = true;
+        else
+          movilVerificado = false;
+      }
+      if(!movilVerificado){
+        JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
+        textMobil.setBackground(Color.red);
+        return false;
+      }
+    }
+
+    return true;
   }
 }
