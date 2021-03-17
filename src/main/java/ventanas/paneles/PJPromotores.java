@@ -1,10 +1,7 @@
 package ventanas.paneles;
 
-import javax.lang.model.util.ElementScanner14;
-import javax.swing.*;
-
 import negocio.Empresa;
-
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -14,21 +11,13 @@ public class PJPromotores extends JFrame{
 
   private JPanel contentPane;
   private JTextField textCif;
-  private String cif;
   private JTextField textNombreEmp;
-  private String razonSocial;
   private JTextField textEnderezoEMp;
-  private String direccionEmpresa;
   private JTextField textResponsable;
-  private String responsable;
   private JTextField textEnderezoResp;
-  private String direccionResp;
   private JTextField textEmail;
-  private String email;
   private JTextField textTlf;
-  private String telf;
   private JTextField textMobil;
-  private String movil;
 
   public PJPromotores() {
     //PAgregarPersona pAgregarPersona = new PAgregarPersona();
@@ -116,14 +105,9 @@ public class PJPromotores extends JFrame{
     ActionListener click = new ActionListener(){
       @Override
       public void actionPerformed(ActionEvent e){
-          cif = textCif.getText();
-          razonSocial = textNombreEmp.getText();
-          direccionEmpresa = textEnderezoEMp.getText();
-          email = textEmail.getText();
-          telf = textTlf.getText();
-          movil = textMobil.getText();
 
-          boolean validado = validarInput(cif, razonSocial, direccionEmpresa, email, telf, movil);
+
+          boolean validado = validarInput(textCif.getText(), textNombreEmp.getText(), textEnderezoEMp.getText(), textEmail.getText(), textTlf.getText(), textMobil.getText());
           if(!validado){
             JOptionPane.showMessageDialog(btnAnadir, "Error en la creacion del evento");
           }else{
@@ -131,7 +115,7 @@ public class PJPromotores extends JFrame{
             int opcionConfirmacion = JOptionPane.showConfirmDialog(btnAnadir, "¿Esta seguro de crear el evento", 
                                      "Confirmacion", JOptionPane.YES_NO_CANCEL_OPTION);
             if(opcionConfirmacion == JOptionPane.YES_OPTION){
-              Empresa representanteJuridico = new Empresa(cif, razonSocial, direccionEmpresa, email, telf, movil);
+              Empresa representanteJuridico = new Empresa(textCif.getText(), textNombreEmp.getText(), textEnderezoEMp.getText(), textEmail.getText(), textTlf.getText(), textMobil.getText());
               System.out.println(representanteJuridico);
             }
           }
@@ -139,7 +123,7 @@ public class PJPromotores extends JFrame{
   };
     btnAnadir.addActionListener(click);
   }
-    
+
   private boolean validarInput(String cif, 
                               String nombreEmpresa, 
                               String direccionEmpresa, 
@@ -189,7 +173,7 @@ public class PJPromotores extends JFrame{
     }else{
       boolean telfVerificado = false;
       for(int i = 0; i < textTlf.getText().length(); i++){
-        if(telf.charAt(i) >= '0' && telf.charAt(i) <= '9')
+        if(textTlf.getText().charAt(i) >= '0' && textTlf.getText().charAt(i) <= '9')
           telfVerificado = true;
         else
           telfVerificado = false;
@@ -219,7 +203,18 @@ public class PJPromotores extends JFrame{
         return false;
       }
     }
-
+    setWhiteBg(textCif);
+    setWhiteBg(textEmail);
+    setWhiteBg(textEnderezoEMp);
+    setWhiteBg(textEnderezoResp);
+    setWhiteBg(textMobil);
+    setWhiteBg(textNombreEmp);
+    setWhiteBg(textResponsable);
+    setWhiteBg(textTlf);
     return true;
+  }
+
+  private void setWhiteBg(JTextField campo){
+    campo.setBackground(Color.white);
   }
 }
