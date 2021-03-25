@@ -155,7 +155,6 @@ public class PPPromotores extends JFrame {
             JOptionPane.showMessageDialog(null, "Debe introducir un NIF valido");
             input.setBackground(Color.red);
             return false;
-          break;
         default: 
 
 
