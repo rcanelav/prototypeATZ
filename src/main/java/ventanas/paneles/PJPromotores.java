@@ -1,6 +1,6 @@
 package ventanas.paneles;
 
-import negocio.Empresa;
+import negocio.PromotorEmpresa;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,13 +11,13 @@ public class PJPromotores extends JFrame{
 
   private JPanel contentPane;
   private JTextField textCif;
-  private JTextField textNombreEmp;
-  private JTextField textEnderezoEMp;
+  private JTextField textNombreEmpresa;
+  private JTextField textDireccionEmpresa;
   private JTextField textResponsable;
-  private JTextField textEnderezoResp;
+  private JTextField textDireccionResponsable;
   private JTextField textEmail;
   private JTextField textTlf;
-  private JTextField textMobil;
+  private JTextField textMovil;
 
   public PJPromotores() {
     //PAgregarPersona pAgregarPersona = new PAgregarPersona();
@@ -46,17 +46,17 @@ public class PJPromotores extends JFrame{
     lblNombreEmp.setBounds(170, 150, 229, 25);
     contentPane.add(lblNombreEmp);
 
-    textNombreEmp = new JTextField();
-    textNombreEmp.setBounds(330, 150, 229, 25);
-    contentPane.add(textNombreEmp);
+    textNombreEmpresa = new JTextField();
+    textNombreEmpresa.setBounds(330, 150, 229, 25);
+    contentPane.add(textNombreEmpresa);
 
     JLabel lblEnderezoEmp = new JLabel("Enderezo Empresa: ");
     lblEnderezoEmp.setBounds(170, 200, 229, 25);
     contentPane.add(lblEnderezoEmp);
 
-    textEnderezoEMp = new JTextField();
-    textEnderezoEMp.setBounds(330, 200,229, 25);
-    contentPane.add(textEnderezoEMp);
+    textDireccionEmpresa = new JTextField();
+    textDireccionEmpresa.setBounds(330, 200,229, 25);
+    contentPane.add(textDireccionEmpresa);
 
     JLabel lblResponsable = new JLabel("Responsable: ");
     lblResponsable.setBounds(170, 250, 229, 25);
@@ -70,9 +70,9 @@ public class PJPromotores extends JFrame{
     lblEnderezoResp.setBounds(170, 300, 229, 25);
     contentPane.add(lblEnderezoResp);
     
-    textEnderezoResp = new JTextField();
-    textEnderezoResp.setBounds(330, 300, 229, 25);
-    contentPane.add(textEnderezoResp);
+    textDireccionResponsable = new JTextField();
+    textDireccionResponsable.setBounds(330, 300, 229, 25);
+    contentPane.add(textDireccionResponsable);
 
     JLabel lblEmail= new JLabel("email: ");
     lblEmail.setBounds(170, 450, 229, 25);
@@ -94,9 +94,9 @@ public class PJPromotores extends JFrame{
     lblMobil.setBounds(340, 500, 50, 25);
     contentPane.add(lblMobil);
     
-    textMobil = new JTextField();
-    textMobil.setBounds(395, 500, 120, 25);
-    contentPane.add(textMobil);
+    textMovil = new JTextField();
+    textMovil.setBounds(395, 500, 120, 25);
+    contentPane.add(textMovil);
 
     JButton btnAnadir= new JButton("añadir");
     btnAnadir.setBounds(320, 600, 89, 23);
@@ -106,8 +106,7 @@ public class PJPromotores extends JFrame{
       @Override
       public void actionPerformed(ActionEvent e){
 
-
-          boolean validado = validarInput(textCif.getText(), textNombreEmp.getText(), textEnderezoEMp.getText(), textEmail.getText(), textTlf.getText(), textMobil.getText());
+          boolean validado = validarInput(textCif.getText(), textNombreEmpresa.getText(), textDireccionEmpresa.getText(), textEmail.getText(), textTlf.getText(), textMovil.getText());
           if(!validado){
             JOptionPane.showMessageDialog(btnAnadir, "Error en la creacion del evento");
           }else{
@@ -115,7 +114,7 @@ public class PJPromotores extends JFrame{
             int opcionConfirmacion = JOptionPane.showConfirmDialog(btnAnadir, "¿Esta seguro de crear el evento", 
                                      "Confirmacion", JOptionPane.YES_NO_CANCEL_OPTION);
             if(opcionConfirmacion == JOptionPane.YES_OPTION){
-              Empresa representanteJuridico = new Empresa(textCif.getText(), textNombreEmp.getText(), textEnderezoEMp.getText(), textEmail.getText(), textTlf.getText(), textMobil.getText());
+              PromotorEmpresa representanteJuridico = new PromotorEmpresa(textCif.getText(), textNombreEmpresa.getText(), textDireccionEmpresa.getText(), textEmail.getText(), textTlf.getText(), textMovil.getText());
               System.out.println(representanteJuridico);
             }
           }
@@ -137,15 +136,15 @@ public class PJPromotores extends JFrame{
       return false;
     }  
     
-    if(textNombreEmp.getText().isBlank()){
-      JOptionPane.showMessageDialog(textNombreEmp, "Debe ingresar un nombre válido");
-      textNombreEmp.setBackground(Color.red);
+    if(textNombreEmpresa.getText().isBlank()){
+      JOptionPane.showMessageDialog(textNombreEmpresa, "Debe ingresar un nombre válido");
+      textNombreEmpresa.setBackground(Color.red);
       return false;
     }
 
-    if(textEnderezoEMp.getText().isBlank()){
-      JOptionPane.showMessageDialog(textEnderezoEMp, "Debe ingresar una direccion válida");
-      textEnderezoEMp.setBackground(Color.red);
+    if(textDireccionEmpresa.getText().isBlank()){
+      JOptionPane.showMessageDialog(textDireccionEmpresa, "Debe ingresar una direccion válida");
+      textDireccionEmpresa.setBackground(Color.red);
       return false;
     }
     
@@ -185,13 +184,13 @@ public class PJPromotores extends JFrame{
       }
     }
 
-    if(textMobil.getText().isBlank() || textMobil.getText().length() < 9){
+    if(textMovil.getText().isBlank() || textMovil.getText().length() < 9){
       JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
-      textMobil.setBackground(Color.red);
+      textMovil.setBackground(Color.red);
       return false;
     }else{
       boolean movilVerificado = false;
-      for(int i = 0; i < textMobil.getText().length(); i++){
+      for(int i = 0; i < textMovil.getText().length(); i++){
         if(movil.charAt(i) >= '0' && movil.charAt(i) <= '9')
           movilVerificado = true;
         else
@@ -199,22 +198,24 @@ public class PJPromotores extends JFrame{
       }
       if(!movilVerificado){
         JOptionPane.showMessageDialog(textEmail, "Debe ingresar un teléfono válido");
-        textMobil.setBackground(Color.red);
+        textMovil.setBackground(Color.red);
         return false;
       }
     }
-    setWhiteBg(textCif);
-    setWhiteBg(textEmail);
-    setWhiteBg(textEnderezoEMp);
-    setWhiteBg(textEnderezoResp);
-    setWhiteBg(textMobil);
-    setWhiteBg(textNombreEmp);
-    setWhiteBg(textResponsable);
-    setWhiteBg(textTlf);
+    
+    setWhiteBg();
     return true;
   }
 
-  private void setWhiteBg(JTextField campo){
-    campo.setBackground(Color.white);
+  private void setWhiteBg(){
+    textCif.setBackground(Color.white);
+    textEmail.setBackground(Color.white);
+    textDireccionEmpresa.setBackground(Color.white);
+    textDireccionResponsable.setBackground(Color.white);
+    textMovil.setBackground(Color.white);
+    textNombreEmpresa.setBackground(Color.white);
+    textMovil.setBackground(Color.white);
+    textResponsable.setBackground(Color.white);
+    textTlf.setBackground(Color.white);
   }
 }

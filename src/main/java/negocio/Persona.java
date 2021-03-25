@@ -11,6 +11,8 @@ public class Persona {
     private String email;
     private String telefono;
     private String movil;
+    
+
 
     protected Persona(){}
 
@@ -18,13 +20,26 @@ public class Persona {
         this.nombre = nombre;
         this.apellidos = apellidos;
     }
-    public Persona(String nombre, String apellidos, String nif, String telefono, String direccion){
+    public Persona(String nombre, 
+                   String apellidos, 
+                   String nif, 
+                   String direccion, 
+                   String provincia,
+                   int cp,
+                   String email,
+                   String telefono,
+                   String movil
+                ){
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nif = nif;
-        this.telefono = telefono;
         this.direccion = direccion;
-    }
+        this.provincia = provincia;
+        this.cp = cp;
+        this.email = email;
+        this.telefono = telefono;
+        this.movil = movil;
+                }
 
     public String getNombre() {
         return this.nombre;
