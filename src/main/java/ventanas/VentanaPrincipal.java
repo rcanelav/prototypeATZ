@@ -22,12 +22,12 @@ public class VentanaPrincipal extends JFrame {
         setVisible(true);
         setResizable(true);
         setTitle("Espectaculos CFMMR");
-        Image miIcono = miPantalla.getImage("src/main/java/ventanas/java1.gif");
+        Image miIcono = miPantalla.getImage("src/main/java/imagenes/SafeShow.png");
         setIconImage(miIcono);
         setLocationRelativeTo(null);  //opcional
 
-        //Creacion del menu
-        crearMenu();
+        //Creacion del menu en espera
+        //crearMenu();
         
         //Funcion de entrada a los componentes
         iniciarComponentes();
@@ -41,15 +41,14 @@ public class VentanaPrincipal extends JFrame {
         colocarPaneles();
     }
 
-    private void crearMenu(){
+    /*private void crearMenu(){
         Menu menu = new Menu();
         setJMenuBar(menu.createMenuBar());
         setContentPane(menu.createContentPane());
-    }
+    }*/
 
     private void colocarPaneles(){
         //Posibilidad de modificar ubicacion de elementos setLayout
-        pPrincipal.setLayout(null);
         this.getContentPane().add(pPrincipal);
     }
 

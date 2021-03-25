@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 public class VentanaDeporte extends JFrame {
     
     public VentanaDeporte(){
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
 
+        Toolkit miPantalla = Toolkit.getDefaultToolkit();
         Dimension tamanoPantalla = miPantalla.getScreenSize();
 
         int alturaPantalla = tamanoPantalla.height;

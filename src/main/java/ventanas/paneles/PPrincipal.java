@@ -2,12 +2,13 @@ package ventanas.paneles;
 
 import javax.swing.JPanel;
 
+import javax.swing.*;
+import ventanas.VentanaCultural;
 import ventanas.VentanaDeporte;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import java.awt.Color;
-import java.awt.Image;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.*;
@@ -15,10 +16,13 @@ import java.awt.*;
 public class PPrincipal extends JPanel{
   
     private static final long serialVersionUID = 1L;
+    GridBagConstraints gridBagConstraints = new java.awt.GridBagConstraints();
   
     public PPrincipal(){
-        colocarEtiquetas();
+        
+        colocarTextos();
         colocarBotones();
+        colocarFondo();
     }
 
     @Override
@@ -29,93 +33,190 @@ public class PPrincipal extends JPanel{
         g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
     }
 
-    private void colocarEtiquetas(){
+    private void colocarTextos(){
+        
 
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
-        Dimension tamanoPantalla = miPantalla.getScreenSize();
-        int alturaPantalla = tamanoPantalla.height;
-        int anchoPantalla = tamanoPantalla.width;
-    
-        ImageIcon imagen = new ImageIcon("src/main/java/ventanas/banner.png");
-        JLabel etiBanner = new JLabel();
-        etiBanner.setBounds(40, 0, 1055, 90);
-        etiBanner.setLocation(anchoPantalla/4, 0);
-        etiBanner.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(etiBanner.getWidth(), etiBanner.getHeight(), Image.SCALE_SMOOTH)));
-        this.add(etiBanner);
+        textoTitulo = new javax.swing.JTextPane();
+        textoSubtitulo = new javax.swing.JTextPane();
+        textoDeportivo = new javax.swing.JTextPane();
+        textoCultural = new javax.swing.JTextPane();
+        textoAnalogo = new javax.swing.JTextPane();
+        textoArtistico = new javax.swing.JTextPane();
+        this.setLayout(new java.awt.GridBagLayout());
 
-        JLabel etiPrincipal = new JLabel("            ¿Qué tipo de evento deseas solicitar?");
-        etiPrincipal.setSize(anchoPantalla/2, alturaPantalla/20);
-        etiPrincipal.setLocation(anchoPantalla/6*2, alturaPantalla/10);
-        etiPrincipal.setFont(etiPrincipal.getFont().deriveFont(24.0f));
-        etiPrincipal.setForeground(Color.BLACK);
-        etiPrincipal.setOpaque(false);
-        this.add(etiPrincipal);
+        textoTitulo.setEditable(false);
+        textoTitulo.setBorder(null);
+        textoTitulo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        textoTitulo.setText("DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA\n                            ESPECTÁCULOS PÚBLICOS");
+        textoTitulo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        textoTitulo.setMinimumSize(new java.awt.Dimension(484, 42));
+        textoTitulo.setOpaque(false);
+        textoTitulo.setRequestFocusEnabled(false);
 
-        JLabel etiDeporte = new JLabel("   Deporte");
-        etiDeporte.setSize(anchoPantalla/20, alturaPantalla/6);
-        etiDeporte.setLocation(anchoPantalla/4, alturaPantalla/8);
-        etiDeporte.setFont(etiDeporte.getFont().deriveFont(20.0f));
-        this.add(etiDeporte);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.5;
+        this.add(textoTitulo, gridBagConstraints);
 
-        JLabel etiMusica = new JLabel("Musical");
-        etiMusica.setSize(anchoPantalla/10, alturaPantalla/6);
-        etiMusica.setLocation(anchoPantalla/6*4, alturaPantalla/8);
-        etiMusica.setFont(etiMusica.getFont().deriveFont(20.0f));
-        this.add(etiMusica);
+        textoSubtitulo.setEditable(false);
+        textoSubtitulo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        textoSubtitulo.setText("Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  actividades \nrecreativas de Galicia.");
+        textoSubtitulo.setMinimumSize(new java.awt.Dimension(484, 42));
+        textoSubtitulo.setOpaque(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.weightx = 1.0;
+        this.add(textoSubtitulo, gridBagConstraints);
 
-        JLabel etiArtistico = new JLabel("   Artistico");
-        etiArtistico.setSize(anchoPantalla/20, alturaPantalla/6);
-        etiArtistico.setLocation(anchoPantalla/4, alturaPantalla/2-5);
-        etiArtistico.setFont(etiArtistico.getFont().deriveFont(20.0f));
-        this.add(etiArtistico);
+        textoDeportivo.setEditable(false);
+        textoDeportivo.setBackground(new java.awt.Color(255, 204, 204));
+        textoDeportivo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoDeportivo.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter artístico.");
+        textoDeportivo.setMinimumSize(new java.awt.Dimension(204, 74));
+        textoDeportivo.setOpaque(false);
+        textoDeportivo.setPreferredSize(new java.awt.Dimension(204, 74));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        this.add(textoDeportivo, gridBagConstraints);
 
-        JLabel etiOtros = new JLabel("Otros");
-        etiOtros.setSize(anchoPantalla/3, alturaPantalla/6);
-        etiOtros.setLocation(anchoPantalla/6*4, alturaPantalla/2-5);
-        etiOtros.setFont(etiOtros.getFont().deriveFont(20.0f));
-        this.add(etiOtros);
+        textoCultural.setEditable(false);
+        textoCultural.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoCultural.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter cultural.");
+        textoCultural.setMinimumSize(new java.awt.Dimension(204, 74));
+        textoCultural.setOpaque(false);
+        textoCultural.setPreferredSize(new java.awt.Dimension(204, 74));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        this.add(textoCultural, gridBagConstraints);
+
+        textoAnalogo.setEditable(false);
+        textoAnalogo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoAnalogo.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter análogo.");
+        textoAnalogo.setMinimumSize(new java.awt.Dimension(204, 74));
+        textoAnalogo.setOpaque(false);
+        textoAnalogo.setPreferredSize(new java.awt.Dimension(204, 74));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        this.add(textoAnalogo, gridBagConstraints);
+
+        textoArtistico.setEditable(false);
+        textoArtistico.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoArtistico.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter artístico.");
+        textoArtistico.setAlignmentX(1.0F);
+        textoArtistico.setAlignmentY(1.0F);
+        textoArtistico.setMinimumSize(new java.awt.Dimension(204, 74));
+        textoArtistico.setOpaque(false);
+        textoArtistico.setPreferredSize(new java.awt.Dimension(204, 74));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.weightx = 1.0;
+        this.add(textoArtistico, gridBagConstraints);
 
     }
 
     private void colocarBotones(){
 
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
-        Dimension tamanoPantalla = miPantalla.getScreenSize();
-        int alturaPantalla = tamanoPantalla.height;
-        int anchoPantalla = tamanoPantalla.width;
+        botonDeportivo = new javax.swing.JButton();
+        botonCultural = new javax.swing.JButton();
+        botonAnalogo = new javax.swing.JButton();
+        botonArtistico = new javax.swing.JButton();
 
-        JButton boton1 = new JButton();
-        boton1.setSize(alturaPantalla/2, anchoPantalla/8);
-        boton1.setLocation(alturaPantalla/4, anchoPantalla/8);
-        ImageIcon deporteImg = new ImageIcon("src/main/java/ventanas/deporte1.jpg");
-        boton1.setIcon(new ImageIcon(deporteImg.getImage().getScaledInstance(boton1.getWidth(), boton1.getHeight(), Image.SCALE_SMOOTH)));
-        add(boton1);
         
-        ActionListener listener = new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae){
-                VentanaDeporte ventanaDeporte = new VentanaDeporte();
-                
+        botonDeportivo.setBackground(new java.awt.Color(255, 255, 51));
+        botonDeportivo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        botonDeportivo.setText("DEPORTIVO");
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.5;
+        this.add(botonDeportivo, gridBagConstraints);
+
+        botonCultural.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        botonCultural.setText("CULTURAL");
+        botonCultural.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCulturalActionPerformed(evt);
             }
-        };
-        boton1.addActionListener(listener);
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.5;
+        this.add(botonCultural, gridBagConstraints);
 
-        JButton boton2 = new JButton();
-        boton2.setSize(alturaPantalla/2, anchoPantalla/8);
-        boton2.setLocation(alturaPantalla - alturaPantalla/20, anchoPantalla/8);
-        ImageIcon conciertoImg = new ImageIcon("src/main/java/ventanas/musica.jpg");
-        boton2.setIcon(new ImageIcon(conciertoImg.getImage().getScaledInstance(boton2.getWidth(), boton2.getHeight(), Image.SCALE_SMOOTH)));
-        add(boton2);
+        botonAnalogo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        botonAnalogo.setText("ANALOGO");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.5;
+        this.add(botonAnalogo, gridBagConstraints);
 
-        JButton boton3 = new JButton();
-        boton3.setSize(alturaPantalla/2, anchoPantalla/8);
-        boton3.setLocation(alturaPantalla - alturaPantalla/20, anchoPantalla/3);
-        add(boton3);
+        botonArtistico.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        botonArtistico.setText("ARTÍSTICO");
 
-        JButton boton4 = new JButton();
-        boton4.setSize(alturaPantalla/2, anchoPantalla/8);
-        boton4.setLocation(alturaPantalla/4, anchoPantalla/3);
-        add(boton4);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.5;
+        this.add(botonArtistico, gridBagConstraints);
+
+
+
     }
+
+    private void colocarFondo(){
+
+        labelFondo = new javax.swing.JLabel();
+
+        labelFondo.setBackground(new java.awt.Color(255, 255, 204));
+        labelFondo.setForeground(new java.awt.Color(255, 255, 204));
+        labelFondo.setOpaque(true);
+        labelFondo.setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridheight = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BELOW_BASELINE;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        this.add(labelFondo, gridBagConstraints);
+
+
+    }
+
+    private void botonCulturalActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        VentanaCultural deportivo = new VentanaCultural();
+        new VentanaCultural().setVisible(true);
+    }   
+
+    private javax.swing.JButton botonAnalogo;
+    private javax.swing.JButton botonArtistico;
+    private javax.swing.JButton botonCultural;
+    private javax.swing.JButton botonDeportivo;
+
+    private javax.swing.JLabel labelFondo;
+    private javax.swing.JTextPane textoAnalogo;
+    private javax.swing.JTextPane textoArtistico;
+    private javax.swing.JTextPane textoCultural;
+    private javax.swing.JTextPane textoDeportivo;
+    private javax.swing.JTextPane textoSubtitulo;
+    private javax.swing.JTextPane textoTitulo;
 
 }

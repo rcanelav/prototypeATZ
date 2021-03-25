@@ -1,3 +1,4 @@
+import ventanas.VentanaCultural;
 import ventanas.VentanaPrincipal;
 
 
@@ -15,6 +16,7 @@ public class App {
     private static void createAndShowGUI() {
         
         VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-           
+        //VentanaCultural ven = new VentanaCultural();
+        //ven.setVisible(true);
     }
 }
