@@ -3,6 +3,8 @@ package ventanas.paneles;
 import javax.swing.*;
 import ventanas.VentanaCultural;
 import ventanas.botones.BotonPrincipal;
+
+// import ventanas.VentanaDeporte;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -52,6 +54,7 @@ public class PPrincipal extends JPanel{
         textoTitulo.setPreferredSize(new Dimension(1000, 400));
         textoTitulo.setOpaque(false);
         textoTitulo.setRequestFocusEnabled(false);
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
@@ -68,6 +71,7 @@ public class PPrincipal extends JPanel{
         textoSubtitulo.setMinimumSize(new Dimension(484, 42));
         textoTitulo.setPreferredSize(new Dimension(700, 62));
         textoSubtitulo.setOpaque(false);
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 30;
@@ -83,6 +87,7 @@ public class PPrincipal extends JPanel{
         textoArtistico.setMinimumSize(new Dimension(204, 74));
         textoArtistico.setOpaque(false);
         textoArtistico.setPreferredSize(new Dimension(400, 130));
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.weightx = 1.0;
@@ -95,6 +100,7 @@ public class PPrincipal extends JPanel{
         textoCultural.setMinimumSize(new Dimension(204, 74));
         textoCultural.setOpaque(false);
         textoCultural.setPreferredSize(new Dimension(400, 130));
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipady = 0;
@@ -108,6 +114,7 @@ public class PPrincipal extends JPanel{
         textoDeportivo.setMinimumSize(new Dimension(400, 130));
         textoDeportivo.setOpaque(false);
         textoDeportivo.setPreferredSize(new Dimension(400, 130));
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.insets = new Insets(40, 50, 0, 0);
@@ -120,6 +127,7 @@ public class PPrincipal extends JPanel{
         textoAnalogo.setMinimumSize(new Dimension(204, 74));
         textoAnalogo.setOpaque(false);
         textoAnalogo.setPreferredSize(new Dimension(400, 130));
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.insets = new Insets(40, 50, 0, 0);
@@ -129,6 +137,7 @@ public class PPrincipal extends JPanel{
     
     private void colocarBotones(){
         botonArtistico = new BotonPrincipal("ARTÍSTICO");
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 40;
@@ -144,6 +153,7 @@ public class PPrincipal extends JPanel{
                 botonCulturalActionPerformed(evt);
             }
         });
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 40;
@@ -154,6 +164,7 @@ public class PPrincipal extends JPanel{
         this.add(botonCultural, gridBagConstraints);
         
         botonDeportivo = new BotonPrincipal("DEPORTIVO");
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 40;
@@ -164,6 +175,7 @@ public class PPrincipal extends JPanel{
         this.add(botonDeportivo, gridBagConstraints);
         
         botonAnalogo = new BotonPrincipal("ANÁLOGO");
+        gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 40;
