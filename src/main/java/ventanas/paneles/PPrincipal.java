@@ -3,13 +3,11 @@ package ventanas.paneles;
 import javax.swing.*;
 import ventanas.VentanaCultural;
 import ventanas.botones.BotonPrincipal;
-
-// import ventanas.VentanaDeporte;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PPrincipal extends JPanel{
+public class PPrincipal extends JPanel implements ActionListener{
     private static final long serialVersionUID = 1L;
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
     private BotonPrincipal botonAnalogo;
@@ -148,11 +146,7 @@ public class PPrincipal extends JPanel{
         this.add(botonArtistico, gridBagConstraints);
         
         botonCultural = new BotonPrincipal("CULTURAL");
-        botonCultural.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                botonCulturalActionPerformed(evt);
-            }
-        });
+        botonCultural.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -186,9 +180,14 @@ public class PPrincipal extends JPanel{
         gridBagConstraints.anchor = GridBagConstraints.NORTH;
         this.add(botonAnalogo, gridBagConstraints);
     }
-    
-    private void botonCulturalActionPerformed(ActionEvent evt) {                                              
-        VentanaCultural ventanaCultural = new VentanaCultural();
-        ventanaCultural.setVisible(true);
-    }   
+
+    //Seccion de acciones de los botones para nuevas ventanas.
+    @Override
+    public void actionPerformed(ActionEvent evento) {
+        if(evento.getSource() == botonCultural){
+            VentanaCultural ventanaCultural = new VentanaCultural();
+            ventanaCultural.setVisible(true);
+        }
+    }
+
 }
