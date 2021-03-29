@@ -16,6 +16,7 @@ public class App {
     private static void createAndShowGUI() {
         
         VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
+        ventanaPrincipal.setVisible(true);
         //VentanaCultural ven = new VentanaCultural();
         //ven.setVisible(true);
     }
