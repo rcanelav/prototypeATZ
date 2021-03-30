@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import ventanas.paneles.PPrincipal;
+import ventanas.VentanaPrincipal;
 
 
 
@@ -34,6 +35,8 @@ public class Pidioma extends JPanel {
       private JTextArea leyEspSParrafo;
       private JTextArea leyGalTParrafo;
       private JTextArea leyEspTParrafo;
+      private JComponent pPrincipal;
+      private JComponent pIdioma;
      
 
    
@@ -314,9 +317,10 @@ public class Pidioma extends JPanel {
         ActionListener click = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                PPrincipal pPrincipal = new PPrincipal();
+               
+               
                 pPrincipal.setVisible(true);
-                Pidioma pIdioma = new Pidioma();
+               
                 pIdioma.setVisible(false);
                 
                 

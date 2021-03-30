@@ -2,11 +2,14 @@ package ventanas;
 
 import javax.swing.*;
 import ventanas.paneles.PPrincipal;
+import ventanas.paneles.Pidioma;
 import java.awt.*;
 
 
 public class VentanaPrincipal extends JFrame {
     PPrincipal pPrincipal = new PPrincipal();
+    Pidioma pIdioma = new Pidioma();
+    
     
     public VentanaPrincipal(){
         //Obtener tamano de pantalla del usuario
@@ -50,6 +53,8 @@ public class VentanaPrincipal extends JFrame {
     private void colocarPaneles(){
         //Posibilidad de modificar ubicacion de elementos setLayout
         this.getContentPane().add(pPrincipal);
+        pPrincipal.setVisible(false);
+        this.getContentPane().add(pIdioma);
     }
 
 }
