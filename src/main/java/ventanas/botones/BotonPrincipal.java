@@ -15,7 +15,6 @@ public class BotonPrincipal extends JButton implements MouseListener {
         this.setFont(new Font("Arial", 1, 20));
         this.setSize(400,200);
         this.setBackground(new Color(213, 156, 71));
-        
         this.setFocusPainted(false);
         this.setBorderPainted(false);
         this.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -47,6 +46,6 @@ public class BotonPrincipal extends JButton implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        // por rellenar        
+        // por rellenar
     }
 }

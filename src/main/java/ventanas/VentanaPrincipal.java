@@ -5,11 +5,8 @@ import ventanas.paneles.PPrincipal;
 import ventanas.paneles.Pidioma;
 import java.awt.*;
 
-
 public class VentanaPrincipal extends JFrame {
-    PPrincipal pPrincipal = new PPrincipal();
-    Pidioma pIdioma = new Pidioma();
-    
+    Pidioma pIdioma = new Pidioma(this);
     
     public VentanaPrincipal(){
         //Obtener tamano de pantalla del usuario
@@ -19,7 +16,6 @@ public class VentanaPrincipal extends JFrame {
         int anchoPantalla = tamanoPantalla.width;
         
         //Establecer tamano de pantalla y caracteristicas.
-        // setSize(anchoPantalla/2+50, alturaPantalla/2);
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         setLocation(anchoPantalla/4, alturaPantalla/4);
         setVisible(true);
@@ -37,7 +33,6 @@ public class VentanaPrincipal extends JFrame {
         
         //Tipo de cierre de la ventana dprincipal
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
     }
 
     private void iniciarComponentes(){
@@ -51,9 +46,6 @@ public class VentanaPrincipal extends JFrame {
     }*/
 
     private void colocarPaneles(){
-        //Posibilidad de modificar ubicacion de elementos setLayout
-        this.getContentPane().add(pPrincipal);
-        pPrincipal.setVisible(false);
         this.getContentPane().add(pIdioma);
     }
 
