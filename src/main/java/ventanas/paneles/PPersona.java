@@ -1,223 +1,481 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ventanas.paneles;
 
-/**
- *
- * @author manuel
- */
-public class PPersona extends javax.swing.JFrame {
+public class PPersona extends javax.swing.JPanel {
 
     public PPersona() {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
+        textoOrganizador = new javax.swing.JTextPane();
+        botonPersonaFisica = new javax.swing.JRadioButton();
+        botonPersonaJuridica = new javax.swing.JRadioButton();
+        botonECCOM = new javax.swing.JRadioButton();
+        textoNumeroOrganizadores = new javax.swing.JLabel();
+        textoNIF = new javax.swing.JLabel();
+        textoApellidos = new javax.swing.JLabel();
+        textoNombre = new javax.swing.JLabel();
+        textoDireccion = new javax.swing.JLabel();
+        textoPoblacion = new javax.swing.JLabel();
+        textoProvincia = new javax.swing.JLabel();
+        textoTelefono = new javax.swing.JLabel();
+        textoMobil = new javax.swing.JLabel();
+        textoEmail = new javax.swing.JLabel();
+        textoEpigrafe = new javax.swing.JLabel();
+        textoSeguro = new javax.swing.JLabel();
+        textoCobertura = new javax.swing.JLabel();
+        textoContenedorNumeroOrganizadores = new javax.swing.JTextPane();
+        textoContenedorNIF = new javax.swing.JTextPane();
+        textoContenedorApellidos = new javax.swing.JTextPane();
+        textoContenedorNombre = new javax.swing.JTextPane();
+        textoContenedorDireccion = new javax.swing.JTextPane();
+        textoContenedorPoblacion = new javax.swing.JTextPane();
+        textoContenedorProvincia = new javax.swing.JTextPane();
+        textoContenedorTelefono = new javax.swing.JTextPane();
+        textoContenedorMobil = new javax.swing.JTextPane();
+        textoContenedorEmail = new javax.swing.JTextPane();
+        textoContenedorEpigrafe = new javax.swing.JTextPane();
+        textoContenedorSeguro = new javax.swing.JTextPane();
+        textoContenedorCobertura = new javax.swing.JTextPane();
+        textoErrorNumeroOrganizadores = new javax.swing.JLabel();
+        textoErrorNIF = new javax.swing.JLabel();
+        textoErrorApellidos = new javax.swing.JLabel();
+        textoErrorNombre = new javax.swing.JLabel();
+        textoErrorDireccion = new javax.swing.JLabel();
+        textoErrorPoblacion = new javax.swing.JLabel();
+        textoErrorProvincia = new javax.swing.JLabel();
+        textoErrorTelefono = new javax.swing.JLabel();
+        textoErrorMobil = new javax.swing.JLabel();
+        textoErrorEmail = new javax.swing.JLabel();
+        textoErrorEpigrafe = new javax.swing.JLabel();
+        textoErrorSeguro = new javax.swing.JLabel();
+        textoErrorCobertura = new javax.swing.JLabel();
+        botonCancelar = new javax.swing.JButton();
+        botonSiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabelNif = new javax.swing.JLabel();
-        TextNifPf = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        TextPaPf = new javax.swing.JTextField();
-        TextSaPf = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        TextNoPf = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        TextEnPf = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        TextPoPf = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        TextPrPf = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        TextCpPf = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        TextEmailPf = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        TextTlfPf = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        TextMoPf = new javax.swing.JTextField();
-        ButtonAgrPf = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        layout.columnWidths = new int[] {0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0};
+        layout.rowHeights = new int[] {0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0};
+        setLayout(layout);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        jLabel1.setText("Persoa física");
+        textoOrganizador.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        textoOrganizador.setText("Organizador\n");
+        textoOrganizador.setOpaque(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        add(textoOrganizador, gridBagConstraints);
 
-        jLabelNif.setText("NIF");
+        botonPersonaFisica.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        botonPersonaFisica.setText("Persona Física");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        add(botonPersonaFisica, gridBagConstraints);
 
-        jLabel2.setText("Primeiro apellido");
+        botonPersonaJuridica.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        botonPersonaJuridica.setText("Persona Jurídica");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        add(botonPersonaJuridica, gridBagConstraints);
 
-        jLabel3.setText("Segundo apellido");
+        botonECCOM.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        botonECCOM.setText("ECCOM");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        add(botonECCOM, gridBagConstraints);
 
-        jLabel4.setText("Nome");
+        textoNumeroOrganizadores.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoNumeroOrganizadores.setText("Nº de organizadores/as");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        add(textoNumeroOrganizadores, gridBagConstraints);
 
-        jLabel5.setText("Enderezo");
+        textoNIF.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoNIF.setText("NIF");
+        textoNIF.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        add(textoNIF, gridBagConstraints);
 
-        jLabel6.setText("Pobación");
+        textoApellidos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoApellidos.setText("Apellidos");
+        textoApellidos.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        add(textoApellidos, gridBagConstraints);
 
-        jLabel7.setText("Provincia");
+        textoNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoNombre.setText("Nombre");
+        textoNombre.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 10;
+        add(textoNombre, gridBagConstraints);
 
-        jLabel8.setText("C.P.");
+        textoDireccion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoDireccion.setText("Dirección");
+        textoDireccion.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
+        add(textoDireccion, gridBagConstraints);
 
-        jLabel9.setText("Email");
+        textoPoblacion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoPoblacion.setText("Población");
+        textoPoblacion.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
+        add(textoPoblacion, gridBagConstraints);
 
-        jLabel10.setText("Tlf:");
+        textoProvincia.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoProvincia.setText("Provincia");
+        textoProvincia.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 16;
+        add(textoProvincia, gridBagConstraints);
 
-        jLabel11.setText("Móbil");
+        textoTelefono.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoTelefono.setText("Teléfono");
+        textoTelefono.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 18;
+        add(textoTelefono, gridBagConstraints);
 
-        ButtonAgrPf.setText("Agregar");
+        textoMobil.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoMobil.setText("Móbil");
+        textoMobil.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 20;
+        add(textoMobil, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(TextEmailPf, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelNif, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextNifPf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(TextPaPf, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGap(100, 100, 100)))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addGap(100, 100, 100)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(118, 118, 118)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(TextSaPf, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                    .addComponent(TextNoPf)
-                                    .addComponent(TextEnPf)
-                                    .addComponent(TextPoPf)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(TextPrPf, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(TextCpPf))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(TextTlfPf, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                                .addComponent(jLabel11)
-                                .addGap(34, 34, 34)
-                                .addComponent(TextMoPf, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(268, 268, 268)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(98, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(ButtonAgrPf)
-                .addGap(281, 281, 281))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNif)
-                    .addComponent(TextNifPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TextPaPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextSaPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(TextNoPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(TextEnPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(TextPoPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(TextPrPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(TextCpPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(TextEmailPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(TextTlfPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)
-                    .addComponent(TextMoPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(ButtonAgrPf)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        textoEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoEmail.setText("E-mail");
+        textoEmail.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 22;
+        add(textoEmail, gridBagConstraints);
 
-        pack();
+        textoEpigrafe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoEpigrafe.setText("Epígrafe IAE");
+        textoEpigrafe.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 24;
+        add(textoEpigrafe, gridBagConstraints);
+
+        textoSeguro.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoSeguro.setText("Póliza de Seguro");
+        textoSeguro.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 26;
+        add(textoSeguro, gridBagConstraints);
+
+        textoCobertura.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoCobertura.setText("Cobertura (€)");
+        textoCobertura.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 28;
+        add(textoCobertura, gridBagConstraints);
+
+        textoContenedorNumeroOrganizadores.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorNumeroOrganizadores.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorNumeroOrganizadores.setPreferredSize(new java.awt.Dimension(40, 16));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        add(textoContenedorNumeroOrganizadores, gridBagConstraints);
+
+        textoContenedorNIF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorNIF.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorNIF.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        add(textoContenedorNIF, gridBagConstraints);
+
+        textoContenedorApellidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorApellidos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorApellidos.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        add(textoContenedorApellidos, gridBagConstraints);
+
+        textoContenedorNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorNombre.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        add(textoContenedorNombre, gridBagConstraints);
+
+        textoContenedorDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorDireccion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorDireccion.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        add(textoContenedorDireccion, gridBagConstraints);
+
+        textoContenedorPoblacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorPoblacion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorPoblacion.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        add(textoContenedorPoblacion, gridBagConstraints);
+
+        textoContenedorProvincia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorProvincia.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorProvincia.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 16;
+        add(textoContenedorProvincia, gridBagConstraints);
+
+        textoContenedorTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorTelefono.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorTelefono.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 18;
+        add(textoContenedorTelefono, gridBagConstraints);
+
+        textoContenedorMobil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorMobil.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorMobil.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 20;
+        add(textoContenedorMobil, gridBagConstraints);
+
+        textoContenedorEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorEmail.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 22;
+        add(textoContenedorEmail, gridBagConstraints);
+
+        textoContenedorEpigrafe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorEpigrafe.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorEpigrafe.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 24;
+        add(textoContenedorEpigrafe, gridBagConstraints);
+
+        textoContenedorSeguro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorSeguro.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorSeguro.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 26;
+        add(textoContenedorSeguro, gridBagConstraints);
+
+        textoContenedorCobertura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textoContenedorCobertura.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        textoContenedorCobertura.setPreferredSize(new java.awt.Dimension(129, 14));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 28;
+        add(textoContenedorCobertura, gridBagConstraints);
+
+        textoErrorNumeroOrganizadores.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorNumeroOrganizadores.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorNumeroOrganizadores.setText("Debe introducir un número");
+        textoErrorNumeroOrganizadores.setVisible(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        add(textoErrorNumeroOrganizadores, gridBagConstraints);
+
+        textoErrorNIF.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorNIF.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorNIF.setText("El NIF de contener 9 dígitos ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        add(textoErrorNIF, gridBagConstraints);
+
+        textoErrorApellidos.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorApellidos.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorApellidos.setText("Debe ingresar un apellido válido");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 8;
+        add(textoErrorApellidos, gridBagConstraints);
+
+        textoErrorNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorNombre.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorNombre.setText("Debe ingresar un nombre válido");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 10;
+        add(textoErrorNombre, gridBagConstraints);
+
+        textoErrorDireccion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorDireccion.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorDireccion.setText("Debe ingresar una dirección válida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 12;
+        add(textoErrorDireccion, gridBagConstraints);
+
+        textoErrorPoblacion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorPoblacion.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorPoblacion.setText("Debe ingresar una población válida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 14;
+        add(textoErrorPoblacion, gridBagConstraints);
+
+        textoErrorProvincia.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorProvincia.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorProvincia.setText("Debe ingresar una provincia válida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 16;
+        add(textoErrorProvincia, gridBagConstraints);
+
+        textoErrorTelefono.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorTelefono.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorTelefono.setText("Debe ingresar un teléfono válido");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 18;
+        add(textoErrorTelefono, gridBagConstraints);
+
+        textoErrorMobil.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorMobil.setText("jLabel1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 20;
+        add(textoErrorMobil, gridBagConstraints);
+
+        textoErrorEmail.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorEmail.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorEmail.setText("Debe ingresar un e-mail válido");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 22;
+        add(textoErrorEmail, gridBagConstraints);
+
+        textoErrorEpigrafe.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorEpigrafe.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorEpigrafe.setText("Debe ingresar un epígrafe IAE válido");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 24;
+        add(textoErrorEpigrafe, gridBagConstraints);
+
+        textoErrorSeguro.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorSeguro.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorSeguro.setText("Debe ingresar una póliza de seguro válida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 26;
+        add(textoErrorSeguro, gridBagConstraints);
+
+        textoErrorCobertura.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        textoErrorCobertura.setForeground(new java.awt.Color(255, 51, 51));
+        textoErrorCobertura.setText("Debe ingresar una cobertura válida");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 28;
+        add(textoErrorCobertura, gridBagConstraints);
+
+        botonCancelar.setBackground(new java.awt.Color(255, 102, 102));
+        botonCancelar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        botonCancelar.setText("Cancelar");
+        botonCancelar.setPreferredSize(new java.awt.Dimension(100, 25));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 30;
+        add(botonCancelar, gridBagConstraints);
+
+        botonSiguiente.setBackground(new java.awt.Color(102, 204, 255));
+        botonSiguiente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        botonSiguiente.setText("Siguiente");
+        botonSiguiente.setPreferredSize(new java.awt.Dimension(100, 25));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 30;
+        add(botonSiguiente, gridBagConstraints);
+
+        jLabel1.setText("jLabel1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        add(jLabel1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonAgrPf;
-    private javax.swing.JTextField TextCpPf;
-    private javax.swing.JTextField TextEmailPf;
-    private javax.swing.JTextField TextEnPf;
-    private javax.swing.JTextField TextMoPf;
-    private javax.swing.JTextField TextNifPf;
-    private javax.swing.JTextField TextNoPf;
-    private javax.swing.JTextField TextPaPf;
-    private javax.swing.JTextField TextPoPf;
-    private javax.swing.JTextField TextPrPf;
-    private javax.swing.JTextField TextSaPf;
-    private javax.swing.JTextField TextTlfPf;
+    private javax.swing.JButton botonCancelar;
+    private javax.swing.JRadioButton botonECCOM;
+    private javax.swing.JRadioButton botonPersonaFisica;
+    private javax.swing.JRadioButton botonPersonaJuridica;
+    private javax.swing.JButton botonSiguiente;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelNif;
+    private javax.swing.JLabel textoApellidos;
+    private javax.swing.JLabel textoCobertura;
+    private javax.swing.JTextPane textoContenedorApellidos;
+    private javax.swing.JTextPane textoContenedorCobertura;
+    private javax.swing.JTextPane textoContenedorDireccion;
+    private javax.swing.JTextPane textoContenedorEmail;
+    private javax.swing.JTextPane textoContenedorEpigrafe;
+    private javax.swing.JTextPane textoContenedorMobil;
+    private javax.swing.JTextPane textoContenedorNIF;
+    private javax.swing.JTextPane textoContenedorNombre;
+    private javax.swing.JTextPane textoContenedorNumeroOrganizadores;
+    private javax.swing.JTextPane textoContenedorPoblacion;
+    private javax.swing.JTextPane textoContenedorProvincia;
+    private javax.swing.JTextPane textoContenedorSeguro;
+    private javax.swing.JTextPane textoContenedorTelefono;
+    private javax.swing.JLabel textoDireccion;
+    private javax.swing.JLabel textoEmail;
+    private javax.swing.JLabel textoEpigrafe;
+    private javax.swing.JLabel textoErrorApellidos;
+    private javax.swing.JLabel textoErrorCobertura;
+    private javax.swing.JLabel textoErrorDireccion;
+    private javax.swing.JLabel textoErrorEmail;
+    private javax.swing.JLabel textoErrorEpigrafe;
+    private javax.swing.JLabel textoErrorMobil;
+    private javax.swing.JLabel textoErrorNIF;
+    private javax.swing.JLabel textoErrorNombre;
+    private javax.swing.JLabel textoErrorNumeroOrganizadores;
+    private javax.swing.JLabel textoErrorPoblacion;
+    private javax.swing.JLabel textoErrorProvincia;
+    private javax.swing.JLabel textoErrorSeguro;
+    private javax.swing.JLabel textoErrorTelefono;
+    private javax.swing.JLabel textoMobil;
+    private javax.swing.JLabel textoNIF;
+    private javax.swing.JLabel textoNombre;
+    private javax.swing.JLabel textoNumeroOrganizadores;
+    private javax.swing.JTextPane textoOrganizador;
+    private javax.swing.JLabel textoPoblacion;
+    private javax.swing.JLabel textoProvincia;
+    private javax.swing.JLabel textoSeguro;
+    private javax.swing.JLabel textoTelefono;
     // End of variables declaration//GEN-END:variables
 }
