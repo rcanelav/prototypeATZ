@@ -14,7 +14,6 @@ public class PPrincipal extends JPanel implements ActionListener{
     private JButton botonArtistico;
     private JButton botonCultural;
     private JButton botonDeportivo;
-    // private JLabel labelFondo;
     private JTextPane textoAnalogo;
     private JTextPane textoArtistico;
     private JTextPane textoCultural;
@@ -189,5 +188,4 @@ public class PPrincipal extends JPanel implements ActionListener{
             ventanaCultural.setVisible(true);
         }
     }
-
 }

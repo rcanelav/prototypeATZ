@@ -20,8 +20,7 @@ public class Pidioma extends JPanel implements ActionListener{
     private BotonPrincipal botonCastellano;
     private BotonPrincipal botonGallego;
     
-    public Pidioma(JFrame ventanaPrincipal){
-        this.ventanaPrincipal = ventanaPrincipal;
+    public Pidioma(){
         colocarTextoGallego();
         colocarTextoCastellano();
         colocarBotones();
@@ -170,16 +169,17 @@ public class Pidioma extends JPanel implements ActionListener{
     }
     
      //Seccion de acciones de los botones para nuevas ventanas.
-     @Override
-     public void actionPerformed(ActionEvent evento) {
-         if(evento.getSource() == botonGallego){
-           System.out.println("Boton Gallego");
-           JOptionPane.showMessageDialog(null, "Esta seccion no ha sido implementada", "Error", JOptionPane.ERROR_MESSAGE);
-         }
-         if(evento.getSource() == botonCastellano){
+    @Override
+    public void actionPerformed(ActionEvent evento) {
+        if(evento.getSource() == botonGallego){
+        System.out.println("Boton Gallego");
+        JOptionPane.showMessageDialog(null, "Esta seccion no ha sido implementada", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        if(evento.getSource() == botonCastellano){
             panelPrincipal = new PPrincipal();
-            ventanaPrincipal.setContentPane(panelPrincipal);
+            JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            frame.setContentPane(panelPrincipal);
             this.setVisible(false);            
-          }
-     }  
+        }
+    }  
 }
