@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ventanas.paneles;
+
 import javax.swing.*;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
+
 import ventanas.botones.BotonPrincipal;
 import java.awt.*;
-
 /**
  *
  * @author manuel
  */
-
 public class PArtistico extends JPanel  {
-
     private static final long serialVersionUID = 1L;
     protected JFrame ventanaPrincipal = null;
     protected PPrincipal panelPrincipal = null;
@@ -26,25 +23,19 @@ public class PArtistico extends JPanel  {
     private JTextPane textoMusical;
     private JTextPane textoTeatral;
 
-
     public PArtistico(){
-      
         colocarTextoArtistico();
         colocarBotones();
     }
 
     @Override
-    public void paintComponent(Graphics g)
-    {
+    public void paintComponent(Graphics g){
         super.paintComponent(g);
         ImageIcon img = new ImageIcon("src/main/java/imagenes/fondo.jpg");
         g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
     }
 
- 
     private void colocarTextoArtistico() {
-       
-
         lblTitulo = new JLabel();
         textoLey = new JTextPane();
         textoTeatral = new JTextPane();
@@ -79,6 +70,7 @@ public class PArtistico extends JPanel  {
         //textoLey.setPreferredSize(new Dimension(350, 200));
         textoLey.setOpaque(false);
         textoLey.setRequestFocusEnabled(false);
+        centrarTexto(textoLey);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -97,6 +89,7 @@ public class PArtistico extends JPanel  {
         textoTeatral.setOpaque(false);
        // textoTeatral.setPreferredSize(new Dimension(400, 130));
         textoTeatral.setRequestFocusEnabled(false);
+        centrarTexto(textoTeatral);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -115,6 +108,7 @@ public class PArtistico extends JPanel  {
         textoMusical.setOpaque(false);
        // textoMusical.setPreferredSize(new Dimension(400, 130));
         textoMusical.setRequestFocusEnabled(false);
+        centrarTexto(textoMusical);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -124,7 +118,6 @@ public class PArtistico extends JPanel  {
        // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new Insets(-60, 91, 0, 0);
         add(textoMusical, gridBagConstraints);
-  
     }
 
     private void colocarBotones(){
@@ -151,6 +144,10 @@ public class PArtistico extends JPanel  {
         add(botonMusical, gridBagConstraints);
     }
 
-
-    
+    void centrarTexto(JTextPane texto){
+        StyledDocument parrafo = texto.getStyledDocument();
+        SimpleAttributeSet center = new SimpleAttributeSet();
+        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+        parrafo.setParagraphAttributes(0, parrafo.getLength(), center, false);
+    }
 }

@@ -1,6 +1,10 @@
 package ventanas.paneles;
 
 import javax.swing.*;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
+
 import ventanas.botones.BotonPrincipal;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -49,6 +53,7 @@ public class Pidioma extends JPanel implements ActionListener{
         textoTituloGallego.setOpaque(false);
         textoTituloGallego.setRequestFocusEnabled(false);
         textoTituloGallego.setBackground(Color.black);
+        centrarTexto(textoTituloGallego);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -65,6 +70,7 @@ public class Pidioma extends JPanel implements ActionListener{
         textoSubtituloGallego.setPreferredSize(new Dimension(350, 200));
         textoSubtituloGallego.setOpaque(false);
         textoSubtituloGallego.setRequestFocusEnabled(false);
+        centrarTexto(textoSubtituloGallego);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -82,6 +88,7 @@ public class Pidioma extends JPanel implements ActionListener{
         textoLeyGallego.setPreferredSize(new Dimension(350, 200));
         textoLeyGallego.setOpaque(false);
         textoLeyGallego.setRequestFocusEnabled(false);
+        centrarTexto(textoLeyGallego);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -102,6 +109,7 @@ public class Pidioma extends JPanel implements ActionListener{
         textoTituloCastellano.setPreferredSize(new Dimension(500, 200));
         textoTituloCastellano.setOpaque(false);
         textoTituloCastellano.setRequestFocusEnabled(false);
+        centrarTexto(textoTituloCastellano);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -118,6 +126,7 @@ public class Pidioma extends JPanel implements ActionListener{
         textoSubtituloCastellano.setPreferredSize(new Dimension(350, 200));
         textoSubtituloCastellano.setOpaque(false);
         textoSubtituloCastellano.setRequestFocusEnabled(false);
+        centrarTexto(textoSubtituloCastellano);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -136,6 +145,7 @@ public class Pidioma extends JPanel implements ActionListener{
         textoLeyCastellano.setPreferredSize(new Dimension(350, 200));
         textoLeyCastellano.setOpaque(false);
         textoLeyCastellano.setRequestFocusEnabled(false);
+        centrarTexto(textoLeyCastellano);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -182,4 +192,11 @@ public class Pidioma extends JPanel implements ActionListener{
             this.setVisible(false);            
         }
     }  
+
+    void centrarTexto(JTextPane texto){
+        StyledDocument parrafo = texto.getStyledDocument();
+        SimpleAttributeSet center = new SimpleAttributeSet();
+        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+        parrafo.setParagraphAttributes(0, parrafo.getLength(), center, false);
+    }
 }
