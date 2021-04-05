@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent;
 
 public class PPrincipal extends JPanel implements ActionListener{
     private static final long serialVersionUID = 1L;
+    protected JFrame ventanaPrincipal = null;
+    protected PArtistico panelArtistico = null;
+    protected PCultural panelCultural= null;
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
     private BotonPrincipal botonAnalogo;
     private JButton botonArtistico;
@@ -20,6 +23,7 @@ public class PPrincipal extends JPanel implements ActionListener{
     private JTextPane textoDeportivo;
     private JTextPane textoSubtitulo;
     private JTextPane textoTitulo;
+    
 
     public PPrincipal(){
         colocarTextos();
@@ -134,6 +138,7 @@ public class PPrincipal extends JPanel implements ActionListener{
     
     private void colocarBotones(){
         botonArtistico = new BotonPrincipal("ARTÍSTICO");
+        botonArtistico.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -184,8 +189,18 @@ public class PPrincipal extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evento) {
         if(evento.getSource() == botonCultural){
-            VentanaCultural ventanaCultural = new VentanaCultural();
-            ventanaCultural.setVisible(true);
+            panelCultural = new PCultural();
+            JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            frame.setContentPane(panelCultural);
+            this.setVisible(false);   
+        }
+
+        if(evento.getSource() == botonArtistico){
+            panelArtistico = new PArtistico();
+            JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            frame.setContentPane(panelArtistico);
+            this.setVisible(false);            
         }
     }
+ 
 }
