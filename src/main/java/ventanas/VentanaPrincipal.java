@@ -1,11 +1,14 @@
 package ventanas;
 
 import javax.swing.*;
+
+import ventanas.paneles.PPersonaJuridicoEccom;
 import ventanas.paneles.Pidioma;
 import java.awt.*;
 
 public class VentanaPrincipal extends JFrame {
     Pidioma pIdioma = new Pidioma();
+    PPersonaJuridicoEccom pPersonaJuridicoEccom = new PPersonaJuridicoEccom();
     
     public VentanaPrincipal(){
         //Obtener tamano de pantalla del usuario
@@ -45,6 +48,6 @@ public class VentanaPrincipal extends JFrame {
     }*/
 
     private void colocarPaneles(){
-        this.getContentPane().add(pIdioma);
+        this.getContentPane().add(pPersonaJuridicoEccom);
     }
 }
