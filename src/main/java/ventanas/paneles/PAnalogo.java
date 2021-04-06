@@ -15,24 +15,22 @@ import javax.swing.text.StyledDocument;
  * @author manuel
  */
 
-public class PCultural extends JPanel  {
-
+public class PAnalogo extends JPanel  {
     private static final long serialVersionUID = 1L;
     protected JFrame ventanaPrincipal = null;
     protected PPrincipal panelPrincipal = null;
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
-    private JButton botonFeria;
-    private JButton botonCinematografico;
-    private JButton botonExhibicion;
-    private JLabel textoTitulo;
+    private JButton botonTaurino;
+    private JButton botonPirotecnico;
+    private JButton botonCircenses;
+    private JLabel  textoTitulo;
     private JTextPane textoLey;
-    private JTextPane textoFeria;
-    private JTextPane textoCinematografico;
-    private JTextPane textoExhibicion;
+    private JTextPane textoTaurino;
+    private JTextPane textoPirotecnico;
+    private JTextPane textoCircenses;
 
 
-    public PCultural(){
-      
+    public PAnalogo(){
         colocarTextoArtistico();
         colocarBotones();
     }
@@ -47,16 +45,14 @@ public class PCultural extends JPanel  {
 
  
     private void colocarTextoArtistico() {
-       
-
         textoTitulo = new JLabel();
         textoLey = new JTextPane();
-        textoCinematografico = new JTextPane();
-        textoFeria = new JTextPane();
-        textoExhibicion = new JTextPane();
-        botonFeria = new JButton();
-        botonCinematografico = new JButton();
-        botonExhibicion = new JButton();
+        textoPirotecnico = new JTextPane();
+        textoTaurino = new JTextPane();
+        textoCircenses = new JTextPane();
+        botonTaurino = new JButton();
+        botonPirotecnico = new JButton();
+        botonCircenses = new JButton();
         this.setLayout(new GridBagLayout());
 
         textoTitulo.setBorder(null);
@@ -73,9 +69,9 @@ public class PCultural extends JPanel  {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 8;
         gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 18;
+        gridBagConstraints.ipady = 22;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-60, 259, 0, 0);
+        gridBagConstraints.insets = new Insets(80, 259, 0, 0);
         //gridBagConstraints.anchor = GridBagConstraints.NORTH;
         this.add(textoTitulo, gridBagConstraints);
 
@@ -83,109 +79,111 @@ public class PCultural extends JPanel  {
         textoLey.setBorder(null);
         textoLey.setFont(new Font("Arial", 0, 24)); 
         textoLey.setText("Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo  de espectáculos  públicos,  actividades  recreativas  y  establecementos  abiertos  al público  de la  Comunidad  Autónoma  de  Galicia y  se  establecen  determinadas disposiciones geraless de aplicación en la materia.");
-       // textoLey.setMinimumSize(new Dimension(350, 200));
+        textoLey.setBackground(new Color(213, 156, 71, 200));
+        // textoLey.setMinimumSize(new Dimension(350, 200));
         //textoLey.setPreferredSize(new Dimension(350, 200));
+        textoLey.setBackground(new Color(213, 156, 71, 1));
         textoLey.setOpaque(false);
         textoLey.setRequestFocusEnabled(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 8;
         gridBagConstraints.ipadx = 1005;
         gridBagConstraints.ipady = 127;
         //gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(10, 71, 0, 100);
+        gridBagConstraints.insets = new Insets(-60, 71, 0, 100);
         add(textoLey, gridBagConstraints);
 
-        textoCinematografico.setEditable(false);
-        textoCinematografico.setBorder(null);
-        textoCinematografico.setFont(new Font("Arial", 0, 16)); 
-        textoCinematografico.setText("Exhibición o proyección pública de películas cinematográficas y otros contenidos susceptibles de ser proyectados en pantalla, con independencia de los medios técnicos utilizados, y sin prejuicio de que se exhiban o proyecten en establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.");
-       // textoCinematografico.setMinimumSize(new Dimension(204, 74));
-        textoCinematografico.setOpaque(false);
-       // textoCinematografico.setPreferredSize(new Dimension(400, 130));
-        textoCinematografico.setRequestFocusEnabled(false);
+        textoPirotecnico.setEditable(false);
+        textoPirotecnico.setBorder(null);
+        textoPirotecnico.setFont(new Font("Arial", 0, 16)); 
+        textoPirotecnico.setText("Aquellos en que se produce la ejecución o representación en público de obras o composiciones de efectos visuales, sonoros, y fumígenos con una finalidad lúdica, mediante el uso de artificios de pirotecnia, conjunta o aisladamente con composiciones audiovisuales, de instrumentos musicales oo voz humana, a cargo de intérpretes musicales, cantantes o artistas, profesionales o personas aficionadas, en espacios abiertos al público debidamente acondicionados y habilitados para eso.");
+       // textoPirotecnico.setMinimumSize(new Dimension(204, 74));
+        textoPirotecnico.setOpaque(false);
+       // textoPirotecnico.setPreferredSize(new Dimension(400, 130));
+        textoPirotecnico.setRequestFocusEnabled(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipadx = 415;
         gridBagConstraints.ipady = 178;
        // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-105, 125, 0, 0);
-        add(textoCinematografico, gridBagConstraints);
+        gridBagConstraints.insets = new Insets(40, 125, 0, 0);
+        add(textoPirotecnico, gridBagConstraints);
         
-        textoFeria.setEditable(false);
-        textoFeria.setBorder(null);
-        textoFeria.setFont(new Font("Arial", 0, 16)); 
-        textoFeria.setText("Presentación en público de productos naturales o artificiales derivados de las plantas, animales o naturaleza en establecimentos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.");
-       // textoFeria.setMinimumSize(new Dimension(204, 74));
-        textoFeria.setOpaque(false);
-       // textoFeria.setPreferredSize(new Dimension(400, 130));
-        textoFeria.setRequestFocusEnabled(false);
+        textoTaurino.setEditable(false);
+        textoTaurino.setBorder(null);
+        textoTaurino.setFont(new Font("Arial", 0, 16)); 
+        textoTaurino.setText("Aquellos en que intervienen reses de ganado bovino bravo para ser lidiadas en plazas de toros con público, por profesionales o personas aficionadas, de acuerdo con la normativa específica. La clasificación y características de los recintos serán las establecidas en la normativa específica aplicable");
+       // textoTaurino.setMinimumSize(new Dimension(204, 74));
+        textoTaurino.setOpaque(false);
+       // textoTaurino.setPreferredSize(new Dimension(400, 130));
+        textoTaurino.setRequestFocusEnabled(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.ipadx = 385;
         gridBagConstraints.ipady = 178;
        // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-105, 91, 0, 0);
-        add(textoFeria, gridBagConstraints);
+        gridBagConstraints.insets = new Insets(40, 91, 0, 0);
+        add(textoTaurino, gridBagConstraints);
 
-        textoExhibicion.setEditable(false);
-        textoExhibicion.setBorder(null);
-        textoExhibicion.setFont(new Font("Arial", 0, 16)); 
-        textoExhibicion.setText("Realización en público de bailes, exhibiciones, cabalgatas o desfiles de carácter popular, tradicional o de cualquier índole en establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.");
-       // textoExhibicion.setMinimumSize(new Dimension(204, 74));
-        textoExhibicion.setOpaque(false);
-       // textoExhibicion.setPreferredSize(new Dimension(400, 130));
-        textoExhibicion.setRequestFocusEnabled(false);
+        textoCircenses.setEditable(false);
+        textoCircenses.setBorder(null);
+        textoCircenses.setFont(new Font("Arial", 0, 16)); 
+        textoCircenses.setText("La ejecución o representación en público de ejercicios físicos, de acrobacia o habilidad, actuacinoes de payasos, malabaristas, prestidigitadores, animales amaestrados o no, y otras semejantes, realizadas por artistas, intérpretes o ejecutantes, profesionales o personas aficionadas, en establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso, sin prejuizo de lo dispuesto en el artículo 9.I) de la Ley 4/2017, del 3 de octubre, de protección y bienestar de los animales de compañía.");
+       // textoCircenses.setMinimumSize(new Dimension(204, 74));
+        textoCircenses.setOpaque(false);
+       // textoCircenses.setPreferredSize(new Dimension(400, 130));
+       textoCircenses.setRequestFocusEnabled(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.ipadx = 385;
         gridBagConstraints.ipady = 178;
        // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new Insets(-140, -470, 0, 0);
-        add(textoExhibicion, gridBagConstraints);
+        add(textoCircenses, gridBagConstraints);
   
     }
 
     private void colocarBotones(){
-        botonCinematografico = new BotonPrincipal("CINEMATOGRÁFICO");
-        //botonCinematografico.addActionListener(this);
+        botonPirotecnico = new BotonPrincipal("PIROTÉCNICO");
+        //botonPirotecnico.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 30;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new Insets(-160, 220, 176, 0);
-        add(botonCinematografico, gridBagConstraints);
+        add(botonPirotecnico,gridBagConstraints);
 
-         botonFeria = new BotonPrincipal("FERIA");
-        // botonFeria.addActionListener(this);
+         botonTaurino = new BotonPrincipal("TAURINO");
+        // botonTaurino.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 30;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new Insets(-165, 210, 176, 0);
-        add(botonFeria, gridBagConstraints);
+        add(botonTaurino, gridBagConstraints);
 
-        botonExhibicion = new BotonPrincipal("EXHIBICIÓN");
-        // botonExhibicion.addActionListener(this);
+        botonCircenses = new BotonPrincipal("CIRCENSES");
+        // botonCircenses.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 30;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new Insets(-160, -100, 0, 0);
-        add(botonExhibicion, gridBagConstraints);
+        add(botonCircenses, gridBagConstraints);
     }
     void centrarTexto(JTextPane texto){
         StyledDocument parrafo = texto.getStyledDocument();

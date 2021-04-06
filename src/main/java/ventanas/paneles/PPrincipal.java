@@ -1,6 +1,10 @@
 package ventanas.paneles;
 
 import javax.swing.*;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
+
 import ventanas.VentanaCultural;
 import ventanas.botones.BotonPrincipal;
 import java.awt.*;
@@ -12,6 +16,8 @@ public class PPrincipal extends JPanel implements ActionListener{
     protected JFrame ventanaPrincipal = null;
     protected PArtistico panelArtistico = null;
     protected PCultural panelCultural= null;
+    protected PDeportivo panelDeportivo= null;
+    protected PAnalogo panelAnalogo= null;
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
     private BotonPrincipal botonAnalogo;
     private JButton botonArtistico;
@@ -31,8 +37,7 @@ public class PPrincipal extends JPanel implements ActionListener{
     }
 
     @Override
-    public void paintComponent(Graphics g)
-    {
+    public void paintComponent(Graphics g){
         super.paintComponent(g);
         ImageIcon img = new ImageIcon("src/main/java/imagenes/fondo.jpg");
         g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
@@ -55,6 +60,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         textoTitulo.setPreferredSize(new Dimension(1000, 400));
         textoTitulo.setOpaque(false);
         textoTitulo.setRequestFocusEnabled(false);
+        centrarTexto(textoTitulo);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -72,6 +78,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         textoSubtitulo.setMinimumSize(new Dimension(484, 42));
         textoTitulo.setPreferredSize(new Dimension(700, 62));
         textoSubtitulo.setOpaque(false);
+        centrarTexto(textoSubtitulo);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -88,6 +95,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         textoArtistico.setMinimumSize(new Dimension(204, 74));
         textoArtistico.setOpaque(false);
         textoArtistico.setPreferredSize(new Dimension(400, 130));
+        centrarTexto(textoArtistico);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -101,6 +109,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         textoCultural.setMinimumSize(new Dimension(204, 74));
         textoCultural.setOpaque(false);
         textoCultural.setPreferredSize(new Dimension(400, 130));
+        centrarTexto(textoCultural);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -115,6 +124,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         textoDeportivo.setMinimumSize(new Dimension(400, 130));
         textoDeportivo.setOpaque(false);
         textoDeportivo.setPreferredSize(new Dimension(400, 130));
+        centrarTexto(textoDeportivo);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -128,6 +138,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         textoAnalogo.setMinimumSize(new Dimension(204, 74));
         textoAnalogo.setOpaque(false);
         textoAnalogo.setPreferredSize(new Dimension(400, 130));
+        centrarTexto(textoAnalogo);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
@@ -145,7 +156,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 30;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new Insets(-30, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
         gridBagConstraints.anchor = GridBagConstraints.NORTH;
         this.add(botonArtistico, gridBagConstraints);
         
@@ -157,22 +168,24 @@ public class PPrincipal extends JPanel implements ActionListener{
         gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 30;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new Insets(-30, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
         gridBagConstraints.anchor = GridBagConstraints.NORTH;
         this.add(botonCultural, gridBagConstraints);
         
         botonDeportivo = new BotonPrincipal("DEPORTIVO");
+        botonDeportivo.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 30;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new Insets(-30, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
         gridBagConstraints.anchor = GridBagConstraints.NORTH;
         this.add(botonDeportivo, gridBagConstraints);
         
         botonAnalogo = new BotonPrincipal("ANÁLOGO");
+        botonAnalogo.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
@@ -180,7 +193,7 @@ public class PPrincipal extends JPanel implements ActionListener{
         gridBagConstraints.ipady = 30;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 0.5;
-        gridBagConstraints.insets = new Insets(-30, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
         gridBagConstraints.anchor = GridBagConstraints.NORTH;
         this.add(botonAnalogo, gridBagConstraints);
     }
@@ -201,6 +214,25 @@ public class PPrincipal extends JPanel implements ActionListener{
             frame.setContentPane(panelArtistico);
             this.setVisible(false);            
         }
+
+        if(evento.getSource() == botonDeportivo){
+            panelDeportivo = new PDeportivo();
+            JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            frame.setContentPane(panelDeportivo);
+            this.setVisible(false);            
+        }
+        
+        if(evento.getSource() == botonAnalogo){
+            panelAnalogo = new PAnalogo();
+            JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            frame.setContentPane(panelAnalogo);
+            this.setVisible(false);          
+        }
     }
- 
+    void centrarTexto(JTextPane texto){
+        StyledDocument parrafo = texto.getStyledDocument();
+        SimpleAttributeSet center = new SimpleAttributeSet();
+        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+        parrafo.setParagraphAttributes(0, parrafo.getLength(), center, false);
+    } 
 }

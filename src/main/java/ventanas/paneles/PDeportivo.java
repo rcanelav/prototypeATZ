@@ -1,47 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ventanas.paneles;
-
 import javax.swing.*;
+import ventanas.botones.BotonPrincipal;
+import java.awt.*;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-
-import ventanas.botones.BotonPrincipal;
-import java.awt.*;
 /**
  *
  * @author manuel
  */
-public class PArtistico extends JPanel  {
+
+public class PDeportivo extends JPanel  {
     private static final long serialVersionUID = 1L;
     protected JFrame ventanaPrincipal = null;
     protected PPrincipal panelPrincipal = null;
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
-    private JButton botonMusical;
-    private JButton botonTeatral;
-    private JLabel textoTitulo;
+    private JButton botonDeportivo;
+    private JLabel  textoTitulo;
     private JTextPane textoLey;
-    private JTextPane textoMusical;
-    private JTextPane textoTeatral;
+    private JTextPane textoDeportivo;
 
-    public PArtistico(){
+    public PDeportivo(){
         colocarTextoArtistico();
         colocarBotones();
     }
 
     @Override
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g)
+    {
         super.paintComponent(g);
         ImageIcon img = new ImageIcon("src/main/java/imagenes/fondo.jpg");
         g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
     }
 
+ 
     private void colocarTextoArtistico() {
         textoTitulo = new JLabel();
         textoLey = new JTextPane();
-        textoTeatral = new JTextPane();
-        textoMusical = new JTextPane();
-        botonTeatral = new JButton();
-        botonMusical = new JButton();
+        textoDeportivo = new JTextPane();
+        botonDeportivo = new JButton();
         this.setLayout(new GridBagLayout());
 
         textoTitulo.setBorder(null);
@@ -58,9 +60,9 @@ public class PArtistico extends JPanel  {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 8;
         gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 22;
+        gridBagConstraints.ipady = 18;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(80, 259, 0, 0);
+        gridBagConstraints.insets = new Insets(-60, 259, 0, 0);
         //gridBagConstraints.anchor = GridBagConstraints.NORTH;
         this.add(textoTitulo, gridBagConstraints);
 
@@ -72,7 +74,6 @@ public class PArtistico extends JPanel  {
         //textoLey.setPreferredSize(new Dimension(350, 200));
         textoLey.setOpaque(false);
         textoLey.setRequestFocusEnabled(false);
-        centrarTexto(textoLey);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -83,34 +84,14 @@ public class PArtistico extends JPanel  {
         gridBagConstraints.insets = new Insets(31, 71, 0, 100);
         add(textoLey, gridBagConstraints);
 
-        textoTeatral.setEditable(false);
-        textoTeatral.setBorder(null);
-        textoTeatral.setFont(new Font("Arial", 0, 16)); 
-        textoTeatral.setText("Representación pública de obras teatrales, artísticas o escénicas, mediante la utilización, aislada o conjuntamente, del lenguaje, de la mímica, de la música, del cómic, de marionetas u otros objetos a cargo de artistas, intérpretes o ejecutantes, sean o no profesionales, en establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.");
-       // textoTeatral.setMinimumSize(new Dimension(204, 74));
-        textoTeatral.setOpaque(false);
-       // textoTeatral.setPreferredSize(new Dimension(400, 130));
-        textoTeatral.setRequestFocusEnabled(false);
-        centrarTexto(textoTeatral);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 415;
-        gridBagConstraints.ipady = 178;
-       // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-60, 125, 0, 0);
-        add(textoTeatral, gridBagConstraints);
-        
-        textoMusical.setEditable(false);
-        textoMusical.setBorder(null);
-        textoMusical.setFont(new Font("Arial", 0, 16)); 
-        textoMusical.setText("Ejecución o representación pública de obras o composiciones musicales, operísticas o de danza, mediante la utilización, aislada o conjuntamente, de instrumentos musicales, música grabada y enviada por medios mecánicos o de la voz humana a cargo de artistas, intérpretes o ejecutantes, profesionales u personas aficionadas, en establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.");
-       // textoMusical.setMinimumSize(new Dimension(204, 74));
-        textoMusical.setOpaque(false);
-       // textoMusical.setPreferredSize(new Dimension(400, 130));
-        textoMusical.setRequestFocusEnabled(false);
-        centrarTexto(textoMusical);
+        textoDeportivo.setEditable(false);
+        textoDeportivo.setBorder(null);
+        textoDeportivo.setFont(new Font("Arial", 0, 16)); 
+        textoDeportivo.setText("La exhibición en público del ejercicio de cualquier modalidad o especialidad deportiva, competitiva o no, por deportistas profesionales o aficionados/as, en recintos, instalacoóens, vías o espacios abiertos al público, debidamente acondicionados y habilitados para eso.");
+       // textoDeportivo.setMinimumSize(new Dimension(204, 74));
+        textoDeportivo.setOpaque(false);
+       // textoDeportivo.setPreferredSize(new Dimension(400, 130));
+        textoDeportivo.setRequestFocusEnabled(false);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -118,38 +99,27 @@ public class PArtistico extends JPanel  {
         gridBagConstraints.ipadx = 385;
         gridBagConstraints.ipady = 178;
        // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-60, 91, 0, 0);
-        add(textoMusical, gridBagConstraints);
+        gridBagConstraints.insets = new Insets(-60, 360, 0, 0);
+        add(textoDeportivo, gridBagConstraints);
     }
 
     private void colocarBotones(){
-        botonTeatral = new BotonPrincipal("TEATRAL");
-        //botonTeatral.addActionListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-100, 294, 176, 0);
-        add(botonTeatral, gridBagConstraints);
-
-         botonMusical = new BotonPrincipal("MUSICAL");
-        // botonMusical.addActionListener(this);
+        botonDeportivo = new BotonPrincipal("DEPORTIVO");
+        //botonDeportivo.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 30;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-105, 239, 176, 0);
-        add(botonMusical, gridBagConstraints);
+        gridBagConstraints.insets = new Insets(-105, 440, 176, 0);
+        add(botonDeportivo, gridBagConstraints);
     }
-
     void centrarTexto(JTextPane texto){
         StyledDocument parrafo = texto.getStyledDocument();
         SimpleAttributeSet center = new SimpleAttributeSet();
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         parrafo.setParagraphAttributes(0, parrafo.getLength(), center, false);
-    } 
+    }
+ 
 }
