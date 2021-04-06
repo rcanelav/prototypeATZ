@@ -83,10 +83,10 @@ public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
     //Las dimensiones del layout seleccionado
     //-----------------------------------
     private void colocarLayout(){
-        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        GridBagLayout layout = new GridBagLayout();
         layout.columnWidths = new int[] {0, 15, 0, 15, 0, 15, 0};
         layout.rowHeights = new int[] {0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0, 15, 0};
-        setLayout(layout);
+        this.setLayout(layout);
     }
 
     //-----------------------------------
@@ -104,33 +104,9 @@ public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
         grupoBotones.add(botonPersonaJuridica);
         grupoBotones.add(botonECCOM);
 
-        botonPersonaFisica.setFont(new Font("Arial", 1, 12));
-        botonPersonaFisica.setText("Persona Física");
-        botonPersonaFisica.setSelected(true);
-        botonPersonaFisica.setPreferredSize(new Dimension(232, 23));
-        botonPersonaFisica.addChangeListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        add(botonPersonaFisica, gridBagConstraints);
-
-        botonPersonaJuridica.setFont(new Font("Arial", 1, 12));
-        botonPersonaJuridica.setText("Persona Jurídica");
-        botonPersonaJuridica.setPreferredSize(new Dimension(232, 23));
-        botonPersonaJuridica.addChangeListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        add(botonPersonaJuridica, gridBagConstraints);
-
-        botonECCOM.setFont(new Font("Arial", 1, 12));
-        botonECCOM.setText("ECCOM");
-        botonECCOM.setPreferredSize(new Dimension(232, 23));
-        botonECCOM.addChangeListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        add(botonECCOM, gridBagConstraints);
+        propiedadesRadioButton(botonPersonaFisica, "Persona Física", 0, 2, true);
+        propiedadesRadioButton(botonPersonaJuridica, "Persona Jurídica", 2, 2, false);
+        propiedadesRadioButton(botonECCOM, "ECCOM", 4, 2, false);
 
         botonCancelar.setBackground(new Color(204, 0, 51));
         botonCancelar.setFont(new Font("Arial", 0, 12));
@@ -139,7 +115,7 @@ public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 32;
         gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(botonCancelar, gridBagConstraints);
+        this.add(botonCancelar, gridBagConstraints);
 
         botonSiguiente.setBackground(new Color(0, 153, 255));
         botonSiguiente.setFont(new Font("Arial", 0, 12));
@@ -148,7 +124,7 @@ public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 32;
         gridBagConstraints.anchor = GridBagConstraints.WEST;
-        add(botonSiguiente, gridBagConstraints);
+        this.add(botonSiguiente, gridBagConstraints);
     }
 
     //-----------------------------------
@@ -192,292 +168,36 @@ public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        add(textoOrganizador, gridBagConstraints);
+        this.add(textoOrganizador, gridBagConstraints);
 
-        textoNumeroOrganizadores.setFont(new Font("Arial", 0, 12));
-        textoNumeroOrganizadores.setText("Nº de organizadores/as");
-        textoNumeroOrganizadores.setMinimumSize(new Dimension(130, 14));
-        textoNumeroOrganizadores.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoNumeroOrganizadores, gridBagConstraints);
+        propiedadesTextos_TextosError(textoNumeroOrganizadores, 0, 0, 0, "Nº de organizadores/as", 130, 14, true, 0, 4);
+        propiedadesTextos_TextosError(textoNIF, 0, 0, 0, "NIF", 130, 14, true, 0, 6);
+        propiedadesTextos_TextosError(textoApellidos, 0, 0, 0, "Apellidos", 130, 14, true, 0, 8);
+        propiedadesTextos_TextosError(textoNombre, 0, 0, 0, "Nombre", 130, 14, true, 0, 10);
+        propiedadesTextos_TextosError(textoDireccion, 0, 0, 0, "Dirección", 130, 14, true, 0, 12);
+        propiedadesTextos_TextosError(textoPoblacion, 0, 0, 0, "Población", 130, 14, true, 0, 14);
+        propiedadesTextos_TextosError(textoProvincia, 0, 0, 0, "Provincia", 130, 14, true, 0, 16);
+        propiedadesTextos_TextosError(textoTelefono, 0, 0, 0, "Teléfono", 130, 14, true, 0, 18);
+        propiedadesTextos_TextosError(textoMobil, 0, 0, 0, "Móbil", 130, 14, true, 0, 20);
+        propiedadesTextos_TextosError(textoEmail, 0, 0, 0, "E-mail", 130, 14, true, 0, 22);
+        propiedadesTextos_TextosError(textoEpigrafe, 0, 0, 0, "Epígrafe IAE", 130, 14, true, 0, 24);
+        propiedadesTextos_TextosError(textoSeguro, 0, 0, 0, "Póliza de Seguro", 130, 14, true, 0, 26);
+        propiedadesTextos_TextosError(textoCobertura, 0, 0, 0, "Cobertura (€)", 130, 14, true, 0, 28);
 
-        textoNIF.setFont(new Font("Arial", 0, 12));
-        textoNIF.setText("NIF");
-        textoNIF.setMinimumSize(new Dimension(130, 14));
-        textoNIF.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoNIF, gridBagConstraints);
-
-        textoApellidos.setFont(new Font("Arial", 0, 12));
-        textoApellidos.setText("Apellidos");
-        textoApellidos.setMinimumSize(new Dimension(130, 14));
-        textoApellidos.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoApellidos, gridBagConstraints);
-
-        textoNombre.setFont(new Font("Arial", 0, 12));
-        textoNombre.setText("Nombre");
-        textoNombre.setMinimumSize(new Dimension(130, 14));
-        textoNombre.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoNombre, gridBagConstraints);
-
-        textoDireccion.setFont(new Font("Arial", 0, 12));
-        textoDireccion.setText("Dirección");
-        textoDireccion.setMinimumSize(new Dimension(130, 14));
-        textoDireccion.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoDireccion, gridBagConstraints);
-
-        textoPoblacion.setFont(new Font("Arial", 0, 12));
-        textoPoblacion.setText("Población");
-        textoPoblacion.setMinimumSize(new Dimension(130, 14));
-        textoPoblacion.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoPoblacion, gridBagConstraints);
-
-        textoProvincia.setFont(new Font("Arial", 0, 12));
-        textoProvincia.setText("Provincia");
-        textoProvincia.setMinimumSize(new Dimension(130, 14));
-        textoProvincia.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoProvincia, gridBagConstraints);
-
-        textoTelefono.setFont(new Font("Arial", 0, 12));
-        textoTelefono.setText("Teléfono");
-        textoTelefono.setMinimumSize(new Dimension(130, 14));
-        textoTelefono.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 18;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoTelefono, gridBagConstraints);
-
-        textoMobil.setFont(new Font("Arial", 0, 12));
-        textoMobil.setText("Móbil");
-        textoMobil.setMinimumSize(new Dimension(130, 14));
-        textoMobil.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 20;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoMobil, gridBagConstraints);
-
-        textoEmail.setFont(new Font("Arial", 0, 12));
-        textoEmail.setText("E-mail");
-        textoEmail.setMinimumSize(new Dimension(130, 14));
-        textoEmail.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 22;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoEmail, gridBagConstraints);
-
-        textoEpigrafe.setFont(new Font("Arial", 0, 12));
-        textoEpigrafe.setText("Epígrafe IAE");
-        textoEpigrafe.setMinimumSize(new Dimension(130, 14));
-        textoEpigrafe.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 24;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoEpigrafe, gridBagConstraints);
-
-        textoSeguro.setFont(new Font("Arial", 0, 12));
-        textoSeguro.setText("Póliza de Seguro");
-        textoSeguro.setMinimumSize(new Dimension(130, 14));
-        textoSeguro.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 26;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoSeguro, gridBagConstraints);
-
-        textoCobertura.setFont(new Font("Arial", 0, 12));
-        textoCobertura.setText("Cobertura (€)");
-        textoCobertura.setMinimumSize(new Dimension(130, 14));
-        textoCobertura.setPreferredSize(new Dimension(130, 14));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 28;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoCobertura, gridBagConstraints);
-
-        textoRegistro.setFont(new Font("Arial", 0, 12));
-        textoRegistro.setText("Nº Registro");
-        textoRegistro.setMinimumSize(new Dimension(130, 14));
-        textoRegistro.setPreferredSize(new Dimension(130, 14));
-        textoRegistro.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoRegistro, gridBagConstraints);
-
-        textoCIF.setFont(new Font("Arial", 0, 12));
-        textoCIF.setText("CIF");
-        textoCIF.setMinimumSize(new Dimension(130, 14));
-        textoCIF.setPreferredSize(new Dimension(130, 14));
-        textoCIF.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoCIF, gridBagConstraints);
-
-        textoRazonSocial.setFont(new Font("Arial", 0, 12));
-        textoRazonSocial.setText("Razón Social");
-        textoRazonSocial.setMinimumSize(new Dimension(130, 14));
-        textoRazonSocial.setPreferredSize(new Dimension(130, 14));
-        textoRazonSocial.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoRazonSocial, gridBagConstraints);
-
-        textoDireccionJuEccom.setFont(new Font("Arial", 0, 12));
-        textoDireccionJuEccom.setText("Dirección");
-        textoDireccionJuEccom.setMinimumSize(new Dimension(130, 14));
-        textoDireccionJuEccom.setPreferredSize(new Dimension(130, 14));
-        textoDireccionJuEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoDireccionJuEccom, gridBagConstraints);
-
-        textoPoblacionJuEccom.setFont(new Font("Arial", 0, 12));
-        textoPoblacionJuEccom.setText("Población");
-        textoPoblacionJuEccom.setMinimumSize(new Dimension(130, 14));
-        textoPoblacionJuEccom.setPreferredSize(new Dimension(130, 14));
-        textoPoblacionJuEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoPoblacionJuEccom, gridBagConstraints);
-
-        textoProvinciaJuEccom.setFont(new Font("Arial", 0, 12));
-        textoProvinciaJuEccom.setText("Provincia");
-        textoProvinciaJuEccom.setMinimumSize(new Dimension(130, 14));
-        textoProvinciaJuEccom.setPreferredSize(new Dimension(130, 14));
-        textoProvinciaJuEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoProvinciaJuEccom, gridBagConstraints);
-
-        textoTelefonoJuEccom.setFont(new Font("Arial", 0, 12));
-        textoTelefonoJuEccom.setText("Teléfono");
-        textoTelefonoJuEccom.setMinimumSize(new Dimension(130, 14));
-        textoTelefonoJuEccom.setPreferredSize(new Dimension(130, 14));
-        textoTelefonoJuEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoTelefonoJuEccom, gridBagConstraints);
-
-        textoMobilJuEccom.setFont(new Font("Arial", 0, 12));
-        textoMobilJuEccom.setText("Móbil");
-        textoMobilJuEccom.setMinimumSize(new Dimension(130, 14));
-        textoMobilJuEccom.setPreferredSize(new Dimension(130, 14));
-        textoMobilJuEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 18;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoMobilJuEccom, gridBagConstraints);
-
-        textoEmailJuEccom.setFont(new Font("Arial", 0, 12));
-        textoEmailJuEccom.setText("E-mail");
-        textoEmailJuEccom.setMinimumSize(new Dimension(130, 14));
-        textoEmailJuEccom.setPreferredSize(new Dimension(130, 14));
-        textoEmailJuEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 20;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoEmailJuEccom, gridBagConstraints);
-
-        textoRepresentante.setFont(new Font("Arial", 0, 12));
-        textoRepresentante.setText("Representante");
-        textoRepresentante.setMinimumSize(new Dimension(130, 14));
-        textoRepresentante.setPreferredSize(new Dimension(130, 14));
-        textoRepresentante.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 22;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoRepresentante, gridBagConstraints);
-
-        textoHabilitacion.setFont(new Font("Arial", 0, 12));
-        textoHabilitacion.setText("Habilitación");
-        textoHabilitacion.setMinimumSize(new Dimension(130, 14));
-        textoHabilitacion.setPreferredSize(new Dimension(130, 14));
-        textoHabilitacion.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 24;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoHabilitacion, gridBagConstraints);
-
-        textoAlcanceCertificacion.setFont(new Font("Arial", 0, 12));
-        textoAlcanceCertificacion.setText("Alcance de certificación");
-        textoAlcanceCertificacion.setMinimumSize(new Dimension(130, 14));
-        textoAlcanceCertificacion.setPreferredSize(new Dimension(130, 14));
-        textoAlcanceCertificacion.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 26;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoAlcanceCertificacion, gridBagConstraints);
-
-        textoSeguroEccom.setFont(new Font("Arial", 0, 12));
-        textoSeguroEccom.setText("Póliza de Seguro");
-        textoSeguroEccom.setMinimumSize(new Dimension(130, 14));
-        textoSeguroEccom.setPreferredSize(new Dimension(130, 14));
-        textoSeguroEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 28;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoSeguroEccom, gridBagConstraints);
-
-        textoCoberturaEccom.setFont(new Font("Arial", 0, 12));
-        textoCoberturaEccom.setText("Cobertura (€)");
-        textoCoberturaEccom.setMinimumSize(new Dimension(130, 14));
-        textoCoberturaEccom.setPreferredSize(new Dimension(130, 14));
-        textoCoberturaEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 30;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoCoberturaEccom, gridBagConstraints);
-
+        propiedadesTextos_TextosError(textoRegistro, 0, 0, 0, "Nº Registro", 130, 14, false, 0, 4);
+        propiedadesTextos_TextosError(textoCIF, 0, 0, 0, "CIF", 130, 14, false, 0, 6);
+        propiedadesTextos_TextosError(textoRazonSocial, 0, 0, 0, "Razón Social", 130, 14, false, 0, 8);
+        propiedadesTextos_TextosError(textoDireccionJuEccom, 0, 0, 0, "Dirección", 130, 14, false, 0, 10);
+        propiedadesTextos_TextosError(textoPoblacionJuEccom, 0, 0, 0, "Población", 130, 14, false, 0, 12);
+        propiedadesTextos_TextosError(textoProvinciaJuEccom, 0, 0, 0, "Provincia", 130, 14, false, 0, 14);
+        propiedadesTextos_TextosError(textoTelefonoJuEccom, 0, 0, 0, "Teléfono", 130, 14, false, 0, 16);
+        propiedadesTextos_TextosError(textoMobilJuEccom, 0, 0, 0, "Móbil", 130, 14, false, 0, 18);
+        propiedadesTextos_TextosError(textoEmailJuEccom, 0, 0, 0, "E-mail", 130, 14, false, 0, 20);
+        propiedadesTextos_TextosError(textoRepresentante, 0, 0, 0, "Representante", 130, 14, false, 0, 22);
+        propiedadesTextos_TextosError(textoHabilitacion, 0, 0, 0, "Habilitación", 130, 14, false, 0, 24);
+        propiedadesTextos_TextosError(textoAlcanceCertificacion, 0, 0, 0, "Alcance de certificación", 130, 14, false, 0, 26);
+        propiedadesTextos_TextosError(textoSeguroEccom, 0, 0, 0, "Póliza de Seguro", 130, 14, false, 0, 28);
+        propiedadesTextos_TextosError(textoCoberturaEccom, 0, 0, 0, "Cobertura (€)", 130, 14, false, 0, 30);
     }
 
     //-----------------------------------
@@ -500,155 +220,21 @@ public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
         textoContenedorCobertura_SeguroEccom = new JTextField();           //Recoge tanto la cobertura(persona física y jurídica) como la póliza de seguro(ECCOM), dependiendo del RadioButton seleccionado
         textoContenedorCoberturaEccom = new JTextField();                  //Recoge la cobretura(ECCOM), dependiendo del RadioButton seleccionado
 
-        textoContenedorNumeroOrganizadores.setFont(new Font("Arial", 0, 12));
-        textoContenedorNumeroOrganizadores.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorNumeroOrganizadores.setMinimumSize(new Dimension(50, 20));
-        textoContenedorNumeroOrganizadores.setPreferredSize(new Dimension(50, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorNumeroOrganizadores, gridBagConstraints);
-
-        textoContenedorNumeroRegistro.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorNumeroRegistro.setMinimumSize(new Dimension(130, 20));
-        textoContenedorNumeroRegistro.setPreferredSize(new Dimension(130, 20));
-        textoContenedorNumeroRegistro.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorNumeroRegistro, gridBagConstraints);
-
-        textoContenedorNIF_CIF.setFont(new Font("Arial", 0, 12));
-        textoContenedorNIF_CIF.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorNIF_CIF.setMinimumSize(new Dimension(130, 20));
-        textoContenedorNIF_CIF.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorNIF_CIF, gridBagConstraints);
-
-        textoContenedorApellidos_RazonSocial.setFont(new Font("Arial", 0, 12));
-        textoContenedorApellidos_RazonSocial.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorApellidos_RazonSocial.setMinimumSize(new Dimension(130, 20));
-        textoContenedorApellidos_RazonSocial.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorApellidos_RazonSocial, gridBagConstraints);
-
-        textoContenedorNombre_DireccionJuEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorNombre_DireccionJuEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorNombre_DireccionJuEccom.setMinimumSize(new Dimension(130, 20));
-        textoContenedorNombre_DireccionJuEccom.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorNombre_DireccionJuEccom, gridBagConstraints);
-
-        textoContenedorDireccion_PoblacionJuEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorDireccion_PoblacionJuEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorDireccion_PoblacionJuEccom.setMinimumSize(new Dimension(130, 20));
-        textoContenedorDireccion_PoblacionJuEccom.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorDireccion_PoblacionJuEccom, gridBagConstraints);
-
-        textoContenedorPoblacion_ProvinciaJuEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorPoblacion_ProvinciaJuEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorPoblacion_ProvinciaJuEccom.setMinimumSize(new Dimension(130, 20));
-        textoContenedorPoblacion_ProvinciaJuEccom.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorPoblacion_ProvinciaJuEccom, gridBagConstraints);
-
-        textoContenedorProvincia_TelefonoJuEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorProvincia_TelefonoJuEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorProvincia_TelefonoJuEccom.setMinimumSize(new Dimension(130, 20));
-        textoContenedorProvincia_TelefonoJuEccom.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorProvincia_TelefonoJuEccom, gridBagConstraints);
-
-        textoContenedorTelefono_MobilJuEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorTelefono_MobilJuEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorTelefono_MobilJuEccom.setMinimumSize(new Dimension(130, 20));
-        textoContenedorTelefono_MobilJuEccom.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 18;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorTelefono_MobilJuEccom, gridBagConstraints);
-
-        textoContenedorMobil_EmailJuEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorMobil_EmailJuEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorMobil_EmailJuEccom.setMinimumSize(new Dimension(130, 20));
-        textoContenedorMobil_EmailJuEccom.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 20;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorMobil_EmailJuEccom, gridBagConstraints);
-
-        textoContenedorEmail_Representante.setFont(new Font("Arial", 0, 12));
-        textoContenedorEmail_Representante.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorEmail_Representante.setMinimumSize(new Dimension(130, 20));
-        textoContenedorEmail_Representante.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 22;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorEmail_Representante, gridBagConstraints);
-
-        textoContenedorEpigrafe_Habilitacion.setFont(new Font("Arial", 0, 12));
-        textoContenedorEpigrafe_Habilitacion.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorEpigrafe_Habilitacion.setMinimumSize(new Dimension(130, 20));
-        textoContenedorEpigrafe_Habilitacion.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 24;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorEpigrafe_Habilitacion, gridBagConstraints);
-
-        textoContenedorSeguro_AlcanceCertificacion.setFont(new Font("Arial", 0, 12));
-        textoContenedorSeguro_AlcanceCertificacion.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorSeguro_AlcanceCertificacion.setMinimumSize(new Dimension(130, 20));
-        textoContenedorSeguro_AlcanceCertificacion.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 26;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorSeguro_AlcanceCertificacion, gridBagConstraints);
-
-        textoContenedorCobertura_SeguroEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorCobertura_SeguroEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorCobertura_SeguroEccom.setMinimumSize(new Dimension(130, 20));
-        textoContenedorCobertura_SeguroEccom.setPreferredSize(new Dimension(130, 20));
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 28;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorCobertura_SeguroEccom, gridBagConstraints);
-
-        textoContenedorCoberturaEccom.setFont(new Font("Arial", 0, 12));
-        textoContenedorCoberturaEccom.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
-        textoContenedorCoberturaEccom.setPreferredSize(new Dimension(130, 20));
-        textoContenedorCoberturaEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 30;
-        gridBagConstraints.anchor = GridBagConstraints.EAST;
-        add(textoContenedorCoberturaEccom, gridBagConstraints);
+        propiedadesTextoContenedor(textoContenedorNumeroOrganizadores, 2, 4, 50, 20, true);
+        propiedadesTextoContenedor(textoContenedorNumeroRegistro, 2, 4, 130, 20, false);
+        propiedadesTextoContenedor(textoContenedorNIF_CIF, 2, 6, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorApellidos_RazonSocial, 2, 8, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorNombre_DireccionJuEccom, 2, 10, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorDireccion_PoblacionJuEccom, 2, 12, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorPoblacion_ProvinciaJuEccom, 2, 14, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorProvincia_TelefonoJuEccom, 2, 16, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorTelefono_MobilJuEccom, 2, 18, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorMobil_EmailJuEccom, 2, 20, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorEmail_Representante, 2, 22, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorEpigrafe_Habilitacion, 2, 24, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorSeguro_AlcanceCertificacion, 2, 26, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorCobertura_SeguroEccom, 2, 28, 130, 20, true);
+        propiedadesTextoContenedor(textoContenedorCoberturaEccom, 2, 30, 130, 20, false);
     }
 
     //-----------------------------------
@@ -670,145 +256,59 @@ public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
         textoErrorCobertura = new JLabel();
         textoErrorCoberturaEccom = new JLabel();
 
-        textoErrorNumeroOrganizadores.setFont(new Font("Arial", 0, 12));
-        textoErrorNumeroOrganizadores.setForeground(new Color(255, 51, 51));
-        textoErrorNumeroOrganizadores.setText("Debe introducir un número");
-        textoErrorNumeroOrganizadores.setPreferredSize(new Dimension(232, 14));
-        textoErrorNumeroOrganizadores.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        add(textoErrorNumeroOrganizadores, gridBagConstraints);
+        propiedadesTextos_TextosError(textoErrorNumeroOrganizadores, 255, 51, 51, "Debe introducir un número", 232, 14, false, 4, 4);
+        propiedadesTextos_TextosError(textoErrorNIF, 255, 51, 51, "El NIF de contener 9 dígitos", 232, 14, false, 4, 6);
+        propiedadesTextos_TextosError(textoErrorApellidos, 255, 51, 51, "Debe ingresar un apellido válido", 232, 14, false, 4, 8);
+        propiedadesTextos_TextosError(textoErrorNombre, 255, 51, 51, "Debe ingresar un nombre válido", 232, 14, false, 4, 10);
+        propiedadesTextos_TextosError(textoErrorDireccion, 255, 51, 51, "Debe ingresar una dirección válida", 232, 14, false, 4, 12);
+        propiedadesTextos_TextosError(textoErrorPoblacion, 255, 51, 51, "Debe ingresar una población válida", 232, 14, false, 4, 14);
+        propiedadesTextos_TextosError(textoErrorProvincia, 255, 51, 51, "Debe ingresar una provincia válida", 232, 14, false, 4, 16);
+        propiedadesTextos_TextosError(textoErrorTelefono, 255, 51, 51, "Debe ingresar un teléfono válido", 232, 14, false, 4, 18);
+        propiedadesTextos_TextosError(textoErrorMobil, 255, 51, 51, "Debe ingresar un móbil válido", 232, 14, false, 4, 20);
+        propiedadesTextos_TextosError(textoErrorEmail, 255, 51, 51, "Debe ingresar un E-mail válido", 232, 14, false, 4, 22);
+        propiedadesTextos_TextosError(textoErrorEpigrafe, 255, 51, 51, "Debe ingresar un epígrafe IAE válido", 232, 14, false, 4, 24);
+        propiedadesTextos_TextosError(textoErrorSeguro, 255, 51, 51, "Debe ingresar una póliza de seguro válida", 232, 14, false, 4, 26);
+        propiedadesTextos_TextosError(textoErrorCobertura, 255, 51, 51, "Debe ingresar una cobertura válida", 232, 14, false, 4, 28);        
+        propiedadesTextos_TextosError(textoErrorCoberturaEccom, 255, 51, 51, "Debe ingresar una cobertura válida", 232, 14, false, 4, 30);
+    }
 
-        textoErrorNIF.setFont(new Font("Arial", 0, 12));
-        textoErrorNIF.setForeground(new Color(255, 51, 51));
-        textoErrorNIF.setText("El NIF de contener 9 dígitos ");
-        textoErrorNIF.setPreferredSize(new Dimension(232, 14));
-        textoErrorNIF.setVisible(false);
+    private void propiedadesRadioButton(JRadioButton c, String texto, int x, int y, boolean bandera){
+        c.setFont(new Font("Arial", 1, 12));
+        c.setText(texto);
+        c.setSelected(bandera);
+        c.setPreferredSize(new Dimension(232, 23));
+        c.addChangeListener(this);
         gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        add(textoErrorNIF, gridBagConstraints);
+        gridBagConstraints.gridx = x;
+        gridBagConstraints.gridy = y;
+        this.add(c, gridBagConstraints);
+    }
 
-        textoErrorApellidos.setFont(new Font("Arial", 0, 12));
-        textoErrorApellidos.setForeground(new Color(255, 51, 51));
-        textoErrorApellidos.setText("Debe ingresar un apellido válido");
-        textoErrorApellidos.setPreferredSize(new Dimension(232, 14));
-        textoErrorApellidos.setVisible(false);
+    private void propiedadesTextos_TextosError(JLabel c, int colorA, int colorB, int colorC, String texto, int ancho, int largo, boolean bandera, int x, int y){
+        c.setFont(new Font("Arial", 0, 12));
+        c.setForeground(new Color(colorA, colorB, colorC));
+        c.setText(texto);
+        c.setMinimumSize(new Dimension(ancho, largo));
+        c.setPreferredSize(new Dimension(ancho, largo));
+        c.setVisible(bandera);
         gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        add(textoErrorApellidos, gridBagConstraints);
+        gridBagConstraints.gridx = x;
+        gridBagConstraints.gridy = y;
+        gridBagConstraints.anchor = GridBagConstraints.EAST;
+        this.add(c, gridBagConstraints);
+    }
 
-        textoErrorNombre.setFont(new Font("Arial", 0, 12));
-        textoErrorNombre.setForeground(new Color(255, 51, 51));
-        textoErrorNombre.setText("Debe ingresar un nombre válido");
-        textoErrorNombre.setPreferredSize(new Dimension(232, 14));
-        textoErrorNombre.setVisible(false);
+    private void propiedadesTextoContenedor(JTextField c, int x , int y, int ancho, int largo, boolean bandera){
+        c.setFont(new Font("Arial", 0, 12));
+        c.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+        c.setMinimumSize(new Dimension(ancho, largo));
+        c.setPreferredSize(new Dimension(ancho, largo));
+        c.setVisible(bandera);
         gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 10;
-        add(textoErrorNombre, gridBagConstraints);
-
-        textoErrorDireccion.setFont(new Font("Arial", 0, 12));
-        textoErrorDireccion.setForeground(new Color(255, 51, 51));
-        textoErrorDireccion.setText("Debe ingresar una dirección válida");
-        textoErrorDireccion.setPreferredSize(new Dimension(232, 14));
-        textoErrorDireccion.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 12;
-        add(textoErrorDireccion, gridBagConstraints);
-
-        textoErrorPoblacion.setFont(new Font("Arial", 0, 12));
-        textoErrorPoblacion.setForeground(new Color(255, 51, 51));
-        textoErrorPoblacion.setText("Debe ingresar una población válida");
-        textoErrorPoblacion.setPreferredSize(new Dimension(232, 14));
-        textoErrorPoblacion.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 14;
-        add(textoErrorPoblacion, gridBagConstraints);
-
-        textoErrorProvincia.setFont(new Font("Arial", 0, 12));
-        textoErrorProvincia.setForeground(new Color(255, 51, 51));
-        textoErrorProvincia.setText("Debe ingresar una provincia válida");
-        textoErrorProvincia.setPreferredSize(new Dimension(232, 14));
-        textoErrorProvincia.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 16;
-        add(textoErrorProvincia, gridBagConstraints);
-
-        textoErrorTelefono.setFont(new Font("Arial", 0, 12));
-        textoErrorTelefono.setForeground(new Color(255, 51, 51));
-        textoErrorTelefono.setText("Debe ingresar un teléfono válido");
-        textoErrorTelefono.setPreferredSize(new Dimension(232, 14));
-        textoErrorTelefono.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 18;
-        add(textoErrorTelefono, gridBagConstraints);
-
-        textoErrorMobil.setFont(new Font("Arial", 0, 12));
-        textoErrorMobil.setForeground(new Color(255, 51, 51));
-        textoErrorMobil.setText("Debe ingresar un móbil válido");
-        textoErrorMobil.setPreferredSize(new Dimension(232, 14));
-        textoErrorMobil.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 20;
-        add(textoErrorMobil, gridBagConstraints);
-
-        textoErrorEmail.setFont(new Font("Arial", 0, 12));
-        textoErrorEmail.setForeground(new Color(255, 51, 51));
-        textoErrorEmail.setText("Debe ingresar un E-mail válido");
-        textoErrorEmail.setPreferredSize(new Dimension(232, 14));
-        textoErrorEmail.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 22;
-        add(textoErrorEmail, gridBagConstraints);
-
-        textoErrorEpigrafe.setFont(new Font("Arial", 0, 12));
-        textoErrorEpigrafe.setForeground(new Color(255, 51, 51));
-        textoErrorEpigrafe.setText("Debe ingresar un epígrafe IAE válido");
-        textoErrorEpigrafe.setPreferredSize(new Dimension(232, 14));
-        textoErrorEpigrafe.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 24;
-        add(textoErrorEpigrafe, gridBagConstraints);
-
-        textoErrorSeguro.setFont(new Font("Arial", 0, 12));
-        textoErrorSeguro.setForeground(new Color(255, 51, 51));
-        textoErrorSeguro.setText("Debe ingresar una póliza de seguro válida");
-        textoErrorSeguro.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 26;
-        gridBagConstraints.anchor = GridBagConstraints.WEST;
-        add(textoErrorSeguro, gridBagConstraints);
-
-        textoErrorCobertura.setFont(new Font("Arial", 0, 12));
-        textoErrorCobertura.setForeground(new Color(255, 51, 51));
-        textoErrorCobertura.setText("Debe ingresar una cobertura válida");
-        textoErrorCobertura.setPreferredSize(new Dimension(232, 14));
-        textoErrorCobertura.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 28;
-        add(textoErrorCobertura, gridBagConstraints);
-
-        textoErrorCoberturaEccom.setFont(new Font("Arial", 0, 12));
-        textoErrorCoberturaEccom.setForeground(new Color(255, 51, 51));
-        textoErrorCoberturaEccom.setText("Debe ingresar una cobertura válida");
-        textoErrorCoberturaEccom.setPreferredSize(new Dimension(232, 14));
-        textoErrorCoberturaEccom.setVisible(false);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 30;
-        add(textoErrorCoberturaEccom, gridBagConstraints);
+        gridBagConstraints.gridx = x;
+        gridBagConstraints.gridy = y;
+        gridBagConstraints.anchor = GridBagConstraints.EAST;
+        this.add(c, gridBagConstraints);
     }
 
     public void stateChanged(ChangeEvent e){
