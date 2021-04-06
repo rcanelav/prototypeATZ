@@ -4,13 +4,9 @@ import javax.swing.*;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-
 import ventanas.botones.BotonPrincipal;
 import java.awt.*;
-/**
- *
- * @author manuel
- */
+
 public class PArtistico extends JPanel  {
     private static final long serialVersionUID = 1L;
     protected JFrame ventanaPrincipal = null;
@@ -59,7 +55,7 @@ public class PArtistico extends JPanel  {
         gridBagConstraints.ipadx = 34;
         gridBagConstraints.ipady = 22;
         gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(80, 259, 0, 0);
+        gridBagConstraints.insets = new Insets(80, 300, 0, 0);
         add(lblTitulo, gridBagConstraints);
 
         textoLey.setEditable(false);
