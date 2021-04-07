@@ -3,9 +3,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
 
-
 public class PPersonaJuridicoEccom extends JPanel implements ChangeListener{
-
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
     private JButton botonCancelar;
     private JRadioButton botonECCOM;
