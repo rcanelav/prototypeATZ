@@ -4,7 +4,9 @@ import javax.swing.*;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
+
 import ventanas.botones.BotonPrincipal;
+
 import java.awt.*;
 
 public class PArtistico extends JPanel  {

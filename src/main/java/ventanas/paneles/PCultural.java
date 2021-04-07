@@ -5,7 +5,9 @@
  */
 package ventanas.paneles;
 import javax.swing.*;
+
 import ventanas.botones.BotonPrincipal;
+
 import java.awt.*;
 
 /**

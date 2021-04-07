@@ -1,12 +1,9 @@
 package ventanas.paneles;
 
 import javax.swing.*;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
-
-import ventanas.VentanaCultural;
 import ventanas.botones.BotonPrincipal;
+import ventanas.elementos.Grid;
+import ventanas.elementos.PanelTexto;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -16,185 +13,90 @@ public class PPrincipal extends JPanel implements ActionListener{
     protected JFrame ventanaPrincipal = null;
     protected PArtistico panelArtistico = null;
     protected PCultural panelCultural= null;
-    GridBagConstraints gridBagConstraints = new GridBagConstraints();
+    GridBagConstraints grid = new Grid();
     private BotonPrincipal botonAnalogo;
-    private JButton botonArtistico;
-    private JButton botonCultural;
-    private JButton botonDeportivo;
-    private JTextPane textoAnalogo;
-    private JTextPane textoArtistico;
-    private JTextPane textoCultural;
-    private JTextPane textoDeportivo;
-    private JTextPane textoSubtitulo;
-    private JTextPane textoTitulo;
+    private BotonPrincipal botonArtistico;
+    private BotonPrincipal botonCultural;
+    private BotonPrincipal botonDeportivo;
+    private String texto;
     
-
     public PPrincipal(){
+        colocarLayout();
         colocarTextos();
         colocarBotones();
     }
 
+    private void colocarLayout(){
+        GridBagLayout layout = new GridBagLayout();
+        layout.columnWidths = new int[] {500, 500};
+        layout.rowHeights = new int[] {10, 10, 50, 50, 100, 50, 100};
+        this.setLayout(layout);
+    }
+    
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         ImageIcon img = new ImageIcon("src/main/java/imagenes/fondo.jpg");
         g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
     }
-
+    
     private void colocarTextos(){
-        textoTitulo = new JTextPane();
-        textoSubtitulo = new JTextPane();
-        textoDeportivo = new JTextPane();
-        textoCultural = new JTextPane();
-        textoAnalogo = new JTextPane();
-        textoArtistico = new JTextPane();
-        this.setLayout(new GridBagLayout());
-
-        textoTitulo.setEditable(false);
-        textoTitulo.setBorder(null);
-        textoTitulo.setFont(new Font("Times New Roman", 1, 22));
-        textoTitulo.setText("DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA\n\t\t    ESPECTÁCULOS PÚBLICOS");
-        textoTitulo.setMinimumSize(new Dimension(484, 500));
-        textoTitulo.setPreferredSize(new Dimension(1000, 400));
-        textoTitulo.setOpaque(false);
-        textoTitulo.setRequestFocusEnabled(false);
-        centrarTexto(textoTitulo);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.ipadx = 0;
-        gridBagConstraints.weightx = 5;
-        gridBagConstraints.weighty = 0.3;
-        gridBagConstraints.insets = new Insets(0, 100, 0, 0);
-        this.add(textoTitulo, gridBagConstraints);
+        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA ESPECTÁCULOS PÚBLICOS";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1000, 30);
+        grid = new Grid(0, 0, 2, -100);
+        this.add(textoTitulo, grid);
         
-        textoSubtitulo.setEditable(false);
-        textoSubtitulo.setFont(new Font("Times New Roman", 0, 18));
-        textoSubtitulo.setText("Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  actividades recreativas de Galicia.");
-        textoSubtitulo.setMinimumSize(new Dimension(484, 42));
-        textoTitulo.setPreferredSize(new Dimension(700, 62));
-        textoSubtitulo.setOpaque(false);
-        centrarTexto(textoSubtitulo);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new Insets(-50, 100, 0, 0);
-        this.add(textoSubtitulo, gridBagConstraints);
+        texto = "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  "+
+                "actividades recreativas de Galicia.";
+        PanelTexto textoSubtitulo = new PanelTexto(texto, 0, 18, 700, 50);
+        grid = new Grid(0, 2, 2, -50);
+        this.add(textoSubtitulo, grid);
 
-        textoArtistico.setEditable(false);
-        textoArtistico.setFont(new Font("Arial", 0, 18));
-        textoArtistico.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter artístico.");
-        textoArtistico.setMinimumSize(new Dimension(204, 74));
-        textoArtistico.setOpaque(false);
-        textoArtistico.setPreferredSize(new Dimension(400, 130));
-        centrarTexto(textoArtistico);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new Insets(0, 50, 0, 0);
-        this.add(textoArtistico, gridBagConstraints);
-
-        textoCultural.setEditable(false);
-        textoCultural.setFont(new Font("Arial", 0, 18));
-        textoCultural.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter cultural.");
-        textoCultural.setMinimumSize(new Dimension(204, 74));
-        textoCultural.setOpaque(false);
-        textoCultural.setPreferredSize(new Dimension(400, 130));
-        centrarTexto(textoCultural);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipady = 0;
-        gridBagConstraints.insets = new Insets(0, 50, 0, 0);
-        this.add(textoCultural, gridBagConstraints);
+        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
+                "audiciones de concurrencia pública de carácter artístico.";
+        PanelTexto textoArtistico = new PanelTexto(texto, 0, 18, 450, 60);
+        grid = new Grid(0, 3, 0, 0);
+        this.add(textoArtistico, grid);
+       
+        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
+                "audiciones de concurrencia pública de carácter cultural.";
+        PanelTexto textoCultural = new PanelTexto(texto, 0, 18, 450, 60);
+        grid = new Grid(1, 3, 0, 0);
+        this.add(textoCultural, grid);
         
-        textoDeportivo.setEditable(false);
-        textoDeportivo.setBackground(new Color(255, 204, 204));
-        textoDeportivo.setFont(new Font("Arial", 0, 18));
-        textoDeportivo.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter artístico.");
-        textoDeportivo.setMinimumSize(new Dimension(400, 130));
-        textoDeportivo.setOpaque(false);
-        textoDeportivo.setPreferredSize(new Dimension(400, 130));
-        centrarTexto(textoDeportivo);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.insets = new Insets(40, 50, 0, 0);
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        this.add(textoDeportivo, gridBagConstraints);
+        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
+                "audiciones de concurrencia pública de carácter artístico.";
+        PanelTexto textoDeportivo = new PanelTexto(texto, 0, 18, 450, 60);
+        grid = new Grid(0, 5, 0, 0);
+        this.add(textoDeportivo, grid);
         
-        textoAnalogo.setEditable(false);
-        textoAnalogo.setFont(new Font("Arial", 0, 18));
-        textoAnalogo.setText("Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o audiciones de concurrencia pública de carácter análogo.");
-        textoAnalogo.setMinimumSize(new Dimension(204, 74));
-        textoAnalogo.setOpaque(false);
-        textoAnalogo.setPreferredSize(new Dimension(400, 130));
-        centrarTexto(textoAnalogo);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.insets = new Insets(40, 50, 0, 0);
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        this.add(textoAnalogo, gridBagConstraints); 
+        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
+                "audiciones de concurrencia pública de carácter análogo.";
+        PanelTexto textoAnalogo = new PanelTexto(texto, 0, 18, 450, 60);
+        grid = new Grid(1, 5, 0, 0);
+        this.add(textoAnalogo, grid); 
     }
     
     private void colocarBotones(){
-        botonArtistico = new BotonPrincipal("ARTÍSTICO");
+        JButton botonArtistico = new BotonPrincipal("ARTÍSTICO");
         botonArtistico.addActionListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        this.add(botonArtistico, gridBagConstraints);
+        grid = new Grid(0, 4, 0, 0, 40, 30);
+        this.add(botonArtistico, grid);
         
         botonCultural = new BotonPrincipal("CULTURAL");
         botonCultural.addActionListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        this.add(botonCultural, gridBagConstraints);
+        grid = new Grid(1, 4, 0, 0, 40, 30);
+        this.add(botonCultural, grid);
         
         botonDeportivo = new BotonPrincipal("DEPORTIVO");
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        this.add(botonDeportivo, gridBagConstraints);
+        grid = new Grid(0, 6, 0, 0, 40, 30);
+        this.add(botonDeportivo, grid);
         
         botonAnalogo = new BotonPrincipal("ANÁLOGO");
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.5;
-        gridBagConstraints.insets = new Insets(-30, 50, 0, 0);
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        this.add(botonAnalogo, gridBagConstraints);
+        grid = new Grid(1, 6, 0, 0, 40, 30);
+        this.add(botonAnalogo, grid);
     }
 
-    //Seccion de acciones de los botones para nuevas ventanas.
     @Override
     public void actionPerformed(ActionEvent evento) {
         if(evento.getSource() == botonCultural){
@@ -211,11 +113,4 @@ public class PPrincipal extends JPanel implements ActionListener{
             this.setVisible(false);            
         }
     }
-
-    void centrarTexto(JTextPane texto){
-        StyledDocument parrafo = texto.getStyledDocument();
-        SimpleAttributeSet center = new SimpleAttributeSet();
-        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-        parrafo.setParagraphAttributes(0, parrafo.getLength(), center, false);
-    } 
 }
