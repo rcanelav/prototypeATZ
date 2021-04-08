@@ -43,57 +43,57 @@ public class PPrincipal extends JPanel implements ActionListener{
     private void colocarTextos(){
         texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA ESPECTÁCULOS PÚBLICOS";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1000, 30);
-        grid = new Grid(0, 0, 2, -100);
+        grid = new Grid(0, 0, 2, -100, 0);
         this.add(textoTitulo, grid);
         
         texto = "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  "+
                 "actividades recreativas de Galicia.";
         PanelTexto textoSubtitulo = new PanelTexto(texto, 0, 18, 700, 50);
-        grid = new Grid(0, 2, 2, -50);
+        grid = new Grid(0, 2, 2, -50, 0);
         this.add(textoSubtitulo, grid);
 
         texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
                 "audiciones de concurrencia pública de carácter artístico.";
         PanelTexto textoArtistico = new PanelTexto(texto, 0, 18, 450, 60);
-        grid = new Grid(0, 3, 0, 0);
+        grid = new Grid(0, 3, 0, 0, 0);
         this.add(textoArtistico, grid);
        
         texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
                 "audiciones de concurrencia pública de carácter cultural.";
         PanelTexto textoCultural = new PanelTexto(texto, 0, 18, 450, 60);
-        grid = new Grid(1, 3, 0, 0);
+        grid = new Grid(1, 3, 0, 0, 0);
         this.add(textoCultural, grid);
         
         texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
                 "audiciones de concurrencia pública de carácter artístico.";
         PanelTexto textoDeportivo = new PanelTexto(texto, 0, 18, 450, 60);
-        grid = new Grid(0, 5, 0, 0);
+        grid = new Grid(0, 5, 0, 0, 0);
         this.add(textoDeportivo, grid);
         
         texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
                 "audiciones de concurrencia pública de carácter análogo.";
         PanelTexto textoAnalogo = new PanelTexto(texto, 0, 18, 450, 60);
-        grid = new Grid(1, 5, 0, 0);
+        grid = new Grid(1, 5, 0, 0, 0);
         this.add(textoAnalogo, grid); 
     }
     
     private void colocarBotones(){
         JButton botonArtistico = new BotonPrincipal("ARTÍSTICO");
         botonArtistico.addActionListener(this);
-        grid = new Grid(0, 4, 0, 0, 40, 30);
+        grid = new Grid(0, 4, 0, 0, 0, 40, 30);
         this.add(botonArtistico, grid);
         
-        botonCultural = new BotonPrincipal("CULTURAL");
+        botonCultural = new BotonPrincipal("CULTURAL"); 
         botonCultural.addActionListener(this);
-        grid = new Grid(1, 4, 0, 0, 40, 30);
+        grid = new Grid(1, 4, 0, 0, 0, 40, 30);
         this.add(botonCultural, grid);
         
         botonDeportivo = new BotonPrincipal("DEPORTIVO");
-        grid = new Grid(0, 6, 0, 0, 40, 30);
+        grid = new Grid(0, 6, 0, 0, 0, 40, 30);
         this.add(botonDeportivo, grid);
         
         botonAnalogo = new BotonPrincipal("ANÁLOGO");
-        grid = new Grid(1, 6, 0, 0, 40, 30);
+        grid = new Grid(1, 6, 0, 0, 0, 40, 30);
         this.add(botonAnalogo, grid);
     }
 

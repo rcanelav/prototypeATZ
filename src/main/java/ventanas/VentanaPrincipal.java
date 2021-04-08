@@ -6,6 +6,7 @@ import ventanas.paneles.*;
 
 public class VentanaPrincipal extends JFrame {
     Pidioma pIdioma = new Pidioma();
+    PCultural pCultural = new PCultural();
     PDatosOrganizador pDatosOrganizador = new PDatosOrganizador();
     
     public VentanaPrincipal(){
@@ -25,7 +26,8 @@ public class VentanaPrincipal extends JFrame {
         setLocationRelativeTo(null);  //opcional
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        this.getContentPane().add(pIdioma);
+        // this.getContentPane().add(pIdioma);
         // this.getContentPane().add(pDatosOrganizador);
+        this.getContentPane().add(pCultural);
     }
 }

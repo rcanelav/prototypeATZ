@@ -34,14 +34,14 @@ public class Pidioma extends JPanel implements ActionListener{
 
         texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENZA ESPECTÁCULOS PÚBLICOS";
         PanelTexto textoTituloGallego = new PanelTexto(texto, 1, 16, 500, 200);
-        grid = new Grid(0, 0, 0, -50);
+        grid = new Grid(0, 0, 0, -50, 0);
         this.add(textoTituloGallego, grid);
         
         texto = "Decreto 144/2016, do 22 de septembro, polo que se aproba o Regulamento único  de  regulación "+
                 "integrada de  actividades  económicas  e  apertura  de establecementos\n\nLei  10/2017,  do  "+
                 "27  de  decembro,  de  espectáculos  públicos  e actividades recreativas de Galicia.";
         PanelTexto textoSubtituloGallego = new PanelTexto(texto, 1, 14, 350, 200);
-        grid = new Grid(0, 1, 0, -100);
+        grid = new Grid(0, 1, 0, -100, 0);
         this.add(textoSubtituloGallego, grid);
 
         texto = "Decreto  124/2019,  do  5  de  setembro,  polo  que  se  aproba  o  Catálogo  de"+ 
@@ -49,14 +49,14 @@ public class Pidioma extends JPanel implements ActionListener{
                 "público  da  Comunidade  Autónoma  de  Galicia  e se  establecen  determinadas "+
                 "disposicións xerais de aplicación na materia.";
         PanelTexto textoLeyGallego = new PanelTexto(texto, 0, 14, 350, 200);
-        grid = new Grid(0, 2, 0, -50);
+        grid = new Grid(0, 2, 0, -50, 0);
         this.add(textoLeyGallego, grid);
     }
 
     private void colocarTextoCastellano(){
         texto = "  DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA ESPECTÁCULOS PÚBLICOS";
         PanelTexto textoTituloCastellano = new PanelTexto(texto, 3, 16, 500, 200);
-        grid = new Grid(1, 0, 0, -50);
+        grid = new Grid(1, 0, 0, -50, 0);
         this.add(textoTituloCastellano, grid);
 
         texto = "Decreto 144/2016, del 22 de septiembre, por el que se aprueba el Reglamento único  de  "+ 
@@ -64,7 +64,7 @@ public class Pidioma extends JPanel implements ActionListener{
                 "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos públicos  y actividades "+ 
                 "recreativas de Galicia.";
         PanelTexto textoSubtituloCastellano = new PanelTexto(texto, 3, 14, 350, 200); 
-        grid = new Grid(1, 1, 0, -100);
+        grid = new Grid(1, 1, 0, -100, 0);
         this.add(textoSubtituloCastellano, grid);
 
         texto = "Decreto  124/2019,  del  5  de  septiembre,  por el  que  se  aprueba  el  Catálogo  de "+
@@ -72,19 +72,19 @@ public class Pidioma extends JPanel implements ActionListener{
                 "público  de la  Comunidad  Autónoma  de  Galicia  y se  establecen  determinadas "+
                 "disposiciones generales de aplicación en la materia.";
         PanelTexto textoLeyCastellano = new PanelTexto(texto, 2, 14, 350, 200); 
-        grid = new Grid(1, 2, 0, -50);
+        grid = new Grid(1, 2, 0, -50, 0);
         this.add(textoLeyCastellano, grid);
     }
     
     private void colocarBotones(){
         botonGallego = new BotonPrincipal("GALEGO");
         botonGallego.addActionListener(this);
-        grid = new Grid(0, 3, 0, -30, 100, 30);
+        grid = new Grid(0, 3, 0, -30, 0, 100, 30);
         this.add(botonGallego, grid);
 
         botonCastellano = new BotonPrincipal("CASTELLANO");
         botonCastellano.addActionListener(this);
-        grid = new Grid(1, 3, 0, -30, 40, 30);
+        grid = new Grid(1, 3, 0, -30, 0, 40, 30);
         this.add(botonCastellano, grid);
     }
     
