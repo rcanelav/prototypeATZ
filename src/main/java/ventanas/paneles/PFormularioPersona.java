@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.*;
 import java.awt.*;
 
-public class PDatosPersona extends JPanel {
+public class PFormularioPersona extends JPanel {
     GridBagConstraints gridBagConstraints = new GridBagConstraints();
     private JLabel lblNOrganizadores;
     private JLabel lblNif;
@@ -34,7 +34,7 @@ public class PDatosPersona extends JPanel {
     private JTextField textoCobertura;
 
     
-    public PDatosPersona(){
+    public PFormularioPersona(){
         formulario();
         this.setVisible(true);
         this.setOpaque(false);
@@ -85,15 +85,15 @@ public class PDatosPersona extends JPanel {
 
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new Insets(150, 0, 0, 0);
+        gridBagConstraints.gridy = 2;
+        // gridBagConstraints.insets = new Insets(150, 0, 0, 0);
         this.add(lblNif, gridBagConstraints);
         textoNif.setPreferredSize(new Dimension(150, 20));
         textoNif.setMinimumSize(new Dimension(150, 20));
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 2;
         // gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.insets = new Insets(150, 400, 0, 0);
+        gridBagConstraints.insets = new Insets(0, 400, 0, 0);
         this.add(textoNif, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
@@ -116,10 +116,10 @@ public class PDatosPersona extends JPanel {
         this.add(lblNombre, gridBagConstraints);
         textoNombre.setPreferredSize(new Dimension(150, 20));
         textoNombre.setMinimumSize(new Dimension(150, 20));
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         // gridBagConstraints.gridwidth = 6;
-        // gridBagConstraints.insets = new Insets(-500, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(250, 400, 0, 0);
         this.add(textoNombre, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
@@ -129,10 +129,10 @@ public class PDatosPersona extends JPanel {
         this.add(lblDireccion, gridBagConstraints);
         textoDireccion.setPreferredSize(new Dimension(150, 20));
         textoDireccion.setMinimumSize(new Dimension(150, 20));
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         // gridBagConstraints.gridwidth = 6;
-        // gridBagConstraints.insets = new Insets(-500, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(300, 400, 0, 0);
         this.add(textoDireccion, gridBagConstraints);
 
         gridBagConstraints = new GridBagConstraints();
@@ -142,10 +142,10 @@ public class PDatosPersona extends JPanel {
         this.add(lblPoblacion, gridBagConstraints);
         textoPoblacion.setPreferredSize(new Dimension(150, 20));
         textoPoblacion.setMinimumSize(new Dimension(150, 20));
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         // gridBagConstraints.gridwidth = 6;
-        // gridBagConstraints.insets = new Insets(-500, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(350, 400, 0, 0);
         this.add(textoPoblacion, gridBagConstraints);
         
         gridBagConstraints = new GridBagConstraints();
@@ -155,10 +155,10 @@ public class PDatosPersona extends JPanel {
         this.add(lblProvincia, gridBagConstraints);
         textoProvincia.setPreferredSize(new Dimension(150, 20));
         textoProvincia.setMinimumSize(new Dimension(150, 20));
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         // gridBagConstraints.gridwidth = 6;
-        // gridBagConstraints.insets = new Insets(-500, 0, 0, 0);
+        gridBagConstraints.insets = new Insets(400, 400, 0, 0);
         this.add(textoProvincia, gridBagConstraints);
     }
 }

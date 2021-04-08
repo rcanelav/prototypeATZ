@@ -13,13 +13,21 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
     JRadioButton rbJuridico;
     JRadioButton rbEccom;
     ButtonGroup radiobuttons;
-    PDatosPersona pDatosPersona;
+    PFormularioPersona pFormularioPersona;
  
     public PDatosOrganizador(){
+        // colocarLayout();
         this.setBackground(new Color(220, 220, 220));
         radioButtons();
         formularios();
     }
+
+    // private void colocarLayout(){
+    //     GridBagLayout layout = new GridBagLayout();
+    //     layout.columnWidths = new int[] {500, 500, 500, 500};
+    //     layout.rowHeights = new int[] {10, 500, 1000};
+    //     this.setLayout(layout);
+    // }
 
     private void radioButtons(){
         rbPersona = new JRadioButton();
@@ -36,43 +44,44 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         rbPersona.setOpaque(false);
         rbPersona.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipady = 0;
-        gridBagConstraints.insets = new Insets(0, -500, 500, 0);
+        // gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.insets = new Insets(0, 0, 0, 0);
         this.add(rbPersona, gridBagConstraints);
         
         rbJuridico.setText("Juridico");
         rbJuridico.setOpaque(false);
         rbJuridico.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipady = 0;
-        gridBagConstraints.insets = new Insets(0, 0, 500, 0);
+        // gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.insets = new Insets(0, 0, 0, 0);
         this.add(rbJuridico, gridBagConstraints);
         
         rbEccom.setText("ECCOM");
         rbEccom.setOpaque(false);
         rbEccom.addActionListener(this);
         gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new Insets(0, 500, 500, 0);
+        gridBagConstraints.insets = new Insets(0, 0, 0, 0);
         this.add(rbEccom, gridBagConstraints);
     }
 
     private void formularios(){
-        pDatosPersona = new PDatosPersona();
+        pFormularioPersona = new PFormularioPersona();
         
-        pDatosPersona.setOpaque(false);
-        pDatosPersona.setVisible(true);
+        pFormularioPersona.setOpaque(false);
+        pFormularioPersona.setVisible(true);
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        // gridBagConstraints.gridheight = 5;
-        gridBagConstraints.insets = new Insets(-900, 0, 0, 0);
-        this.add(pDatosPersona,gridBagConstraints);
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        // // gridBagConstraints.gridheight = 5;
+        gridBagConstraints.insets = new Insets(100, 0, 0, 0);
+        this.add(pFormularioPersona,gridBagConstraints);
     }
 
 

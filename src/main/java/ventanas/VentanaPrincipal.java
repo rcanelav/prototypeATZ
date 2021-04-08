@@ -27,7 +27,7 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         // this.getContentPane().add(pIdioma);
-        // this.getContentPane().add(pDatosOrganizador);
-        this.getContentPane().add(pCultural);
+        this.getContentPane().add(pDatosOrganizador);
+        // this.getContentPane().add(pCultural);
     }
 }
