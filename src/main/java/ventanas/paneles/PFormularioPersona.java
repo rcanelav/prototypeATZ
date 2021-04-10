@@ -10,7 +10,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-public class PFormularioPersona extends JPanel implements FocusListener{
+public class PFormularioPersona extends JPanel{
     private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
     private TextoFormulario textoNOrganizadores;
@@ -42,7 +42,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblNOrganizadores, grid);
         textoNOrganizadores = new TextoFormulario("Indique el número de organizadores del evento.", 
                                                   TipoTextoFormulario.NUMERICO);
-        textoNOrganizadores.addFocusListener(this);
         grid = new Grid(1, 1, 0, 0, 250);
         this.add(textoNOrganizadores, grid);
         exclamacion = new IconoError("Debe ingresar unicamente un numero entero.");
@@ -55,7 +54,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblNif, grid);
         textoNif = new TextoFormulario("Indique el NIF/NIE del creador del evento", 
                                        TipoTextoFormulario.NIF);
-        textoNif.addFocusListener(this);
         grid = new Grid(1, 2, 0, 10, 250);
         this.add(textoNif, grid);
         exclamacion = new IconoError("Debe ingresar un NIF/NIE válido");
@@ -68,7 +66,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblApellidos, grid);
         textoApellidos = new TextoFormulario("Indique los apellidos del creador del evento.", 
                                               TipoTextoFormulario.ALFABETICO);
-        textoApellidos.addFocusListener(this);
         grid = new Grid(1, 3, 0, 10, 250);
         this.add(textoApellidos, grid);
         exclamacion = new IconoError("Los apellidos NO deben contener numeros ni caracteres especiales.");
@@ -81,7 +78,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblNombre, grid);
         textoNombre = new TextoFormulario("Indique el nombre del creador del evento.",
                                           TipoTextoFormulario.ALFABETICO);
-        textoNombre.addFocusListener(this);
         grid = new Grid(1, 4, 0, 10, 250);
         this.add(textoNombre, grid);
         exclamacion = new IconoError("El nombre NO debe contener números ni caracteres especiales.");
@@ -94,7 +90,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblDireccion, grid);
         textoDireccion = new TextoFormulario("Indique la dirección de contacto del creador del evento.",
                                              TipoTextoFormulario.ALFABETICO);
-        textoDireccion.addFocusListener(this);
         grid = new Grid(1, 5, 0, 10, 250);
         this.add(textoDireccion, grid);
         exclamacion = new IconoError("Debe indicar una dirección válida (Inferior a 100 caracteres)");
@@ -107,7 +102,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblPoblacion, grid);
         textoPoblacion = new TextoFormulario("Indique el nombre de la población del creador del evento.", 
                                              TipoTextoFormulario.ALFABETICO);
-        textoPoblacion.addFocusListener(this);
         grid = new Grid(1, 6, 0, 10, 250);
         this.add(textoPoblacion, grid);
         exclamacion = new IconoError("Debe indicar una población válida (Inferior a 50 caracteres)");
@@ -120,7 +114,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblProvincia, grid);
         textoProvincia = new TextoFormulario("Indique el nombre de la provincia del creador del evento.", 
                                               TipoTextoFormulario.ALFABETICO);
-        textoProvincia.addFocusListener(this);
         grid = new Grid(1, 7, 0, 10, 250);
         this.add(textoProvincia, grid);
         exclamacion = new IconoError("Debe indicar una provincia válida (Inferior a 50 caracteres)");
@@ -133,7 +126,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblTelefono, grid);
         textoTelefono = new TextoFormulario("Indique el número de contacto del creador del evento.", 
                                              TipoTextoFormulario.NUMERICO);
-        textoTelefono.addFocusListener(this);
         grid = new Grid(1, 8, 0, 10, 250);
         this.add(textoTelefono, grid);
         exclamacion = new IconoError("Debe indicar un número de teléfono válido. (Sin guiones, ni espacios, ni carácteres especiales.)");
@@ -146,7 +138,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblMovil, grid);
         textoMovil = new TextoFormulario("Indique el número móvil de contacto del creador del evento.",
                                           TipoTextoFormulario.NUMERICO);
-        textoMovil.addFocusListener(this);
         grid = new Grid(1, 9, 0, 10, 250);
         this.add(textoMovil, grid);
         exclamacion = new IconoError("Debe indicar un número de teléfono válido. (Sin guiones, ni espacios, ni carácteres especiales.)");
@@ -159,7 +150,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblEmail, grid);
         textoEmail = new TextoFormulario("Indique el e-mail del creador del evento.", 
                                           TipoTextoFormulario.ALFABETICO);
-        textoEmail.addFocusListener(this);
         grid = new Grid(1, 10, 0, 10, 250);
         this.add(textoEmail, grid);
         exclamacion = new IconoError("Debe ingresar un e-mail válido.");
@@ -172,7 +162,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblEpigrafe, grid);
         textoEpigrafe = new TextoFormulario("Indique el epígrafe IAE del creador el evento.", 
                                              TipoTextoFormulario.ALFABETICO);
-        textoEpigrafe.addFocusListener(this);
         grid = new Grid(1, 11, 0, 10, 250);
         this.add(textoEpigrafe, grid);
         exclamacion = new IconoError("Debe introducir un epígrafe válido");
@@ -185,7 +174,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblPolizaSeguro, grid);
         textoPolizaSeguro = new TextoFormulario("Indique el nombre de la empresa que proporciona la Póliza de Seguro del creador del evento.", 
                                                  TipoTextoFormulario.ALFABETICO);
-        textoPolizaSeguro.addFocusListener(this);
         grid = new Grid(1, 12, 0, 10, 250);
         this.add(textoPolizaSeguro, grid);
         exclamacion = new IconoError("Debe ingresar un nombre de póliza válido");
@@ -198,7 +186,6 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         this.add(lblCoberturaSeguro, grid);
         textoCoberturaSeguro = new TextoFormulario("Indique la cantidad en euros de la cobertura de la póliza.", 
                                                     TipoTextoFormulario.NUMERICO);
-        textoCoberturaSeguro.addFocusListener(this);
         grid = new Grid(1, 13, 0, 10, 250);
         this.add(textoCoberturaSeguro, grid);
         exclamacion = new IconoError("Indique una cantidad válida. (Sin caracteres especiales)");
@@ -207,154 +194,152 @@ public class PFormularioPersona extends JPanel implements FocusListener{
         textoCoberturaSeguro.setIconoError(exclamacion);
     }
 
-    @Override
-    public void focusGained(FocusEvent e) {
-        TextoFormulario field = (TextoFormulario)e.getSource();
-        if (!field.validar()){
-           bordesError(field, 0);
-           field.getIconoError().setVisible(false);
-        }
-        // if(e.getSource() == textoNOrganizadores){
-        //     if(!textoNOrganizadores.validar()){
-        //         bordesError(textoNOrganizadores, 0);
-        //         textoNOrganizadores.getIconoError().setVisible(false);
-        //     } 
-        // } else if(e.getSource() == textoNif){
-        //     if(textoNif.getText().isBlank()){
-        //         bordesError(textoNif, 0);
-        //         exclamacionNif.setVisible(false);
-        //     } 
-        //     if(textoNif.getText().length() != 9){
-        //         bordesError(textoNif, 0);
-        //         exclamacionNif.setVisible(false);
-        //     }  
-        // } else if(e.getSource() == textoApellidos){
-        //     if(textoApellidos.getText().isBlank()){
-        //         bordesError(textoApellidos, 0);
-        //         exclamacionApellidos.setVisible(false);
-        //     } 
-        //     if(Pattern.matches("[0-9,.]+", textoApellidos.getText())){
-        //         bordesError(textoApellidos, 0);
-        //         exclamacionApellidos.setVisible(false);
-        //     }
-        // } else if(e.getSource() == textoNombre){
-        //     if(textoNombre.getText().isBlank()){
-        //         bordesError(textoNombre, 0);
-        //         exclamacionNombre.setVisible(false);
-        //     } 
-        //     if(Pattern.matches("[0-9,.]+", textoNombre.getText())){
-        //         bordesError(textoNombre, 0);
-        //         exclamacionNombre.setVisible(false);
-        //     }
-        // } else if(e.getSource() == textoDireccion){
-        //     if(textoDireccion.getText().isBlank() || textoDireccion.getText().length() > 100){
-        //         bordesError(textoDireccion, 0);
-        //         exclamacionDireccion.setVisible(false);
-        //     } 
-        // } else if(e.getSource() == textoPoblacion){
-        //     if(textoPoblacion.getText().isBlank() || textoPoblacion.getText().length() > 50){
-        //         bordesError(textoPoblacion, 0);
-        //         exclamacionPoblacion.setVisible(false);
-        //     } 
-        // } else if(e.getSource() == textoProvincia){
-        //     if(textoProvincia.getText().isBlank() || textoProvincia.getText().length() > 50){
-        //         bordesError(textoProvincia, 0);
-        //         exclamacionProvincia.setVisible(false);
-        //     } 
-        // } else if(e.getSource() == textoCoberturaSeguro){
-        //     if(textoCoberturaSeguro.getText().isBlank()){
-        //         bordesError(textoCoberturaSeguro, 0);
-        //         exclamacionCoberturaSeguro.setVisible(false);
-        //     } 
-        //     if(Pattern.matches("[a-zA-Z,.]+", textoCoberturaSeguro.getText())){
-        //         bordesError(textoCoberturaSeguro, 0);
-        //         exclamacionCoberturaSeguro.setVisible(false);
-        //     }
-        // } 
-    }
+//     @Override
+//     public void focusGained(FocusEvent e) {
+//         TextoFormulario field = (TextoFormulario)e.getSource();
+//         if (!field.validar()){
+//            bordesError(field, 0);
+//            field.getIconoError().setVisible(false);
+//         }
+//         // if(e.getSource() == textoNOrganizadores){
+//         //     if(!textoNOrganizadores.validar()){
+//         //         bordesError(textoNOrganizadores, 0);
+//         //         textoNOrganizadores.getIconoError().setVisible(false);
+//         //     } 
+//         // } else if(e.getSource() == textoNif){
+//         //     if(textoNif.getText().isBlank()){
+//         //         bordesError(textoNif, 0);
+//         //         exclamacionNif.setVisible(false);
+//         //     } 
+//         //     if(textoNif.getText().length() != 9){
+//         //         bordesError(textoNif, 0);
+//         //         exclamacionNif.setVisible(false);
+//         //     }  
+//         // } else if(e.getSource() == textoApellidos){
+//         //     if(textoApellidos.getText().isBlank()){
+//         //         bordesError(textoApellidos, 0);
+//         //         exclamacionApellidos.setVisible(false);
+//         //     } 
+//         //     if(Pattern.matches("[0-9,.]+", textoApellidos.getText())){
+//         //         bordesError(textoApellidos, 0);
+//         //         exclamacionApellidos.setVisible(false);
+//         //     }
+//         // } else if(e.getSource() == textoNombre){
+//         //     if(textoNombre.getText().isBlank()){
+//         //         bordesError(textoNombre, 0);
+//         //         exclamacionNombre.setVisible(false);
+//         //     } 
+//         //     if(Pattern.matches("[0-9,.]+", textoNombre.getText())){
+//         //         bordesError(textoNombre, 0);
+//         //         exclamacionNombre.setVisible(false);
+//         //     }
+//         // } else if(e.getSource() == textoDireccion){
+//         //     if(textoDireccion.getText().isBlank() || textoDireccion.getText().length() > 100){
+//         //         bordesError(textoDireccion, 0);
+//         //         exclamacionDireccion.setVisible(false);
+//         //     } 
+//         // } else if(e.getSource() == textoPoblacion){
+//         //     if(textoPoblacion.getText().isBlank() || textoPoblacion.getText().length() > 50){
+//         //         bordesError(textoPoblacion, 0);
+//         //         exclamacionPoblacion.setVisible(false);
+//         //     } 
+//         // } else if(e.getSource() == textoProvincia){
+//         //     if(textoProvincia.getText().isBlank() || textoProvincia.getText().length() > 50){
+//         //         bordesError(textoProvincia, 0);
+//         //         exclamacionProvincia.setVisible(false);
+//         //     } 
+//         // } else if(e.getSource() == textoCoberturaSeguro){
+//         //     if(textoCoberturaSeguro.getText().isBlank()){
+//         //         bordesError(textoCoberturaSeguro, 0);
+//         //         exclamacionCoberturaSeguro.setVisible(false);
+//         //     } 
+//         //     if(Pattern.matches("[a-zA-Z,.]+", textoCoberturaSeguro.getText())){
+//         //         bordesError(textoCoberturaSeguro, 0);
+//         //         exclamacionCoberturaSeguro.setVisible(false);
+//         //     }
+//         // } 
+//     }
 
-    @Override
-    public void focusLost(FocusEvent e) {
-        TextoFormulario field = (TextoFormulario)e.getSource();
-        if (!field.validar()){
-           bordesError(field, 1);
-           field.getIconoError().setVisible(true);
-        } 
+//     // @Override
+//     // public void focusLost(FocusEvent e) {
+//         // TextoFormulario field = (TextoFormulario)e.getSource();
+//         // if (!field.validar()){
+//         //    bordesError(field, 1);
+//         //    field.getIconoError().setVisible(true);
+//         // } 
 
-        // if(e.getSource() == textoNOrganizadores){
-        //     if(!textoNOrganizadores.validar()){
-        //         bordesError(textoNOrganizadores, 1);
-        //         textoNOrganizadores.getIconoError().setVisible(true);
-        //     }
-        // }
+//         // if(e.getSource() == textoNOrganizadores){
+//         //     if(!textoNOrganizadores.validar()){
+//         //         bordesError(textoNOrganizadores, 1);
+//         //         textoNOrganizadores.getIconoError().setVisible(true);
+//         //     }
+//         // }
 
-        // if(e.getSource() == textoNif){
-        //     if(textoNif.getText().isBlank()){
-        //         bordesError(textoNif, 1);
-        //         exclamacionNif.setVisible(true);
-        //     }
-        //     if(textoNif.getText().length() != 9){
-        //         bordesError(textoNif, 1);
-        //         exclamacionNif.setVisible(true);
-        //     }   
-        // }
+//         // if(e.getSource() == textoNif){
+//         //     if(textoNif.getText().isBlank()){
+//         //         bordesError(textoNif, 1);
+//         //         exclamacionNif.setVisible(true);
+//         //     }
+//         //     if(textoNif.getText().length() != 9){
+//         //         bordesError(textoNif, 1);
+//         //         exclamacionNif.setVisible(true);
+//         //     }   
+//         // }
 
-        // if(e.getSource() == textoApellidos){
-        //     if(textoApellidos.getText().isBlank()){
-        //         bordesError(textoApellidos, 1);
-        //         exclamacionApellidos.setVisible(true);
-        //     }
-        //     if(Pattern.matches("[0-9,.]+", textoApellidos.getText())){
-        //         bordesError(textoApellidos, 1);
-        //         exclamacionApellidos.setVisible(true);
-        //     }   
-        // }
+//         // if(e.getSource() == textoApellidos){
+//         //     if(textoApellidos.getText().isBlank()){
+//         //         bordesError(textoApellidos, 1);
+//         //         exclamacionApellidos.setVisible(true);
+//         //     }
+//         //     if(Pattern.matches("[0-9,.]+", textoApellidos.getText())){
+//         //         bordesError(textoApellidos, 1);
+//         //         exclamacionApellidos.setVisible(true);
+//         //     }   
+//         // }
 
-        // if(e.getSource() == textoNombre){
-        //     if(textoNombre.getText().isBlank()){
-        //         bordesError(textoNombre, 1);
-        //         exclamacionNombre.setVisible(true);
-        //     }
-        //     if(Pattern.matches("[0-9,.]+", textoNombre.getText())){
-        //         bordesError(textoNombre, 1);
-        //         exclamacionNombre.setVisible(true);
-        //     }   
-        // }
+//         // if(e.getSource() == textoNombre){
+//         //     if(textoNombre.getText().isBlank()){
+//         //         bordesError(textoNombre, 1);
+//         //         exclamacionNombre.setVisible(true);
+//         //     }
+//         //     if(Pattern.matches("[0-9,.]+", textoNombre.getText())){
+//         //         bordesError(textoNombre, 1);
+//         //         exclamacionNombre.setVisible(true);
+//         //     }   
+//         // }
 
-        // if(e.getSource() == textoDireccion){
-        //     if(textoDireccion.getText().isBlank() || textoDireccion.getText().length() > 100){
-        //         bordesError(textoDireccion, 1);
-        //         exclamacionDireccion.setVisible(true);
-        //     } 
-        // }
+//         // if(e.getSource() == textoDireccion){
+//         //     if(textoDireccion.getText().isBlank() || textoDireccion.getText().length() > 100){
+//         //         bordesError(textoDireccion, 1);
+//         //         exclamacionDireccion.setVisible(true);
+//         //     } 
+//         // }
 
-        // if(e.getSource() == textoPoblacion){
-        //     if(textoPoblacion.getText().isBlank() || textoPoblacion.getText().length() > 100){
-        //         bordesError(textoPoblacion, 1);
-        //         exclamacionPoblacion.setVisible(true);
-        //     } 
-        // }
+//         // if(e.getSource() == textoPoblacion){
+//         //     if(textoPoblacion.getText().isBlank() || textoPoblacion.getText().length() > 100){
+//         //         bordesError(textoPoblacion, 1);
+//         //         exclamacionPoblacion.setVisible(true);
+//         //     } 
+//         // }
 
-        // if(e.getSource() == textoProvincia){
-        //     if(textoProvincia.getText().isBlank() || textoProvincia.getText().length() > 100){
-        //         bordesError(textoProvincia, 1);
-        //         exclamacionProvincia.setVisible(true);
-        //     } 
-        // }
+//         // if(e.getSource() == textoProvincia){
+//         //     if(textoProvincia.getText().isBlank() || textoProvincia.getText().length() > 100){
+//         //         bordesError(textoProvincia, 1);
+//         //         exclamacionProvincia.setVisible(true);
+//         //     } 
+//         // }
 
-        // if(e.getSource() == textoCoberturaSeguro){
-        //     if(textoCoberturaSeguro.getText().isBlank()){
-        //         bordesError(textoCoberturaSeguro, 1);
-        //         exclamacionCoberturaSeguro.setVisible(true);
-        //     }
-        //     if(Pattern.matches("[a-zA-Z,.]+", textoCoberturaSeguro.getText())){
-        //         bordesError(textoCoberturaSeguro, 1);
-        //         exclamacionCoberturaSeguro.setVisible(true);
-        //     }   
-        // }
-    }
+//         // if(e.getSource() == textoCoberturaSeguro){
+//         //     if(textoCoberturaSeguro.getText().isBlank()){
+//         //         bordesError(textoCoberturaSeguro, 1);
+//         //         exclamacionCoberturaSeguro.setVisible(true);
+//         //     }
+//         //     if(Pattern.matches("[a-zA-Z,.]+", textoCoberturaSeguro.getText())){
+//         //         bordesError(textoCoberturaSeguro, 1);
+//         //         exclamacionCoberturaSeguro.setVisible(true);
+//         //     }   
+//         // }
+//     // }
 
-    private void bordesError(JTextField texto, int color){
-        texto.setBorder(new LineBorder(color > 0 ? Color.RED : Color.BLACK, color > 0 ? 3 : 1));
-    }
+
 }
