@@ -24,6 +24,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         radioButtons();
         formularios();
         botonesSiguienteAnterior();
+        
     }
 
     private void radioButtons(){
@@ -83,6 +84,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         botonSiguiente = new BotonFlujo("SIGUIENTE");
         grid = new Grid(1, 3, 3, 40, 350, 30, 10);
         this.add(botonSiguiente, grid);
+        botonSiguiente.addActionListener(click -> validar());
     }
 
     @Override
@@ -102,5 +104,13 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
             pFormularioJuridico.setVisible(false);
             pFormularioPersona.setVisible(false);
         }
+    }
+    
+    public void validar(){
+        if(pFormularioPersona.validar())
+            JOptionPane.showMessageDialog(null, "SALTAR A PANEL TECNICO");
+        else
+            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR VALIDAMENTE TODOS LOS CAMPOS");
+
     }
 }

@@ -1,4 +1,5 @@
 package ventanas.elementos;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -12,7 +13,7 @@ public class TextoFormulario extends JTextField implements FocusListener{
     private IconoError iconoError;
     private TipoTextoFormulario tipo;
     public enum TipoTextoFormulario {
-        ALFABETICO, NUMERICO, NIF;
+        ALFABETICO, NUMERICO, NIF, EMAIL;
     }
 
     public TextoFormulario(){
@@ -24,15 +25,13 @@ public class TextoFormulario extends JTextField implements FocusListener{
         addFocusListener(this);
     }
     
-    public TextoFormulario(String tooltip){
+    public TextoFormulario(String tooltip, 
+                           TipoTextoFormulario tipo,
+                           String errorTooltip){
         this();
-        setToolTipText(tooltip);
-    }
-    
-    public TextoFormulario(String tooltip, TipoTextoFormulario tipo){
-        this();
-        setToolTipText(tooltip);
         this.tipo = tipo;
+        setToolTipText(tooltip);
+        iconoError = new IconoError(errorTooltip);
     }
 
     // public TextoFormulario(String texto, int width, int height){
@@ -75,6 +74,10 @@ public class TextoFormulario extends JTextField implements FocusListener{
                 if(getText().length() != 9)
                     return false;
                 break;
+            case EMAIL:
+            if(!Pattern.matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$", getText()))
+                    return false;
+                break;
             default:
              System.out.println("ERROR: No se ha especificado tipo para el TextoFormulario o este es incorrecto");
         }
@@ -111,8 +114,8 @@ public class TextoFormulario extends JTextField implements FocusListener{
         } 
     }
 
-    private void bordesError(JTextField texto, int color){
-        texto.setBorder(new LineBorder(color > 0 ? Color.RED : Color.BLACK, color > 0 ? 3 : 1));
-    }
+    // private void bordesError(JTextField texto, int color){
+    //     texto.setBorder(new LineBorder(color > 0 ? Color.RED : Color.BLACK, color > 0 ? 3 : 1));
+    // }
 
 }
