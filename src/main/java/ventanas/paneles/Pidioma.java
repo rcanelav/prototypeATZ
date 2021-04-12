@@ -97,7 +97,7 @@ public class Pidioma extends JPanel implements ActionListener{
         if(evento.getSource() == botonCastellano){
             panelPrincipal = new PPrincipal();
             JFrame frame = (JFrame) SwingUtilities.getAncestorOfClass(JFrame.class, this);
-            frame.setContentPane(panelPrincipal);
+            frame.add(panelPrincipal);
             this.setVisible(false);            
         }
     }  

@@ -1,12 +1,19 @@
 package ventanas;
 
 import javax.swing.*;
+
+import negocio.Evento;
+
 import java.awt.*;
 import ventanas.paneles.*;
 
 public class VentanaPrincipal extends JFrame {
+    
+    private static final long serialVersionUID = 1L;
     Pidioma pIdioma = new Pidioma();
     PCultural pCultural = new PCultural();
+    Evento  evento;
+    
     PDatosOrganizador pDatosOrganizador = new PDatosOrganizador();
     
     public VentanaPrincipal(){
@@ -26,8 +33,16 @@ public class VentanaPrincipal extends JFrame {
         setLocationRelativeTo(null);  //opcional
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // this.getContentPane().add(pIdioma);
-        this.getContentPane().add(pDatosOrganizador);
+        this.getContentPane().add(pIdioma);
+        // this.getContentPane().add(pDatosOrganizador);
         // this.getContentPane().add(pCultural);
+        evento = new Evento();
+    }
+
+    public Evento getEvento(){
+        return evento;
+    }
+    public void setEvento(Evento evento) {
+        this.evento = evento;
     }
 }

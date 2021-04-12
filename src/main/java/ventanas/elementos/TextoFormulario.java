@@ -34,16 +34,6 @@ public class TextoFormulario extends JTextField implements FocusListener{
         iconoError = new IconoError(errorTooltip);
     }
 
-    // public TextoFormulario(String texto, int width, int height){
-    //     super(texto);
-    //     setPreferredSize(new Dimension((width > 0) ? width : 350, (height > 0) ? height : 20));
-    //     setMinimumSize(new Dimension(300, 40));
-    //     setOpaque(true);
-    //     setBorder(new LineBorder(Color.BLACK, 1));
-    //     setCursor(new Cursor(Cursor.TEXT_CURSOR));
-    //     tipo = TipoTextoFormulario.ALFABETICO;
-    // }
-
     public void setIconoError(IconoError icono){
         iconoError = icono;
     }
@@ -56,7 +46,7 @@ public class TextoFormulario extends JTextField implements FocusListener{
         this.tipo = tipo; 
     }
 
-    public boolean validar(){
+    public boolean validarInput(){
         if (getText().isBlank())
             return false;
         if (getText().length() > 100)
@@ -81,15 +71,26 @@ public class TextoFormulario extends JTextField implements FocusListener{
             default:
              System.out.println("ERROR: No se ha especificado tipo para el TextoFormulario o este es incorrecto");
         }
+
         return true;
+    }
+
+    public boolean validar () {
+        boolean isValid = validarInput();
+        if (!isValid){
+            setBorder(new LineBorder(Color.RED, 3));
+            if (iconoError != null) 
+                iconoError.setVisible(true);
+         } else {
+            setBorder(new LineBorder(Color.BLACK, 1));
+            if (iconoError != null) 
+                iconoError.setVisible(false); 
+         }
+         return isValid;
     }
 
     @Override
     public void focusGained(FocusEvent e) {
-        TextoFormulario field = (TextoFormulario)e.getSource();
-        if (field != this) {
-            System.out.println("EH?! o^O");
-        }
         setBorder(new LineBorder(Color.BLACK, 1));
         if (iconoError == null) {
             System.err.println("No iconoError set para este TextoFormulario");
@@ -100,22 +101,6 @@ public class TextoFormulario extends JTextField implements FocusListener{
 
     @Override
     public void focusLost(FocusEvent e) {
-        TextoFormulario field = (TextoFormulario)e.getSource();
-        if (field != this) {
-            System.out.println("EH?!");
-        }
-        if (!validar()){
-           setBorder(new LineBorder(Color.RED, 3));
-           if (iconoError == null) {
-                System.err.println("No iconoError set para este TextoFormulario");
-                return;
-             }
-           iconoError.setVisible(true);
-        } 
+        validar();
     }
-
-    // private void bordesError(JTextField texto, int color){
-    //     texto.setBorder(new LineBorder(color > 0 ? Color.RED : Color.BLACK, color > 0 ? 3 : 1));
-    // }
-
 }

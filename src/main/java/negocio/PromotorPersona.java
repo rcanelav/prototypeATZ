@@ -1,12 +1,13 @@
 package negocio;
 
 public class PromotorPersona extends Persona {
+    private static final long serialVersionUID = 1L;
     private String epigrafeIAE;
     private String polizaSeguro;
     private String coberturaSeguro;
 
-    private PromotorPersona(){
-        super();
+    public PromotorPersona(){
+        
     }
 
     public PromotorPersona(String epigrafeIAE, String polizaSeguro, String coberturaSeguro){
@@ -14,6 +15,34 @@ public class PromotorPersona extends Persona {
         this.epigrafeIAE = epigrafeIAE;
         this.polizaSeguro = polizaSeguro;
         this.coberturaSeguro = coberturaSeguro;   
+    }
+
+    public void setEpigrafeIAE(String epigrafeIAE) {
+        this.epigrafeIAE = epigrafeIAE;
+    }
+    public String getEpigrafeIAE() {
+        return epigrafeIAE;
+    }
+    public void setPolizaSeguro(String polizaSeguro) {
+        this.polizaSeguro = polizaSeguro;
+    }
+    public String getPolizaSeguro() {
+        return polizaSeguro;
+    }
+    public void setCoberturaSeguro(String coberturaSeguro) {
+        this.coberturaSeguro = coberturaSeguro;
+    }
+    public String getCoberturaSeguro() {
+        return coberturaSeguro;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%-5s %-5s", "EPIGRAFE: ", getEpigrafeIAE() + "\n"));
+        sb.append(String.format("%-5s %-5s", "POLIZA: ", getPolizaSeguro() + "\n"));
+        sb.append(String.format("%-5s %-5s", "COBERTURA: ", getCoberturaSeguro() + " euros\n"));
+        return super.toString() + sb.toString();
     }
     
 }

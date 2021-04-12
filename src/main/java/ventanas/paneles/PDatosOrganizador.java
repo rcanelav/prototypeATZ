@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
+
+import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
 public class PDatosOrganizador extends JPanel implements ActionListener {
@@ -24,7 +26,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         radioButtons();
         formularios();
         botonesSiguienteAnterior();
-        
+        setVisible(true);
     }
 
     private void radioButtons(){
@@ -84,7 +86,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         botonSiguiente = new BotonFlujo("SIGUIENTE");
         grid = new Grid(1, 3, 3, 40, 350, 30, 10);
         this.add(botonSiguiente, grid);
-        botonSiguiente.addActionListener(click -> validar());
+        botonSiguiente.addActionListener(this);
     }
 
     @Override
@@ -104,13 +106,31 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
             pFormularioJuridico.setVisible(false);
             pFormularioPersona.setVisible(false);
         }
+
+        if (evento.getSource() == botonSiguiente) {
+            VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            if (rbPersona.isSelected()) {
+               if(validarFormulario(pFormularioPersona)){
+                    pFormularioPersona.grabarDatos(frame.getEvento());
+               }
+            } else if (rbJuridico.isSelected()) {
+                if(validarFormulario(pFormularioJuridico)){
+                    pFormularioJuridico.grabarDatos(frame.getEvento());
+                }
+
+            } else if (rbEccom.isSelected()){
+                validarFormulario(pFormularioEccom);
+            }
+        }
     }
     
-    public void validar(){
-        if(pFormularioPersona.validar())
+    public boolean validarFormulario(PFormulario formulario){
+        if(formulario.validar()){
             JOptionPane.showMessageDialog(null, "SALTAR A PANEL TECNICO");
-        else
+            return true;
+        }else{
             JOptionPane.showMessageDialog(null, "DEBE COMPLETAR VALIDAMENTE TODOS LOS CAMPOS");
-
+            return false;
+        }
     }
 }

@@ -1,46 +1,23 @@
 package negocio;
 
 public class Persona {
-    private String nombre;
-    private String apellidos;
     private String nif;
+    private String apellidos;
+    private String nombre;
     private String direccion;
     private String poblacion;
     private String provincia;
-    private int cp;
-    private String email;
     private String telefono;
     private String movil;
+    private String email;
     
-
-
-    protected Persona(){}
+    public Persona(){}
 
     public Persona(String nombre, String apellidos){
         this.nombre = nombre;
         this.apellidos = apellidos;
     }
-    public Persona(String nombre, 
-                   String apellidos, 
-                   String nif, 
-                   String direccion, 
-                   String provincia,
-                   int cp,
-                   String email,
-                   String telefono,
-                   String movil
-                ){
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.nif = nif;
-        this.direccion = direccion;
-        this.provincia = provincia;
-        this.cp = cp;
-        this.email = email;
-        this.telefono = telefono;
-        this.movil = movil;
-                }
-
+    
     public String getNombre() {
         return this.nombre;
     }
@@ -95,11 +72,19 @@ public class Persona {
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
-    public int getCp() {
-        return cp;
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("NIF: " + getNif() + "\n");
+        sb.append("APELLIDOS: " + getApellidos() + "\n");
+        sb.append("NOMBRE: " + getNombre() + "\n");
+        sb.append("DIRECCIÓN: " + getDireccion() + "\n");
+        sb.append("POBLACION: " + getPoblacion() + "\n");
+        sb.append("PROVINCIA: " + getProvincia() + "\n");
+        sb.append("TELEFONO: " + getTelefono() + "\n");
+        sb.append("MOVIL: : " + getMovil() + "\n");
+        sb.append("EMAIL: : " + getEmail() + "\n");
+        return sb.toString();
     }
-    public void setCp(int cp) {
-        this.cp = cp;
-    }
-    
 }

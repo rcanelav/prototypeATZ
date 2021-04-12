@@ -1,64 +1,35 @@
 package negocio;
 
 public class Juridico {
-    private String razonSocial;
+    private static final long serialVersionUID = 1L;
     private String  cif;
-    private Persona representante;
+    private String razonSocial;
     private String direccion;
     private String poblacion;
     private String provincia;
-    private int cp;
-    private String email;
     private String telefono;
     private String movil;
+    private String email;
+    private String representante;
 
-
-    public Juridico(String razonSocial, String cif){
-        this.razonSocial = razonSocial;
+    public Juridico(){
+  
+    }
+    public Juridico(String cif){
         this.cif = cif;
     }
 
-    public Juridico(String cif, String razonSocial, String direccion, String email, String telefono, String movil){
-        this.cif = cif;
-        this.razonSocial = razonSocial;
-        this.direccion = direccion;
-        this.email = email;
-        this.telefono = telefono;
-        this.movil = movil;
-    }
-
-    public Juridico(String cif, 
-                    String razonSocial, 
-                    String direccion, 
-                    String poblacion, 
-                    String provincia, 
-                    int cp, 
-                    String email, 
-                    String telefono, 
-                    String movil){
-        this.cif = cif;
-        this.razonSocial = razonSocial;
-        this.direccion = direccion;
-        this.poblacion = poblacion;
-        this.provincia = provincia;
-        this.cp = cp;
-        this.email = email;
-        this.telefono = telefono;
-        this.movil = movil;
-    }
-
-
-    public String getRazonSocial() {
-        return razonSocial;
-    }
-    public void setRazonSocial(String razonSocial) {
-        this.razonSocial = razonSocial;
-    }
     public String getCif() {
         return cif;
     }
     public void setCif(String cif) {
         this.cif = cif;
+    }
+    public String getRazonSocial() {
+        return razonSocial;
+    }
+    public void setRazonSocial(String razonSocial) {
+        this.razonSocial = razonSocial;
     }
     public String getDireccion() {
         return direccion;
@@ -78,22 +49,17 @@ public class Juridico {
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
-    public int getCp() {
-        return cp;
-    }
-    public void setCp(int cp) {
-        this.cp = cp;
-    }
-    public Persona getRepresentante() {
+  
+    public String getRepresentante() {
         return representante;
     }
-    public void setRepresentante(Persona representante) {
+    public void setRepresentante(String representante) {
         this.representante = representante;
     }
-    public String gettelefono() {
+    public String getTelefono() {
         return telefono;
     }
-    public void settelefono(String telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
     public String getMovil() {
@@ -102,13 +68,27 @@ public class Juridico {
     public void setMovil(String movil) {
         this.movil = movil;
     }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @Override
     public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Representante Jurídico: \n");
+        sb.append("CIF: " + getCif() + "\n");
+        sb.append("RAZON SOCIAL: " + getRazonSocial() + "\n");
+        sb.append("DIRECCIÓN: " + getDireccion() + "\n");
+        sb.append("POBLACION: " + getPoblacion() + "\n");
+        sb.append("PROVINCIA: " + getProvincia() + "\n");
+        sb.append("TELEFONO: " + getTelefono() + "\n");
+        sb.append("MOVIL: : " + getMovil() + "\n");
+        sb.append("EMAIL: : " + getEmail() + "\n");
+        sb.append("REPRESENTANTE: : " + getRepresentante() + "\n");
         
-        return "Representante Juridico: \n" + "   Razon social: " + razonSocial + "\nCIF: " + cif + 
-               "\nDireccion: " + direccion +", Poblacion: " + this.getPoblacion() + ", Provincia: " + this.getProvincia() + ", CP: " + this.getCp() +
-               "\nTelefonos: " + telefono + " - movil: " + movil + "\nEmail: " + email;
-
+        return sb.toString();
     }
 }

@@ -1,53 +1,42 @@
 package negocio;
 
-public class PromotorEmpresa extends Juridico {
-     
+public class PromotorEmpresa extends Juridico{
+    private static final long serialVersionUID = 1L;
     private String epigrafeIAE;
     private String polizaSeguro;
     private String coberturaSeguro;
 
-    public PromotorEmpresa(String razonSocial, String cif){
-        super(razonSocial, cif);
+    public PromotorEmpresa(){
+        super();
     }
 
-    public PromotorEmpresa(String cif, String razonSocial, String direccion, String email, String telefono, String movil, String epigrafeIAE){
-        super(cif, razonSocial, direccion, email, telefono, movil);
+    
+    public void setEpigrafe(String epigrafeIAE) {
         this.epigrafeIAE = epigrafeIAE;
     }
-    public PromotorEmpresa(String cif, 
-                            String razonSocial, 
-                            String direccion, 
-                            String email, 
-                            String telefono, 
-                            String movil,
-                            String epigrafeIAE,
-                            String polizaSeguro,
-                            String coberturaSeguro){
-        super(cif, razonSocial, direccion, email, telefono, movil);
-        this.epigrafeIAE = epigrafeIAE;
-        this.polizaSeguro = polizaSeguro;
-        this.coberturaSeguro = coberturaSeguro;
-    }
-
-    public PromotorEmpresa( String cif, 
-                            String razonSocial, 
-                            String direccion, 
-                            String email, 
-                            String telefono, 
-                            String movil
-                            ){
-        super(cif, razonSocial, direccion, email, telefono, movil);
-    }
-
     public String getEpigrafe() {
         return epigrafeIAE;
     }
-    public void setEpigrafe(String epigrafeIAE) {
-        this.epigrafeIAE = epigrafeIAE;
+
+    public void setPolizaSeguro(String polizaSeguro) {
+        this.polizaSeguro = polizaSeguro;
+    }
+    public String getPolizaSeguro() {
+        return polizaSeguro;
+    }
+    public void setCoberturaSeguro(String coberturaSeguro) {
+        this.coberturaSeguro = coberturaSeguro;
+    }
+    public String getCoberturaSeguro() {
+        return coberturaSeguro;
     }
 
     @Override
     public String toString() {
-        return super.toString() + ", Representante: " + this.getRepresentante() + ", Epigrafe: " + this.getEpigrafe();
+        StringBuilder sb = new StringBuilder();
+        sb.append("EPIGRAFE: " +  getEpigrafe() + "\n");
+        sb.append("POLIZA: " +  getPolizaSeguro() + "\n");
+        sb.append("COBERTURA: " +  getCoberturaSeguro() + " euros\n");
+        return super.toString() + sb.toString();
     }
 }

@@ -4,9 +4,10 @@ import ventanas.elementos.Grid;
 import ventanas.elementos.LabelFormulario;
 import ventanas.elementos.TextoFormulario;
 import ventanas.elementos.TextoFormulario.TipoTextoFormulario;
-import javax.swing.*;
 import java.awt.*;
-public class PFormularioPersona extends JPanel{
+
+import negocio.Evento;
+public class PFormularioPersona extends PFormulario {
     private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
     private TextoFormulario textoNOrganizadores;
@@ -22,7 +23,7 @@ public class PFormularioPersona extends JPanel{
     private TextoFormulario textoEpigrafe;
     private TextoFormulario textoPolizaSeguro;
     private TextoFormulario textoCoberturaSeguro;
-    
+
     public PFormularioPersona(){
         formulario();
         this.setVisible(true);
@@ -36,7 +37,8 @@ public class PFormularioPersona extends JPanel{
         grid = new Grid(1, 1, 0, 0, 0);
         this.add(lblNOrganizadores, grid);
         textoNOrganizadores = new TextoFormulario("Indique el número de organizadores del evento.", 
-                                                  TipoTextoFormulario.NUMERICO, "");
+                                                  TipoTextoFormulario.NUMERICO, 
+                                                  "Ingrese un número válido.");
         grid = new Grid(1, 1, 0, 0, 250);
         this.add(textoNOrganizadores, grid);
         grid = new Grid(2, 1, 0, 0, 4);
@@ -173,21 +175,47 @@ public class PFormularioPersona extends JPanel{
         grid = new Grid(2, 13, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
     }
-
+    @Override
     public boolean validar(){
-        return (textoNOrganizadores.validar() &&
-                textoNif.validar() &&
-                textoApellidos.validar() &&
-                textoNombre.validar() &&
-                textoDireccion.validar() &&
-                textoPoblacion.validar() &&
-                textoProvincia.validar() &&
-                textoTelefono.validar() &&
-                textoMovil.validar() &&
-                textoEmail.validar() &&
-                textoEpigrafe.validar() &&
-                textoPolizaSeguro.validar() &&
-                textoCoberturaSeguro.validar()
-                );
+        boolean valido = true;
+
+        if(!textoNOrganizadores.validar())
+            valido = false;
+        if(!textoNif.validar())
+            valido = false;
+        if(!textoApellidos.validar())
+            valido = false;
+        if(!textoNombre.validar())
+            valido = false;
+        if(!textoDireccion.validar())
+            valido = false;
+        if(!textoPoblacion.validar())
+            valido = false;
+        if(!textoProvincia.validar())
+            valido = false;
+        if(!textoTelefono.validar())
+            valido = false;
+        if(!textoMovil.validar())
+            valido = false;
+        if(!textoEmail.validar())
+            valido = false;
+        if(!textoEpigrafe.validar())
+            valido = false;
+        if(!textoPolizaSeguro.validar())
+            valido = false;
+        if(!textoCoberturaSeguro.validar())
+            valido = false;
+        
+        return valido;
+    }
+    public void grabarDatos(Evento evento) {
+        evento.setDatosOrganizadorPersona(textoNOrganizadores.getText(), textoNif.getText(),
+                                         textoApellidos.getText(), textoNombre.getText(), 
+                                         textoDireccion.getText(), textoPoblacion.getText(), 
+                                         textoProvincia.getText(), textoTelefono.getText(), 
+                                         textoMovil.getText(), textoEmail.getText(),
+                                         textoEpigrafe.getText(), textoPolizaSeguro.getText(),
+                                         textoCoberturaSeguro.getText());
+        evento.verEvento(1);
     }
 }

@@ -4,10 +4,11 @@ import ventanas.elementos.Grid;
 import ventanas.elementos.LabelFormulario;
 import ventanas.elementos.TextoFormulario;
 import ventanas.elementos.TextoFormulario.TipoTextoFormulario;
-import javax.swing.*;
 import java.awt.*;
 
-public class PFormularioEccom extends JPanel {
+import negocio.Evento;
+
+public class PFormularioEccom extends PFormulario {
     GridBagConstraints grid = new Grid();
     private TextoFormulario textoNOrganizadores;
     private TextoFormulario textoCif;
@@ -186,6 +187,53 @@ public class PFormularioEccom extends JPanel {
         this.add(textoCoberturaSeguro, grid);
         grid = new Grid(2, 14, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
+    }
+
+    @Override
+    public boolean validar(){
+        boolean valido = true;
+        
+        if(!textoNOrganizadores.validar())
+            valido = false;
+        if(!textoCif.validar())
+            valido = false;
+        if(!textoRazonSocial.validar())
+            valido = false;
+        if(!textoDireccion.validar())
+            valido = false;
+        if(!textoPoblacion.validar())
+            valido = false;
+        if(!textoProvincia.validar())
+            valido = false;
+        if(!textoTelefono.validar())
+            valido = false;
+        if(!textoMovil.validar())
+            valido = false;
+        if(!textoEmail.validar())
+            valido = false;
+        if(!textoRepresentante.validar())
+            valido = false;
+        if(!textoHabilitacion.validar())
+            valido = false;
+        if(!textoAlcanceCertificacion.validar())
+            valido = false;
+        if(!textoPolizaSeguro.validar())
+            valido = false;
+        if(!textoCoberturaSeguro.validar())
+            valido = false;
+        
+        return valido;
+    }
+
+    public void grabarDatos(Evento evento) {
+        evento.setDatosOrganizadorEccom(textoNOrganizadores.getText(), textoCif.getText(),
+                                        textoRazonSocial.getText(), textoDireccion.getText(),
+                                        textoPoblacion.getText(), textoProvincia.getText(),
+                                        textoTelefono.getText(), textoMovil.getText(),
+                                        textoEmail.getText(), textoRepresentante.getText(),
+                                        textoHabilitacion.getText(), textoAlcanceCertificacion.getText(),
+                                        textoPolizaSeguro.getText(), textoCoberturaSeguro.getText());
+        evento.verEvento(3);
     }
 }
 
