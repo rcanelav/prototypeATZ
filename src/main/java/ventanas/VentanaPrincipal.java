@@ -1,9 +1,7 @@
 package ventanas;
 
 import javax.swing.*;
-
 import negocio.Evento;
-
 import java.awt.*;
 import ventanas.paneles.*;
 
@@ -12,9 +10,8 @@ public class VentanaPrincipal extends JFrame {
     private static final long serialVersionUID = 1L;
     Pidioma pIdioma = new Pidioma();
     PCultural pCultural = new PCultural();
+    PDatosTecnico pDatosTecnico = new PDatosTecnico();
     Evento  evento;
-    
-    PDatosOrganizador pDatosOrganizador = new PDatosOrganizador();
     
     public VentanaPrincipal(){
         //Obtener tamano de pantalla del usuario
@@ -33,8 +30,9 @@ public class VentanaPrincipal extends JFrame {
         setLocationRelativeTo(null);  //opcional
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        this.getContentPane().add(pIdioma);
+        // this.getContentPane().add(pIdioma);
         // this.getContentPane().add(pDatosOrganizador);
+        this.getContentPane().add(pDatosTecnico);
         // this.getContentPane().add(pCultural);
         evento = new Evento();
     }

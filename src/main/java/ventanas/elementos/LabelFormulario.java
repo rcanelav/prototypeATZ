@@ -13,4 +13,8 @@ public class LabelFormulario extends JLabel{
         setOpaque(false);
         setBorder(null);
     }
+    
+    public void setSize(int width, int height){
+        setPreferredSize(new Dimension(width > 0 ? width : 400, height > 0 ? height : 20));
+    }
 }
