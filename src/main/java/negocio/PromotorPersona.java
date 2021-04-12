@@ -39,9 +39,9 @@ public class PromotorPersona extends Persona {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-5s %-5s", "EPIGRAFE: ", getEpigrafeIAE() + "\n"));
-        sb.append(String.format("%-5s %-5s", "POLIZA: ", getPolizaSeguro() + "\n"));
-        sb.append(String.format("%-5s %-5s", "COBERTURA: ", getCoberturaSeguro() + " euros\n"));
+        sb.append("EPIGRAFE: " + getEpigrafeIAE() + "\n");
+        sb.append("POLIZA: " + getPolizaSeguro() + "\n");
+        sb.append("COBERTURA: " + getCoberturaSeguro() + " euros\n");
         return super.toString() + sb.toString();
     }
     

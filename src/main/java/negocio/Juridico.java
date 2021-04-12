@@ -78,7 +78,6 @@ public class Juridico {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Representante Jurídico: \n");
         sb.append("CIF: " + getCif() + "\n");
         sb.append("RAZON SOCIAL: " + getRazonSocial() + "\n");
         sb.append("DIRECCIÓN: " + getDireccion() + "\n");

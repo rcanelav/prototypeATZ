@@ -5,7 +5,6 @@ import ventanas.elementos.LabelFormulario;
 import ventanas.elementos.TextoFormulario;
 import ventanas.elementos.TextoFormulario.TipoTextoFormulario;
 import java.awt.*;
-
 import negocio.Evento;
 
 public class PFormularioEccom extends PFormulario {
@@ -233,7 +232,7 @@ public class PFormularioEccom extends PFormulario {
                                         textoEmail.getText(), textoRepresentante.getText(),
                                         textoHabilitacion.getText(), textoAlcanceCertificacion.getText(),
                                         textoPolizaSeguro.getText(), textoCoberturaSeguro.getText());
-        evento.verEvento(3);
+        System.out.println(evento);
     }
 }
 

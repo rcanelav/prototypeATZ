@@ -4,11 +4,11 @@ import ventanas.elementos.Grid;
 import ventanas.elementos.LabelFormulario;
 import ventanas.elementos.TextoFormulario;
 import ventanas.elementos.TextoFormulario.TipoTextoFormulario;
-
 import java.awt.*;
-
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
+
+import negocio.Evento;
 
 public class PFormularioTecnico extends PFormulario {
     private static final long serialVersionUID = 1L;
@@ -232,5 +232,16 @@ public class PFormularioTecnico extends PFormulario {
             valido = false;
         
         return valido;
+    }
+
+    public void grabarDatos(Evento evento) {
+        evento.setDatosTecnico(textoNTecnicos.getText(), textoNif.getText(),
+                               textoApellidos.getText(), textoNombre.getText(), 
+                               textoDireccion.getText(), textoPoblacion.getText(), 
+                               textoProvincia.getText(), textoTelefono.getText(), 
+                               textoMovil.getText(), textoEmail.getText(),
+                               titulacionSi.isSelected(), textoOtraTitulacion.getText(),
+                               textoPolizaSeguro.getText(), textoCoberturaSeguro.getText());
+        System.out.println(evento);         
     }
 }

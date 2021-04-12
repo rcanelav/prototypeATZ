@@ -217,6 +217,6 @@ public class PFormularioPersona extends PFormulario {
                                          textoMovil.getText(), textoEmail.getText(),
                                          textoEpigrafe.getText(), textoPolizaSeguro.getText(),
                                          textoCoberturaSeguro.getText());
-        evento.verEvento(1);
+        System.out.println(evento);
     }
 }

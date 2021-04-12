@@ -47,6 +47,6 @@ public class Eccom extends Juridico {
         sb.append(String.format("%-5s %-5s", "ALCANCE CERTIFICACION: ", getAlcanceCertificacion() + "\n"));
         sb.append(String.format("%-5s %-5s", "POLIZA: ", getPolizaSeguro() + "\n"));
         sb.append(String.format("%-5s %-5s", "COBERTURA: ", getCoberturaSeguro() + " euros\n"));
-        return super.toString() + sb.toString();
+        return "Representante ECCOM: \n" + super.toString() + sb.toString();
     }
 }

@@ -5,11 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
-
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
 public class PDatosOrganizador extends JPanel implements ActionListener {
+    private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
     JRadioButton rbPersona;
     JRadioButton rbJuridico;
@@ -18,6 +18,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
     PFormularioPersona pFormularioPersona;
     PFormularioJuridico pFormularioJuridico;
     PFormularioEccom pFormularioEccom;
+    PDatosTecnico pDatosTecnico;
     BotonFlujo botonSiguiente;
     BotonFlujo botonAnterior;
  
@@ -119,8 +120,13 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
                 }
 
             } else if (rbEccom.isSelected()){
-                validarFormulario(pFormularioEccom);
+                if(validarFormulario(pFormularioEccom))
+                    pFormularioEccom.grabarDatos(frame.getEvento());
+
             }
+            pDatosTecnico = new PDatosTecnico();
+            frame.add(pDatosTecnico);
+            this.setVisible(false);
         }
     }
     

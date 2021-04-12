@@ -5,14 +5,12 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
 import ventanas.elementos.LabelFormulario;
 
 public class PDatosTecnico extends JPanel implements ActionListener {
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     private GridBagConstraints grid = new Grid();
     private JRadioButton tecnico, noTecnico;
@@ -45,10 +43,12 @@ public class PDatosTecnico extends JPanel implements ActionListener {
 
         tecnico.setOpaque(false);
         tecnico.setSelected(true);
+        tecnico.addActionListener(this);
         grid = new Grid(2, 1, 2, 30, 50);
         this.add(tecnico, grid);
 
         noTecnico.setOpaque(false);
+        noTecnico.addActionListener(this);
         grid = new Grid(4, 1, 0, 30, 175);
         this.add(noTecnico, grid);
     }
@@ -57,11 +57,12 @@ public class PDatosTecnico extends JPanel implements ActionListener {
         botonAnterior = new BotonFlujo("ANTERIOR");
         grid = new Grid(4, 3, 0, 30, -300, 30, 10);
         this.add(botonAnterior, grid);
+        botonAnterior.addActionListener(this);
         
         botonSiguiente = new BotonFlujo("SIGUIENTE");
         grid = new Grid(4, 3, 0, 30, 175, 30, 10);
         this.add(botonSiguiente, grid);
-        // botonSiguiente.addActionListener(this);
+        botonSiguiente.addActionListener(this);
     }
 
     private void formulario(){
@@ -73,8 +74,28 @@ public class PDatosTecnico extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        
+        if(e.getSource() == tecnico)
+            pFormularioTecnico.setVisible(true);
+        else if (e.getSource() == noTecnico)
+            pFormularioTecnico.setVisible(false);
+        else if(e.getSource() == botonSiguiente){
+            VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            if(tecnico.isSelected()){
+                if(validarFormulario(pFormularioTecnico)){
+                    pFormularioTecnico.grabarDatos(frame.getEvento());
+                }
+            }
+        }
+    }
+
+    public boolean validarFormulario(PFormulario formulario){
+        if(formulario.validar()){
+            JOptionPane.showMessageDialog(null, "SALTAR SIGUIENTE PANEL");
+            return true;
+        }else{
+            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR VALIDAMENTE TODOS LOS CAMPOS");
+            return false;
+        }
     }
 
 }

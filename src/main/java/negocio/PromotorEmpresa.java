@@ -37,6 +37,6 @@ public class PromotorEmpresa extends Juridico{
         sb.append("EPIGRAFE: " +  getEpigrafe() + "\n");
         sb.append("POLIZA: " +  getPolizaSeguro() + "\n");
         sb.append("COBERTURA: " +  getCoberturaSeguro() + " euros\n");
-        return super.toString() + sb.toString();
+        return "Representante Jurídico: \n" + super.toString() + sb.toString();
     }
 }

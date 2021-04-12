@@ -218,7 +218,7 @@ public class PFormularioJuridico extends PFormulario {
                                          textoEmail.getText(), textoRepresentante.getText(),
                                          textoEpigrafe.getText(), textoPolizaSeguro.getText(),
                                          textoCoberturaSeguro.getText());
-        evento.verEvento(2);
+        System.out.println(evento);
     }
 }
 

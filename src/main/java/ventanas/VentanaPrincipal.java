@@ -30,9 +30,9 @@ public class VentanaPrincipal extends JFrame {
         setLocationRelativeTo(null);  //opcional
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // this.getContentPane().add(pIdioma);
+        this.getContentPane().add(pIdioma);
         // this.getContentPane().add(pDatosOrganizador);
-        this.getContentPane().add(pDatosTecnico);
+        // this.getContentPane().add(pDatosTecnico);
         // this.getContentPane().add(pCultural);
         evento = new Evento();
     }
