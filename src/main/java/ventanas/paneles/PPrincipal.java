@@ -1,7 +1,6 @@
 package ventanas.paneles;
 
 import javax.swing.*;
-
 import negocio.Evento.TipoEvento;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
@@ -81,7 +80,7 @@ public class PPrincipal extends JPanel implements ActionListener{
     }
     
     private void colocarBotones(){
-        JButton botonArtistico = new BotonPrincipal("ARTÍSTICO");
+        botonArtistico = new BotonPrincipal("ARTÍSTICO");
         botonArtistico.addActionListener(this);
         grid = new Grid(0, 4, 0, 0, 0, 40, 30);
         this.add(botonArtistico, grid);
@@ -92,49 +91,42 @@ public class PPrincipal extends JPanel implements ActionListener{
         this.add(botonCultural, grid);
         
         botonDeportivo = new BotonPrincipal("DEPORTIVO");
+        botonDeportivo.addActionListener(this);
         grid = new Grid(0, 6, 0, 0, 0, 40, 30);
         this.add(botonDeportivo, grid);
         
         botonAnalogo = new BotonPrincipal("ANÁLOGO");
+        botonAnalogo.addActionListener(this);
         grid = new Grid(1, 6, 0, 0, 0, 40, 30);
         this.add(botonAnalogo, grid);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         
         if(e.getSource() == botonArtistico){
             pDatosOrganizador = new PDatosOrganizador();
-            VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
             frame.getEvento().setTipo(TipoEvento.ARTISTICO);
             frame.add(pDatosOrganizador);
-            pDatosOrganizador.setVisible(true);
             this.setVisible(false);   
         }
-        if(e.getSource() == botonCultural){
+        else if(e.getSource() == botonCultural){
             pDatosOrganizador = new PDatosOrganizador();
-            VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
             frame.getEvento().setTipo(TipoEvento.CULTURAL);
             frame.add(pDatosOrganizador);
-            pDatosOrganizador.setVisible(true);
             this.setVisible(false);   
         }
-
-        if(e.getSource() == botonDeportivo){
+        else if(e.getSource() == botonDeportivo){
             pDatosOrganizador = new PDatosOrganizador();
-            VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
             frame.getEvento().setTipo(TipoEvento.DEPORTIVO);
             frame.add(pDatosOrganizador);
-            pDatosOrganizador.setVisible(true);
             this.setVisible(false);   
         }
-
-        if(e.getSource() == botonAnalogo){
+        else if(e.getSource() == botonAnalogo){
             pDatosOrganizador = new PDatosOrganizador();
-            VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
             frame.getEvento().setTipo(TipoEvento.ANALOGO);
             frame.add(pDatosOrganizador);
-            pDatosOrganizador.setVisible(true);
             this.setVisible(false); 
         }
     }

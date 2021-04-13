@@ -199,6 +199,20 @@ public class PFormularioTecnico extends PFormulario {
         this.add(textoCoberturaSeguro, grid);
         grid = new Grid(3, 14, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
+
+        textoNTecnicos.setText("2");
+        textoNif.setText("986574127");
+        textoApellidos.setText("Valbuena Blake");
+        textoNombre.setText("Kensington");
+        textoDireccion.setText("Avenida del ejercito");
+        textoPoblacion.setText("A CORUÑA");
+        textoProvincia.setText("Crunha");
+        textoTelefono.setText("3122356623");
+        textoMovil.setText("3122356623");
+        textoEmail.setText("estoesunaprueba@proyecto.com");
+        textoPolizaSeguro.setText("amanecer");
+        textoCoberturaSeguro.setText("600000");
+        textoOtraTitulacion.setText("Gerencia de proyectos");
     }
 
     @Override

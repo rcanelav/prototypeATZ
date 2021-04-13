@@ -2,6 +2,10 @@ package ventanas.paneles;
 
 import java.awt.*;
 import javax.swing.*;
+
+import negocio.Evento;
+import negocio.Evento.TipoEvento;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -17,6 +21,10 @@ public class PDatosTecnico extends JPanel implements ActionListener {
     ButtonGroup radioButtons;
     BotonFlujo botonSiguiente, botonAnterior;
     PFormularioTecnico pFormularioTecnico;
+    PCultural pCultural = null;
+    PArtistico pArtistico = null;
+    PDeportivo pDeportivo = null;
+    PAnalogo pAnalogo = null;
     
     public PDatosTecnico(){
         this.setLayout(new GridBagLayout());
@@ -86,12 +94,31 @@ public class PDatosTecnico extends JPanel implements ActionListener {
                     pFormularioTecnico.grabarDatos(frame.getEvento());
                     isValid = true;
                 }
+            }else if (noTecnico.isSelected()){
+                isValid = true;
             }
             if(isValid){
-                JOptionPane.showMessageDialog(null, "EN CONSTRUCCIÓN... \n REVISAR TERMINAL");
+                if(frame.getEvento().getTipo() == TipoEvento.CULTURAL){
+                    pCultural = new PCultural();
+                    frame.add(pCultural);
+                    this.setVisible(false);
+                }
+                else if(frame.getEvento().getTipo() == TipoEvento.ARTISTICO){
+                    pArtistico = new PArtistico();
+                    frame.add(pArtistico);
+                    this.setVisible(false);
+                }
+                else if(frame.getEvento().getTipo() == TipoEvento.DEPORTIVO){
+                    pDeportivo = new PDeportivo();
+                    frame.add(pDeportivo);
+                    this.setVisible(false);
+                }else if(frame.getEvento().getTipo() == TipoEvento.ANALOGO){
+                    pAnalogo = new PAnalogo();
+                    frame.add(pAnalogo);
+                    this.setVisible(false);
+                }
             }
         }
-        
     }
 
     public boolean validarFormulario(PFormulario formulario){

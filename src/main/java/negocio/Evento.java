@@ -2,9 +2,12 @@ package negocio;
 
 import java.util.Date;
 public class Evento {
-    private static final long serialVersionUID = 1L;
     public enum TipoEvento {
         DEPORTIVO, ARTISTICO, CULTURAL, ANALOGO;
+    }
+    public enum SubtipoEvento {
+        TEATRAL, MUSICAL, CINEMATOGRAFICO, FERIA, EXHIBICION, DEPORTIVO,
+        PIROTECNICO, TAURINO, CIRCENCE;
     }
     private boolean declaracionPrevia;
     private boolean solicitudLicencia;
@@ -16,6 +19,7 @@ public class Evento {
     private Eccom eccom;
     private Tipologia tipologia;
     private TipoEvento tipo;
+    private SubtipoEvento subtipo;
     private String nOrganizadores;
     private String nTecnicos;
 
@@ -31,6 +35,12 @@ public class Evento {
     }
     public TipoEvento getTipo() {
         return tipo;
+    }
+    public void setSubtipo(SubtipoEvento subtipo) {
+        this.subtipo = subtipo;
+    }
+    public SubtipoEvento getSubtipo() {
+        return subtipo;
     }
 
     public void setDatosOrganizadorPersona(String nOrganizadores, String nif, String apellidos, String nombre,

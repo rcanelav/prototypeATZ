@@ -1,25 +1,26 @@
 package ventanas.paneles;
 
 import javax.swing.*;
+import negocio.Evento.SubtipoEvento;
+import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.awt.*;
-public class PCultural extends JPanel  {
-
+public class PCultural extends JPanel implements ActionListener  {
     private static final long serialVersionUID = 1L;
-    protected JFrame ventanaPrincipal = null;
-    protected PPrincipal panelPrincipal = null;
     GridBagConstraints grid = new Grid();
-    private JButton botonFeria;
-    private JButton botonCinematografico;
-    private JButton botonExhibicion;
+    private BotonPrincipal botonFeria;
+    private BotonPrincipal botonCinematografico;
+    private BotonPrincipal botonExhibicion;
     private String texto;
 
     public PCultural(){
         colocarTextoArtistico();
         colocarBotones();
+        setVisible(true);
     }
 
     @Override
@@ -35,7 +36,6 @@ public class PCultural extends JPanel  {
         texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
         grid = new Grid(0, 0, 2, -80, 0);
-        
         this.add(textoTitulo, grid);
 
         texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  "+
@@ -71,18 +71,36 @@ public class PCultural extends JPanel  {
 
     private void colocarBotones(){
         botonCinematografico = new BotonPrincipal("CINEMATOGRÁFICO");
-        //botonCinematografico.addActionListener(this);
+        botonCinematografico.addActionListener(this);
         grid = new Grid(0, 3, 0, 20, 30, 40, 30);
         this.add(botonCinematografico, grid);
 
          botonFeria = new BotonPrincipal("FERIA");
-        // botonFeria.addActionListener(this);
+        botonFeria.addActionListener(this);
         grid = new Grid(1, 3, 0, 20, 50, 180, 30);
         this.add(botonFeria, grid);
 
         botonExhibicion = new BotonPrincipal("EXHIBICIÓN");
-        // botonExhibicion.addActionListener(this);
+        botonExhibicion.addActionListener(this);
         grid = new Grid(0, 5, 2, 20, 0, 180, 30);
         this.add(botonExhibicion, grid);
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        if(e.getSource() == botonCinematografico){
+            frame.getEvento().setSubtipo(SubtipoEvento.CINEMATOGRAFICO);
+            JOptionPane.showMessageDialog(null, "Establecido el subtipo como CINEMATOGRAFICO - WIP");
+        }
+        else if(e.getSource() == botonFeria){
+            frame.getEvento().setSubtipo(SubtipoEvento.FERIA);
+            JOptionPane.showMessageDialog(null, "Establecido el subtipo como FERIA - WIP");
+        }else if(e.getSource() == botonExhibicion){
+            frame.getEvento().setSubtipo(SubtipoEvento.EXHIBICION);
+            JOptionPane.showMessageDialog(null, "Establecido el subtipo como EXHIBICION - WIP");
+        }
+    }
 }
+
+

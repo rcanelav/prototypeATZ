@@ -175,6 +175,21 @@ public class PFormularioPersona extends PFormulario {
         this.add(textoCoberturaSeguro, grid);
         grid = new Grid(2, 13, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
+
+        textoNOrganizadores.setText("2");
+        textoNif.setText("986574127");
+        textoApellidos.setText("Valbuena Blake");
+        textoNombre.setText("Kensington");
+        textoDireccion.setText("Avenida del ejercito");
+        textoPoblacion.setText("A CORUÑA");
+        textoProvincia.setText("Crunha");
+        textoTelefono.setText("3122356623");
+        textoMovil.setText("3122356623");
+        textoEmail.setText("estoesunaprueba@proyecto.com");
+        textoEpigrafe.setText("epigrafe");
+        textoPolizaSeguro.setText("amanecer");
+        textoCoberturaSeguro.setText("600000");
+
     }
     @Override
     public boolean validar(){

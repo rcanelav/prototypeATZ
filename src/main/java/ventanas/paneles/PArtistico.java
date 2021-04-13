@@ -1,29 +1,25 @@
 package ventanas.paneles;
 
 import javax.swing.*;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyledDocument;
-
+import negocio.Evento.SubtipoEvento;
+import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
-
+import ventanas.elementos.Grid;
+import ventanas.elementos.PanelTexto;
 import java.awt.*;
-
-public class PArtistico extends JPanel  {
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+public class PArtistico extends JPanel implements ActionListener {
     private static final long serialVersionUID = 1L;
-    protected JFrame ventanaPrincipal = null;
-    protected PPrincipal panelPrincipal = null;
-    GridBagConstraints gridBagConstraints = new GridBagConstraints();
-    private JButton botonMusical;
-    private JButton botonTeatral;
-    private JLabel lblTitulo;
-    private JTextPane textoLey;
-    private JTextPane textoMusical;
-    private JTextPane textoTeatral;
+    GridBagConstraints grid = new Grid();
+    private BotonPrincipal botonMusical;
+    private BotonPrincipal botonTeatral;
+    private String texto;
 
     public PArtistico(){
         colocarTextoArtistico();
         colocarBotones();
+        setVisible(true);
     }
 
     @Override
@@ -34,118 +30,64 @@ public class PArtistico extends JPanel  {
     }
 
     private void colocarTextoArtistico() {
-        lblTitulo = new JLabel();
-        textoLey = new JTextPane();
-        textoTeatral = new JTextPane();
-        textoMusical = new JTextPane();
-        botonTeatral = new JButton();
-        botonMusical = new JButton();
         this.setLayout(new GridBagLayout());
 
-        lblTitulo.setBorder(null);
-        lblTitulo.setFont(new Font("Arial", 0, 28)); 
-        lblTitulo.setText("DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA");
-        //lblTitulo.setMinimumSize(new Dimension(484, 500));
-        //lblTitulo.setPreferredSize(new Dimension(1000, 400));
-        lblTitulo.setOpaque(false);
-        lblTitulo.setRequestFocusEnabled(false);
-        lblTitulo.setBackground(Color.black);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 34;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(80, 300, 0, 0);
-        add(lblTitulo, gridBagConstraints);
+        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        grid = new Grid(0, 0, 2, -200, 0);
+        grid.fill = SwingConstants.HORIZONTAL;
+        this.add(textoTitulo, grid);
 
-        textoLey.setEditable(false);
-        textoLey.setBorder(null);
-        textoLey.setFont(new Font("Arial", 0, 24)); 
-        textoLey.setText("Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo  de espectáculos  públicos,  actividades  recreativas  y  establecementos  abiertos  al público  de la  Comunidad  Autónoma  de  Galicia y  se  establecen  determinadas disposiciones geraless de aplicación en la materia.");
-       // textoLey.setMinimumSize(new Dimension(350, 200));
-        //textoLey.setPreferredSize(new Dimension(350, 200));
-        textoLey.setOpaque(false);
-        textoLey.setRequestFocusEnabled(false);
-        centrarTexto(textoLey);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.ipadx = 1005;
-        gridBagConstraints.ipady = 127;
-        //gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(31, 71, 0, 100);
-        add(textoLey, gridBagConstraints);
+        texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo"+
+                "  de espectáculos  públicos,  actividades  recreativas  y  establecementos  abiertos"+
+                " al público  de la  Comunidad  Autónoma  de  Galicia y  se  establecen  determinadas "+
+                "disposiciones geraless de aplicación en la materia.";
+        PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
+        grid = new Grid(0, 1, 2, -50, 0);
+        grid.fill = SwingConstants.HORIZONTAL;
+        this.add(textoLey, grid);
 
-        textoTeatral.setEditable(false);
-        textoTeatral.setBorder(null);
-        textoTeatral.setFont(new Font("Arial", 0, 16)); 
-        textoTeatral.setText("Representación pública de obras teatrales, artísticas o escénicas, mediante la utilización, aislada o conjuntamente, del lenguaje, de la mímica, de la música, del cómic, de marionetas u otros objetos a cargo de artistas, intérpretes o ejecutantes, sean o no profesionales, en establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.");
-       // textoTeatral.setMinimumSize(new Dimension(204, 74));
-        textoTeatral.setOpaque(false);
-       // textoTeatral.setPreferredSize(new Dimension(400, 130));
-        textoTeatral.setRequestFocusEnabled(false);
-        centrarTexto(textoTeatral);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 415;
-        gridBagConstraints.ipady = 178;
-       // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-60, 125, 0, 0);
-        add(textoTeatral, gridBagConstraints);
-        
-        textoMusical.setEditable(false);
-        textoMusical.setBorder(null);
-        textoMusical.setFont(new Font("Arial", 0, 16)); 
-        textoMusical.setText("Ejecución o representación pública de obras o composiciones musicales, operísticas o de danza, mediante la utilización, aislada o conjuntamente, de instrumentos musicales, música grabada y enviada por medios mecánicos o de la voz humana a cargo de artistas, intérpretes o ejecutantes, profesionales u personas aficionadas, en establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.");
-       // textoMusical.setMinimumSize(new Dimension(204, 74));
-        textoMusical.setOpaque(false);
-       // textoMusical.setPreferredSize(new Dimension(400, 130));
-        textoMusical.setRequestFocusEnabled(false);
-        centrarTexto(textoMusical);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 385;
-        gridBagConstraints.ipady = 178;
-       // gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-60, 91, 0, 0);
-        add(textoMusical, gridBagConstraints);
+        texto = "Representación pública de obras teatrales, artísticas o escénicas, mediante la utilización, "+
+                "aislada o conjuntamente, del lenguaje, de la mímica, de la música, del cómic, de marionetas u"+
+                " otros objetos a cargo de artistas, intérpretes o ejecutantes, sean o no profesionales, en "+
+                "establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.";
+        PanelTexto textoTeatral = new PanelTexto(texto, 0, 18, 500, 105);
+        grid = new Grid(0, 2, 0, 0, 50);
+        this.add(textoTeatral, grid);
+
+        texto = "Ejecución o representación pública de obras o composiciones musicales, operísticas o de "+
+                "danza, mediante la utilización, aislada o conjuntamente, de instrumentos musicales, música"+
+                " grabada y enviada por medios mecánicos o de la voz humana a cargo de artistas, intérpretes "+
+                "o ejecutantes, profesionales u personas aficionadas, en establecimientos cerrados o al aire "+
+                "libre, debidamente acondicionados y habilitados para eso.";
+        PanelTexto textoMusical = new PanelTexto(texto, 0, 18, 500, 105);
+        grid = new Grid(1, 2, 0, 0, 10);
+        this.add(textoMusical, grid);
     }
 
     private void colocarBotones(){
         botonTeatral = new BotonPrincipal("TEATRAL");
-        //botonTeatral.addActionListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-100, 294, 176, 0);
-        add(botonTeatral, gridBagConstraints);
+        botonTeatral.addActionListener(this);
+        grid = new Grid(0, 3, 0, 30, 50, 40, 30);
+        this.add(botonTeatral, grid);
 
-         botonMusical = new BotonPrincipal("MUSICAL");
-        // botonMusical.addActionListener(this);
-        gridBagConstraints = new GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new Insets(-105, 239, 176, 0);
-        add(botonMusical, gridBagConstraints);
+
+        botonMusical = new BotonPrincipal("MUSICAL");
+        botonMusical.addActionListener(this);
+        grid = new Grid(1, 3, 0, 30, 10, 40, 30);
+        this.add(botonMusical, grid);
     }
 
-    void centrarTexto(JTextPane texto){
-        StyledDocument parrafo = texto.getStyledDocument();
-        SimpleAttributeSet center = new SimpleAttributeSet();
-        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
-        parrafo.setParagraphAttributes(0, parrafo.getLength(), center, false);
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        if(e.getSource() == botonTeatral){
+            frame.getEvento().setSubtipo(SubtipoEvento.TEATRAL);
+            JOptionPane.showMessageDialog(null, "Establecido el subtipo como TEATRAL - WIP");
+        }
+        else if(e.getSource() == botonMusical){
+            frame.getEvento().setSubtipo(SubtipoEvento.MUSICAL);
+            JOptionPane.showMessageDialog(null, "Establecido el subtipo como MUSICAL - WIP");
+        }
     }
 }

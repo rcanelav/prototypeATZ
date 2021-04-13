@@ -10,7 +10,10 @@ public class VentanaPrincipal extends JFrame {
     private static final long serialVersionUID = 1L;
     Pidioma pIdioma = new Pidioma();
     PCultural pCultural = new PCultural();
+    PDeportivo pDeportivo = new PDeportivo();
     PDatosTecnico pDatosTecnico = new PDatosTecnico();
+    PArtistico pArtistico = new PArtistico();
+    PAnalogo pAnalogo = new PAnalogo();
     Evento  evento;
     
     public VentanaPrincipal(){
@@ -31,9 +34,12 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.getContentPane().add(pIdioma);
+        // this.getContentPane().add(pAnalogo);
         // this.getContentPane().add(pDatosOrganizador);
         // this.getContentPane().add(pDatosTecnico);
         // this.getContentPane().add(pCultural);
+        // this.getContentPane().add(pDeportivo);
+        // this.getContentPane().add(pArtistico);
         evento = new Evento();
     }
 
