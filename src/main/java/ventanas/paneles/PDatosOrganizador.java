@@ -110,33 +110,36 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
 
         if (evento.getSource() == botonSiguiente) {
             VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            boolean isValid = false;
             if (rbPersona.isSelected()) {
                if(validarFormulario(pFormularioPersona)){
                     pFormularioPersona.grabarDatos(frame.getEvento());
+                    isValid = true;
                }
             } else if (rbJuridico.isSelected()) {
                 if(validarFormulario(pFormularioJuridico)){
                     pFormularioJuridico.grabarDatos(frame.getEvento());
+                    isValid = true;
                 }
-
             } else if (rbEccom.isSelected()){
-                if(validarFormulario(pFormularioEccom))
+                if(validarFormulario(pFormularioEccom)){
                     pFormularioEccom.grabarDatos(frame.getEvento());
-
+                    isValid = true;
+                }
             }
-            pDatosTecnico = new PDatosTecnico();
-            frame.add(pDatosTecnico);
-            this.setVisible(false);
+            if(isValid){
+                pDatosTecnico = new PDatosTecnico();
+                frame.add(pDatosTecnico);
+                this.setVisible(false);
+            }
         }
     }
     
     public boolean validarFormulario(PFormulario formulario){
-        if(formulario.validar()){
-            JOptionPane.showMessageDialog(null, "SALTAR A PANEL TECNICO");
-            return true;
-        }else{
+        if(!formulario.validar()){
             JOptionPane.showMessageDialog(null, "DEBE COMPLETAR VALIDAMENTE TODOS LOS CAMPOS");
-            return false;
+            return false; 
         }
+        return true;
     }
 }

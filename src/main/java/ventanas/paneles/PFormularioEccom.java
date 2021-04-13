@@ -232,7 +232,7 @@ public class PFormularioEccom extends PFormulario {
                                         textoEmail.getText(), textoRepresentante.getText(),
                                         textoHabilitacion.getText(), textoAlcanceCertificacion.getText(),
                                         textoPolizaSeguro.getText(), textoCoberturaSeguro.getText());
-        System.out.println(evento);
+        // System.out.println(evento);
     }
 }
 

@@ -84,9 +84,9 @@ public class Juridico {
         sb.append("POBLACION: " + getPoblacion() + "\n");
         sb.append("PROVINCIA: " + getProvincia() + "\n");
         sb.append("TELEFONO: " + getTelefono() + "\n");
-        sb.append("MOVIL: : " + getMovil() + "\n");
-        sb.append("EMAIL: : " + getEmail() + "\n");
-        sb.append("REPRESENTANTE: : " + getRepresentante() + "\n");
+        sb.append("MOVIL: " + getMovil() + "\n");
+        sb.append("EMAIL: " + getEmail() + "\n");
+        sb.append("REPRESENTANTE: " + getRepresentante() + "\n");
         
         return sb.toString();
     }

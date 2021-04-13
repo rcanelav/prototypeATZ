@@ -80,22 +80,25 @@ public class PDatosTecnico extends JPanel implements ActionListener {
             pFormularioTecnico.setVisible(false);
         else if(e.getSource() == botonSiguiente){
             VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+            boolean isValid = false;
             if(tecnico.isSelected()){
                 if(validarFormulario(pFormularioTecnico)){
                     pFormularioTecnico.grabarDatos(frame.getEvento());
+                    isValid = true;
                 }
             }
+            if(isValid){
+                JOptionPane.showMessageDialog(null, "EN CONSTRUCCIÓN... \n REVISAR TERMINAL");
+            }
         }
+        
     }
 
     public boolean validarFormulario(PFormulario formulario){
-        if(formulario.validar()){
-            JOptionPane.showMessageDialog(null, "SALTAR SIGUIENTE PANEL");
-            return true;
-        }else{
+        if(!formulario.validar()){
             JOptionPane.showMessageDialog(null, "DEBE COMPLETAR VALIDAMENTE TODOS LOS CAMPOS");
-            return false;
+            return false; 
         }
+        return true;
     }
-
 }
