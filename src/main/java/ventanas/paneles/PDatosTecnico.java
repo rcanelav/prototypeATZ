@@ -36,13 +36,13 @@ public class PDatosTecnico extends JPanel implements ActionListener {
     }
 
     private void radioButtons(){
-        tecnico = new JRadioButton("Sí, hay técnico.");
-        noTecnico = new JRadioButton("No, no hay técnico.");
+        tecnico = new JRadioButton("Responsable del desarrollo del espectáculo");
+        noTecnico = new JRadioButton("Responsable del proyecto técnico adjunto");
         radioButtons = new ButtonGroup();
         radioButtons.add(tecnico);
         radioButtons.add(noTecnico);
 
-        JLabel titulo = new LabelFormulario("¿El evento a realizar posee técnico?");
+        JLabel titulo = new LabelFormulario("TÉCNICO COMPETENTE");
         titulo.setHorizontalAlignment(0);
         titulo.setFont(new Font("Arial", 1, 16));
         grid = new Grid(3, 0, 3, 0, -0);
@@ -123,7 +123,7 @@ public class PDatosTecnico extends JPanel implements ActionListener {
 
     public boolean validarFormulario(PFormulario formulario){
         if(!formulario.validar()){
-            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR VALIDAMENTE TODOS LOS CAMPOS");
+            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
             return false; 
         }
         return true;

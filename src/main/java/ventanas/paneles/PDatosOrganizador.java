@@ -41,24 +41,24 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         radiobuttons.add(rbEccom);
         this.setLayout(new GridBagLayout());
 
-        JLabel titulo = new JLabel("ORGANIZADO POR", 0);
+        JLabel titulo = new JLabel("TRÁMITE REALIZADO POR", 0);
         grid = new Grid(2, 0, 0, -50, 0);
         this.add(titulo, grid);
 
-        rbPersona.setText("Persona");
+        rbPersona.setText("Persona física");
         rbPersona.setOpaque(false);
         rbPersona.setSelected(true);
         rbPersona.addActionListener(this);
         grid = new Grid(1, 1, 0, 0, 0);
         this.add(rbPersona, grid);
         
-        rbJuridico.setText("Juridico");
+        rbJuridico.setText("Persona jurídica");
         rbJuridico.setOpaque(false);
         rbJuridico.addActionListener(this);
         grid = new Grid(2, 1, 0, 0, 0);
         this.add(rbJuridico, grid);
         
-        rbEccom.setText("ECCOM");
+        rbEccom.setText("Entidad de Certificación de Conformidad Municipal");
         rbEccom.setOpaque(false);
         rbEccom.addActionListener(this);
         grid = new Grid(3, 1, 0, 0, 0);
@@ -137,7 +137,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
     
     public boolean validarFormulario(PFormulario formulario){
         if(!formulario.validar()){
-            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR VALIDAMENTE TODOS LOS CAMPOS");
+            JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
             return false; 
         }
         return true;

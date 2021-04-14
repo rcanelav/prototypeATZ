@@ -5,6 +5,7 @@ public class Eccom extends Juridico {
     private String habilitacion;
     private String alcanceCertificacion;
     private String polizaSeguro;
+    private String numeroSeguro;
     private String coberturaSeguro;
 
     public Eccom(){
@@ -32,7 +33,12 @@ public class Eccom extends Juridico {
     public String getPolizaSeguro() {
         return polizaSeguro;
     }
-
+    public void setNumeroSeguro(String numeroSeguro) {
+        this.numeroSeguro = numeroSeguro;
+    }
+    public String getNumeroSeguro() {
+        return numeroSeguro;
+    }
     public void setCoberturaSeguro(String coberturaSeguro) {
         this.coberturaSeguro = coberturaSeguro;
     }
@@ -43,7 +49,7 @@ public class Eccom extends Juridico {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-5s %-5s", "HABILITACION: ", getHabilitacion() + "\n"));
+        //sb.append(String.format("%-5s %-5s", "HABILITACION: ", getHabilitacion() + "\n"));
         sb.append(String.format("%-5s %-5s", "ALCANCE CERTIFICACION: ", getAlcanceCertificacion() + "\n"));
         sb.append(String.format("%-5s %-5s", "POLIZA: ", getPolizaSeguro() + "\n"));
         sb.append(String.format("%-5s %-5s", "COBERTURA: ", getCoberturaSeguro() + " euros\n"));
