@@ -9,10 +9,10 @@ public class Evento {
         TEATRAL, MUSICAL, CINEMATOGRAFICO, FERIA, EXHIBICION, DEPORTIVO,
         PIROTECNICO, TAURINO, CIRCENCE;
     }
-    private boolean declaracionPrevia;
-    private boolean solicitudLicencia;
-    private boolean solicitudLicenciaUrbanistica;
-    private Date fecha;
+    // private boolean declaracionPrevia;
+    // private boolean solicitudLicencia;
+    // private boolean solicitudLicenciaUrbanistica;
+    // private Date fecha;
     private PromotorEmpresa pJuridico;
     private PromotorPersona pPersona;
     private Tecnico tecnico;
@@ -21,6 +21,7 @@ public class Evento {
     private TipoEvento tipo;
     private SubtipoEvento subtipo;
     private String nOrganizadores;
+    private String nRegistro;
     private String nTecnicos;
 
     public Evento(){
@@ -88,8 +89,8 @@ public class Evento {
 
     public void setDatosOrganizadorEccom(String nRegistro, String cif, String razonSocial,
                                          String direccion, String poblacion, String provincia, String telefono,
-                                         String movil, String email, String representante, String habilitacion,
-                                         String alcanceCertificacion, String polizaSeguro, String numeroSeguro,
+                                         String movil, String email, String representante, String numeroSeguro,
+                                         String alcanceCertificacion, String polizaSeguro, 
                                          String coberturaSeguro){
         eccom = new Eccom();
         this.nRegistro = nRegistro; 
@@ -102,10 +103,9 @@ public class Evento {
         eccom.setMovil(movil);
         eccom.setEmail(email);
         eccom.setRepresentante(representante);
-        eccom.setHabilitacion(habilitacion);
+        eccom.setNumeroSeguro(numeroSeguro);
         eccom.setAlcanceCertificacion(alcanceCertificacion);
         eccom.setPolizaSeguro(polizaSeguro);
-        eccom.setNumeroSeguro(numeroSeguro);
         eccom.setCoberturaSeguro(coberturaSeguro);
     }
 

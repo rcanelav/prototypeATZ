@@ -6,10 +6,10 @@ import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.*;
-public class PCultural extends JPanel implements ActionListener  {
+
+public class PCultural extends PFondoStandard {
     private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
     private BotonPrincipal botonFeria;
@@ -21,13 +21,6 @@ public class PCultural extends JPanel implements ActionListener  {
         colocarTextoArtistico();
         colocarBotones();
         setVisible(true);
-    }
-
-    @Override
-    public void paintComponent(Graphics g){
-        super.paintComponent(g);
-        ImageIcon img = new ImageIcon("src/main/java/imagenes/fondo.jpg");
-        g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
     }
 
     private void colocarTextoArtistico() {

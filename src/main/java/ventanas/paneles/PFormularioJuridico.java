@@ -187,6 +187,22 @@ public class PFormularioJuridico extends PFormulario {
         this.add(textoCoberturaSeguro, grid);
         grid = new Grid(2, 14, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
+
+
+        textoNOrganizadores.setText("2");
+        textoCif.setText("986574127");
+        textoRazonSocial.setText("Valbuena Blake");
+        textoDireccion.setText("Avenida del ejercito");
+        textoPoblacion.setText("A CORUÑA");
+        textoProvincia.setText("Crunha");
+        textoTelefono.setText("3122356623");
+        textoMovil.setText("3122356623");
+        textoEmail.setText("estoesunaprueba@proyecto.com");
+        textoRepresentante.setText("Pedro Bol");
+        textoEpigrafe.setText("ASD832");
+        textoPolizaSeguro.setText("amanecer");
+        textoNumeroSeguro.setText("AB8342");
+        textoCoberturaSeguro.setText("600000");
     }
     @Override
     public boolean validar(){

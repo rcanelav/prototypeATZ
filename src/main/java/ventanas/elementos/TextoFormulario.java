@@ -12,6 +12,8 @@ import java.awt.event.FocusListener;
 public class TextoFormulario extends JTextField implements FocusListener{
     private IconoError iconoError;
     private TipoTextoFormulario tipo;
+    private boolean esObligatorio;
+
     public enum TipoTextoFormulario {
         ALFABETICO, NUMERICO, NIF, EMAIL;
     }
@@ -22,9 +24,17 @@ public class TextoFormulario extends JTextField implements FocusListener{
         setBorder(new LineBorder(Color.BLACK, 1));
         setCursor(new Cursor(Cursor.TEXT_CURSOR));
         tipo = TipoTextoFormulario.ALFABETICO;
+        esObligatorio = true;
         addFocusListener(this);
     }
     
+    public void setEsObligatorio(boolean esObligatorio) {
+        this.esObligatorio = esObligatorio;
+    }
+    public boolean getEsObligatorio() {
+        return esObligatorio;
+    }
+
     public TextoFormulario(String tooltip, 
                            TipoTextoFormulario tipo,
                            String errorTooltip){
@@ -47,8 +57,14 @@ public class TextoFormulario extends JTextField implements FocusListener{
     }
 
     public boolean validarInput(){
-        if (getText().isBlank())
-            return false;
+        if (!isEnabled())
+            return true;
+        if (getText().isBlank()) {
+            if (getEsObligatorio())
+                return false;
+            else
+                return true;
+        }
         if (getText().length() > 100)
             return false;
         switch(tipo){

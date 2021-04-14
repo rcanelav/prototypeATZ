@@ -19,7 +19,6 @@ public class PFormularioEccom extends PFormulario {
     private TextoFormulario textoMovil;
     private TextoFormulario textoEmail;
     private TextoFormulario textoRepresentante;
-    //private TextoFormulario textoHabilitacion;
     private TextoFormulario textoAlcanceCertificacion;
     private TextoFormulario textoPolizaSeguro;
     private TextoFormulario textoNumeroSeguro;
@@ -144,17 +143,6 @@ public class PFormularioEccom extends PFormulario {
         grid = new Grid(2, 10, 0, 10, 4);
         this.add(textoRepresentante.getIconoError(), grid);
 
-       /*LabelFormulario lblHabilitacion = new LabelFormulario("HABILITACIÓN");
-        grid = new Grid(1, 11, 0, 10, 0);
-        this.add(lblHabilitacion, grid);
-        textoHabilitacion = new TextoFormulario("Indique su habilitación.",
-                                                TipoTextoFormulario.ALFABETICO,
-                                                "Debe ingresar una habilitación válida.");
-        grid = new Grid(1, 11, 0, 10, 250);
-        this.add(textoHabilitacion, grid);
-        grid = new Grid(2, 11, 0, 10, 4);
-        this.add(textoHabilitacion.getIconoError(), grid);*/
-
         LabelFormulario lblAlcanceCertificacion = new LabelFormulario("ALCANCE CERTIFICACIÓN");
         grid = new Grid(1, 12, 0, 10, 0);
         this.add(lblAlcanceCertificacion, grid);
@@ -198,6 +186,21 @@ public class PFormularioEccom extends PFormulario {
         this.add(textoCoberturaSeguro, grid);
         grid = new Grid(2, 15, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
+
+        textoNRegistro.setText("2");
+        textoCif.setText("986574127");
+        textoRazonSocial.setText("Valbuena Blake");
+        textoDireccion.setText("Avenida del ejercito");
+        textoPoblacion.setText("A CORUÑA");
+        textoProvincia.setText("Crunha");
+        textoTelefono.setText("3122356623");
+        textoMovil.setText("3122356623");
+        textoEmail.setText("estoesunaprueba@proyecto.com");
+        textoRepresentante.setText("Pedro Bol");
+        textoAlcanceCertificacion.setText("asdasd");
+        textoPolizaSeguro.setText("amanecer");
+        textoNumeroSeguro.setText("AB8342");
+        textoCoberturaSeguro.setText("600000");
     }
 
     @Override
@@ -224,8 +227,6 @@ public class PFormularioEccom extends PFormulario {
             valido = false;
         if(!textoRepresentante.validar())
             valido = false;
-        //if(!textoHabilitacion.validar())
-            //valido = false;
         if(!textoAlcanceCertificacion.validar())
             valido = false;
         if(!textoPolizaSeguro.validar())
@@ -244,8 +245,8 @@ public class PFormularioEccom extends PFormulario {
                                         textoPoblacion.getText(), textoProvincia.getText(),
                                         textoTelefono.getText(), textoMovil.getText(),
                                         textoEmail.getText(), textoRepresentante.getText(),
-                                        /*textoHabilitacion.getText(),*/ textoAlcanceCertificacion.getText(),
-                                        textoPolizaSeguro.getText(), textoNumeroSeguro.getText(),
+                                        textoNumeroSeguro.getText(), textoAlcanceCertificacion.getText(),
+                                        textoPolizaSeguro.getText(), 
                                         textoCoberturaSeguro.getText());
         // System.out.println(evento);
     }

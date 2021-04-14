@@ -200,6 +200,7 @@ public class PFormularioPersona extends PFormulario {
         textoEmail.setText("estoesunaprueba@proyecto.com");
         textoEpigrafe.setText("epigrafe");
         textoPolizaSeguro.setText("amanecer");
+        textoNumeroSeguro.setText("ASB84");
         textoCoberturaSeguro.setText("600000");
 
     }
