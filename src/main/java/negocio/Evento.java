@@ -36,7 +36,7 @@ public class Evento {
     public void setDatosOrganizadorPersona(String nOrganizadores, String nif, String apellidos, String nombre,
                                            String direccion, String poblacion, String provincia, String telefono,
                                            String movil, String email, String epigrafeIAE, String polizaSeguro,
-                                           String coberturaSeguro){
+                                           String numeroSeguro, String coberturaSeguro){
         pPersona = new PromotorPersona();
         this.nOrganizadores = nOrganizadores;
         pPersona.setNif(nif);
@@ -50,13 +50,15 @@ public class Evento {
         pPersona.setEmail(email);
         pPersona.setEpigrafeIAE(epigrafeIAE);
         pPersona.setPolizaSeguro(polizaSeguro);
+        pPersona.setNumeroSeguro(numeroSeguro);
         pPersona.setCoberturaSeguro(coberturaSeguro);
     }
 
     public void setDatosOrganizadorJuridico(String nOrganizadores, String cif, String razonSocial,
                                             String direccion, String poblacion, String provincia, String telefono,
                                             String movil, String email, String representante, String epigrafe,
-                                            String polizaSeguro, String coberturaSeguro){
+                                            String polizaSeguro, String numeroSeguro,
+                                            String coberturaSeguro){
         pJuridico = new PromotorEmpresa();
         this.nOrganizadores = nOrganizadores; 
         pJuridico.setCif(cif);               
@@ -70,15 +72,17 @@ public class Evento {
         pJuridico.setRepresentante(representante);
         pJuridico.setEpigrafe(epigrafe);
         pJuridico.setPolizaSeguro(polizaSeguro);
+        pJuridico.setNumeroSeguro(numeroSeguro);
         pJuridico.setCoberturaSeguro(coberturaSeguro);
     }
 
-    public void setDatosOrganizadorEccom(String nOrganizadores, String cif, String razonSocial,
+    public void setDatosOrganizadorEccom(String nRegistro, String cif, String razonSocial,
                                          String direccion, String poblacion, String provincia, String telefono,
                                          String movil, String email, String representante, String habilitacion,
-                                         String alcanceCertificacion, String polizaSeguro, String coberturaSeguro){
+                                         String alcanceCertificacion, String polizaSeguro, String numeroSeguro,
+                                         String coberturaSeguro){
         eccom = new Eccom();
-        this.nOrganizadores = nOrganizadores; 
+        this.nRegistro = nRegistro; 
         eccom.setCif(cif);               
         eccom.setRazonSocial(razonSocial);
         eccom.setDireccion(direccion);               
@@ -91,12 +95,14 @@ public class Evento {
         eccom.setHabilitacion(habilitacion);
         eccom.setAlcanceCertificacion(alcanceCertificacion);
         eccom.setPolizaSeguro(polizaSeguro);
+        eccom.setNumeroSeguro(numeroSeguro);
         eccom.setCoberturaSeguro(coberturaSeguro);
     }
 
     public void setDatosTecnico(String nTecnicos, String nif, String apellidos, String nombre, String direccion,
                                 String poblacion, String provincia, String telefono, String movil, String email,
-                                boolean certificado, String otraTitulacion, String polizaSeguro, String coberturaSeguro){
+                                boolean certificado, String otraTitulacion, String polizaSeguro, String numeroSeguro,
+                                String coberturaSeguro){
         tecnico = new Tecnico();
         this.nTecnicos = nTecnicos;
         tecnico.setNif(nif);
@@ -111,6 +117,7 @@ public class Evento {
         tecnico.setCertificado(certificado);
         tecnico.setOtraTitulacion(otraTitulacion);
         tecnico.setPolizaSeguro(polizaSeguro);
+        tecnico.setNumeroSeguro(numeroSeguro);
         tecnico.setCoberturaSeguro(coberturaSeguro);
     }
 

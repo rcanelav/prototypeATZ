@@ -4,6 +4,7 @@ public class PromotorEmpresa extends Juridico{
     private static final long serialVersionUID = 1L;
     private String epigrafeIAE;
     private String polizaSeguro;
+    private String numeroSeguro;
     private String coberturaSeguro;
 
     public PromotorEmpresa(){
@@ -17,12 +18,17 @@ public class PromotorEmpresa extends Juridico{
     public String getEpigrafe() {
         return epigrafeIAE;
     }
-
     public void setPolizaSeguro(String polizaSeguro) {
         this.polizaSeguro = polizaSeguro;
     }
     public String getPolizaSeguro() {
         return polizaSeguro;
+    }
+    public void setNumeroSeguro(String numeroSeguro) {
+        this.numeroSeguro = numeroSeguro;
+    }
+    public String getNumeroSeguro() {
+        return numeroSeguro;
     }
     public void setCoberturaSeguro(String coberturaSeguro) {
         this.coberturaSeguro = coberturaSeguro;

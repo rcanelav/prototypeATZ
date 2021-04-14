@@ -27,6 +27,7 @@ public class PFormularioTecnico extends PFormulario {
     private JRadioButton titulacionNo;
     private TextoFormulario textoOtraTitulacion;
     private TextoFormulario textoPolizaSeguro;
+    private TextoFormulario textoNumeroSeguro;
     private TextoFormulario textoCoberturaSeguro;
     ButtonGroup radioButtons;
     
@@ -39,68 +40,68 @@ public class PFormularioTecnico extends PFormulario {
 
     public void formulario(){
         
-        LabelFormulario lblNTecnicos = new LabelFormulario("Nº de Tecnicos");
+        LabelFormulario lblNTecnicos = new LabelFormulario("Nº TÉCNICOS");
         grid.anchor = GridBagConstraints.CENTER;
-        grid = new Grid(1, 1, 0, 0, -225);
+        grid = new Grid(1, 1, 0, 0, -300);
         this.add(lblNTecnicos, grid);
-        textoNTecnicos = new TextoFormulario("Indique el número de tecnicos del evento.", 
+        textoNTecnicos = new TextoFormulario("Indique el nº de técnicos responsables del desarrollo del espectáculo.", 
                                              TipoTextoFormulario.NUMERICO, 
-                                             "Ingrese un número válido.");
+                                             "Introduzca un número válido.");
         grid = new Grid(2, 1, 0, 0, 0);
         this.add(textoNTecnicos, grid);
         grid = new Grid(3, 1, 0, 0, 4);
         this.add(textoNTecnicos.getIconoError(), grid);
 
-        LabelFormulario lblNif = new LabelFormulario("NIF");
+        LabelFormulario lblNif = new LabelFormulario("NIF/ NIE/ OTRO");
         grid = new Grid(2, 2, 0, 10, -300);
         this.add(lblNif, grid);
-        textoNif = new TextoFormulario("Indique el NIF/NIE del Técnico del evento", 
+        textoNif = new TextoFormulario("Indique el NIF/ NIE/ OTRO del Técnico.", 
                                        TipoTextoFormulario.NIF,
-                                       "Indique un NIF/NIE válido.");
+                                       "Introduzca un NIF/NIE válido.");
         grid = new Grid(2, 2, 0, 10, 0);
         this.add(textoNif, grid);
         grid = new Grid(3, 2, 0, 10, 4);
         this.add(textoNif.getIconoError(), grid);  
 
-        LabelFormulario lblApellidos = new LabelFormulario("APELIDOS");
+        LabelFormulario lblApellidos = new LabelFormulario("APELLIDOS");
         grid = new Grid(2, 3, 0, 10, -300);
         this.add(lblApellidos, grid);
         textoApellidos = new TextoFormulario("Indique los apellidos del técnico del evento.", 
                                               TipoTextoFormulario.ALFABETICO,
-                                              "Indique unos apellidos válidos.");
+                                              "Introduzca unos apellidos válidos.");
         grid = new Grid(2, 3, 0, 10, 0);
         this.add(textoApellidos, grid);
         grid = new Grid(3, 3, 0, 10, 4);
         this.add(textoApellidos.getIconoError(), grid);
 
-        LabelFormulario lblNombre = new LabelFormulario("NOME");
+        LabelFormulario lblNombre = new LabelFormulario("NOMBRE");
         grid = new Grid(2, 4, 0, 10, -300);
         this.add(lblNombre, grid);
-        textoNombre = new TextoFormulario("Indique el nombre del técnico del evento.",
+        textoNombre = new TextoFormulario("Indique el nombre del técnico.",
                                           TipoTextoFormulario.ALFABETICO,
-                                          "Indique un nombre válido.");
+                                          "Introduzca un nombre válido.");
         grid = new Grid(2, 4, 0, 10, 0);
         this.add(textoNombre, grid);
         grid = new Grid(3, 4, 0, 10, 4);
         this.add(textoNombre.getIconoError(), grid);
 
-        LabelFormulario lblDireccion = new LabelFormulario("ENDEREZO");
+        LabelFormulario lblDireccion = new LabelFormulario("DIRECCIÓN");
         grid = new Grid(2, 5, 0, 10, -300);
         this.add(lblDireccion, grid);
-        textoDireccion = new TextoFormulario("Indique la dirección de contacto del técnico del evento.",
+        textoDireccion = new TextoFormulario("Indique la dirección de contacto del Técnico.",
                                              TipoTextoFormulario.ALFABETICO,
-                                             "Indique una dirección válida.");
+                                             "Introduzca una dirección válida.");
         grid = new Grid(2, 5, 0, 10, 0);
         this.add(textoDireccion, grid);
         grid = new Grid(3, 5, 0, 10, 4);
         this.add(textoDireccion.getIconoError(), grid);
 
-        LabelFormulario lblPoblacion = new LabelFormulario("POBOACIÓN");
+        LabelFormulario lblPoblacion = new LabelFormulario("POBLACIÓN");
         grid = new Grid(2, 6, 0, 10, -300);
         this.add(lblPoblacion, grid);
-        textoPoblacion = new TextoFormulario("Indique el nombre de la población del técnico del evento.", 
+        textoPoblacion = new TextoFormulario("Indique la población de la dirección del técnico.", 
                                              TipoTextoFormulario.ALFABETICO, 
-                                             "Indique un nombre de población válido.");
+                                             "Introduzca un nombre de población válido.");
         grid = new Grid(2, 6, 0, 10, 0);
         this.add(textoPoblacion, grid);
         grid = new Grid(3, 6, 0, 10, 4);
@@ -109,9 +110,9 @@ public class PFormularioTecnico extends PFormulario {
         LabelFormulario lblProvincia = new LabelFormulario("PROVINCIA");
         grid = new Grid(2, 7, 0, 10, -300);
         this.add(lblProvincia, grid);
-        textoProvincia = new TextoFormulario("Indique el nombre de la provincia del técnico del evento.", 
+        textoProvincia = new TextoFormulario("Indique la provincia de la dirección del técnico.", 
                                               TipoTextoFormulario.ALFABETICO,
-                                              "Indique un nombre de provincia válido.");
+                                              "Introduzca un nombre de provincia válido.");
         grid = new Grid(2, 7, 0, 10, 0);
         this.add(textoProvincia, grid);
         grid = new Grid(3, 7, 0, 10, 4);
@@ -120,45 +121,45 @@ public class PFormularioTecnico extends PFormulario {
         LabelFormulario lblTelefono = new LabelFormulario("TELÉFONO");
         grid = new Grid(2, 8, 0, 10, -300);
         this.add(lblTelefono, grid);
-        textoTelefono = new TextoFormulario("Indique el número de contacto del técnico del evento.", 
+        textoTelefono = new TextoFormulario("Indique el Tlf. de contacto del técnico.", 
                                              TipoTextoFormulario.NUMERICO,
-                                             "Indique un número de telefono válido. (Únicamente números)");
+                                             "Introduzca un número de telefono válido. (Únicamente números)");
         grid = new Grid(2, 8, 0, 10, 0);
         this.add(textoTelefono, grid);
         grid = new Grid(3, 8, 0, 10, 4);
         this.add(textoTelefono.getIconoError(), grid);  
 
-        LabelFormulario lblMovil = new LabelFormulario("MÓBIL");
+        LabelFormulario lblMovil = new LabelFormulario("MÓVIL");
         grid = new Grid(2, 9, 0, 10, -300);
         this.add(lblMovil, grid);
-        textoMovil = new TextoFormulario("Indique el número móvil de contacto del técnico del evento.",
+        textoMovil = new TextoFormulario("Indique el móvil de contacto del técnico.",
                                           TipoTextoFormulario.NUMERICO,
-                                          "Indique un número de móvil válido.");
+                                          "Introduzca un número de móvil válido.");
         grid = new Grid(2, 9, 0, 10, 0);
         this.add(textoMovil, grid);
         grid = new Grid(3, 9, 0, 10, 4);
         this.add(textoMovil.getIconoError(), grid);
 
-        LabelFormulario lblEmail = new LabelFormulario("E-MAIL");
+        LabelFormulario lblEmail = new LabelFormulario("CORREO-E");
         grid = new Grid(2, 10, 0, 10, -300);
         this.add(lblEmail, grid);
-        textoEmail = new TextoFormulario("Indique el e-mail del técnico del evento.", 
-        TipoTextoFormulario.EMAIL, 
-        "Ingresar email válido");
+        textoEmail = new TextoFormulario("Indique el correo-e del técnico.", 
+                                        TipoTextoFormulario.EMAIL, 
+                                        "Introduzca un correo-e válido");
         grid = new Grid(2, 10, 0, 10, 0);
         this.add(textoEmail, grid);
         grid = new Grid(3, 10, 0, 10, 4);
         this.add(textoEmail.getIconoError(), grid);
         
-        LabelFormulario lblTitulacion = new LabelFormulario("<html>TÉCNICO SUPERIOR EN<br/>PRODUCCIÓN DE EVENTOS");
+        LabelFormulario lblTitulacion = new LabelFormulario("Técnico Superio Producción Eespectáculos");
         lblTitulacion.setSize(0, 40);
         grid = new Grid(2, 11, 0, 10, -300);
         this.add(lblTitulacion, grid);
-        titulacionSi = new JRadioButton("Sí");
+        titulacionSi = new JRadioButton("SI");
         titulacionSi.setOpaque(false);
         grid = new Grid(2, 11, 0, 10, -100);
         this.add(titulacionSi, grid);
-        titulacionNo = new JRadioButton("No");
+        titulacionNo = new JRadioButton("NO");
         titulacionNo.setOpaque(false);
         titulacionNo.setSelected(true);
         grid = new Grid(2, 11, 0, 10, 100);
@@ -170,34 +171,45 @@ public class PFormularioTecnico extends PFormulario {
         LabelFormulario lblOtraTitulacion = new LabelFormulario("OTRA TITULACIÓN");
         grid = new Grid(2, 12, 0, 10, -300);
         this.add(lblOtraTitulacion, grid);
-        textoOtraTitulacion = new TextoFormulario("Indique si el técnico posee otra titulación.", 
+        textoOtraTitulacion = new TextoFormulario("Titulación de Grado Superior habilitante para producción de espectáculos", 
                                             TipoTextoFormulario.ALFABETICO,
-                                            "Ingrese una titulación válida.");
+                                            "Introduzca una titulación válida.");
         grid = new Grid(2, 12, 0, 10, 0);
         this.add(textoOtraTitulacion, grid);
         grid = new Grid(3, 12, 0, 10, 4);
         this.add(textoOtraTitulacion.getIconoError(), grid);
 
-        LabelFormulario lblPolizaSeguro = new LabelFormulario("PÓLIZA SEGURO");
+        LabelFormulario lblPolizaSeguro = new LabelFormulario("ENTIDAD ASEGURADORA");
         grid = new Grid(2, 13, 0, 10, -300);
         this.add(lblPolizaSeguro, grid);
-        textoPolizaSeguro = new TextoFormulario("Indique el nombre de la empresa que proporciona la Póliza de Seguro del técnico del evento.", 
+        textoPolizaSeguro = new TextoFormulario("Indique el nombre de la compañía proveedora del Seguro Profesional del técnico.", 
                                                  TipoTextoFormulario.ALFABETICO,
-                                                 "Ingrese un nombre de póliza válido.");
+                                                 "Introduzca un nombre de póliza válido.");
         grid = new Grid(2, 13, 0, 10, 0);
         this.add(textoPolizaSeguro, grid);
         grid = new Grid(3, 13, 0, 10, 4);
         this.add(textoPolizaSeguro.getIconoError(), grid);
 
-        LabelFormulario lblCoberturaSeguro = new LabelFormulario("COBERTURA (€)");
+        LabelFormulario lblNumeroSeguro = new LabelFormulario("NÚMERO PÓLIZA");
         grid = new Grid(2, 14, 0, 10, -300);
+        this.add(lblNumeroSeguro, grid);
+        textoNumeroSeguro = new TextoFormulario("Indique el nº de póliza del Seguro Profesional del técnico.", 
+                                                 TipoTextoFormulario.ALFABETICO,
+                                                 "Introduzca un nº de póliza válido.");
+        grid = new Grid(2, 14, 0, 10, 0);
+        this.add(textoNumeroSeguro, grid);
+        grid = new Grid(3, 14, 0, 10, 4);
+        this.add(textoNumeroSeguro.getIconoError(), grid);
+
+        LabelFormulario lblCoberturaSeguro = new LabelFormulario("COBERTURA (€)");
+        grid = new Grid(2, 15, 0, 10, -300);
         this.add(lblCoberturaSeguro, grid);
         textoCoberturaSeguro = new TextoFormulario("Indique la cantidad en euros de la cobertura de la póliza.", 
                                                    TipoTextoFormulario.NUMERICO,
                                                    "Ingrese una cantidad válida. (Sin caracteres especiales)");
-        grid = new Grid(2, 14, 0, 10, 0);
+        grid = new Grid(2, 15, 0, 10, 0);
         this.add(textoCoberturaSeguro, grid);
-        grid = new Grid(3, 14, 0, 10, 4);
+        grid = new Grid(3, 15, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
     }
 
@@ -228,6 +240,8 @@ public class PFormularioTecnico extends PFormulario {
             valido = false;    
         if(!textoPolizaSeguro.validar())
             valido = false;
+        if(!textoNumeroSeguro.validar())
+            valido = false;   
         if(!textoCoberturaSeguro.validar())
             valido = false;
         
@@ -241,7 +255,8 @@ public class PFormularioTecnico extends PFormulario {
                                textoProvincia.getText(), textoTelefono.getText(), 
                                textoMovil.getText(), textoEmail.getText(),
                                titulacionSi.isSelected(), textoOtraTitulacion.getText(),
-                               textoPolizaSeguro.getText(), textoCoberturaSeguro.getText());
+                               textoPolizaSeguro.getText(), textoNumeroSeguro.getText(),
+                               textoCoberturaSeguro.getText());
         System.out.println(evento);         
     }
 }

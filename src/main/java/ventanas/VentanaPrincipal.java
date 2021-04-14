@@ -24,8 +24,8 @@ public class VentanaPrincipal extends JFrame {
         setLocation(anchoPantalla/4, alturaPantalla/4);
         setVisible(true);
         setResizable(true);
-        setTitle("Espectaculos CFMMR");
-        Image miIcono = miPantalla.getImage("src/main/java/imagenes/SafeShow.png");
+        setTitle("Espectáculos públicos: Xestión/ Gestión Administrativa");
+        Image miIcono = miPantalla.getImage("src/main/java/imagenes/logo.png");
         setIconImage(miIcono);
         setLocationRelativeTo(null);  //opcional
         setDefaultCloseOperation(EXIT_ON_CLOSE);
