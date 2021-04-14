@@ -15,10 +15,6 @@ public class Evento {
     public enum Actividad {
         REPRESENTACION, EXHIBICION, ACTUACION, PROYECCION, COMPETICION, AUDICION;
     }
-    // private boolean declaracionPrevia;
-    // private boolean solicitudLicencia;
-    // private boolean solicitudLicenciaUrbanistica;
-    // private Date fecha;
     private PromotorEmpresa pJuridico;
     private PromotorPersona pPersona;
     private Tecnico tecnico;

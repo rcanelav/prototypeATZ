@@ -1,7 +1,6 @@
 package ventanas.paneles;
 
 import negocio.Evento.Actividad;
-import negocio.Evento.Caracter;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
@@ -18,6 +17,7 @@ public class PActividad extends PFondoStandard{
     private BotonPrincipal botonProyeccion;
     private BotonPrincipal botonCompeticion;
     private BotonPrincipal botonAudicion;
+    private PClasificacion  pClasificacion= null;
     private String texto;
     
     public PActividad(){
@@ -80,26 +80,44 @@ public class PActividad extends PFondoStandard{
         if(e.getSource() == botonRepresentacion){
             frame.getEvento().setTipoActividad(Actividad.REPRESENTACION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como REPRESENTACION - WIP");
+            pClasificacion = new PClasificacion();
+            frame.add(pClasificacion);
+            this.setVisible(false);
         }
         if(e.getSource() == botonExhibicion){
             frame.getEvento().setTipoActividad(Actividad.EXHIBICION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como EXHIBICION - WIP");
+            pClasificacion = new PClasificacion();
+            frame.add(pClasificacion);
+            this.setVisible(false);
         }
         if(e.getSource() == botonActuacion){
             frame.getEvento().setTipoActividad(Actividad.ACTUACION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como ACTUACION - WIP");
+            pClasificacion = new PClasificacion();
+            frame.add(pClasificacion);
+            this.setVisible(false);
         }
         if(e.getSource() == botonProyeccion){
             frame.getEvento().setTipoActividad(Actividad.PROYECCION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como PROYECCION - WIP");
+            pClasificacion = new PClasificacion();
+            frame.add(pClasificacion);
+            this.setVisible(false);
         }
         if(e.getSource() == botonCompeticion){
             frame.getEvento().setTipoActividad(Actividad.COMPETICION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como COMPETICION - WIP");
+            pClasificacion = new PClasificacion();
+            frame.add(pClasificacion);
+            this.setVisible(false);
         }
         if(e.getSource() == botonAudicion){
             frame.getEvento().setTipoActividad(Actividad.AUDICION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como AUDICION - WIP");
+            pClasificacion = new PClasificacion();
+            frame.add(pClasificacion);
+            this.setVisible(false);
         }
     }
     
