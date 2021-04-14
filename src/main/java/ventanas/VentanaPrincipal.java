@@ -14,6 +14,8 @@ public class VentanaPrincipal extends JFrame {
     PDatosTecnico pDatosTecnico = new PDatosTecnico();
     PArtistico pArtistico = new PArtistico();
     PAnalogo pAnalogo = new PAnalogo();
+    PCaracter pCaracter = new PCaracter();
+    PActividad pActividad = new PActividad();
     Evento  evento;
     
     public VentanaPrincipal(){
@@ -34,9 +36,11 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         // this.getContentPane().add(pIdioma);
-        // this.getContentPane().add(pAnalogo);
+        // this.getContentPane().add(pCaracter);
+        this.getContentPane().add(pAnalogo);
+        // this.getContentPane().add(pActividad);
         // this.getContentPane().add(pDatosOrganizador);
-        this.getContentPane().add(pDatosTecnico);
+        // this.getContentPane().add(pDatosTecnico);
         // this.getContentPane().add(pCultural);
         // this.getContentPane().add(pDeportivo);
         // this.getContentPane().add(pArtistico);

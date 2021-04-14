@@ -15,6 +15,7 @@ public class PCultural extends PFondoStandard {
     private BotonPrincipal botonFeria;
     private BotonPrincipal botonCinematografico;
     private BotonPrincipal botonExhibicion;
+    PCaracter pCaracter = null;
     private String texto;
 
     public PCultural(){
@@ -85,13 +86,22 @@ public class PCultural extends PFondoStandard {
         if(e.getSource() == botonCinematografico){
             frame.getEvento().setSubtipo(SubtipoEvento.CINEMATOGRAFICO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como CINEMATOGRAFICO - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }
         else if(e.getSource() == botonFeria){
             frame.getEvento().setSubtipo(SubtipoEvento.FERIA);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como FERIA - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }else if(e.getSource() == botonExhibicion){
             frame.getEvento().setSubtipo(SubtipoEvento.EXHIBICION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como EXHIBICION - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }
     }
 }

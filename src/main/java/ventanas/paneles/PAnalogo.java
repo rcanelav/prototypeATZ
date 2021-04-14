@@ -17,6 +17,8 @@ public class PAnalogo extends JPanel implements ActionListener {
     private BotonPrincipal botonTaurino;
     private BotonPrincipal botonCircence;
     private String texto;
+    PCaracter pCaracter = null;
+
 
     public PAnalogo(){
         colocarTextoAnalogo();
@@ -105,12 +107,21 @@ public class PAnalogo extends JPanel implements ActionListener {
         if(e.getSource() == botonPirotecnico){
             frame.getEvento().setSubtipo(SubtipoEvento.PIROTECNICO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como PIROTECNICO - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }else if(e.getSource() == botonTaurino){
             frame.getEvento().setSubtipo(SubtipoEvento.TAURINO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como TAURINO - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }else if(e.getSource() == botonCircence){
             frame.getEvento().setSubtipo(SubtipoEvento.CIRCENCE);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como CIRCENSE - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }
     }
     

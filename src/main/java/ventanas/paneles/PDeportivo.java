@@ -14,6 +14,7 @@ public class PDeportivo extends JPanel implements ActionListener {
     private static final long serialVersionUID = 1L;
     private GridBagConstraints grid = new Grid();
     private BotonPrincipal botonDeportivo;
+    PCaracter pCaracter = null;
     private String texto;
 
     public PDeportivo(){
@@ -66,6 +67,9 @@ public class PDeportivo extends JPanel implements ActionListener {
         if(e.getSource() == botonDeportivo){
             frame.getEvento().setSubtipo(SubtipoEvento.DEPORTIVO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como DEPORTIVO - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }
     }
     

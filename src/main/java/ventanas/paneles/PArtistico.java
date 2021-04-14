@@ -15,6 +15,7 @@ public class PArtistico extends JPanel implements ActionListener {
     private BotonPrincipal botonMusical;
     private BotonPrincipal botonTeatral;
     private String texto;
+    PCaracter pCaracter = null;
 
     public PArtistico(){
         colocarTextoArtistico();
@@ -84,10 +85,16 @@ public class PArtistico extends JPanel implements ActionListener {
         if(e.getSource() == botonTeatral){
             frame.getEvento().setSubtipo(SubtipoEvento.TEATRAL);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como TEATRAL - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }
         else if(e.getSource() == botonMusical){
             frame.getEvento().setSubtipo(SubtipoEvento.MUSICAL);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como MUSICAL - WIP");
+            pCaracter = new PCaracter();
+            frame.add(pCaracter);
+            this.setVisible(false);
         }
     }
 }

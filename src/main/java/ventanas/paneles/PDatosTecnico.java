@@ -2,13 +2,9 @@ package ventanas.paneles;
 
 import java.awt.*;
 import javax.swing.*;
-
-import negocio.Evento;
 import negocio.Evento.TipoEvento;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
@@ -52,23 +48,23 @@ public class PDatosTecnico extends JPanel implements ActionListener {
         tecnico.setOpaque(false);
         tecnico.setSelected(true);
         tecnico.addActionListener(this);
-        grid = new Grid(2, 1, 2, 30, 50);
+        grid = new Grid(2, 1, 2, 30, -50);
         this.add(tecnico, grid);
 
         noTecnico.setOpaque(false);
         noTecnico.addActionListener(this);
-        grid = new Grid(4, 1, 0, 30, 175);
+        grid = new Grid(4, 1, 0, 30, 100);
         this.add(noTecnico, grid);
     }
 
     private void botonesSiguienteAnterior(){
         botonAnterior = new BotonFlujo("ANTERIOR");
-        grid = new Grid(4, 3, 0, 30, -300, 30, 10);
+        grid = new Grid(3, 3, 0, 30, 200, 30, 10);
         this.add(botonAnterior, grid);
         botonAnterior.addActionListener(this);
         
         botonSiguiente = new BotonFlujo("SIGUIENTE");
-        grid = new Grid(4, 3, 0, 30, 175, 30, 10);
+        grid = new Grid(4, 3, 0, 30, -150, 30, 10);
         this.add(botonSiguiente, grid);
         botonSiguiente.addActionListener(this);
     }

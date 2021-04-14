@@ -9,6 +9,12 @@ public class Evento {
         TEATRAL, MUSICAL, CINEMATOGRAFICO, FERIA, EXHIBICION, DEPORTIVO,
         PIROTECNICO, TAURINO, CIRCENCE;
     }
+    public enum Caracter {
+        PROFESIONAL, AFICIONADO;
+    }
+    public enum Actividad {
+        REPRESENTACION, EXHIBICION, ACTUACION, PROYECCION, COMPETICION, AUDICION;
+    }
     // private boolean declaracionPrevia;
     // private boolean solicitudLicencia;
     // private boolean solicitudLicenciaUrbanistica;
@@ -20,6 +26,8 @@ public class Evento {
     private Tipologia tipologia;
     private TipoEvento tipo;
     private SubtipoEvento subtipo;
+    private Caracter tipoCaracter;
+    private Actividad tipoActividad;
     private String nOrganizadores;
     private String nRegistro;
     private String nTecnicos;
@@ -42,6 +50,18 @@ public class Evento {
     }
     public SubtipoEvento getSubtipo() {
         return subtipo;
+    }
+    public void setTipoCaracter(Caracter caracter) {
+        this.tipoCaracter = caracter;
+    }
+    public Caracter getTipoCaracter() {
+        return tipoCaracter;
+    }
+    public void setTipoActividad(Actividad tipoActividad) {
+        this.tipoActividad = tipoActividad;
+    }
+    public Actividad getTipoActividad() {
+        return tipoActividad;
     }
 
     public void setDatosOrganizadorPersona(String nOrganizadores, String nif, String apellidos, String nombre,
@@ -136,6 +156,7 @@ public class Evento {
         StringBuilder sb = new StringBuilder();
         sb.append("\n--------------   DATOS DEL EVENTO --------------\n");
         sb.append("TIPO DE EVENTO: " + tipo + "\n");
+        sb.append("DE CARACTER: " + subtipo + "\n");
         sb.append("\n--------------   DATOS DEL ORGANIZADOR --------------\n");
         sb.append("NÚMERO DE ORGANIZADORES: " + nOrganizadores + "\n");
         if(pPersona != null)
