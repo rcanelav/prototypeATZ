@@ -1,6 +1,9 @@
 package negocio;
 
 import java.util.Date;
+
+import negocio.UbicacionEvento.Espacio;
+import negocio.UbicacionEvento.Ubicacion;
 public class Evento {
     public enum TipoEvento {
         DEPORTIVO, ARTISTICO, CULTURAL, ANALOGO;
@@ -15,18 +18,23 @@ public class Evento {
     public enum Actividad {
         REPRESENTACION, EXHIBICION, ACTUACION, PROYECCION, COMPETICION, AUDICION;
     }
+    public enum Clasificacion{
+        PERMANENTE, TEMPORADA, OCASIONAL, EXTRAORDINARIO;
+    }
+    // private Tipologia tipologia;
+    private TipoEvento tipo;
+    private String nOrganizadores;
     private PromotorEmpresa pJuridico;
     private PromotorPersona pPersona;
-    private Tecnico tecnico;
     private Eccom eccom;
-    private Tipologia tipologia;
-    private TipoEvento tipo;
+    private String nRegistro;
+    private Tecnico tecnico;
+    private String nTecnicos;
     private SubtipoEvento subtipo;
     private Caracter tipoCaracter;
     private Actividad tipoActividad;
-    private String nOrganizadores;
-    private String nRegistro;
-    private String nTecnicos;
+    private Clasificacion tipoClasificacion;
+    private UbicacionEvento ubicacion;
 
     public Evento(){
         pPersona = null;
@@ -58,6 +66,12 @@ public class Evento {
     }
     public Actividad getTipoActividad() {
         return tipoActividad;
+    }
+    public void setTipoClasificacion(Clasificacion tipoClasificacion) {
+        this.tipoClasificacion = tipoClasificacion;
+    }
+    public Clasificacion getTipoClasificacion() {
+        return tipoClasificacion;
     }
 
     public void setDatosOrganizadorPersona(String nOrganizadores, String nif, String apellidos, String nombre,
@@ -147,6 +161,15 @@ public class Evento {
         tecnico.setCoberturaSeguro(coberturaSeguro);
     }
 
+    public void setUbicacion(Ubicacion tipoUbicacion) {
+        ubicacion = new UbicacionEvento();
+        ubicacion.setTipoUbicacion(tipoUbicacion);
+    }
+
+    public void setEspacio(Espacio tipoEspacio){
+        ubicacion.setTipoEspacio(tipoEspacio);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,7 +189,11 @@ public class Evento {
             sb.append("NÚMERO DE TÉCNICOS: " + nTecnicos + "\n");
             sb.append(tecnico);
         }
+        sb.append("\n--------------   DATOS DEL LUGAR --------------\n");
+        sb.append("CARACTER DEL EVENTO: " + tipoCaracter + "\n");
+        sb.append("ACTIVIDAD DEL EVENTO: " + tipoActividad + "\n");
+        sb.append("CLASIFICACIÓN DEL EVENTO: " + tipoClasificacion + "\n");
+
         return sb.toString();
     }
-     
 }

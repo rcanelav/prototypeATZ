@@ -5,6 +5,9 @@ import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
 import javax.swing.*;
+
+import negocio.Evento.Clasificacion;
+
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
@@ -14,6 +17,7 @@ public class PClasificacion extends PFondoStandard {
         private BotonPrincipal botonTemporada;
         private BotonPrincipal botonOcasional;
         private BotonPrincipal botonExtraordinario;
+        private PUbicacion pUbicacion;
         private String texto;
 
         public PClasificacion() {
@@ -90,6 +94,7 @@ public class PClasificacion extends PFondoStandard {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+                VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
                 String mensaje;
                 Object[] options = { "Continuar", "Cancelar" };
                 if (e.getSource() == botonExtraordinario) {
@@ -107,7 +112,11 @@ public class PClasificacion extends PFondoStandard {
                         int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
+                                frame.getEvento().setTipoClasificacion(Clasificacion.EXTRAORDINARIO);
                                 JOptionPane.showMessageDialog(null, "CLASIFICADO COMO EXTRAORDINARIO - WIP");
+                                pUbicacion = new PUbicacion();
+                                frame.add(pUbicacion);
+                                this.setVisible(false);
                         }
                 } else if (e.getSource() == botonOcasional) {
                         texto = "d) Establecimientos abiertos al público: locales, instalaciones o recintos dedicados a"
@@ -123,7 +132,11 @@ public class PClasificacion extends PFondoStandard {
                         int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
+                                frame.getEvento().setTipoClasificacion(Clasificacion.OCASIONAL);
                                 JOptionPane.showMessageDialog(null, "CLASIFICADO COMO OCASIONAL - WIP");
+                                pUbicacion = new PUbicacion();
+                                frame.add(pUbicacion);
+                                this.setVisible(false);
                         }
                 } else if (e.getSource() == botonPermanente) {
                         texto = " Locales cerrados, permanentes no desmontables, cubiertos total o parcialmente.";
@@ -132,7 +145,11 @@ public class PClasificacion extends PFondoStandard {
                         int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
+                                frame.getEvento().setTipoClasificacion(Clasificacion.PERMANENTE);
                                 JOptionPane.showMessageDialog(null, "CLASIFICADO COMO PERMANENTE - WIP");
+                                pUbicacion = new PUbicacion();
+                                frame.add(pUbicacion);
+                                this.setVisible(false);
                         }
                 } else if (e.getSource() == botonTemporada) {
                         texto = " d) Establecimientos abiertos al público: locales, instalaciones o recintos dedicados a"
@@ -146,7 +163,11 @@ public class PClasificacion extends PFondoStandard {
                         int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
+                                frame.getEvento().setTipoClasificacion(Clasificacion.TEMPORADA);
                                 JOptionPane.showMessageDialog(null, "CLASIFICADO COMO Temporada - WIP");
+                                pUbicacion = new PUbicacion();
+                                frame.add(pUbicacion);
+                                this.setVisible(false);
                         }
                 }
         }

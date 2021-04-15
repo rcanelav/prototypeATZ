@@ -91,7 +91,6 @@ public class Pidioma extends JPanel implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent evento) {
         if(evento.getSource() == botonGallego){
-        System.out.println("Boton Gallego");
         JOptionPane.showMessageDialog(null, "Esta seccion no ha sido implementada", "Error", JOptionPane.ERROR_MESSAGE);
         }
         if(evento.getSource() == botonCastellano){
