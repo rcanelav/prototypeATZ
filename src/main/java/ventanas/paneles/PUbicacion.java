@@ -26,7 +26,7 @@ public class PUbicacion extends PFondoStandard implements ActionListener{
     private void colocarTextos(){
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
@@ -55,14 +55,14 @@ public class PUbicacion extends PFondoStandard implements ActionListener{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonEstablecimiento){
             frame.getEvento().setUbicacion(Ubicacion.ESTABLECIMIENTO);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo de ubicacion: ESTABLECIMIENTO- WIP");
+            JOptionPane.showMessageDialog(null, "Ubicación seleccionada como ESTABLECIMIENTO");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }
         if(e.getSource() == botonEspacioAbierto){
             frame.getEvento().setUbicacion(Ubicacion.ESPACIO_ABIERTO);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo de ubicacion: ESPACIO ABIERTO- WIP");
+            JOptionPane.showMessageDialog(null, "Ubicación seleccionada como ESPACIO ABIERTO");
             pEspacios = new PEspacios();
             frame.add(pEspacios);
             this.setVisible(false);

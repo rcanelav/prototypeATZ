@@ -27,7 +27,7 @@ public class PCultural extends PFondoStandard {
     private void colocarTextoArtistico() {
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
         grid = new Grid(0, 0, 2, -80, 0);
         this.add(textoTitulo, grid);
@@ -42,22 +42,19 @@ public class PCultural extends PFondoStandard {
 
         texto = "Exhibición o proyección pública de películas cinematográficas y otros contenidos"+
                 " susceptibles de ser proyectados en pantalla, con independencia de los medios técnicos"+
-                " utilizados, y sin prejuicio de que se exhiban o proyecten en establecimientos cerrados "+
-                "o al aire libre, debidamente acondicionados y habilitados para eso.";
+                " utilizados.";
         PanelTexto textoCinematoGrafico = new PanelTexto(texto, 0, 18, 500, 105);
         grid = new Grid(0, 2, 0, -20, 40);
         this.add(textoCinematoGrafico, grid);
         
         texto = "Presentación en público de productos naturales o\n artificiales derivados de las plantas, "+
-                "animales o naturaleza en establecimentos cerrados o al aire libre, debidamente acondicionados"+
-                " y habilitados para eso.";
+                "animales o naturaleza.";
         PanelTexto textoFeria = new PanelTexto(texto, 0, 18, 500, 100);
         grid = new Grid(1, 2, 0, -20, 45);
         this.add(textoFeria, grid);
 
         texto = "Realización en público de bailes, exhibiciones,\n cabalgatas o desfiles de "+
-                "carácter popular, tradicional o de cualquier índole en establecimientos cerrados"+
-                " o al aire libre, debidamente acondicionados y habilitados para eso.";
+                "carácter popular, tradicional o de cualquier índole.";
         PanelTexto textoExhibicion = new PanelTexto(texto, 0, 18, 450, 60);
         grid = new Grid(0, 4, 2, 20, 0);
         this.add(textoExhibicion, grid);
@@ -85,20 +82,20 @@ public class PCultural extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonCinematografico){
             frame.getEvento().setTipo(Tipo.CINEMATOGRAFICO);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como CINEMATOGRAFICO - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como CINEMATOGRÁFICO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }
         else if(e.getSource() == botonFeria){
             frame.getEvento().setTipo(Tipo.FERIA);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como FERIA - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como FERIA");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonExhibicion){
             frame.getEvento().setTipo(Tipo.EXHIBICION);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como EXHIBICION - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como EXHIBICIÓN");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

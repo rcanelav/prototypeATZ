@@ -25,7 +25,7 @@ public class PCaracter extends PFondoStandard {
     private void colocarTexto(){
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
         grid = new Grid(0, 0, 0, -300, 0);
         this.add(textoTitulo, grid);
@@ -55,14 +55,14 @@ public class PCaracter extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonProfesional){
             frame.getEvento().setTipoCaracter(Caracter.PROFESIONAL);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como PROFESIONAL - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el carácter como PROFESIONAL");
             pActividad = new PActividad();
             frame.add(pActividad);
             this.setVisible(false);
         }
         if(e.getSource() == botonAficionado){
             frame.getEvento().setTipoCaracter(Caracter.AFICIONADO);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como AFICIONADO - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el carácter como AFICIONADO");
             pActividad = new PActividad();
             frame.add(pActividad);
             this.setVisible(false);

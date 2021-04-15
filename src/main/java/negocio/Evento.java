@@ -172,9 +172,12 @@ public class Evento {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n--------------   DATOS DEL EVENTO --------------\n");
-        sb.append("TIPO DE EVENTO: " + categoria + "\n");
-        sb.append("DE CARACTER: " + tipo + "\n");
+        sb.append("\n--------------   DATOS DEL ESPECTÁCULO --------------\n");
+        sb.append("CATEGORÍA: " + categoria + "\n");
+        sb.append("TIPO: " + tipo + "\n");
+        sb.append("CARÁCTER: " + tipoCaracter + "\n");
+        sb.append("ACTIVIDAD: " + tipoActividad + "\n");
+        sb.append("TEMPORALIDAD: " + tipoClasificacion + "\n");
         sb.append("\n--------------   DATOS DEL ORGANIZADOR --------------\n");
         sb.append("NÚMERO DE ORGANIZADORES: " + nOrganizadores + "\n");
         if(pPersona != null)
@@ -184,14 +187,12 @@ public class Evento {
         if(eccom != null)
             sb.append(eccom);
         if(tecnico != null){
-            sb.append("\n--------------   DATOS DEL TECNICO --------------\n");
+            sb.append("\n--------------   DATOS DEL TÉCNICO --------------\n");
             sb.append("NÚMERO DE TÉCNICOS: " + nTecnicos + "\n");
             sb.append(tecnico);
         }
         sb.append("\n--------------   DATOS DEL LUGAR --------------\n");
-        sb.append("CARACTER DEL EVENTO: " + tipoCaracter + "\n");
-        sb.append("ACTIVIDAD DEL EVENTO: " + tipoActividad + "\n");
-        sb.append("CLASIFICACIÓN DEL EVENTO: " + tipoClasificacion + "\n");
+       
 
         return sb.toString();
     }
