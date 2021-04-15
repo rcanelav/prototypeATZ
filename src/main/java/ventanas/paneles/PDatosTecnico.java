@@ -2,7 +2,8 @@ package ventanas.paneles;
 
 import java.awt.*;
 import javax.swing.*;
-import negocio.Evento.TipoEvento;
+
+import negocio.Evento.Categoria;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import ventanas.VentanaPrincipal;
@@ -94,21 +95,21 @@ public class PDatosTecnico extends JPanel implements ActionListener {
                 isValid = true;
             }
             if(isValid){
-                if(frame.getEvento().getTipo() == TipoEvento.CULTURAL){
+                if(frame.getEvento().getCategoria() == Categoria.CULTURAL){
                     pCultural = new PCultural();
                     frame.add(pCultural);
                     this.setVisible(false);
                 }
-                else if(frame.getEvento().getTipo() == TipoEvento.ARTISTICO){
+                else if(frame.getEvento().getCategoria() == Categoria.ARTISTICO){
                     pArtistico = new PArtistico();
                     frame.add(pArtistico);
                     this.setVisible(false);
                 }
-                else if(frame.getEvento().getTipo() == TipoEvento.DEPORTIVO){
+                else if(frame.getEvento().getCategoria() == Categoria.DEPORTIVO){
                     pDeportivo = new PDeportivo();
                     frame.add(pDeportivo);
                     this.setVisible(false);
-                }else if(frame.getEvento().getTipo() == TipoEvento.ANALOGO){
+                }else if(frame.getEvento().getCategoria() == Categoria.ANALOGO){
                     pAnalogo = new PAnalogo();
                     frame.add(pAnalogo);
                     this.setVisible(false);

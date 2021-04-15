@@ -1,14 +1,13 @@
 package negocio;
 
 import java.util.Date;
-
 import negocio.UbicacionEvento.Espacio;
 import negocio.UbicacionEvento.Ubicacion;
 public class Evento {
-    public enum TipoEvento {
+    public enum Categoria {
         DEPORTIVO, ARTISTICO, CULTURAL, ANALOGO;
     }
-    public enum SubtipoEvento {
+    public enum Tipo {
         TEATRAL, MUSICAL, CINEMATOGRAFICO, FERIA, EXHIBICION, DEPORTIVO,
         PIROTECNICO, TAURINO, CIRCENCE;
     }
@@ -22,7 +21,7 @@ public class Evento {
         PERMANENTE, TEMPORADA, OCASIONAL, EXTRAORDINARIO;
     }
     // private Tipologia tipologia;
-    private TipoEvento tipo;
+    private Categoria categoria;
     private String nOrganizadores;
     private PromotorEmpresa pJuridico;
     private PromotorPersona pPersona;
@@ -30,7 +29,7 @@ public class Evento {
     private String nRegistro;
     private Tecnico tecnico;
     private String nTecnicos;
-    private SubtipoEvento subtipo;
+    private Tipo tipo;
     private Caracter tipoCaracter;
     private Actividad tipoActividad;
     private Clasificacion tipoClasificacion;
@@ -43,17 +42,17 @@ public class Evento {
         tecnico = null;
     }
 
-    public void setTipo(TipoEvento tipo) {
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    public Categoria getCategoria() {
+        return categoria;
+    }
+    public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
-    public TipoEvento getTipo() {
+    public Tipo getTipo() {
         return tipo;
-    }
-    public void setSubtipo(SubtipoEvento subtipo) {
-        this.subtipo = subtipo;
-    }
-    public SubtipoEvento getSubtipo() {
-        return subtipo;
     }
     public void setTipoCaracter(Caracter caracter) {
         this.tipoCaracter = caracter;
@@ -174,8 +173,8 @@ public class Evento {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("\n--------------   DATOS DEL EVENTO --------------\n");
-        sb.append("TIPO DE EVENTO: " + tipo + "\n");
-        sb.append("DE CARACTER: " + subtipo + "\n");
+        sb.append("TIPO DE EVENTO: " + categoria + "\n");
+        sb.append("DE CARACTER: " + tipo + "\n");
         sb.append("\n--------------   DATOS DEL ORGANIZADOR --------------\n");
         sb.append("NÚMERO DE ORGANIZADORES: " + nOrganizadores + "\n");
         if(pPersona != null)

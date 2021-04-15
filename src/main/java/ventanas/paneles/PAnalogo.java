@@ -1,6 +1,6 @@
 package ventanas.paneles;
 
-import negocio.Evento.SubtipoEvento;
+import negocio.Evento.Tipo;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
@@ -105,19 +105,19 @@ public class PAnalogo extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonPirotecnico){
-            frame.getEvento().setSubtipo(SubtipoEvento.PIROTECNICO);
+            frame.getEvento().setTipo(Tipo.PIROTECNICO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como PIROTECNICO - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonTaurino){
-            frame.getEvento().setSubtipo(SubtipoEvento.TAURINO);
+            frame.getEvento().setTipo(Tipo.TAURINO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como TAURINO - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonCircence){
-            frame.getEvento().setSubtipo(SubtipoEvento.CIRCENCE);
+            frame.getEvento().setTipo(Tipo.CIRCENCE);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como CIRCENSE - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);

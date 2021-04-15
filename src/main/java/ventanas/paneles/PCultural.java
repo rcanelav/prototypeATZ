@@ -1,7 +1,7 @@
 package ventanas.paneles;
 
 import javax.swing.*;
-import negocio.Evento.SubtipoEvento;
+import negocio.Evento.Tipo;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
@@ -84,20 +84,20 @@ public class PCultural extends PFondoStandard {
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonCinematografico){
-            frame.getEvento().setSubtipo(SubtipoEvento.CINEMATOGRAFICO);
+            frame.getEvento().setTipo(Tipo.CINEMATOGRAFICO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como CINEMATOGRAFICO - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }
         else if(e.getSource() == botonFeria){
-            frame.getEvento().setSubtipo(SubtipoEvento.FERIA);
+            frame.getEvento().setTipo(Tipo.FERIA);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como FERIA - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonExhibicion){
-            frame.getEvento().setSubtipo(SubtipoEvento.EXHIBICION);
+            frame.getEvento().setTipo(Tipo.EXHIBICION);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como EXHIBICION - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);

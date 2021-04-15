@@ -1,7 +1,8 @@
 package ventanas.paneles;
 
 import javax.swing.*;
-import negocio.Evento.SubtipoEvento;
+
+import negocio.Evento.Tipo;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
@@ -83,14 +84,14 @@ public class PArtistico extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonTeatral){
-            frame.getEvento().setSubtipo(SubtipoEvento.TEATRAL);
+            frame.getEvento().setTipo(Tipo.TEATRAL);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como TEATRAL - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }
         else if(e.getSource() == botonMusical){
-            frame.getEvento().setSubtipo(SubtipoEvento.MUSICAL);
+            frame.getEvento().setTipo(Tipo.MUSICAL);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como MUSICAL - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);

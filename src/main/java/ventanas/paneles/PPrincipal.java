@@ -1,7 +1,7 @@
 package ventanas.paneles;
 
 import javax.swing.*;
-import negocio.Evento.TipoEvento;
+import negocio.Evento.Categoria;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
@@ -107,25 +107,25 @@ public class PPrincipal extends JPanel implements ActionListener{
         
         if(e.getSource() == botonArtistico){
             pDatosOrganizador = new PDatosOrganizador();
-            frame.getEvento().setTipo(TipoEvento.ARTISTICO);
+            frame.getEvento().setCategoria(Categoria.ARTISTICO);
             frame.add(pDatosOrganizador);
             this.setVisible(false);   
         }
         else if(e.getSource() == botonCultural){
             pDatosOrganizador = new PDatosOrganizador();
-            frame.getEvento().setTipo(TipoEvento.CULTURAL);
+            frame.getEvento().setCategoria(Categoria.CULTURAL);
             frame.add(pDatosOrganizador);
             this.setVisible(false);   
         }
         else if(e.getSource() == botonDeportivo){
             pDatosOrganizador = new PDatosOrganizador();
-            frame.getEvento().setTipo(TipoEvento.DEPORTIVO);
+            frame.getEvento().setCategoria(Categoria.DEPORTIVO);
             frame.add(pDatosOrganizador);
             this.setVisible(false);   
         }
         else if(e.getSource() == botonAnalogo){
             pDatosOrganizador = new PDatosOrganizador();
-            frame.getEvento().setTipo(TipoEvento.ANALOGO);
+            frame.getEvento().setCategoria(Categoria.ANALOGO);
             frame.add(pDatosOrganizador);
             this.setVisible(false); 
         }

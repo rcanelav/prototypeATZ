@@ -1,12 +1,14 @@
 package ventanas.paneles;
 
-import negocio.Evento.SubtipoEvento;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+
+import negocio.Evento.Tipo;
+
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
@@ -65,12 +67,11 @@ public class PDeportivo extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonDeportivo){
-            frame.getEvento().setSubtipo(SubtipoEvento.DEPORTIVO);
+            frame.getEvento().setTipo(Tipo.DEPORTIVO);
             JOptionPane.showMessageDialog(null, "Establecido el subtipo como DEPORTIVO - WIP");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }
     }
-    
 }
