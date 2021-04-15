@@ -36,36 +36,33 @@ public class PAnalogo extends JPanel implements ActionListener {
     private void colocarTextoAnalogo(){
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
         grid = new Grid(0, 0, 2, 0, 0);
         grid.fill = GridBagConstraints.HORIZONTAL;
         this.add(textoTitulo, grid);
 
-        texto = "Aquellos en que se produce la ejecución o representación en público de obras o composiciones"+
+        texto = "Ejecución o representación en público de obras o composiciones"+
                 " de efectos visuales, sonoros, y fumígenos con una finalidad lúdica, mediante el uso de artificios de "+
-                "pirotecnia, conjunta o aisladamente con composiciones audiovisuales, de instrumentos musicales oo voz humana,"+
-                " a cargo de intérpretes musicales, cantantes o artistas, profesionales o personas aficionadas, en espacios"+
-                " abiertos al público debidamente";
+                "pirotecnia, conjunta o aisladamente con composiciones audiovisuales, de instrumentos musicales o voz humana,"+
+                " a cargo de intérpretes musicales, cantantes o artistas.";
         PanelTexto textoPirotecnico = new PanelTexto(texto, 0, 16, 500, 150);
         textoPirotecnico.setMinimumSize(new Dimension(500, 150));
         grid = new Grid(0, 1, 0, 0, 100);
         this.add(textoPirotecnico, grid);
 
-        texto = "Aquellos en que intervienen reses de ganado bovino bravo para ser lidiadas en plazas "+
-                "de toros con público, por profesionales o personas aficionadas, de acuerdo con la normativa "+
-                " específica. La clasificación y características de los recintos serán las establecidas en la normativa "+
-                "específica aplicable";
+        texto = "Espectáculo en el que intervienen reses de ganado bovino bravo para ser lidiadas en plazas "+
+                "de toros con público de acuerdo con la normativa "+
+                " específica.";
         PanelTexto textoTaurino = new PanelTexto(texto, 0, 16, 500, 150);
         textoTaurino.setMinimumSize(new Dimension(500, 150));
         grid = new Grid(1, 1, 0, 0, 0);
         this.add(textoTaurino, grid);
 
-        texto = "La ejecución o representación en público de ejercicios físicos, de acrobacia o habilidad, actuacinoes de"+
+        texto = "Ejecución o representación en público de ejercicios físicos, de acrobacia o habilidad, actuacinoes de"+
                 " payasos, malabaristas, prestidigitadores, animales amaestrados o no, "+
-                "y otras semejantes, realizadas por artistas, intérpretes o ejecutantes, profesionales"+
-                " o personas aficionadas, en establecimientos cerrados o al aire libre, debidamente "+
-                "acondicionados y habilitados para eso, sin prejuizo de lo dispuesto en el artículo 9.I) de la Ley 4/2017, "+
+                "y otras semejantes, realizadas por artistas, intérpretes o ejecutantes,"+
+                " sin prejuizo de lo dispuesto en el artículo 9.I) de la Ley 4/2017, "+
                 "del 3 de octubre, de protección y bienestar de los animales de compañía.";
         PanelTexto textoCircence = new PanelTexto(texto, 0, 16, 900, 100);
         textoCircence.setMinimumSize(new Dimension(600, 100));
@@ -106,19 +103,19 @@ public class PAnalogo extends JPanel implements ActionListener {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonPirotecnico){
             frame.getEvento().setTipo(Tipo.PIROTECNICO);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como PIROTECNICO - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como PIROTÉCNICO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonTaurino){
             frame.getEvento().setTipo(Tipo.TAURINO);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como TAURINO - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como TAURINO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonCircence){
             frame.getEvento().setTipo(Tipo.CIRCENCE);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como CIRCENSE - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como CIRCENSE");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

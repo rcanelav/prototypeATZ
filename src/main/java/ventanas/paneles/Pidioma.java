@@ -32,7 +32,7 @@ public class Pidioma extends JPanel implements ActionListener{
     private void colocarTextoGallego(){
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENZA ESPECTÁCULOS PÚBLICOS";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENZA";
         PanelTexto textoTituloGallego = new PanelTexto(texto, 1, 16, 500, 200);
         grid = new Grid(0, 0, 0, -50, 0);
         this.add(textoTituloGallego, grid);

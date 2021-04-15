@@ -43,7 +43,7 @@ public class PPrincipal extends JPanel implements ActionListener{
     }
     
     private void colocarTextos(){
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA ESPECTÁCULOS PÚBLICOS";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1000, 30);
         grid = new Grid(0, 0, 2, -100, 0);
         this.add(textoTitulo, grid);
@@ -54,26 +54,26 @@ public class PPrincipal extends JPanel implements ActionListener{
         grid = new Grid(0, 2, 2, -50, 0);
         this.add(textoSubtitulo, grid);
 
-        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
-                "audiciones de concurrencia pública de carácter artístico.";
+        texto = "Representación, exhibición, actuación, proyección, competición o "+
+                "audición de concurrencia pública de carácter artístico.";
         PanelTexto textoArtistico = new PanelTexto(texto, 0, 18, 450, 60);
         grid = new Grid(0, 3, 0, 0, 0);
         this.add(textoArtistico, grid);
        
-        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
-                "audiciones de concurrencia pública de carácter cultural.";
+        texto = "Representación, exhibición, actuación, proyección, competición o "+
+                "audición de concurrencia pública de carácter cultural.";
         PanelTexto textoCultural = new PanelTexto(texto, 0, 18, 450, 60);
         grid = new Grid(1, 3, 0, 0, 0);
         this.add(textoCultural, grid);
         
-        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
-                "audiciones de concurrencia pública de carácter artístico.";
+        texto = "Representación, exhibición, actuación, proyección, competición o "+
+                "audición de concurrencia pública de carácter deportivo.";
         PanelTexto textoDeportivo = new PanelTexto(texto, 0, 18, 450, 60);
         grid = new Grid(0, 5, 0, 0, 0);
         this.add(textoDeportivo, grid);
         
-        texto = "Representaciones, exhibiciones, actuaciones, proyecciones, competiciones o "+
-                "audiciones de concurrencia pública de carácter análogo.";
+        texto = "Representación, exhibición, actuación, proyección, competición o "+
+                "audición de concurrencia pública de carácter análogo.";
         PanelTexto textoAnalogo = new PanelTexto(texto, 0, 18, 450, 60);
         grid = new Grid(1, 5, 0, 0, 0);
         this.add(textoAnalogo, grid); 

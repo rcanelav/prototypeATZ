@@ -34,7 +34,7 @@ public class PArtistico extends JPanel implements ActionListener {
     private void colocarTextoArtistico() {
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
         grid = new Grid(0, 0, 2, -200, 0);
         grid.fill = SwingConstants.HORIZONTAL;
@@ -51,8 +51,7 @@ public class PArtistico extends JPanel implements ActionListener {
 
         texto = "Representación pública de obras teatrales, artísticas o escénicas, mediante la utilización, "+
                 "aislada o conjuntamente, del lenguaje, de la mímica, de la música, del cómic, de marionetas u"+
-                " otros objetos a cargo de artistas, intérpretes o ejecutantes, sean o no profesionales, en "+
-                "establecimientos cerrados o al aire libre, debidamente acondicionados y habilitados para eso.";
+                " otros objetos a cargo de artistas, intérpretes o ejecutantes.";
         PanelTexto textoTeatral = new PanelTexto(texto, 0, 18, 500, 105);
         grid = new Grid(0, 2, 0, 0, 50);
         this.add(textoTeatral, grid);
@@ -60,8 +59,7 @@ public class PArtistico extends JPanel implements ActionListener {
         texto = "Ejecución o representación pública de obras o composiciones musicales, operísticas o de "+
                 "danza, mediante la utilización, aislada o conjuntamente, de instrumentos musicales, música"+
                 " grabada y enviada por medios mecánicos o de la voz humana a cargo de artistas, intérpretes "+
-                "o ejecutantes, profesionales u personas aficionadas, en establecimientos cerrados o al aire "+
-                "libre, debidamente acondicionados y habilitados para eso.";
+                "o ejecutantes.";
         PanelTexto textoMusical = new PanelTexto(texto, 0, 18, 500, 105);
         grid = new Grid(1, 2, 0, 0, 10);
         this.add(textoMusical, grid);
@@ -85,14 +83,14 @@ public class PArtistico extends JPanel implements ActionListener {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonTeatral){
             frame.getEvento().setTipo(Tipo.TEATRAL);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como TEATRAL - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como TEATRAL");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }
         else if(e.getSource() == botonMusical){
             frame.getEvento().setTipo(Tipo.MUSICAL);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como MUSICAL - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como MUSICAL");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

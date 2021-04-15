@@ -29,40 +29,42 @@ public class PClasificacion extends PFondoStandard {
         private void colocarTexto() {
                 this.setLayout(new GridBagLayout());
 
-                texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+                texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
                 PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
                 grid = new Grid(0, 0, 3, -120, 0);
 
                 this.add(textoTitulo, grid);
 
-                texto = "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  actividades"
-                                + "recreativas de Galicia.";
+                texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo"+
+                "  de espectáculos  públicos,  actividades  recreativas  y  establecementos  abiertos"+
+                " al público  de la  Comunidad  Autónoma  de  Galicia y  se  establecen  determinadas "+
+                "disposiciones geraless de aplicación en la materia.";
                 PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
                 grid = new Grid(0, 1, 3, -40, 0);
                 this.add(textoLey, grid);
 
-                texto = "Aquel que se celebre de forma habitual en los establecimientos abiertos al público a"
+                texto = "Se celebrará de forma habitual en un establecimiento abierto al público al"
                                 + " que se refiere el artículo 3.d).1º de la Ley 10/2017, del 27 de diciembre.";
                 PanelTexto textoPermanente = new PanelTexto(texto, 0, 18, 500, 100);
                 grid = new Grid(0, 2, 0, -60, 50);
                 this.add(textoPermanente, grid);
 
-                texto = "Aquel que se celebre en los establecimientos abiertos al público a que se refiere el "
-                                + "artículo 3.d) de la Ley 10/2017, del 27 de diciembre, durante períodos de tiempo superiores"
-                                + " a 3 meses e inferiores a 1 año, en cómputo global anual.";
+                texto = "Se celebrará en un establecimiento abierto al público al que se refiere el "
+                                + "artículo 3.d) de la Ley 10/2017, del 27 de diciembre, durante un período de tiempo superior"
+                                + " a 3 meses e inferior a 1 año, en cómputo global anual.";
                 PanelTexto textoTemporada = new PanelTexto(texto, 0, 18, 500, 100);
                 grid = new Grid(2, 2, 0, -60, 0);
                 this.add(textoTemporada, grid);
 
-                texto = "Aquel que se celebre en establecimientos abiertos al público o espacios abiertos al público,"
-                                + " a que se refeire el artículo 3.d) y e) de la Ley 10/2017, del 27 de diciembro, durante períodos"
-                                + " de tiempo iguales o inferiores a 3 meses, en cómputo global anual.";
+                texto = "Se celebrará en un establecimiento abierto al público o espacio abierto al público,"
+                                + " a los que se refeire el artículo 3.d) y 3.e) de la Ley 10/2017, del 27 de diciembro, durante un período"
+                                + " de tiempo igual o inferior a 3 meses, en cómputo global anual.";
                 PanelTexto textoOcasional = new PanelTexto(texto, 0, 18, 500, 150);
                 grid = new Grid(0, 4, 0, 30, 50);
                 this.add(textoOcasional, grid);
 
-                texto = "Aquel que se desenvuelve esporádicamente en establecimientos abiertos al público legalmente "
-                                + "habilitados para celebrar un espectáculo público o actividad recreativa distinta de la actividad "
+                texto = "Se desarrollará esporádicamente en un establecimiento abierto al público que pueda "
+                                + "albergar un espectáculo público diferente al de la actividad "
                                 + "propia del establecimiento.";
                 PanelTexto textoExtraordinario = new PanelTexto(texto, 0, 18, 500, 150);
                 grid = new Grid(2, 4, 0, 30, 0);
@@ -98,73 +100,63 @@ public class PClasificacion extends PFondoStandard {
                 String mensaje;
                 Object[] options = { "Continuar", "Cancelar" };
                 if (e.getSource() == botonExtraordinario) {
-                        texto = "Desarrollo esporádico: máximo de 6 espectáculos públicos realizados"
-                                        + " en un mismo establecimiento abierto al público durante un máximo de"
-                                        + "6 días naturales al año. <br><br>No se podrán agrupar como un único espectáculo"
-                                        + "las programaciones de más de un día de duración.<br><br> Establecimientos abiertos"
-                                        + " al público legalmente habilitados para celebrar un espectáculo público"
-                                        + "distinto de la actividad propia del establecimiento: aquellos que reúnan"
+                        texto = "- Desarrollo esporádico: máximo de 6 espectáculos públicos realizados durante un máximo de"
+                                        + " 6 días naturales al año. <br> No se podrán agrupar como un único espectáculo"
+                                        + " las programaciones de más de un día de duración.<br><br>- Establecimiento abierto"
+                                        + " al público legalmente habilitado para celebrar un espectáculo público"
+                                        + " distinto de la actividad propia del establecimiento: <br> Aquel que reúna"
                                         + " las condiciones técnicas, de seguridad y de aislamiento acústico necesarias"
-                                        + "para el desarrollo del espectáculo o actividad que se pretende celebrar de"
+                                        + " para el desarrollo del espectáculo que se pretende celebrar de"
                                         + " forma extraordinaria.";
                         mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",
                                         400, texto);
-                        int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
+                        int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIONES:", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.EXTRAORDINARIO);
-                                JOptionPane.showMessageDialog(null, "CLASIFICADO COMO EXTRAORDINARIO - WIP");
+                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como EXTRAORDINARIO");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
                         }
                 } else if (e.getSource() == botonOcasional) {
-                        texto = "d) Establecimientos abiertos al público: locales, instalaciones o recintos dedicados a"
-                                        + "llevar a cabo en ellos espectáculos públicos o actividades recreativas. Pueden ser de los "
-                                        + "siguientes tipos:<br><br> 1.º Locales cerrados, permanentes no desmontables, cubiertos total o parcialmente.<br>"
-                                        + "2.º Locales no permanentes desmontables, cubiertos total o parcialmente, o instalaciones fijas portátiles"
-                                        + " o desmontables cerradas.<br> 3.º Recintos que unen varios locales o instalaciones, constituidos en complejos o "
-                                        + "infraestructuras de ocio. <br>  e) Espacios abiertos al público: lugares de titularidad pública, incluida la vía "
-                                        + "pública, o de propiedad privada, donde ocasionalmente se llevan a cabo espectáculos públicos o "
-                                        + "actividades recreativas y que no disponen de infraestructuras ni instalaciones fijas para hacerlo";
+                        texto = "- Establecimiento abierto al público: local, instalación o recinto dedicado a"
+                                        + " llevar a cabo espectáculos públicos.";
                         mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",
                                         400, texto);
-                        int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
+                        int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.OCASIONAL);
-                                JOptionPane.showMessageDialog(null, "CLASIFICADO COMO OCASIONAL - WIP");
+                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como OCASIONAL");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
                         }
                 } else if (e.getSource() == botonPermanente) {
-                        texto = " Locales cerrados, permanentes no desmontables, cubiertos total o parcialmente.";
+                        texto = "- Establecimiento abierto al público: local, instalación o recinto dedicado a"
+                                        + " llevar a cabo espectáculos públicos.";
                         mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",
                                         400, texto);
-                        int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
+                        int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.PERMANENTE);
-                                JOptionPane.showMessageDialog(null, "CLASIFICADO COMO PERMANENTE - WIP");
+                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como PERMANENTE");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
                         }
                 } else if (e.getSource() == botonTemporada) {
-                        texto = " d) Establecimientos abiertos al público: locales, instalaciones o recintos dedicados a"
-                                        + "llevar a cabo en ellos espectáculos públicos o actividades recreativas. Pueden ser de los "
-                                        + "siguientes tipos:<br>1.º Locales cerrados, permanentes no desmontables, cubiertos total o parcialmente.<br>"
-                                        + "2.º Locales no permanentes desmontables, cubiertos total o parcialmente, o instalaciones fijas"
-                                        + "portátiles o desmontables cerradas.<br>3.º Recintos que unen varios locales o instalaciones, "
-                                        + "constituidos en complejos o infraestructuras de ocio.";
+                        texto = "- Establecimiento abierto al público: local, instalación o recinto dedicado a"
+                        + " llevar a cabo espectáculos públicos.";
                         mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",
                                         400, texto);
-                        int res = JOptionPane.showOptionDialog(null, mensaje, "Ley", JOptionPane.DEFAULT_OPTION,
+                        int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN", JOptionPane.DEFAULT_OPTION,
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.TEMPORADA);
-                                JOptionPane.showMessageDialog(null, "CLASIFICADO COMO Temporada - WIP");
+                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como DE TEMPORADA");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);

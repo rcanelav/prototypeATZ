@@ -35,7 +35,7 @@ public class PDeportivo extends JPanel implements ActionListener {
     private void colocarTextoDeportivo(){
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
         grid = new Grid(0, 0, 0, -150, 0);
         this.add(textoTitulo, grid);
@@ -48,9 +48,8 @@ public class PDeportivo extends JPanel implements ActionListener {
         grid = new Grid(0, 1, 0, -50, 0);
         this.add(textoLey, grid);
 
-        texto = "La exhibición en público del ejercicio de cualquier modalidad o especialidad deportiva,"+
-                " competitiva o no, por deportistas profesionales o aficionados/as, en recintos, instalaciones,"+
-                " vías o espacios abiertos al público, debidamente acondicionados y habilitados para eso.";
+        texto = "Exhibición en público del ejercicio de cualquier modalidad o especialidad deportiva,"+
+                " competitiva o no.";
         PanelTexto textoDeportivo = new PanelTexto(texto, 0, 18, 600, 100);
         grid = new Grid(0, 2, 0, 20, 0);
         this.add(textoDeportivo, grid);
@@ -68,7 +67,7 @@ public class PDeportivo extends JPanel implements ActionListener {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonDeportivo){
             frame.getEvento().setTipo(Tipo.DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "Establecido el subtipo como DEPORTIVO - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo como DEPORTIVO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
