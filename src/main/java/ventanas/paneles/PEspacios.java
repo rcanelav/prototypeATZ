@@ -1,21 +1,20 @@
 package ventanas.paneles;
 import negocio.UbicacionEvento.Espacio;
-import negocio.UbicacionEvento.Ubicacion;
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
-public class PEspacios extends PFondoStandard implements ActionListener{
+public class PEspacios extends PFondoStandard {
     private static final long serialVersionUID = 1L;
     private GridBagConstraints grid = new Grid();
     private BotonPrincipal botonEspacioAbiertoAlPublico;
     private BotonPrincipal botonOtro;
     private String texto;
+    private PTitularidad pTitularidad;
 
     public PEspacios(){
         colocarTextos();
@@ -63,13 +62,13 @@ public class PEspacios extends PFondoStandard implements ActionListener{
         if(e.getSource() == botonEspacioAbiertoAlPublico){
             frame.getEvento().setEspacio(Espacio.ABIERTO_AL_PUBLICO);
             JOptionPane.showMessageDialog(null, "Establecida ubicación como ESPACIO ABIERTO AL PÚBLICO");
-            System.out.println(frame.getEvento());
-            // pCaracter = new PCaracter();
-            // frame.add(pCaracter);
-            // this.setVisible(false);
+            // System.out.println(frame.getEvento());
+            pTitularidad = new PTitularidad();
+            frame.add(pTitularidad);
+            this.setVisible(false);
         }
         if(e.getSource() == botonOtro){
-            // frame.getEvento().setEspacio(Espacio.ABIERTO_AL_PUBLICO);
+            frame.getEvento().setEspacio(Espacio.OTRO);
             JOptionPane.showMessageDialog(null, "WIP");
             // pCaracter = new PCaracter();
             // frame.add(pCaracter);

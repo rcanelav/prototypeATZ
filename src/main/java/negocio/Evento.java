@@ -1,7 +1,12 @@
 package negocio;
 
 import java.util.Date;
+
+import negocio.UbicacionEvento.Dominio;
+import negocio.UbicacionEvento.DominioPublicoPortuario;
+import negocio.UbicacionEvento.DominioPublicoVariosMunicipios;
 import negocio.UbicacionEvento.Espacio;
+import negocio.UbicacionEvento.Titularidad;
 import negocio.UbicacionEvento.Ubicacion;
 public class Evento {
     public enum Categoria {
@@ -168,7 +173,18 @@ public class Evento {
     public void setEspacio(Espacio tipoEspacio){
         ubicacion.setTipoEspacio(tipoEspacio);
     }
-
+    public void setTitularidad(Titularidad tipoTitularidad){
+        ubicacion.setTipoTitularidad(tipoTitularidad);
+    }
+    public void setDominio(Dominio tipoDominio){
+        ubicacion.setTipoDominio(tipoDominio);
+    }
+    public void setDominioPublicoPortuario(DominioPublicoPortuario tipoDominioPublicoPortuario){
+        ubicacion.setTipoDominioPublicoPortuario(tipoDominioPublicoPortuario);
+    }
+    public void setDominioVariosMunicipios(DominioPublicoVariosMunicipios tipoDominioVariosMunicipios){
+        ubicacion.setTipoDominioVariosMunicipios(tipoDominioVariosMunicipios);
+    }
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

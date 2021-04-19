@@ -31,7 +31,7 @@ public class PClasificacion extends PFondoStandard {
 
                 texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
                 PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
-                grid = new Grid(0, 0, 3, -120, 0);
+                grid = new Grid(0, 0, 3, -90, 0);
 
                 this.add(textoTitulo, grid);
 
@@ -46,14 +46,14 @@ public class PClasificacion extends PFondoStandard {
                 texto = "Se celebrará de forma habitual en un establecimiento abierto al público al"
                                 + " que se refiere el artículo 3.d).1º de la Ley 10/2017, del 27 de diciembre.";
                 PanelTexto textoPermanente = new PanelTexto(texto, 0, 18, 500, 100);
-                grid = new Grid(0, 2, 0, -60, 50);
+                grid = new Grid(0, 2, 0, 0, 50);
                 this.add(textoPermanente, grid);
 
                 texto = "Se celebrará en un establecimiento abierto al público al que se refiere el "
                                 + "artículo 3.d) de la Ley 10/2017, del 27 de diciembre, durante un período de tiempo superior"
                                 + " a 3 meses e inferior a 1 año, en cómputo global anual.";
                 PanelTexto textoTemporada = new PanelTexto(texto, 0, 18, 500, 100);
-                grid = new Grid(2, 2, 0, -60, 0);
+                grid = new Grid(2, 2, 0, 0, 0);
                 this.add(textoTemporada, grid);
 
                 texto = "Se celebrará en un establecimiento abierto al público o espacio abierto al público,"
@@ -69,7 +69,6 @@ public class PClasificacion extends PFondoStandard {
                 PanelTexto textoExtraordinario = new PanelTexto(texto, 0, 18, 500, 150);
                 grid = new Grid(2, 4, 0, 30, 0);
                 this.add(textoExtraordinario, grid);
-
         }
 
         private void colocarBotones() {

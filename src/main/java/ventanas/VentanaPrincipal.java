@@ -19,6 +19,10 @@ public class VentanaPrincipal extends JFrame {
     PClasificacion pClasificacion = new PClasificacion();
     PUbicacion pUbicacion = new PUbicacion();
     PEspacios pEspacios = new PEspacios();
+    PTitularidad pTitularidad = new PTitularidad();
+    PDominioPublico pDominioPublico = new PDominioPublico();
+    PDominioPublicoPortuario pDominioPublicoPortuario = new PDominioPublicoPortuario();
+    PVariosMunicipios pVariosMunicipios = new PVariosMunicipios();
     Evento  evento;
     
     public VentanaPrincipal(){
@@ -44,6 +48,10 @@ public class VentanaPrincipal extends JFrame {
         // this.getContentPane().add(pCaracter);
         // this.getContentPane().add(pAnalogo);
         // this.getContentPane().add(pClasificacion);
+        // this.getContentPane().add(pTitularidad);
+        // this.getContentPane().add(pDominioPublico);
+        // this.getContentPane().add(pDominioPublicoPortuario);
+        // this.getContentPane().add(pVariosMunicipios);
         // this.getContentPane().add(pActividad);
         // this.getContentPane().add(pDatosOrganizador);
         // this.getContentPane().add(pDatosTecnico);
