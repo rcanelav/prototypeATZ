@@ -25,6 +25,13 @@ public class UbicacionEvento {
     public enum DominioPublicoVariosMunicipios{
         PRUEBA_DEPORTIVA, MARCHA_CICLISTA, VEHICULOS_CLASICOS;
     }
+    public enum LocalAsimilado{
+        ESTADIO_DEPORTIVO, SALA_FIESTAS, PUB, SALON_BANQUETES,
+        PABELLON_DEPORTIVO, CAFE_ESPECTACULO, DISCOTECA,
+        SALA_CONFERENCIAS, SALA_CONCIERTOS, SALA_POLIVALENTE,
+        MUSEO, PARQUE_ACUATICO, PARQUE_ATRACCIONES_TEMATICO,
+        BIBLIOTECA;
+    }
     private Ubicacion tipoUbicacion;
     private Establecimiento tipoEstablecimiento;
     private EstablecimientoAbiertoAlPublico tipoEstablecimientoAbiertoAlPublico;
@@ -33,11 +40,32 @@ public class UbicacionEvento {
     private Dominio tipoDominio;
     private DominioPublicoVariosMunicipios tipoDominioVariosMunicipios;
     private DominioPublicoPortuario tipoDominioPublicoPortuario;
+    private Boolean esAsimilado;
+    private LocalAsimilado tipoLocalAsimilado;
     
     public UbicacionEvento(){
         super();
     }
-
+    //Establecimientos
+    public void setTipoEstablecimiento(Establecimiento tipoEstablecimiento) {
+        this.tipoEstablecimiento = tipoEstablecimiento;
+    }
+    public Establecimiento getTipoEstablecimiento() {
+        return tipoEstablecimiento;
+    }
+    public void setEsAsimilado(Boolean esAsimilado) {
+        this.esAsimilado = esAsimilado;
+    }
+    public Boolean getEsAsimilado() {
+        return esAsimilado;
+    }
+    public void setTipoLocalAsimilado(LocalAsimilado tipoLocalAsimilado) {
+        this.tipoLocalAsimilado = tipoLocalAsimilado;
+    }
+    public LocalAsimilado getTipoLocalAsimilado() {
+        return tipoLocalAsimilado;
+    }
+    //Espacios
     public void setTipoUbicacion(Ubicacion tipoUbicacion) {
         this.tipoUbicacion = tipoUbicacion;
     }

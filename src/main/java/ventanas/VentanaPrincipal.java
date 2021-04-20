@@ -23,6 +23,10 @@ public class VentanaPrincipal extends JFrame {
     PDominioPublico pDominioPublico = new PDominioPublico();
     PDominioPublicoPortuario pDominioPublicoPortuario = new PDominioPublicoPortuario();
     PVariosMunicipios pVariosMunicipios = new PVariosMunicipios();
+    PEstablecimientos pEstablecimientos = new PEstablecimientos();
+    PEstablecimientoOtro pEstablecimientoOtro = new PEstablecimientoOtro();
+    PLocalesAsimilados pLocalesAsimilados = new PLocalesAsimilados();
+
     Evento  evento;
     
     public VentanaPrincipal(){
@@ -43,6 +47,9 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.getContentPane().add(pIdioma);
+        // this.getContentPane().add(pEstablecimientos);
+        // this.getContentPane().add(pEstablecimientoOtro);
+        // this.getContentPane().add(pLocalesAsimilados);
         // this.getContentPane().add(pUbicacion);
         // this.getContentPane().add(pEspacios);
         // this.getContentPane().add(pCaracter);

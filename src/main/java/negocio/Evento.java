@@ -1,11 +1,12 @@
 package negocio;
 
 import java.util.Date;
-
 import negocio.UbicacionEvento.Dominio;
 import negocio.UbicacionEvento.DominioPublicoPortuario;
 import negocio.UbicacionEvento.DominioPublicoVariosMunicipios;
 import negocio.UbicacionEvento.Espacio;
+import negocio.UbicacionEvento.Establecimiento;
+import negocio.UbicacionEvento.LocalAsimilado;
 import negocio.UbicacionEvento.Titularidad;
 import negocio.UbicacionEvento.Ubicacion;
 public class Evento {
@@ -165,11 +166,22 @@ public class Evento {
         tecnico.setCoberturaSeguro(coberturaSeguro);
     }
 
+    
     public void setUbicacion(Ubicacion tipoUbicacion) {
         ubicacion = new UbicacionEvento();
         ubicacion.setTipoUbicacion(tipoUbicacion);
     }
-
+    //Establecimientos
+    public void setEstablecimiento(Establecimiento tipoEstablecimiento){
+        ubicacion.setTipoEstablecimiento(tipoEstablecimiento);
+    }
+    public void setEstablecimientoAsimiladoOtraCategoria(Boolean esAsimilado){
+        ubicacion.setEsAsimilado(esAsimilado);
+    }
+    public void setTipoLocalAsimilado(LocalAsimilado tipoLocalAsimilado){
+        ubicacion.setTipoLocalAsimilado(tipoLocalAsimilado);
+    }
+    //Espacios
     public void setEspacio(Espacio tipoEspacio){
         ubicacion.setTipoEspacio(tipoEspacio);
     }
@@ -185,6 +197,7 @@ public class Evento {
     public void setDominioVariosMunicipios(DominioPublicoVariosMunicipios tipoDominioVariosMunicipios){
         ubicacion.setTipoDominioVariosMunicipios(tipoDominioVariosMunicipios);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

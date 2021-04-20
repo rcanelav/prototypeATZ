@@ -4,17 +4,17 @@ import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
-public class PUbicacion extends PFondoStandard implements ActionListener{
+public class PUbicacion extends PFondoStandard {
     private static final long serialVersionUID = 1L;
     private GridBagConstraints grid = new Grid();
     private BotonPrincipal botonEspacioAbierto;
     private BotonPrincipal botonEstablecimiento;
     private PEspacios pEspacios;
+    private PEstablecimientos pEstablecimientos;
     private String texto;
 
     public PUbicacion(){
@@ -56,9 +56,9 @@ public class PUbicacion extends PFondoStandard implements ActionListener{
         if(e.getSource() == botonEstablecimiento){
             frame.getEvento().setUbicacion(Ubicacion.ESTABLECIMIENTO);
             JOptionPane.showMessageDialog(null, "Ubicación seleccionada como ESTABLECIMIENTO");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            pEstablecimientos = new PEstablecimientos();
+            frame.add(pEstablecimientos);
+            this.setVisible(false);
         }
         if(e.getSource() == botonEspacioAbierto){
             frame.getEvento().setUbicacion(Ubicacion.ESPACIO_ABIERTO);
