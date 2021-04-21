@@ -6,6 +6,7 @@ import negocio.UbicacionEvento.DominioPublicoPortuario;
 import negocio.UbicacionEvento.DominioPublicoVariosMunicipios;
 import negocio.UbicacionEvento.Espacio;
 import negocio.UbicacionEvento.Establecimiento;
+import negocio.UbicacionEvento.EstablecimientoAbiertoAlPublico;
 import negocio.UbicacionEvento.LocalAsimilado;
 import negocio.UbicacionEvento.Titularidad;
 import negocio.UbicacionEvento.Ubicacion;
@@ -180,6 +181,9 @@ public class Evento {
     }
     public void setTipoLocalAsimilado(LocalAsimilado tipoLocalAsimilado){
         ubicacion.setTipoLocalAsimilado(tipoLocalAsimilado);
+    }
+    public void setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico tipoEstablecimientoAbiertoAlPublico){
+        ubicacion.setTipoEstablecimientoAbiertoAlPublico(tipoEstablecimientoAbiertoAlPublico);
     }
     //Espacios
     public void setEspacio(Espacio tipoEspacio){

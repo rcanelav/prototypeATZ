@@ -26,6 +26,7 @@ public class VentanaPrincipal extends JFrame {
     PEstablecimientos pEstablecimientos = new PEstablecimientos();
     PEstablecimientoOtro pEstablecimientoOtro = new PEstablecimientoOtro();
     PLocalesAsimilados pLocalesAsimilados = new PLocalesAsimilados();
+    PEstablecimientosAP pEstablecimientosAP = new PEstablecimientosAP();
 
     Evento  evento;
     
@@ -47,6 +48,7 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.getContentPane().add(pIdioma);
+        // this.getContentPane().add(pEstablecimientosAP);
         // this.getContentPane().add(pEstablecimientos);
         // this.getContentPane().add(pEstablecimientoOtro);
         // this.getContentPane().add(pLocalesAsimilados);

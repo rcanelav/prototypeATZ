@@ -73,7 +73,7 @@ public class PTitularidad  extends PFondoStandard {
             frame.add(pDominioPublico);
             this.setVisible(false);
         }
-        if(e.getSource() == botonTitularidadPublica){
+        if(e.getSource() == botonTitularidadPrivada){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PRIVADA);
             JOptionPane.showMessageDialog(null, "Establecida titularidad PRIVADA - WIP");
             // System.out.println(frame.getEvento());

@@ -65,6 +65,13 @@ public class UbicacionEvento {
     public LocalAsimilado getTipoLocalAsimilado() {
         return tipoLocalAsimilado;
     }
+    public void setTipoEstablecimientoAbiertoAlPublico(
+            EstablecimientoAbiertoAlPublico tipoEstablecimientoAbiertoAlPublico) {
+        this.tipoEstablecimientoAbiertoAlPublico = tipoEstablecimientoAbiertoAlPublico;
+    }
+    public EstablecimientoAbiertoAlPublico getTipoEstablecimientoAbiertoAlPublico() {
+        return tipoEstablecimientoAbiertoAlPublico;
+    }
     //Espacios
     public void setTipoUbicacion(Ubicacion tipoUbicacion) {
         this.tipoUbicacion = tipoUbicacion;

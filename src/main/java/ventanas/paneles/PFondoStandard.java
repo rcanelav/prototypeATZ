@@ -8,6 +8,10 @@ import java.awt.event.ActionEvent;
 
 public class PFondoStandard extends JPanel implements ActionListener {
 
+    public PFondoStandard(){
+        setVisible(true);
+    }
+
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);

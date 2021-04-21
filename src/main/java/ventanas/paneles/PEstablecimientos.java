@@ -15,6 +15,7 @@ public class PEstablecimientos extends PFondoStandard {
     private BotonPrincipal botonOtro;
     private String texto;
     private PEstablecimientoOtro pEstablecimientoOtro;
+    private PEstablecimientosAP pEstablecimientosAP;
 
     public PEstablecimientos(){
         colocarTexto();
@@ -63,9 +64,9 @@ public class PEstablecimientos extends PFondoStandard {
         if(e.getSource() == botonEstablecimientoAP){
             frame.getEvento().setEstablecimiento(Establecimiento.ABIERTO_AL_PUBLICO);
             JOptionPane.showMessageDialog(null, "ESTABLECIMIENTO como ABIERTO AL PUBLICO. - WIP");
-            // pEstablecimientos = new PEstablecimientos();
-            // frame.add(pEstablecimientos);
-            // this.setVisible(false);
+            pEstablecimientosAP = new PEstablecimientosAP();
+            frame.add(pEstablecimientosAP);
+            this.setVisible(false);
         }
         if(e.getSource() == botonOtro){
             frame.getEvento().setEstablecimiento(Establecimiento.OTRO);
