@@ -37,8 +37,8 @@ public class PLocalesAsimilados extends PFondoStandard{
     private void colocarTexto(){
         this.setLayout(new GridBagLayout());
 
-        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -52,12 +52,12 @@ public class PLocalesAsimilados extends PFondoStandard{
     }
 
     private void colocarBotones(){
-        estadioDeportivo = new RadioBut("Estadio deportivo");
+        estadioDeportivo = new RadioBut("ESTADIO DEPORTIVO");
         estadioDeportivo.addActionListener(this);
         grid = new Grid(0, 3, 0, 0, 0);
         this.add(estadioDeportivo, grid);
         
-        salaFiestas = new RadioBut("Sala de Fiestas");
+        salaFiestas = new RadioBut("SALA DE FIESTAS");
         salaFiestas.addActionListener(this);
         grid = new Grid(0, 3, 0, 0, 400);
         this.add(salaFiestas, grid);
@@ -72,52 +72,52 @@ public class PLocalesAsimilados extends PFondoStandard{
         grid = new Grid(1, 3, 0, 0, 0);
         this.add(salonBanquetes, grid);
 
-        pabellonDeportivo = new RadioBut("Pabellón Deportivo");
+        pabellonDeportivo = new RadioBut("PABELLÓN DEPORTIVO");
         pabellonDeportivo.addActionListener(this);
         grid = new Grid(0, 4, 0, 5, 5);
         this.add(pabellonDeportivo, grid);
 
-        cafeEspectaculo = new RadioBut("Café Espectáculo");
+        cafeEspectaculo = new RadioBut("CAFÉ ESPECTÁCULO");
         cafeEspectaculo.addActionListener(this);
         grid = new Grid(0, 4, 0, 5, 412);
         this.add(cafeEspectaculo, grid);
 
-        discoteca = new RadioBut("Discoteca");
+        discoteca = new RadioBut("DISCOTECA");
         discoteca.addActionListener(this);
         grid = new Grid(1, 4, 0, 5, -369);
         this.add(discoteca, grid);
 
-        salaConferencias = new RadioBut("Sala de Conferencias");
+        salaConferencias = new RadioBut("SALA DE CONFERENCIAS");
         salaConferencias.addActionListener(this);
         grid = new Grid(1, 4, 0, 5, -15);
         this.add(salaConferencias, grid);
         
-        salaConciertos = new RadioBut("Sala de conciertos");
+        salaConciertos = new RadioBut("SALA DE CONCIERTOS");
         salaConciertos.addActionListener(this);
         grid = new Grid(0, 5, 0, 5, 5);
         this.add(salaConciertos, grid);
         
-        salaPolivalente = new RadioBut("Sala polivalente");
+        salaPolivalente = new RadioBut("SALA POLIVALENTE");
         salaPolivalente.addActionListener(this);
         grid = new Grid(0, 5, 0, 5, 404);
         this.add(salaPolivalente, grid);
         
-        museo = new RadioBut("Museo");
+        museo = new RadioBut("MUSEO");
         museo.addActionListener(this);
         grid = new Grid(1, 5, 0, 5, -387);
         this.add(museo, grid);
         
-        parqueAcuatico = new RadioBut("Parque acuático");
+        parqueAcuatico = new RadioBut("PARQUE ACUÁTICO");
         parqueAcuatico.addActionListener(this);
         grid = new Grid(1, 5, 0, 5, -42);
         this.add(parqueAcuatico, grid);
 
-        parqueAtraccionesOTematico = new RadioBut("Parque de atracciones / temático");
+        parqueAtraccionesOTematico = new RadioBut("PARQUE DE ATRACCIONES/ TEMÁTICO");
         parqueAtraccionesOTematico.addActionListener(this);
         grid = new Grid(0, 6, 0, 5, 88);
         this.add(parqueAtraccionesOTematico, grid);
 
-        biblioteca = new RadioBut("Biblioteca");
+        biblioteca = new RadioBut("BIBLIOTECA");
         biblioteca.addActionListener(this);
         grid = new Grid(1, 6, 0, 5, -75);
         this.add(biblioteca, grid);
@@ -144,85 +144,99 @@ public class PLocalesAsimilados extends PFondoStandard{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == estadioDeportivo){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.ESTADIO_DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "DEPORTIVO");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un ESTADIO DEPORTIVO");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == salaFiestas){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_FIESTAS);
-            JOptionPane.showMessageDialog(null, "SALA FIESTAS");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a una SALA FIESTAS");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == salonBanquetes){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALON_BANQUETES);
-            JOptionPane.showMessageDialog(null, "SALON BANQUETES");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un SALÓN BANQUETES");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == pub){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PUB);
-            JOptionPane.showMessageDialog(null, "PUB");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un PUB");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == pabellonDeportivo){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PABELLON_DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "PABELLON DEPORTIVO");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un PABELLÓN DEPORTIVO");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == cafeEspectaculo){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.CAFE_ESPECTACULO);
-            JOptionPane.showMessageDialog(null, "CAFE ESPECTACULO");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un CAFÉ ESPECTÁCULO");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == discoteca){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.DISCOTECA);
-            JOptionPane.showMessageDialog(null, "DISCOTECA");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a una DISCOTECA");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == salaConferencias){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_CONFERENCIAS);
-            JOptionPane.showMessageDialog(null, "SALA CONFERENCIAS");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a una SALA DE CONFERENCIAS");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == salaConciertos){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_CONCIERTOS);
-            JOptionPane.showMessageDialog(null, "SALA CONCIERTOS");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a una SALA DE CONCIERTOS");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == salaPolivalente){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_POLIVALENTE);
-            JOptionPane.showMessageDialog(null, "SALA POLIVALENTE");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a una SALA POLIVALENTE");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == museo){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.MUSEO);
-            JOptionPane.showMessageDialog(null, "MUSEO");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un MUSEO");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == parqueAcuatico){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PARQUE_ACUATICO);
-            JOptionPane.showMessageDialog(null, "PARQUE ACUATICO");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un PARQUE ACUÁTICO");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == parqueAtraccionesOTematico){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PARQUE_ATRACCIONES_TEMATICO);
-            JOptionPane.showMessageDialog(null, "PARQUE DE ATRACCIONES / TEMATICO");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a un PARQUE DE ATRACCIONES / TEMÁTICO");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);
         }else if(e.getSource() == biblioteca){
             // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.BIBLIOTECA);
-            JOptionPane.showMessageDialog(null, "BIBLIOTECA");
+            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
+            " desarrollo del espectáculo y corresponde a una BIBLIOTECA");
             // pEspacios = new PEspacios();
             // frame.add(pEspacios);
             // this.setVisible(false);

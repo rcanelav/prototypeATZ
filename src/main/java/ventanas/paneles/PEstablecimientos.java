@@ -26,8 +26,8 @@ public class PEstablecimientos extends PFondoStandard {
     private void colocarTexto() {
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -47,7 +47,7 @@ public class PEstablecimientos extends PFondoStandard {
     }
 
     private void colocarBotones(){
-        botonEstablecimientoAP = new BotonPrincipal("ESTABLECIMIENTO ABIERTO \n AL PUBLICO ");
+        botonEstablecimientoAP = new BotonPrincipal("ABIERTO AL PÚBLICO ");
         botonEstablecimientoAP.addActionListener(this);
         grid = new Grid(0, 3, 0, 10, 0, 30, 40);
         this.add(botonEstablecimientoAP, grid);
@@ -63,14 +63,14 @@ public class PEstablecimientos extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonEstablecimientoAP){
             frame.getEvento().setEstablecimiento(Establecimiento.ABIERTO_AL_PUBLICO);
-            JOptionPane.showMessageDialog(null, "ESTABLECIMIENTO como ABIERTO AL PUBLICO. - WIP");
+            JOptionPane.showMessageDialog(null, "Establecimiento con habilitación de ABIERTO AL PÚBLICO");
             pEstablecimientosAP = new PEstablecimientosAP();
             frame.add(pEstablecimientosAP);
             this.setVisible(false);
         }
         if(e.getSource() == botonOtro){
             frame.getEvento().setEstablecimiento(Establecimiento.OTRO);
-            JOptionPane.showMessageDialog(null, "ESTABLECIMIENTO como OTRO.");
+            JOptionPane.showMessageDialog(null, "Por determinar la habilitación delestablecimiento");
             pEstablecimientoOtro = new PEstablecimientoOtro();
             frame.add(pEstablecimientoOtro);
             this.setVisible(false);

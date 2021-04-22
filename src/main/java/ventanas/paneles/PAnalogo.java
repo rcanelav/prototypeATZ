@@ -36,8 +36,8 @@ public class PAnalogo extends JPanel implements ActionListener {
     private void colocarTextoAnalogo(){
         this.setLayout(new GridBagLayout());
 
-        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, 0, 0);
         grid.fill = GridBagConstraints.HORIZONTAL;
         this.add(textoTitulo, grid);
@@ -103,19 +103,19 @@ public class PAnalogo extends JPanel implements ActionListener {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonPirotecnico){
             frame.getEvento().setTipo(Tipo.PIROTECNICO);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo como PIROTÉCNICO");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como PIROTÉCNICO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonTaurino){
             frame.getEvento().setTipo(Tipo.TAURINO);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo como TAURINO");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como TAURINO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonCircence){
             frame.getEvento().setTipo(Tipo.CIRCENCE);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo como CIRCENSE");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como CIRCENSE");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

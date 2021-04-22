@@ -27,8 +27,8 @@ public class PEstablecimientosAP extends PFondoStandard {
     private void colocarTexto(){
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERACIÓN DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -80, 0);
         this.add(textoTitulo, grid);
 
@@ -86,28 +86,28 @@ public class PEstablecimientosAP extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonLocalCerrado){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.LOCAL_CERRADO);
-            JOptionPane.showMessageDialog(null, "ESTABLECIDO LOCAL CERRADO. - WIP");
+            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un LOCAL CERRADO habilitado");
             // pEstablecimientos = new PEstablecimientos();
             // frame.add(pEstablecimientos);
             // this.setVisible(false);
         }
         if(e.getSource() == botonLocalDesmontable){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.LOCAL_DESMONTABLE);
-            JOptionPane.showMessageDialog(null, "ESTABLECIDO LOCAL DESMONTABLE. - WIP");
+            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un LOCAL DESMONTABLE habilitado");
             // pEstablecimientos = new PEstablecimientos();
             // frame.add(pEstablecimientos);
             // this.setVisible(false);
         }
         if(e.getSource() == botonInstalacion){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.INSTALACION);
-            JOptionPane.showMessageDialog(null, "ESTABLECIDO INSTALACION. - WIP");
+            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en una INSTALACIÓN habilitada");
             // pEstablecimientos = new PEstablecimientos();
             // frame.add(pEstablecimientos);
             // this.setVisible(false);
         }
         if(e.getSource() == botonRecinto){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.RECINTO);
-            JOptionPane.showMessageDialog(null, "ESTABLECIDO RECINTO. - WIP");
+            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un RECINTO habilitado");
             // pEstablecimientos = new PEstablecimientos();
             // frame.add(pEstablecimientos);
             // this.setVisible(false);

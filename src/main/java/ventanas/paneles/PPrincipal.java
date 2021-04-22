@@ -43,8 +43,8 @@ public class PPrincipal extends JPanel implements ActionListener{
     }
     
     private void colocarTextos(){
-        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1000, 30);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1000, 30);
         grid = new Grid(0, 0, 2, -100, 0);
         this.add(textoTitulo, grid);
         

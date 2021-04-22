@@ -26,7 +26,7 @@ public class PTitularidad  extends PFondoStandard {
         this.setLayout(new GridBagLayout());
 
         texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -67,7 +67,7 @@ public class PTitularidad  extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonTitularidadPublica){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PUBLICA);
-            JOptionPane.showMessageDialog(null, "Establecida titularidad PÚBLICA");
+            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto como PÚBLICA");
             // System.out.println(frame.getEvento());
             pDominioPublico = new PDominioPublico();
             frame.add(pDominioPublico);
@@ -75,7 +75,7 @@ public class PTitularidad  extends PFondoStandard {
         }
         if(e.getSource() == botonTitularidadPrivada){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PRIVADA);
-            JOptionPane.showMessageDialog(null, "Establecida titularidad PRIVADA - WIP");
+            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto como PRIVADA");
             // System.out.println(frame.getEvento());
         }
     }
