@@ -35,8 +35,8 @@ public class PDeportivo extends JPanel implements ActionListener {
     private void colocarTextoDeportivo(){
         this.setLayout(new GridBagLayout());
 
-        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 0, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -67,7 +67,7 @@ public class PDeportivo extends JPanel implements ActionListener {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonDeportivo){
             frame.getEvento().setTipo(Tipo.DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo como DEPORTIVO");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como DEPORTIVO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

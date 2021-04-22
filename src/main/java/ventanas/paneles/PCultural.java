@@ -27,8 +27,8 @@ public class PCultural extends PFondoStandard {
     private void colocarTextoArtistico() {
         this.setLayout(new GridBagLayout());
 
-        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -80, 0);
         this.add(textoTitulo, grid);
 
@@ -82,20 +82,20 @@ public class PCultural extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonCinematografico){
             frame.getEvento().setTipo(Tipo.CINEMATOGRAFICO);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo como CINEMATOGRÁFICO");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como CINEMATOGRÁFICO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }
         else if(e.getSource() == botonFeria){
             frame.getEvento().setTipo(Tipo.FERIA);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo como FERIA");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculos como FERIA");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }else if(e.getSource() == botonExhibicion){
             frame.getEvento().setTipo(Tipo.EXHIBICION);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo como EXHIBICIÓN");
+            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como EXHIBICIÓN");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

@@ -29,8 +29,8 @@ public class PClasificacion extends PFondoStandard {
         private void colocarTexto() {
                 this.setLayout(new GridBagLayout());
 
-                texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-                PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+                texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+                PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
                 grid = new Grid(0, 0, 3, -90, 0);
 
                 this.add(textoTitulo, grid);
@@ -49,16 +49,16 @@ public class PClasificacion extends PFondoStandard {
                 grid = new Grid(0, 2, 0, 0, 50);
                 this.add(textoPermanente, grid);
 
-                texto = "Se celebrará en un establecimiento abierto al público al que se refiere el "
-                                + "artículo 3.d) de la Ley 10/2017, del 27 de diciembre, durante un período de tiempo superior"
-                                + " a 3 meses e inferior a 1 año, en cómputo global anual.";
+                texto = "Se celebrará durante un período de tiempo superior a 3 meses e inferior a 1 año, en cómputo "+
+                "global anual, en un establecimiento abierto al público al que se refiere el artículo 3.d) de la Ley "+
+                "10/2017, del 27 de diciembre.";
                 PanelTexto textoTemporada = new PanelTexto(texto, 0, 18, 500, 100);
                 grid = new Grid(2, 2, 0, 0, 0);
                 this.add(textoTemporada, grid);
 
-                texto = "Se celebrará en un establecimiento abierto al público o espacio abierto al público,"
-                                + " a los que se refeire el artículo 3.d) y 3.e) de la Ley 10/2017, del 27 de diciembro, durante un período"
-                                + " de tiempo igual o inferior a 3 meses, en cómputo global anual.";
+                texto = "Se celebrará durante un período de tiempo igual o inferior a 3 meses, en cómputo global anual, "+
+                "en un establecimiento abierto al público o espacio abierto al público a los que se refeire el artículo 3.d) "+
+                "y 3.e) de la Ley 10/2017, del 27 de diciembre.";
                 PanelTexto textoOcasional = new PanelTexto(texto, 0, 18, 500, 150);
                 grid = new Grid(0, 4, 0, 30, 50);
                 this.add(textoOcasional, grid);

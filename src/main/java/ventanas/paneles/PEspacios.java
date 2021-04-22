@@ -25,8 +25,8 @@ public class PEspacios extends PFondoStandard {
     private void colocarTextos(){
         this.setLayout(new GridBagLayout());
 
-        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -45,12 +45,12 @@ public class PEspacios extends PFondoStandard {
     }
 
     private void colocarBotones(){
-        botonEspacioAbiertoAlPublico = new BotonPrincipal("Espacio abierto al público");
+        botonEspacioAbiertoAlPublico = new BotonPrincipal("ABIERTO AL PÚBLICO");
         botonEspacioAbiertoAlPublico.addActionListener(this);
         grid = new Grid(0, 3, 0, 10, 0, 30, 40);
         this.add(botonEspacioAbiertoAlPublico, grid);
 
-        botonOtro = new BotonPrincipal("Otro");
+        botonOtro = new BotonPrincipal("OTRO");
         botonOtro.addActionListener(this);
         grid = new Grid(1, 3, 0, 10, 0, 240, 40);
         this.add(botonOtro, grid);

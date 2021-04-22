@@ -25,8 +25,8 @@ public class PDominioPublicoPortuario extends PFondoStandard{
     private void colocarTexto() {
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -62,7 +62,7 @@ public class PDominioPublicoPortuario extends PFondoStandard{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonDominioPortuario){
             frame.getEvento().setDominioPublicoPortuario(DominioPublicoPortuario.DOM_PUBLICO_PORTUARIO);
-            JOptionPane.showMessageDialog(null, "Establecido DOMINIO PUBLICO PORTUARIO - WIP");
+            JOptionPane.showMessageDialog(null, "Establecido el dominio público como PORTUARIO");
             // System.out.println(frame.getEvento());
             // pTitularidad = new PTitularidad();
             // frame.add(pTitularidad);
@@ -70,7 +70,7 @@ public class PDominioPublicoPortuario extends PFondoStandard{
         }
         if(e.getSource() == botonOtro){
             frame.getEvento().setDominioPublicoPortuario(DominioPublicoPortuario.OTRO);
-            JOptionPane.showMessageDialog(null, "Establecido OTRO TIPO DE DOMINIO - WIP");
+            JOptionPane.showMessageDialog(null, "No se trata de dominio público PORTUARIO");
             // System.out.println(frame.getEvento());
             // pTitularidad = new PTitularidad();
             // frame.add(pTitularidad);

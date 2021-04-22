@@ -26,8 +26,8 @@ public class PDominioPublico extends PFondoStandard  {
     private void colocarTexto() {
         this.setLayout(new GridBagLayout());
 
-        texto = "GENERANDO DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -41,7 +41,7 @@ public class PDominioPublico extends PFondoStandard  {
 
         texto = "Todo tipo de espectáculo público incluido en el ámbito de aplicación de la Ley 10/2017,"+
                 " de 27 de diciembre, que se desenvuelvan en más de un término municipal de la Comunidad Autónoma"+
-                " de Galicia..";
+                " de Galicia.";
         PanelTexto textoVariosMunicipios = new PanelTexto(texto, 0, 18, 500, 100);
         grid = new Grid(1, 2, 0, 10, 100);
         this.add(textoVariosMunicipios, grid);
@@ -64,7 +64,7 @@ public class PDominioPublico extends PFondoStandard  {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonUnMunicipio){
             frame.getEvento().setDominio(Dominio.UN_MUNICIPIO);
-            JOptionPane.showMessageDialog(null, "Establecido DOMINIO UN MUNICIPIO");
+            JOptionPane.showMessageDialog(null, "El dominio público corresponde a UN MUNICIPIO");
             // System.out.println(frame.getEvento());
             pDominioPublicoPortuario = new PDominioPublicoPortuario();
             frame.add(pDominioPublicoPortuario);
@@ -72,7 +72,7 @@ public class PDominioPublico extends PFondoStandard  {
         }
         if(e.getSource() == botonVariosMunicipios){
             frame.getEvento().setDominio(Dominio.VARIOS_MUNICIPIOS);
-            JOptionPane.showMessageDialog(null, "Establecido DOMINIO VARIOS MUNICIPIO");
+            JOptionPane.showMessageDialog(null, "El dominio público corresponde a VARIOS MUNICIPIOS");
             // System.out.println(frame.getEvento());
             pVariosMunicipios = new PVariosMunicipios();
             frame.add(pVariosMunicipios);
