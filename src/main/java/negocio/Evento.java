@@ -8,6 +8,7 @@ import negocio.UbicacionEvento.Espacio;
 import negocio.UbicacionEvento.Establecimiento;
 import negocio.UbicacionEvento.EstablecimientoAbiertoAlPublico;
 import negocio.UbicacionEvento.LocalAsimilado;
+import negocio.UbicacionEvento.LocalCerrado;
 import negocio.UbicacionEvento.Titularidad;
 import negocio.UbicacionEvento.Ubicacion;
 public class Evento {
@@ -184,6 +185,15 @@ public class Evento {
     }
     public void setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico tipoEstablecimientoAbiertoAlPublico){
         ubicacion.setTipoEstablecimientoAbiertoAlPublico(tipoEstablecimientoAbiertoAlPublico);
+    }
+    public void setLicenciaUrbanistica(boolean licenciaUrbanistica){
+        ubicacion.setLicenciaUrbanistica(licenciaUrbanistica);
+    }
+    public void setInstalacionHomologada(boolean instalacionHomologada){
+        ubicacion.setInstalacionHomologada(instalacionHomologada);
+    }
+    public void setTipoLocalCerrado(LocalCerrado tipoLocalCerrado){
+        ubicacion.setTipoLocalCerrado(tipoLocalCerrado);
     }
     //Espacios
     public void setEspacio(Espacio tipoEspacio){

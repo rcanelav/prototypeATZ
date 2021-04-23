@@ -42,19 +42,19 @@ public class PEstablecimientos extends PFondoStandard {
                 "b) Local no permanente desmontable o instalación portátil/ desmontable \n"+
                 "c) Recinto";
         PanelTexto textoEstablecimientoAP = new PanelTexto(texto, 0, 18, 500, 120);
-        grid = new Grid(0, 2, 1, 0, 0);
+        grid = new Grid(0, 2, 1, 0, 80);
         this.add(textoEstablecimientoAP, grid);
     }
 
     private void colocarBotones(){
         botonEstablecimientoAP = new BotonPrincipal("ABIERTO AL PÚBLICO ");
         botonEstablecimientoAP.addActionListener(this);
-        grid = new Grid(0, 3, 0, 10, 0, 30, 40);
+        grid = new Grid(0, 3, 0, 10, 80, 30, 40);
         this.add(botonEstablecimientoAP, grid);
 
         botonOtro = new BotonPrincipal("OTRO");
         botonOtro.addActionListener(this);
-        grid = new Grid(1, 3, 0, 10, 0, 400, 40);
+        grid = new Grid(1, 3, 0, 10, -50, 200, 40);
         this.add(botonOtro, grid);
     }
 

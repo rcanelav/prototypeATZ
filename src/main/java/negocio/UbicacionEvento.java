@@ -32,6 +32,9 @@ public class UbicacionEvento {
         MUSEO, PARQUE_ACUATICO, PARQUE_ATRACCIONES_TEMATICO,
         BIBLIOTECA;
     }
+    public enum LocalCerrado{
+        TEATRO, AUDITORIO, CIRCO, CINE, PLAZA_TOROS, ESPECTACULO_DEPORTIVO;
+    }
     private Ubicacion tipoUbicacion;
     private Establecimiento tipoEstablecimiento;
     private EstablecimientoAbiertoAlPublico tipoEstablecimientoAbiertoAlPublico;
@@ -42,6 +45,9 @@ public class UbicacionEvento {
     private DominioPublicoPortuario tipoDominioPublicoPortuario;
     private Boolean esAsimilado;
     private LocalAsimilado tipoLocalAsimilado;
+    private boolean licenciaUrbanistica;
+    private boolean instalacionHomologada;
+    private LocalCerrado tipoLocalCerrado;
     
     public UbicacionEvento(){
         super();
@@ -71,6 +77,24 @@ public class UbicacionEvento {
     }
     public EstablecimientoAbiertoAlPublico getTipoEstablecimientoAbiertoAlPublico() {
         return tipoEstablecimientoAbiertoAlPublico;
+    }
+    public void setLicenciaUrbanistica(boolean licenciaUrbanistica) {
+        this.licenciaUrbanistica = licenciaUrbanistica;
+    }
+    public boolean getLicenciaUrbanistica(){
+        return licenciaUrbanistica;
+    }
+    public void setInstalacionHomologada(boolean instalacionHomologada) {
+        this.instalacionHomologada = instalacionHomologada;
+    }
+    public boolean getInstalacionHomologada(){
+        return instalacionHomologada;
+    }
+    public void setTipoLocalCerrado(LocalCerrado tipoLocalCerrado) {
+        this.tipoLocalCerrado = tipoLocalCerrado;
+    }
+    public LocalCerrado getTipoLocalCerrado() {
+        return tipoLocalCerrado;
     }
     //Espacios
     public void setTipoUbicacion(Ubicacion tipoUbicacion) {
