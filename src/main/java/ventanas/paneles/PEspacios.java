@@ -61,7 +61,7 @@ public class PEspacios extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonEspacioAbiertoAlPublico){
             frame.getEvento().setEspacio(Espacio.ABIERTO_AL_PUBLICO);
-            JOptionPane.showMessageDialog(null, "Establecida ubicación como ESPACIO ABIERTO AL PÚBLICO");
+            JOptionPane.showMessageDialog(null, "Establecida la ubicación del espectáculo en un ESPACIO ABIERTO AL PÚBLICO habilitado");
             // System.out.println(frame.getEvento());
             pTitularidad = new PTitularidad();
             frame.add(pTitularidad);
@@ -69,7 +69,7 @@ public class PEspacios extends PFondoStandard {
         }
         if(e.getSource() == botonOtro){
             frame.getEvento().setEspacio(Espacio.OTRO);
-            JOptionPane.showMessageDialog(null, "WIP");
+            JOptionPane.showMessageDialog(null, "Establecida la ubicación del espectáculo en un ESPACIO no habilitado");
             // pCaracter = new PCaracter();
             // frame.add(pCaracter);
             // this.setVisible(false);

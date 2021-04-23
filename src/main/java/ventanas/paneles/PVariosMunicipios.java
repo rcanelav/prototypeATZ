@@ -27,8 +27,8 @@ public class PVariosMunicipios extends PFondoStandard{
     private void colocarTexto() {
         this.setLayout(new GridBagLayout());
 
-        texto = "DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 22, 1150, 70);
+        texto = "GENERACIÓN DECLARACIÓN RESPONSABLE / SOLICITUD DE LICENCIA";
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
@@ -41,8 +41,8 @@ public class PVariosMunicipios extends PFondoStandard{
         this.add(textoLey, grid);
 
         texto = "Toda actividad cuyo objeto sea competir en espacio o tiempo "+
-                "por vías o terreos públicos, de uso común o privados, que sean utilizados por "+
-                "unha colectividad indeterminad de persoas usuarias, tanto urbanos como interurbanos.";
+                "por vías o terrenos públicos, de uso común o privados, que sean utilizados por "+
+                "una colectividad indeterminad de persoas usuarias, tanto urbanos como interurbanos.";
         PanelTexto textoPruebaDeportiva = new PanelTexto(texto, 0, 18, 500, 100);
         grid = new Grid(0, 2, 0, -20, 20);
         this.add(textoPruebaDeportiva, grid);
@@ -55,8 +55,8 @@ public class PVariosMunicipios extends PFondoStandard{
         this.add(textoMarchaCiclista, grid);
 
         texto = "Aquellos eventos en los que participan >10 vehículos  históricos o con más de 25 años de "+
-                "antigüedad en los que se estableza una clasificación por velocidad u regularidad, < 50 km/h de media "+
-                "o supongan una manifestación turístics, concentración, concurso de conservación o elegancia y, en general.";
+                "antigüedad en los que se estableza una clasificación por velocidad o regularidad de <50 km/h de media "+
+                "o supongan, en general, una manifestación turística (concentración, concurso de conservación o elegancia...).";
         PanelTexto textoVehiculosClasicos = new PanelTexto(texto, 0, 18, 900, 100);
         grid = new Grid(0, 4, 2, 20, 0);
         this.add(textoVehiculosClasicos, grid);
@@ -84,7 +84,7 @@ public class PVariosMunicipios extends PFondoStandard{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonPruebaDeportiva){
             frame.getEvento().setDominioVariosMunicipios(DominioPublicoVariosMunicipios.PRUEBA_DEPORTIVA);
-            JOptionPane.showMessageDialog(null, "Establecido como PRUBA DEPORTIVA");
+            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como PRUEBA DEPORTIVA");
             // System.out.println(frame.getEvento());
             // pDominioPublicoPortuario = new PDominioPublicoPortuario();
             // frame.add(pDominioPublicoPortuario);
@@ -92,7 +92,7 @@ public class PVariosMunicipios extends PFondoStandard{
         }
         if(e.getSource() == botonMarchaCiclista){
             frame.getEvento().setDominioVariosMunicipios(DominioPublicoVariosMunicipios.MARCHA_CICLISTA);
-            JOptionPane.showMessageDialog(null, "Establecido como MARCHA CICLISTA");
+            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como MARCHA CICLISTA");
             // System.out.println(frame.getEvento());
             // pDominioPublicoPortuario = new PDominioPublicoPortuario();
             // frame.add(pDominioPublicoPortuario);
@@ -100,7 +100,7 @@ public class PVariosMunicipios extends PFondoStandard{
         }
         if(e.getSource() == botonVehiculosClasicos){
             frame.getEvento().setDominioVariosMunicipios(DominioPublicoVariosMunicipios.VEHICULOS_CLASICOS);
-            JOptionPane.showMessageDialog(null, "Establecido como VEHICULOS CLASICOS");
+            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como VEHÍCULOS CLASICOS");
             // System.out.println(frame.getEvento());
             // pDominioPublicoPortuario = new PDominioPublicoPortuario();
             // frame.add(pDominioPublicoPortuario);

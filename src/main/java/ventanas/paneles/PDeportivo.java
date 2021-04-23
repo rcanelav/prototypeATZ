@@ -41,9 +41,9 @@ public class PDeportivo extends JPanel implements ActionListener {
         this.add(textoTitulo, grid);
 
         texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  "+
-                "Catálogo  de espectáculos  públicos,  actividades  recreativas  y  establecementos"+
+                "Catálogo  de espectáculos  públicos,  actividades  recreativas  y  establecimientos"+
                 " abiertos  al público  de la  Comunidad  Autónoma  de  Galicia  y  se  establecen  "+
-                "determinadas disposiciones geraless de aplicación en la materia.";
+                "determinadas disposiciones generales de aplicación en la materia.";
         PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
         grid = new Grid(0, 1, 0, -50, 0);
         this.add(textoLey, grid);

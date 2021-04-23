@@ -70,8 +70,8 @@ public class PAnalogo extends JPanel implements ActionListener {
         this.add(textoCircence, grid);
 
         texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo  de espectáculos  públicos,"+
-                " actividades  recreativas  y  establecementos  abiertos  al público  de la  Comunidad  Autónoma  de  Galicia"+
-                " y  se  establecen  determinadas disposiciones geraless de aplicación en la materia.";
+                " actividades  recreativas  y  establecimientos  abiertos  al público  de la  Comunidad  Autónoma  de  Galicia"+
+                " y  se  establecen  determinadas disposiciones generales de aplicación en la materia.";
         PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1250, 50);
         textoLey.setMinimumSize(new Dimension(1250, 50));
         textoLey.setBackground(new Color(213, 156, 71));
