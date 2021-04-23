@@ -36,9 +36,9 @@ public class PClasificacion extends PFondoStandard {
                 this.add(textoTitulo, grid);
 
                 texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo"+
-                "  de espectáculos  públicos,  actividades  recreativas  y  establecementos  abiertos"+
+                "  de espectáculos  públicos,  actividades  recreativas  y  establecimientos  abiertos"+
                 " al público  de la  Comunidad  Autónoma  de  Galicia y  se  establecen  determinadas "+
-                "disposiciones geraless de aplicación en la materia.";
+                "disposiciones generales de aplicación en la materia.";
                 PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
                 grid = new Grid(0, 1, 3, -40, 0);
                 this.add(textoLey, grid);
@@ -113,7 +113,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.EXTRAORDINARIO);
-                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como EXTRAORDINARIO");
+                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como EXTRAORDINARIO");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
@@ -127,7 +127,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.OCASIONAL);
-                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como OCASIONAL");
+                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como OCASIONAL");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
@@ -141,7 +141,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.PERMANENTE);
-                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como PERMANENTE");
+                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como PERMANENTE");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
@@ -155,7 +155,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.TEMPORADA);
-                                JOptionPane.showMessageDialog(null, "Respecto a la temporalidad, establecido como DE TEMPORADA");
+                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como DE TEMPORADA");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);

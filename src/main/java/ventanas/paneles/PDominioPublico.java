@@ -33,14 +33,14 @@ public class PDominioPublico extends PFondoStandard  {
 
         texto = "Decreto 98/2020, del 2 de julio, por el que se regula el procedimiento"+
                 " de autorización de la celebración de espectáculos públicos y actividades "+
-                "recreativas que se desenvuelvan en más de un término municipal de la Comunidade "+
+                "recreativas que se desenvuelvan en más de un término municipal de la Comunidad "+
                 "Autónoma de Galicia.";
         PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
         grid = new Grid(0, 1, 2, -50, 0);
         this.add(textoLey, grid);
 
         texto = "Todo tipo de espectáculo público incluido en el ámbito de aplicación de la Ley 10/2017,"+
-                " de 27 de diciembre, que se desenvuelvan en más de un término municipal de la Comunidad Autónoma"+
+                " de 27 de diciembre, que se desenvuelva en más de un término municipal de la Comunidad Autónoma"+
                 " de Galicia.";
         PanelTexto textoVariosMunicipios = new PanelTexto(texto, 0, 18, 500, 100);
         grid = new Grid(1, 2, 0, 10, 100);

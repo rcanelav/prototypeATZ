@@ -220,7 +220,7 @@ public class Evento {
         sb.append("TIPO: " + tipo + "\n");
         sb.append("CARÁCTER: " + tipoCaracter + "\n");
         sb.append("ACTIVIDAD: " + tipoActividad + "\n");
-        sb.append("TEMPORALIDAD: " + tipoClasificacion + "\n");
+        sb.append("DESARROLLO: " + tipoClasificacion + "\n");
         sb.append("\n--------------   DATOS DEL ORGANIZADOR --------------\n");
         sb.append("NÚMERO DE ORGANIZADORES: " + nOrganizadores + "\n");
         if(pPersona != null)

@@ -36,7 +36,7 @@ public class PTitularidad  extends PFondoStandard {
         grid = new Grid(0, 1, 2, -50, 0);
         this.add(textoLey, grid);
         
-        texto = "Lugar de titularidad pública, incluida la vía pública donde ocasionalmente se lleven "+
+        texto = "Lugar de titularidad pública, incluida la vía pública, donde ocasionalmente se lleven "+
                 "a cabo espectáculos públicos o actividades recreativas y que no dispone de infraestructuras"+
                 " ni instalaciones fijas para hacerlo.";
         PanelTexto textoTitularidadPublica = new PanelTexto(texto, 0, 18, 500, 100);
@@ -67,7 +67,7 @@ public class PTitularidad  extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonTitularidadPublica){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PUBLICA);
-            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto como PÚBLICA");
+            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto al público como PÚBLICA");
             // System.out.println(frame.getEvento());
             pDominioPublico = new PDominioPublico();
             frame.add(pDominioPublico);
@@ -75,7 +75,7 @@ public class PTitularidad  extends PFondoStandard {
         }
         if(e.getSource() == botonTitularidadPrivada){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PRIVADA);
-            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto como PRIVADA");
+            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto al público como PRIVADA");
             // System.out.println(frame.getEvento());
         }
     }

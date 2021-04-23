@@ -29,7 +29,7 @@ public class PEstablecimientosAP extends PFondoStandard {
     private void colocarTexto(){
         this.setLayout(new GridBagLayout());
 
-        texto = "GENERACIÓN DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
+        texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
         PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
         grid = new Grid(0, 0, 2, -80, 0);
         this.add(textoTitulo, grid);
@@ -45,12 +45,12 @@ public class PEstablecimientosAP extends PFondoStandard {
         grid = new Grid(0, 2, 0, -30, 30);
         this.add(textoLocalCerrado, grid);
         
-        texto = "Local desmontable, cubierto total o parcialmente, destinado a la actividad pretendida";
+        texto = "Local desmontable, cubierto total o parcialmente, destinado al desarrollo de espectáculos públicos";
         PanelTexto textolocalDesmontable = new PanelTexto(texto, 0, 18, 500, 50);
         grid = new Grid(1, 2, 0, -30, 70);
         this.add(textolocalDesmontable, grid);
 
-        texto = "Portátil o desmontable";
+        texto = "Instalación portátil o desmontable destinada al desarrollo de espectáculos públicos";
         PanelTexto textoInstalacion = new PanelTexto(texto, 0, 18, 500, 50);
         grid = new Grid(0, 4, 0, 30, 30);
         this.add(textoInstalacion, grid);
