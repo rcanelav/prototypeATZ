@@ -15,6 +15,7 @@ public class PEspacios extends PFondoStandard {
     private BotonPrincipal botonOtro;
     private String texto;
     private PTitularidad pTitularidad;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PEspacios(){
         colocarTextos();
@@ -70,9 +71,9 @@ public class PEspacios extends PFondoStandard {
         if(e.getSource() == botonOtro){
             frame.getEvento().setEspacio(Espacio.OTRO);
             JOptionPane.showMessageDialog(null, "Establecida la ubicación del espectáculo en un ESPACIO no habilitado");
-            // pCaracter = new PCaracter();
-            // frame.add(pCaracter);
-            // this.setVisible(false);
+            pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+            frame.add(pIdentificacionEspectaculo);
+            this.setVisible(false);
         }
     }
 }

@@ -56,6 +56,12 @@ public class TextoFormulario extends JTextField implements FocusListener{
         this.tipo = tipo; 
     }
 
+    public void setPrefSize(int width, int height){
+        setPreferredSize(new Dimension(width > 0 ? width : 350, height > 0 ? height : 20));
+        setMinimumSize(new Dimension(width > 0 ? width : 350, height > 0 ? height : 20));
+    }
+    
+
     public boolean validarInput(){
         if (!isEnabled())
             return true;

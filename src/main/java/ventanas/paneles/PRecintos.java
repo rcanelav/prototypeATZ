@@ -12,7 +12,7 @@ public class PRecintos extends PFondoStandard {
     private GridBagConstraints grid = new Grid();
     private RadioBut rbRecintoFerial;
     private String texto;
-
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
     public PRecintos(){
         colocarTexto();
         colocarBotones();
@@ -61,5 +61,8 @@ public class PRecintos extends PFondoStandard {
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }
+        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+        frame.add(pIdentificacionEspectaculo);
+        this.setVisible(false);
     }
 }

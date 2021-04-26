@@ -13,6 +13,7 @@ public class PEstablecimientoOtro extends PFondoStandard {
     private BotonPrincipal botonNoAsimilado;
     private PLocalesAsimilados pLocalesAsimilados;
     private String texto;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PEstablecimientoOtro(){
         colocarTexto();
@@ -68,9 +69,9 @@ public class PEstablecimientoOtro extends PFondoStandard {
         if(e.getSource() == botonNoAsimilado){
             frame.getEvento().setEstablecimientoAsimiladoOtraCategoria(false);
             JOptionPane.showMessageDialog(null, "El establecimiento no está habilitado");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+            frame.add(pIdentificacionEspectaculo);
+            this.setVisible(false);
         }
     }
 }

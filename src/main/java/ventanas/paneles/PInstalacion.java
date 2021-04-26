@@ -4,7 +4,6 @@ import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
 import javax.swing.*;
-import negocio.UbicacionEvento.Establecimiento;
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
@@ -13,7 +12,7 @@ public class PInstalacion extends PFondoStandard {
     private BotonPrincipal botonHomologado;
     private BotonPrincipal botonNoHomologado;
     private String texto;
-
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
     public PInstalacion(){
         colocarTexto();
         colocarBotones();
@@ -65,5 +64,8 @@ public class PInstalacion extends PFondoStandard {
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }
+        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+        frame.add(pIdentificacionEspectaculo);
+        this.setVisible(false);
     }
 }

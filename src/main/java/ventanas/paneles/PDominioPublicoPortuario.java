@@ -15,6 +15,7 @@ public class PDominioPublicoPortuario extends PFondoStandard{
     private BotonPrincipal botonDominioPortuario;
     private BotonPrincipal botonOtro;
     private String texto;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PDominioPublicoPortuario(){
             colocarTexto();
@@ -76,5 +77,8 @@ public class PDominioPublicoPortuario extends PFondoStandard{
             // frame.add(pTitularidad);
             // this.setVisible(false);
         }
+        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+        frame.add(pIdentificacionEspectaculo);
+        this.setVisible(false);
     }
 }

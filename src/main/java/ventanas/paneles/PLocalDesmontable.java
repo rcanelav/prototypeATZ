@@ -5,7 +5,6 @@ import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
 import javax.swing.*;
-import negocio.UbicacionEvento.Establecimiento;
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
@@ -14,6 +13,7 @@ public class PLocalDesmontable extends PFondoStandard{
     private BotonPrincipal licenciaUrbanisticaSi;
     private BotonPrincipal licenciaUrbanisticaNo;
     private String texto;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PLocalDesmontable(){
         colocarTexto();
@@ -66,5 +66,8 @@ public class PLocalDesmontable extends PFondoStandard{
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }
+        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+        frame.add(pIdentificacionEspectaculo);
+        this.setVisible(false);
     }
 }

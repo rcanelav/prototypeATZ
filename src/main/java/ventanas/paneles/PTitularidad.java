@@ -15,6 +15,7 @@ public class PTitularidad  extends PFondoStandard {
     private BotonPrincipal botonTitularidadPrivada;
     private String texto;
     private PDominioPublico pDominioPublico;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PTitularidad(){
             colocarTexto();
@@ -76,7 +77,9 @@ public class PTitularidad  extends PFondoStandard {
         if(e.getSource() == botonTitularidadPrivada){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PRIVADA);
             JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto al público como PRIVADA");
-            // System.out.println(frame.getEvento());
+            pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+            frame.add(pIdentificacionEspectaculo);
+            this.setVisible(false);
         }
     }
 }

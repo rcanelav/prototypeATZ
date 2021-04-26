@@ -27,6 +27,7 @@ public class PLocalesAsimilados extends PFondoStandard{
     private RadioBut biblioteca;
     ButtonGroup rb;
     private String texto;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PLocalesAsimilados(){
         colocarTexto();
@@ -241,5 +242,9 @@ public class PLocalesAsimilados extends PFondoStandard{
             // frame.add(pEspacios);
             // this.setVisible(false);
         }
+        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+        frame.add(pIdentificacionEspectaculo);
+        this.setVisible(false);
+
     }
 }

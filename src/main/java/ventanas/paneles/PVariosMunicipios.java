@@ -5,9 +5,7 @@ import ventanas.botones.BotonPrincipal;
 import ventanas.elementos.Grid;
 import ventanas.elementos.PanelTexto;
 import javax.swing.*;
-import negocio.UbicacionEvento.Dominio;
 import negocio.UbicacionEvento.DominioPublicoVariosMunicipios;
-
 import java.awt.event.ActionEvent;
 import java.awt.*;
 
@@ -17,6 +15,7 @@ public class PVariosMunicipios extends PFondoStandard{
     private BotonPrincipal botonMarchaCiclista;
     private BotonPrincipal botonVehiculosClasicos;
     private String texto;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PVariosMunicipios(){
             colocarTexto();
@@ -106,5 +105,8 @@ public class PVariosMunicipios extends PFondoStandard{
             // frame.add(pDominioPublicoPortuario);
             // this.setVisible(false);
         }
+        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+        frame.add(pIdentificacionEspectaculo);
+        this.setVisible(false);
     }
 }

@@ -1,6 +1,9 @@
 package negocio;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import negocio.UbicacionEvento.Dominio;
 import negocio.UbicacionEvento.DominioPublicoPortuario;
 import negocio.UbicacionEvento.DominioPublicoVariosMunicipios;
@@ -42,6 +45,7 @@ public class Evento {
     private Actividad tipoActividad;
     private Clasificacion tipoClasificacion;
     private UbicacionEvento ubicacion;
+    private DatosEvento datos;
 
     public Evento(){
         pPersona = null;
@@ -210,6 +214,13 @@ public class Evento {
     }
     public void setDominioVariosMunicipios(DominioPublicoVariosMunicipios tipoDominioVariosMunicipios){
         ubicacion.setTipoDominioVariosMunicipios(tipoDominioVariosMunicipios);
+    }
+
+    //Datos Finales
+
+    public void setDatosEvento(DatosEvento datosEvento){
+        this.datos = new DatosEvento();
+        datos = datosEvento;
     }
 
     @Override

@@ -20,6 +20,7 @@ public class PLocalesCerrados extends PFondoStandard {
     private RadioBut rbEspectaculosDeportivos;
     private ButtonGroup radioButtons;
     private String texto;
+    private PIdentificacionEspectaculo pIdentificacionEspectaculo;
 
     public PLocalesCerrados(){
         colocarTexto();
@@ -125,7 +126,9 @@ public class PLocalesCerrados extends PFondoStandard {
             // this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(null, "Para otras opciones vaya a ESTABLECIMIENTOS/ OTRO");
-
         }
+        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+        frame.add(pIdentificacionEspectaculo);
+        this.setVisible(false);
     }
 }
