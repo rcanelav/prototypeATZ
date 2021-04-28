@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 
 public class PIdentificacionEspectaculo extends PFormulario implements ActionListener {
     private static final long serialVersionUID = 1L;
-    
     BotonFlujo botonSiguiente;
     GridBagConstraints grid = new Grid();
     private TextoFormulario textoNombreEspectaculo;
