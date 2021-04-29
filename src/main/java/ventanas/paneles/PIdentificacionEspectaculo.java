@@ -63,6 +63,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
     private JRadioButton pagoTasaE2Si;
     private JRadioButton pagoTasaE2No;
     private ButtonGroup rbPagoTasaE2;
+    private PDatosUbicacion pDatosUbicacion;
     
     public PIdentificacionEspectaculo(){
         formulario();
@@ -545,6 +546,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == servicioVigilanciaNo){
             textoEmpresaVigilancia.setEnabled(false);
             textoEmpresaVigilancia.setText("NO REQUIERE");
@@ -555,7 +557,10 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
             textoEmpresaVigilancia.validar();
         }else if(e.getSource() == botonSiguiente){
             if(validar()){
-                grabarDatos();   
+                grabarDatos();
+                pDatosUbicacion = new PDatosUbicacion();
+                frame.add(pDatosUbicacion);
+                this.setVisible(false);
             }else{
                 JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
             }
