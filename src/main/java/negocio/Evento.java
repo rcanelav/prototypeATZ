@@ -1,9 +1,5 @@
 package negocio;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import negocio.UbicacionEvento.Dominio;
 import negocio.UbicacionEvento.DominioPublicoPortuario;
 import negocio.UbicacionEvento.DominioPublicoVariosMunicipios;
@@ -15,6 +11,7 @@ import negocio.UbicacionEvento.LocalCerrado;
 import negocio.UbicacionEvento.Titularidad;
 import negocio.UbicacionEvento.Ubicacion;
 public class Evento {
+    private static final long serialVersionUID = 1L;
     public enum Categoria {
         DEPORTIVO, ARTISTICO, CULTURAL, ANALOGO;
     }
@@ -221,6 +218,10 @@ public class Evento {
     public void setDatosEvento(DatosEvento datosEvento){
         this.datos = new DatosEvento();
         datos = datosEvento;
+    }
+
+    public void setDatosUbicacion(DatosUbicacion datosUbicacion){
+        ubicacion.setDatosUbicacion(datosUbicacion);
     }
 
     @Override

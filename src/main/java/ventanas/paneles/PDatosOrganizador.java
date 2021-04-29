@@ -42,7 +42,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         this.setLayout(new GridBagLayout());
 
         JLabel titulo = new JLabel("TRÁMITE REALIZADO POR", 0);
-        grid = new Grid(2, 0, 0, -50, 0);
+        grid = new Grid(0, 0, 4, -50, 0);
         this.add(titulo, grid);
 
         rbPersona.setText("Persona física");
@@ -67,25 +67,25 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
 
     private void formularios(){
         pFormularioPersona = new PFormularioPersona();
-        grid = new Grid(0, 2, 3, 40, 0);
+        grid = new Grid(0, 2, 4, 40, -100);
         this.add(pFormularioPersona, grid);
         
         pFormularioJuridico = new PFormularioJuridico();
-        grid = new Grid(0, 2, 3, 40, 0);
+        grid = new Grid(0, 2, 4, 40, -100);
         this.add(pFormularioJuridico, grid);
       
         pFormularioEccom = new PFormularioEccom();
-        grid = new Grid(0, 2, 3, 40, 0);
+        grid = new Grid(0, 2, 4, 40, -100);
         this.add(pFormularioEccom, grid);
     }
 
     private void botonesSiguienteAnterior(){
         botonAnterior = new BotonFlujo("ANTERIOR");
-        grid = new Grid(0, 3, 3, 40, -200, 30, 10);
+        grid = new Grid(0, 3, 4, 40, -200, 30, 10);
         this.add(botonAnterior, grid);
 
         botonSiguiente = new BotonFlujo("SIGUIENTE");
-        grid = new Grid(1, 3, 3, 40, 350, 30, 10);
+        grid = new Grid(0, 3, 4, 40, 200, 30, 10);
         this.add(botonSiguiente, grid);
         botonSiguiente.addActionListener(this);
     }

@@ -48,6 +48,7 @@ public class UbicacionEvento {
     private boolean licenciaUrbanistica;
     private boolean instalacionHomologada;
     private LocalCerrado tipoLocalCerrado;
+    private DatosUbicacion datosUbicacion;
     
     public UbicacionEvento(){
         super();
@@ -132,5 +133,10 @@ public class UbicacionEvento {
     }
     public DominioPublicoVariosMunicipios getTipoDominioVariosMunicipios() {
         return tipoDominioVariosMunicipios;
+    }
+
+    public void setDatosUbicacion(DatosUbicacion datosUbicacion) {
+        this.datosUbicacion = new DatosUbicacion();
+        this.datosUbicacion = datosUbicacion;
     }
 }
