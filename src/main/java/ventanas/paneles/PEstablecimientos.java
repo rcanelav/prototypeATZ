@@ -70,7 +70,11 @@ public class PEstablecimientos extends PFondoStandard {
         }
         if(e.getSource() == botonOtro){
             frame.getEvento().setEstablecimiento(Establecimiento.OTRO);
+<<<<<<< HEAD
             JOptionPane.showMessageDialog(null, "Por determinar la habilitación del establecimiento");
+=======
+            JOptionPane.showMessageDialog(null, "Por determinar la habilitación delestablecimiento");
+>>>>>>> 61a85bf7fde3503f7d0f62a2fe1e75b4ea5ebf28
             pEstablecimientoOtro = new PEstablecimientoOtro();
             frame.add(pEstablecimientoOtro);
             this.setVisible(false);

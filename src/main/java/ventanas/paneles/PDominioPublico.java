@@ -40,7 +40,11 @@ public class PDominioPublico extends PFondoStandard  {
         this.add(textoLey, grid);
 
         texto = "Todo tipo de espectáculo público incluido en el ámbito de aplicación de la Ley 10/2017,"+
+<<<<<<< HEAD
                 " de 27 de diciembre, que se desenvuelva en más de un término municipal de la Comunidad Autónoma"+
+=======
+                " de 27 de diciembre, que se desenvuelvan en más de un término municipal de la Comunidad Autónoma"+
+>>>>>>> 61a85bf7fde3503f7d0f62a2fe1e75b4ea5ebf28
                 " de Galicia.";
         PanelTexto textoVariosMunicipios = new PanelTexto(texto, 0, 18, 500, 100);
         grid = new Grid(1, 2, 0, 10, 100);
