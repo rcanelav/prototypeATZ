@@ -54,7 +54,11 @@ public class Pidioma extends JPanel implements ActionListener{
     }
 
     private void colocarTextoCastellano(){
+<<<<<<< HEAD
         texto = "DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA ESPECTÁCULOS PÚBLICOS";
+=======
+        texto = "  DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA ESPECTÁCULOS PÚBLICOS";
+>>>>>>> 61a85bf7fde3503f7d0f62a2fe1e75b4ea5ebf28
         PanelTexto textoTituloCastellano = new PanelTexto(texto, 3, 16, 500, 200);
         grid = new Grid(1, 0, 0, -50, 0);
         this.add(textoTituloCastellano, grid);

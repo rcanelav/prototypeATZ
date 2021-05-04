@@ -77,7 +77,7 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario direccion = new LabelFormulario("Dirección");
         grid = new Grid(0, 2, 0, 5, 0);
         this.add(direccion, grid);
-        textoDireccion = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoDireccion = new TextoFormulario("Indique la dirección de la ubicación del espectáculo ", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoDireccion.setPrefSize(650, 0);
@@ -89,9 +89,9 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario numeroPortal = new LabelFormulario("Nº");
         grid = new Grid(0, 3, 0, 5, 0);
         this.add(numeroPortal, grid);
-        textoNumeroPortal = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoNumeroPortal = new TextoFormulario("Indique el nº que corresponde a la dirección", 
                                                   TipoTextoFormulario.ALFABETICO, 
-                                                  "Introduzca un nombre válido.");
+                                                  "Introduzca un nº válido.");
         textoNumeroPortal.setPrefSize(100, 0);
         grid = new Grid(0, 3, 0, 5, -250);
         this.add(textoNumeroPortal, grid);
@@ -101,7 +101,7 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario edificio = new LabelFormulario("Edificio");
         grid = new Grid(1, 3, 0, 5, -240);
         this.add(edificio, grid);
-        textoEdificio = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoEdificio = new TextoFormulario("Indique el edificio en el que se desarrolla el espectáculo si procede", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoEdificio.setPrefSize(100, 0);
@@ -113,9 +113,9 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario planta = new LabelFormulario("Planta");
         grid = new Grid(2, 3, 0, 5, -215);
         this.add(planta, grid);
-        textoPlanta = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoPlanta = new TextoFormulario("Especifique el nº de planta si es necesario", 
                                                   TipoTextoFormulario.ALFABETICO, 
-                                                  "Introduzca un nombre válido.");
+                                                  "Introduzca un nº válido.");
         textoPlanta.setPrefSize(100, 0);
         grid = new Grid(2, 3, 0, 5, -415);
         this.add(textoPlanta, grid);
@@ -125,7 +125,7 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario local = new LabelFormulario("Local");
         grid = new Grid(3, 3, 0, 5, -215);
         this.add(local, grid);
-        textoLocal = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoLocal = new TextoFormulario("Especifique el local si es necesario", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoLocal.setPrefSize(100, 0);
@@ -137,7 +137,7 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario poblacion = new LabelFormulario("Población");
         grid = new Grid(0, 4, 0, 5, 0);
         this.add(poblacion, grid);
-        textoPoblacion = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoPoblacion = new TextoFormulario("Indique la población en la que se desarrolla el espectáculo", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoPoblacion.setPrefSize(220, 0);
@@ -149,7 +149,7 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario localidad = new LabelFormulario("Localidad");
         grid = new Grid(2, 4, 0, 5, -205);
         this.add(localidad, grid);
-        textoLocalidad = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoLocalidad = new TextoFormulario("Indique la localidad en la que se desarrolla el espectáculo", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoLocalidad.setPrefSize(220, 0);
@@ -161,9 +161,9 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario cp = new LabelFormulario("CP");
         grid = new Grid(0, 5, 0, 5, 0);
         this.add(cp, grid);
-        textoCP = new TextoFormulario("Indique el nombre del espectáculo", 
-                                                  TipoTextoFormulario.ALFABETICO, 
-                                                  "Introduzca un nombre válido.");
+        textoCP = new TextoFormulario("Indique el código postal que corresponda a la ubicación en la que se desarrolla el espectáculo", 
+                                                  TipoTextoFormulario.NUMERICO, 
+                                                  "Introduzca un nº válido.");
         textoCP.setPrefSize(220, 0);
         grid = new Grid(0, 5, 0, 5, 0);
         this.add(textoCP, grid);
@@ -173,7 +173,7 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario provincia = new LabelFormulario("Provincia");
         grid = new Grid(2, 5, 0, 5, -205);
         this.add(provincia, grid);
-        textoProvincia = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoProvincia = new TextoFormulario("Indique la provincia en la que se desarrolla el espectáculo", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoProvincia.setPrefSize(220, 0);
@@ -258,8 +258,8 @@ public class PFormularioUbicacion extends PFormulario {
         LabelFormulario numeroInstalaciones = new LabelFormulario("Nº de instalaciones");
         grid = new Grid(0, 8, 0, 5, 0);
         this.add(numeroInstalaciones, grid);
-        textoNInstalaciones = new TextoFormulario("Indique el nombre del espectáculo", 
-        TipoTextoFormulario.ALFABETICO, 
+        textoNInstalaciones = new TextoFormulario("Indique el nº de instalaciones", 
+        TipoTextoFormulario.NUMERICO, 
         "Introduzca un nombre válido.");
         textoNInstalaciones.setPrefSize(100, 0);
         grid = new Grid(0, 8, 0, 5, -50);
@@ -267,13 +267,13 @@ public class PFormularioUbicacion extends PFormulario {
         grid = new Grid(0, 8, 0, 5, 80);
         this.add(textoNInstalaciones.getIconoError(), grid);
         
-        LabelFormulario relacionInstalaciones = new LabelFormulario("<html>Relacion de<br>instalaciones utilizadas</html>");
+        LabelFormulario relacionInstalaciones = new LabelFormulario("<html>Relación de<br>instalaciones utilizadas</html>");
         relacionInstalaciones.setSize(0, 40);
         grid = new Grid(2, 8, 0, 5, -300);
         this.add(relacionInstalaciones, grid);
-        textoRelacionInstalaciones = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoRelacionInstalaciones = new TextoFormulario("Indique las instalaciones que se utilizarán", 
         TipoTextoFormulario.ALFABETICO, 
-        "Introduzca un nombre válido.");
+        "Introduzca un texto válido.");
         textoRelacionInstalaciones.setPrefSize(270, 30);
         grid = new Grid(2, 8, 0, 5, -150);
         this.add(textoRelacionInstalaciones, grid);

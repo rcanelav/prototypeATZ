@@ -68,7 +68,11 @@ public class PTitularidad  extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonTitularidadPublica){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PUBLICA);
+<<<<<<< HEAD
             JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto al público como PÚBLICA");
+=======
+            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto como PÚBLICA");
+>>>>>>> 61a85bf7fde3503f7d0f62a2fe1e75b4ea5ebf28
             // System.out.println(frame.getEvento());
             pDominioPublico = new PDominioPublico();
             frame.add(pDominioPublico);
@@ -76,10 +80,15 @@ public class PTitularidad  extends PFondoStandard {
         }
         if(e.getSource() == botonTitularidadPrivada){
             frame.getEvento().setTitularidad(Titularidad.TITULARIDAD_PRIVADA);
+<<<<<<< HEAD
             JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto al público como PRIVADA");
             pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
             frame.add(pIdentificacionEspectaculo);
             this.setVisible(false);
+=======
+            JOptionPane.showMessageDialog(null, "Establecida la titularidad del espacio abierto como PRIVADA");
+            // System.out.println(frame.getEvento());
+>>>>>>> 61a85bf7fde3503f7d0f62a2fe1e75b4ea5ebf28
         }
     }
 }

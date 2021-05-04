@@ -69,9 +69,15 @@ public class PEstablecimientoOtro extends PFondoStandard {
         if(e.getSource() == botonNoAsimilado){
             frame.getEvento().setEstablecimientoAsimiladoOtraCategoria(false);
             JOptionPane.showMessageDialog(null, "El establecimiento no está habilitado");
+<<<<<<< HEAD
             pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
             frame.add(pIdentificacionEspectaculo);
             this.setVisible(false);
+=======
+            // pEspacios = new PEspacios();
+            // frame.add(pEspacios);
+            // this.setVisible(false);
+>>>>>>> 61a85bf7fde3503f7d0f62a2fe1e75b4ea5ebf28
         }
     }
 }
