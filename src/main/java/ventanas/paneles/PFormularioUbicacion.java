@@ -369,6 +369,24 @@ public class PFormularioUbicacion extends PFormulario {
         rbMultiplesMunicipios = new ButtonGroup();
         rbMultiplesMunicipios.add(multiplesMunicipiosSi);
         rbMultiplesMunicipios.add(multiplesMunicipiosNo);
+
+
+        //PRUEBAS
+        textoNombre.setText("asd");
+        textoDireccion.setText("asd");
+        textoNumeroPortal.setText("asd");
+        textoEdificio.setText("asd");
+        textoPlanta.setText("asd");
+        textoLocal.setText("asd");
+        textoPoblacion.setText("asd");
+        textoLocalidad.setText("asd");
+        textoCP.setText("asd");
+        textoProvincia.setText("asd");
+        textoNInstalaciones.setText("asd");
+        textoRelacionInstalaciones.setText("asd");
+        textoResponsableMontaje.setText("asd");
+        textoMovilResponsable.setText("asd");
+        textoEmailResponsable.setText("asd");
     }
 
     @Override
@@ -407,6 +425,9 @@ public class PFormularioUbicacion extends PFormulario {
         
         return valido;
     }
+
+   
+
     public void grabarDatos(Evento evento){
         DatosUbicacion datosUbicacion = new DatosUbicacion();
         datosUbicacion.setNombre(textoNombre.getText());

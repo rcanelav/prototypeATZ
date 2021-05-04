@@ -355,6 +355,10 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(textoEmpresaVigilancia, grid);
         grid = new Grid(1, 11, 0, 5, -258);
         this.add(textoEmpresaVigilancia.getIconoError(), grid);
+        textoEmpresaVigilancia.setEnabled(false);
+        textoEmpresaVigilancia.setText("NO REQUIERE");
+        textoEmpresaVigilancia.validar();
+
 
         LabelFormulario responsable = new LabelFormulario("Responsable");
         grid = new Grid(0, 12, 0, 5, 0);
@@ -464,6 +468,22 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbPagoTasaE2.add(pagoTasaE2Si);
         rbPagoTasaE2.add(pagoTasaE2No);
 
+        textoNombreEspectaculo.setText("asd");
+        textoFechaInicio.setText("asd");
+        textoNJornadas.setText("asd");
+        textoFechaMontaje.setText("asd");
+        textoApertura.setText("asd");
+        textoAccesoPublico.setText("asd");
+        textoComienzo.setText("asd");
+        textoFinalizacion.setText("asd");
+        textoTiempoDesalojo.setText("asd");
+        textoCierre.setText("asd");
+        textoCapacidad.setText("asd");
+        textoEmpresaVigilancia.setText("asd");
+        textoResponsable.setText("asd");
+        textoMovilResponsable.setText("asd");
+        textoEmailResponsable.setText("asd");
+
     }
 
     private void botonSiguiente(){    
@@ -547,11 +567,11 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
     @Override
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
-        if(e.getSource() == servicioVigilanciaNo){
+        if(e.getSource() == servicioVigilanciaSi){
             textoEmpresaVigilancia.setEnabled(false);
             textoEmpresaVigilancia.setText("NO REQUIERE");
             textoEmpresaVigilancia.validar();
-        }else if(e.getSource() == servicioVigilanciaSi){
+        }else if(e.getSource() == servicioVigilanciaNo){
             textoEmpresaVigilancia.setEnabled(true);
             textoEmpresaVigilancia.setText("");
             textoEmpresaVigilancia.validar();

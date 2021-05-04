@@ -28,6 +28,10 @@ public class Evento {
     public enum Clasificacion{
         PERMANENTE, TEMPORADA, OCASIONAL, EXTRAORDINARIO;
     }
+    public enum Anexos{
+        PROYECTO_TECNICO, CARTEL_ESPECTACULO, POLIZA_SEGURO_RESPONSABILIDAD_CIVIL, SOLICITUD_LICENCIA_URBANISTICA, AUTORIZACION_MEDIOAMBIENTAL, SOLICITUD_HABILITACION_INSTALACION, CERTIFICADO_INSTALACION, MEMORIA_RECORRIDO_VARIOS_MUNICIPIOS, INFORME_JEFATURA_PROVINCIAL_TRAFICO, COMPROBANTE_PAGO_TASA_SEGURIDAD_PRIVADA,
+        COMPROBANTE_PAGO_TASA_ESPECTACULOS, COMPROBANTE_PAGO_TASA_PLAN_AUTOPROTECCION, SOL_AUT_OCUPACION_DOMINIO_PUBLICO, COMPROBANTE_PAGO_TASA_PORTUARIA, INFORME_SUBDELGOB_LANZAMIENTO_FUEGOS_ARTIFICIALES, PROYECTO_TECNICO_INSTALACION_TEMP_BAJA_TENSION, MEMORIA_TEC_DISENO_INSTALACION_TEMP_BAJA_TENSION, CERTIFICADO_DIRECCION_OBRA;
+    }
     // private Tipologia tipologia;
     private Categoria categoria;
     private String nOrganizadores;
@@ -43,6 +47,8 @@ public class Evento {
     private Clasificacion tipoClasificacion;
     private UbicacionEvento ubicacion;
     private DatosEvento datos;
+    private Anexos[] anexo;
+
 
     public Evento(){
         pPersona = null;
@@ -223,9 +229,44 @@ public class Evento {
     public void setDatosUbicacion(DatosUbicacion datosUbicacion){
         ubicacion.setDatosUbicacion(datosUbicacion);
     }
+    public void setAnexo(Anexos[] anexodato) {
+        this.anexo = new Anexos[anexodato.length];
+        this.anexo = anexodato;
+    }
 
-    @Override
-    public String toString() {
+    // @Override
+    // public String toString() {
+    //     StringBuilder sb = new StringBuilder();
+    //     sb.append("\n--------------   DATOS DEL ESPECTÁCULO --------------\n");
+    //     sb.append("CATEGORÍA: " + categoria + "\n");
+    //     sb.append("TIPO: " + tipo + "\n");
+    //     sb.append("CARÁCTER: " + tipoCaracter + "\n");
+    //     sb.append("ACTIVIDAD: " + tipoActividad + "\n");
+    //     sb.append("DESARROLLO: " + tipoClasificacion + "\n");
+    //     sb.append("\n--------------   DATOS DEL ORGANIZADOR --------------\n");
+    //     sb.append("NÚMERO DE ORGANIZADORES: " + nOrganizadores + "\n");
+    //     if(pPersona != null)
+    //         sb.append(pPersona);
+    //     if(pJuridico != null)
+    //         sb.append(pJuridico);
+    //     if(eccom != null)
+    //         sb.append(eccom);
+    //     if(tecnico != null){
+    //         sb.append("\n--------------   DATOS DEL TÉCNICO --------------\n");
+    //         sb.append("NÚMERO DE TÉCNICOS: " + nTecnicos + "\n");
+    //         sb.append(tecnico);
+    //     }
+    //     sb.append("\n--------------   DATOS DEL LUGAR --------------\n");
+    //     sb.append("Anexos");
+    //     for(Anexos tipoAnexo : anexo){
+    //         sb.append(tipoAnexo + "\n");
+    //     }
+       
+
+    //     return sb.toString();
+    // }
+
+    public String imprimirEvento(){
         StringBuilder sb = new StringBuilder();
         sb.append("\n--------------   DATOS DEL ESPECTÁCULO --------------\n");
         sb.append("CATEGORÍA: " + categoria + "\n");
@@ -247,8 +288,70 @@ public class Evento {
             sb.append(tecnico);
         }
         sb.append("\n--------------   DATOS DEL LUGAR --------------\n");
+        sb.append("Anexos\n");
+        for(var tipoAnexo : this.anexo){
+            String textoAnexo = tipoAnexo.toString();
+            switch(textoAnexo){
+                case "PROYECTO_TECNICO" :
+                    textoAnexo = "PROYECTO TECNICO";
+                    break;
+                case "CARTEL_ESPECTACULO" :
+                    textoAnexo = "CARTEL ESPECTÁCULO";
+                    break;
+                case "POLIZA_SEGURO_RESPONSABILIDAD_CIVIL" :
+                    textoAnexo = "POLIZA DE SEGURO DE RESPONSABILIDAD CIVIL";
+                    break;
+                case "SOLICITUD_LICENCIA_URBANISTICA":
+                    textoAnexo = "SOLICITUD DE LICENCIA URBANISTICA";
+                    break;
+                case "AUTORIZACION_MEDIOAMBIENTAL":
+                    textoAnexo = "AUTORIZACION MEDIOAMBIENTAL";
+                    break;
+                case "SOLICITUD_HABILITACION_INSTALACION":
+                    textoAnexo = "SOLICITUD DE HABILITACIÓN DE INSTALACIÓN";
+                    break;
+                case "CERTIFICADO_INSTALACION":
+                    textoAnexo = "CERTIFICADO DE INSTALACIÓN";
+                    break;
+                case "MEMORIA_RECORRIDO_VARIOS_MUNICIPIOS":
+                    textoAnexo = "MEMORIA DE RECORRIDO POR VARIOS MUNICIPIOS";
+                    break;
+                case "INFORME_JEFATURA_PROVINCIAL_TRAFICO":
+                    textoAnexo = "INFORME DE LA JEFATURA PROVINCIAL DE TRÁFICO";
+                    break;
+                case "COMPROBANTE_PAGO_TASA_SEGURIDAD_PRIVADA":
+                    textoAnexo = "COMPROBANTE DEL PAGO DE TASA DE ESPECTÁCULOS";
+                    break;
+                case "COMPROBANTE_PAGO_TASA_ESPECTACULOS":
+                    textoAnexo = "COMPROBANTE DEL PAGO DE TASA DE ESPECTÁCULOS";
+                    break;
+                case "COMPROBANTE_PAGO_TASA_PLAN_AUTOPROTECCION":
+                    textoAnexo = "COMPROBANTE DEL PAGO DE TASA DE PLAN DE AUTOPROTECCIÓN";
+                    break;
+                case "SOL_AUT_OCUPACION_DOMINIO_PUBLICO":
+                    textoAnexo = "SOLICITUD / AUTORIZACIÓN DE OCUPACIÓN DEL DOMINIO PÚBLICO";
+                    break;
+                case "COMPROBANTE_PAGO_TASA_PORTUARIA":
+                    textoAnexo = "COMPROBANTE DEL PAGO DE TASA PORTUARIA";
+                    break;
+                case "INFORME_SUBDELGOB_LANZAMIENTO_FUEGOS_ARTIFICIALES":
+                    textoAnexo = "INFORME DE LA SUBDELEGACIÓN DE GOBIERNO SOBRE LANZAMIENTO DE FUEGOS ARTIFICIALES";
+                    break;
+                case "PROYECTO_TECNICO_INSTALACION_TEMP_BAJA_TENSION":
+                    textoAnexo = "PROYECTO TÉCNICO DE INSTALACIÓN TEMPORAL DE BAJA TENSIÓN";
+                    break;
+                case "MEMORIA_TEC_DISENO_INSTALACION_TEMP_BAJA_TENSION":
+                    textoAnexo = "MEMORIA TÉCNICA DE DISEÑO DE INSTALACIÓN TEMPORAL DE BAJA TENSIÓN";
+                    break;
+                case "CERTIFICADO_DIRECCION_OBRA":
+                    textoAnexo = "CERTIFICADO DE DIRECCION DE OBRA";
+                    break;
+                default: 
+                    textoAnexo = "";
+            }
+            sb.append(textoAnexo + "\n");
+        }
        
-
         return sb.toString();
     }
 }

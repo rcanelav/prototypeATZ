@@ -15,6 +15,7 @@ public class PDatosUbicacion extends PFormulario implements ActionListener {
     private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
     PFormularioUbicacion pFormularioUbicacion = new PFormularioUbicacion();
+    PDatosFinales pDatosFinales;
     BotonFlujo botonSiguiente;
 
     public PDatosUbicacion(){
@@ -56,11 +57,10 @@ public class PDatosUbicacion extends PFormulario implements ActionListener {
                 }
             }
             if(isValid){
-                // pDatosTecnico = new PDatosTecnico();
-                // frame.add(pDatosTecnico);
-                // this.setVisible(false);
                 JOptionPane.showMessageDialog(null, "WIP");
-                
+                pDatosFinales = new PDatosFinales();
+                frame.add(pDatosFinales);
+                this.setVisible(false);
             }
         }
        

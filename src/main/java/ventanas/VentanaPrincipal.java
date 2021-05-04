@@ -35,6 +35,7 @@ public class VentanaPrincipal extends JFrame {
     PIdentificacionEspectaculo pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
     PFormularioUbicacion pFormularioUbicacion = new PFormularioUbicacion();
     PDatosUbicacion pDatosUbicacion = new PDatosUbicacion();
+    PDatosFinales pDatosFinales = new PDatosFinales();
     Evento  evento;
     
     public VentanaPrincipal(){
@@ -57,6 +58,7 @@ public class VentanaPrincipal extends JFrame {
         this.getContentPane().add(pIdioma);
         // this.getContentPane().add(pFormularioUbicacion);
         // this.getContentPane().add(pDatosUbicacion);
+        // this.getContentPane().add(pDatosFinales);
         // this.getContentPane().add(pIdentificacionEspectaculo);
         // this.getContentPane().add(pInstalacion);
         // this.getContentPane().add(pRecintos);
