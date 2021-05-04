@@ -92,24 +92,24 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         grid = new Grid(1, 1, 0, -50, -250);
         this.add(textoNombreEspectaculo.getIconoError(), grid);
 
-        LabelFormulario fechaInicio = new LabelFormulario("Fecha Inicio");
+        LabelFormulario fechaInicio = new LabelFormulario("Fecha de inicio");
         grid = new Grid(0, 2, 0, -5, 0);
         this.add(fechaInicio, grid);
-        textoFechaInicio = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoFechaInicio = new TextoFormulario("Indique la fecha de inicio del espectáculo", 
                                        TipoTextoFormulario.ALFABETICO,
-                                       "Introduzca un NIF/ NIE/ OTRO válido.");
+                                       "Introduzca una fecha válida.");
         textoFechaInicio.setPrefSize(70, 0);
         grid = new Grid(0, 2, 0, -5, -152);
         this.add(textoFechaInicio, grid);
         grid = new Grid(0, 2, 0, -5, -57);
         this.add(textoFechaInicio.getIconoError(), grid);
 
-        LabelFormulario nJornadas = new LabelFormulario("Nº Jornadas");
+        LabelFormulario nJornadas = new LabelFormulario("Nº de jornadas");
         grid = new Grid(0, 2, 0, -5, 400);
         this.add(nJornadas, grid);
-        textoNJornadas = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoNJornadas = new TextoFormulario("Indique el nº de jornadas de duración", 
                                        TipoTextoFormulario.ALFABETICO,
-                                       "Introduzca un NIF/ NIE/ OTRO válido.");
+                                       "Introduzca un nº de jornadas válido.");
         textoNJornadas.setPrefSize(70, 0);
         grid = new Grid(0, 2, 0, -5, 240);
         this.add(textoNJornadas, grid);
@@ -119,9 +119,9 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         LabelFormulario fechaMontaje = new LabelFormulario("Fecha montaje");
         grid = new Grid(1, 2, 0, -5, -205);
         this.add(fechaMontaje, grid);
-        textoFechaMontaje = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoFechaMontaje = new TextoFormulario("Indique la fecha de montaje", 
                                        TipoTextoFormulario.ALFABETICO,
-                                       "Introduzca un NIF/ NIE/ OTRO válido.");
+                                       "Introduzca una fecha válida.");
         textoFechaMontaje.setPrefSize(70, 0);
         grid = new Grid(1, 2, 0, -5, -345);
         this.add(textoFechaMontaje, grid);
@@ -135,21 +135,21 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         LabelFormulario apertura = new LabelFormulario("Apertura");
         grid = new Grid(0, 3, 0, 7, 180);
         this.add(apertura, grid);
-        textoApertura = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoApertura = new TextoFormulario("Indique la hora de apertura de la ubicación", 
                                        TipoTextoFormulario.ALFABETICO,
-                                       "Introduzca un NIF/ NIE/ OTRO válido.");
+                                       "Introduzca una hora válida.");
         textoApertura.setPrefSize(40, 0);
         grid = new Grid(0, 3, 0, 7, -45);
         this.add(textoApertura, grid);
         grid = new Grid(0, 3, 0, 7, 20);
         this.add(textoApertura.getIconoError(), grid);
 
-        LabelFormulario accesoPublico = new LabelFormulario("Acceso Público");
+        LabelFormulario accesoPublico = new LabelFormulario("Acceso público");
         grid = new Grid(0, 3, 0, 7, 480);
         this.add(accesoPublico, grid);
-        textoAccesoPublico = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoAccesoPublico = new TextoFormulario("Indique la hora de acceso del público", 
                                        TipoTextoFormulario.ALFABETICO,
-                                       "Introduzca un NIF/ NIE/ OTRO válido.");
+                                       "Introduzca una hora válida.");
         textoAccesoPublico.setPrefSize(40, 0);
         grid = new Grid(0, 3, 0, 7, 330);
         this.add(textoAccesoPublico, grid);
@@ -159,9 +159,9 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         LabelFormulario comienzo = new LabelFormulario("Comienzo");
         grid = new Grid(0, 3, 2, 7, 670);
         this.add(comienzo, grid);
-        textoComienzo = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoComienzo = new TextoFormulario("Indique la hora de comienzo del espectáculo", 
                                        TipoTextoFormulario.ALFABETICO,
-                                       "Introduzca un NIF/ NIE/ OTRO válido.");
+                                       "Introduzca una hora válida.");
         textoComienzo.setPrefSize(40, 0);
         grid = new Grid(0, 3, 0, 7, 665);
         this.add(textoComienzo, grid);
@@ -171,9 +171,9 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         LabelFormulario finalizacion = new LabelFormulario("Finalización");
         grid = new Grid(0, 4, 0, 7, 180);
         this.add(finalizacion, grid);
-        textoFinalizacion = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoFinalizacion = new TextoFormulario("Indique la hora de finalización del espectáculo", 
                                        TipoTextoFormulario.ALFABETICO,
-                                       "Introduzca un NIF/ NIE/ OTRO válido.");
+                                       "Introduzca una hora válida.");
         textoFinalizacion.setPrefSize(40, 0);
         grid = new Grid(0, 4, 0, 7, -20);
         this.add(textoFinalizacion, grid);
@@ -183,9 +183,9 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         LabelFormulario tiempoDesalojo = new LabelFormulario("Tiempo desalojo");
         grid = new Grid(0, 4, 0, 7, 480);
         this.add(tiempoDesalojo, grid);
-        textoTiempoDesalojo = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoTiempoDesalojo = new TextoFormulario("Indique el tiempo que requiere el desalojo", 
                                                   TipoTextoFormulario.ALFABETICO,
-                                                  "Introduzca un NIF/ NIE/ OTRO válido.");
+                                                  "Introduzca un nº de horas válido.");
         textoTiempoDesalojo.setPrefSize(40, 0);
         grid = new Grid(0, 4, 0, 7, 330);
         this.add(textoTiempoDesalojo, grid);
@@ -195,16 +195,16 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         LabelFormulario cierre = new LabelFormulario("Cierre");
         grid = new Grid(0, 4, 2, 7, 670);
         this.add(cierre, grid);
-        textoCierre = new TextoFormulario("Indique el tipo de CARTEL", 
+        textoCierre = new TextoFormulario("Indique la hora de cierre de la ubicación", 
                                           TipoTextoFormulario.ALFABETICO,
-                                          "Introduzca un NIF/ NIE/ OTRO válido.");
+                                          "Introduzca una hora válida.");
         textoCierre.setPrefSize(40, 0);
         grid = new Grid(0, 4, 0, 7, 665);
         this.add(textoCierre, grid);
         grid = new Grid(0, 4, 0, 7, 730);
         this.add(textoCierre.getIconoError(), grid);
         
-        LabelFormulario espectaculoEscasaIncidencia = new LabelFormulario("Espectáculo escasa incidencia");
+        LabelFormulario espectaculoEscasaIncidencia = new LabelFormulario("Espectáculo de escasa incidencia");
         grid = new Grid(0, 5, 0, 7, 0);
         this.add(espectaculoEscasaIncidencia, grid);
         escasaIncidenciaSi = new JRadioButton("SI");
@@ -222,19 +222,19 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         escasaIncidencia.add(escasaIncidenciaSi);
         escasaIncidencia.add(escasaIncidenciaNo);
 
-        LabelFormulario capacidad = new LabelFormulario("Capacidad (Aforo)");
+        LabelFormulario capacidad = new LabelFormulario("Capacidad/ Aforo");
         grid = new Grid(0, 6, 0, 5, 0);
         this.add(capacidad, grid);
-        textoCapacidad = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoCapacidad = new TextoFormulario("Indique la capacidad/ afora para el espectáculo", 
                                                   TipoTextoFormulario.ALFABETICO, 
-                                                  "Introduzca un nombre válido.");
+                                                  "Introduzca un número de espectadores válido.");
         textoCapacidad.setPrefSize(475, 0);
         grid = new Grid(0, 6, 0, 5, 320);
         this.add(textoCapacidad, grid);
         grid = new Grid(1, 6, 0, 5, -250);
         this.add(textoCapacidad.getIconoError(), grid);
 
-        LabelFormulario planAutoproteccion = new LabelFormulario("Plan de Autoprotección");
+        LabelFormulario planAutoproteccion = new LabelFormulario("Plan de autoprotección");
         grid = new Grid(0, 7, 0, 5, 0);
         this.add(planAutoproteccion, grid);
         planAutoProteccionSi = new JRadioButton("SI");
@@ -324,7 +324,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbVentaEntradas.add(ventaEntradasSi);
         rbVentaEntradas.add(ventaEntradasNo);
 
-        LabelFormulario servicioVigilancia = new LabelFormulario("Servicio de Vigilancia Propio");
+        LabelFormulario servicioVigilancia = new LabelFormulario("Servicio de seguridad propio");
         grid = new Grid(1, 10, 0, 5, -390);
         this.add(servicioVigilancia, grid);
         servicioVigilanciaSi = new JRadioButton("SI");
@@ -344,10 +344,10 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbServicioVigilancia.add(servicioVigilanciaSi);
         rbServicioVigilancia.add(servicioVigilanciaNo);
 
-        LabelFormulario empresaVigilancia = new LabelFormulario("Empresa de Vigilancia");
+        LabelFormulario empresaVigilancia = new LabelFormulario("Empresa de seguridad");
         grid = new Grid(0, 11, 0, 5, 0);
         this.add(empresaVigilancia, grid);
-        textoEmpresaVigilancia = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoEmpresaVigilancia = new TextoFormulario("Indique el nombre de la empresa encargada de la seguridad", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoEmpresaVigilancia.setPrefSize(450, 0);
@@ -363,7 +363,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         LabelFormulario responsable = new LabelFormulario("Responsable");
         grid = new Grid(0, 12, 0, 5, 0);
         this.add(responsable, grid);
-        textoResponsable = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoResponsable = new TextoFormulario("Indique el nombre del responsable de seguridad", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoResponsable.setPrefSize(450, 0);
@@ -372,10 +372,10 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         grid = new Grid(1, 12, 0, 5, -258);
         this.add(textoResponsable.getIconoError(), grid);
 
-        LabelFormulario movilResponsable = new LabelFormulario("Móvil del Responsable");
+        LabelFormulario movilResponsable = new LabelFormulario("Móvil responsable");
         grid = new Grid(0, 13, 0, 5, 0);
         this.add(movilResponsable, grid);
-        textoMovilResponsable = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoMovilResponsable = new TextoFormulario("Indique el móvil des responsable de seguridad", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoMovilResponsable.setPrefSize(450, 0);
@@ -384,10 +384,10 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         grid = new Grid(1, 13, 0, 5, -258);
         this.add(textoMovilResponsable.getIconoError(), grid);
 
-        LabelFormulario emailResponsable = new LabelFormulario("Email del Responsable");
+        LabelFormulario emailResponsable = new LabelFormulario("Correo-e responsable");
         grid = new Grid(0, 14, 0, 5, 0);
         this.add(emailResponsable, grid);
-        textoEmailResponsable = new TextoFormulario("Indique el nombre del espectáculo", 
+        textoEmailResponsable = new TextoFormulario("Indique el correo-e del responsable", 
                                                   TipoTextoFormulario.ALFABETICO, 
                                                   "Introduzca un nombre válido.");
         textoEmailResponsable.setPrefSize(450, 0);
@@ -396,7 +396,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         grid = new Grid(1, 14, 0, 5, -258);
         this.add(textoEmailResponsable.getIconoError(), grid);
 
-        LabelFormulario pagoTasasPlanAutop = new LabelFormulario("Pago tasa 30.45.00 (Plan autop.)");
+        LabelFormulario pagoTasasPlanAutop = new LabelFormulario("Pago tasa Plan autoprotección");
         grid = new Grid(0, 15, 0, 5, 0);
         this.add(pagoTasasPlanAutop, grid);
         pagoTasaPlanAutopSi = new JRadioButton("SI");
@@ -414,7 +414,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbPagoTasaPlanAutop.add(pagoTasaPlanAutopSi);
         rbPagoTasaPlanAutop.add(pagoTasaPlanAutopNo);
 
-        LabelFormulario pagoTasa053 = new LabelFormulario("Pago tasa 053 (Seg. Privada)");
+        LabelFormulario pagoTasa053 = new LabelFormulario("Pago tasa Seguridad Privada");
         grid = new Grid(1, 15, 0, 5, -400);
         this.add(pagoTasa053, grid);
         pagoTasa053Si = new JRadioButton("SI");
@@ -432,7 +432,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbPagoTasa053.add(pagoTasa053Si);
         rbPagoTasa053.add(pagoTasa053No);
 
-        LabelFormulario pagoTasa3045Espectaculos = new LabelFormulario("Pago tasa 30.45.00 (Espectaculos)");
+        LabelFormulario pagoTasa3045Espectaculos = new LabelFormulario("Pago tasa espectáculos");
         grid = new Grid(0, 16, 0, 5, 0);
         this.add(pagoTasa3045Espectaculos, grid);
         pagoTasaEspectaculosSi = new JRadioButton("SI");
@@ -450,7 +450,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbPagoTasaEspectaculos.add(pagoTasaEspectaculosSi);
         rbPagoTasaEspectaculos.add(pagoTasaEspectaculosNo);
 
-        LabelFormulario pagoTasaE2 = new LabelFormulario("Pago tasa E-2 (Portuarias)");
+        LabelFormulario pagoTasaE2 = new LabelFormulario("Pago tasas portuarias");
         grid = new Grid(1, 16, 0, 5, -400);
         this.add(pagoTasaE2, grid);
         pagoTasaE2Si = new JRadioButton("SI");
