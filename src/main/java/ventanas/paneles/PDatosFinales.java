@@ -25,7 +25,7 @@ public class PDatosFinales extends PFormulario implements ActionListener{
     private void colocarTexto(){
         this.setLayout(new GridBagLayout());
         
-        JLabel titulo = new JLabel("ANEXOS", 0);
+        JLabel titulo = new JLabel("DOCUMENTACIÓN QUE SE ADJUNTA", 0);
         grid = new Grid(0, 0, 4, -100, 0);
         this.add(titulo, grid);
     }
