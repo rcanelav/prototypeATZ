@@ -5,6 +5,7 @@ import ventanas.elementos.Grid;
 import javax.swing.*;
 
 import negocio.Evento;
+import negocio.ExportarPDF;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -46,9 +47,11 @@ public class PDatosFinales extends PFormulario implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
-        if(e.getSource() == botonFinalizar)
+        if(e.getSource() == botonFinalizar){
             pFormularioAnexos.grabarDatos(frame.getEvento());
             System.out.println(frame.getEvento().imprimirEvento());
-        
+            ExportarPDF pdf = new ExportarPDF();
+            pdf.guardarPDF(frame.getEvento());
+        }
     }
 }

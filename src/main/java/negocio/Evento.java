@@ -56,6 +56,21 @@ public class Evento {
         eccom = null;
         tecnico = null;
     }
+    public PromotorPersona getpPersona() {
+        return pPersona;
+    }
+    public PromotorEmpresa getpJuridico() {
+        return pJuridico;
+    }
+    public Eccom getEccom() {
+        return eccom;
+    }
+    public Tecnico getTecnico() {
+        return tecnico;
+    }
+    public UbicacionEvento getUbicacion() {
+        return ubicacion;
+    }
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
@@ -225,6 +240,9 @@ public class Evento {
         this.datos = new DatosEvento();
         datos = datosEvento;
     }
+    public DatosEvento getDatos() {
+        return datos;
+    }
 
     public void setDatosUbicacion(DatosUbicacion datosUbicacion){
         ubicacion.setDatosUbicacion(datosUbicacion);
@@ -232,6 +250,9 @@ public class Evento {
     public void setAnexo(Anexos[] anexodato) {
         this.anexo = new Anexos[anexodato.length];
         this.anexo = anexodato;
+    }
+    public Anexos[] getAnexo() {
+        return anexo;
     }
 
     // @Override

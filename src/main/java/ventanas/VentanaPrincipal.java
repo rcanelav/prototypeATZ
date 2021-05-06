@@ -2,6 +2,8 @@ package ventanas;
 
 import javax.swing.*;
 import negocio.Evento;
+import negocio.ExportarPDF;
+
 import java.awt.*;
 import ventanas.paneles.*;
 
@@ -55,6 +57,8 @@ public class VentanaPrincipal extends JFrame {
         setLocationRelativeTo(null);  //opcional
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        
+
         this.getContentPane().add(pIdioma);
         // this.getContentPane().add(pFormularioUbicacion);
         // this.getContentPane().add(pDatosUbicacion);
@@ -84,6 +88,7 @@ public class VentanaPrincipal extends JFrame {
         // this.getContentPane().add(pDeportivo);
         // this.getContentPane().add(pArtistico);
         evento = new Evento();
+        
     }
 
     public Evento getEvento(){

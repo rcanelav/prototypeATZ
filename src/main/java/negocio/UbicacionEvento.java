@@ -139,4 +139,7 @@ public class UbicacionEvento {
         this.datosUbicacion = new DatosUbicacion();
         this.datosUbicacion = datosUbicacion;
     }
+    public DatosUbicacion getDatosUbicacion() {
+        return datosUbicacion;
+    }
 }

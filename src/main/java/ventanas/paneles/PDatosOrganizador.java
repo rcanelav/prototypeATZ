@@ -11,7 +11,7 @@ import ventanas.elementos.Grid;
 public class PDatosOrganizador extends JPanel implements ActionListener {
     private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
-    JRadioButton rbPersona;
+    private JRadioButton rbPersona;
     JRadioButton rbJuridico;
     JRadioButton rbEccom;
     ButtonGroup radiobuttons;

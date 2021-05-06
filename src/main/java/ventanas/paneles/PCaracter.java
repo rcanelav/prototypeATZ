@@ -55,14 +55,14 @@ public class PCaracter extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonProfesional){
             frame.getEvento().setTipoCaracter(Caracter.PROFESIONAL);
-            JOptionPane.showMessageDialog(null, "Establecido el carácter del espectáculo como PROFESIONAL");
+            // JOptionPane.showMessageDialog(null, "Establecido el carácter del espectáculo como PROFESIONAL");
             pActividad = new PActividad();
             frame.add(pActividad);
             this.setVisible(false);
         }
         if(e.getSource() == botonAficionado){
             frame.getEvento().setTipoCaracter(Caracter.AFICIONADO);
-            JOptionPane.showMessageDialog(null, "Establecido el carácter del espectáculo como AFICIONADO");
+            // JOptionPane.showMessageDialog(null, "Establecido el carácter del espectáculo como AFICIONADO");
             pActividad = new PActividad();
             frame.add(pActividad);
             this.setVisible(false);

@@ -154,6 +154,11 @@ public class PFormularioAnexos extends PFormulario{
         checkBoxes[16] = memoriaTecnicaDiseñoInstalacionTemporalBajaTension;
         checkBoxes[17] = certificadoDireccionObra;
         
+        
+    }
+
+    public JCheckBox[] getCheckBoxes(){
+        return this.checkBoxes;
     }
 
     public void grabarDatos(Evento evento){
