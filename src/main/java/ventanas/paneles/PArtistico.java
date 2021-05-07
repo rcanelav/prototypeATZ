@@ -83,14 +83,14 @@ public class PArtistico extends JPanel implements ActionListener {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonTeatral){
             frame.getEvento().setTipo(Tipo.TEATRAL);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como TEATRAL");
+            // JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como TEATRAL");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);
         }
         else if(e.getSource() == botonMusical){
             frame.getEvento().setTipo(Tipo.MUSICAL);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como MUSICAL");
+            // JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como MUSICAL");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

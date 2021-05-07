@@ -56,13 +56,13 @@ public class PRecintos extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == rbRecintoFerial){
             // frame.getEvento().setEstablecimiento(Establecimiento.ABIERTO_AL_PUBLICO);
-            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un RECINTO FERIAL habilitado");
+            // JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un RECINTO FERIAL habilitado");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
+            pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+            frame.add(pIdentificacionEspectaculo);
+            this.setVisible(false);
         }
-        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
-        frame.add(pIdentificacionEspectaculo);
-        this.setVisible(false);
     }
 }

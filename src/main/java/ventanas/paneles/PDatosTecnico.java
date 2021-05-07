@@ -59,13 +59,13 @@ public class PDatosTecnico extends JPanel implements ActionListener {
     }
 
     private void botonesSiguienteAnterior(){
-        botonAnterior = new BotonFlujo("ANTERIOR");
-        grid = new Grid(3, 3, 0, 30, 200, 30, 10);
-        this.add(botonAnterior, grid);
-        botonAnterior.addActionListener(this);
+        // botonAnterior = new BotonFlujo("ANTERIOR");
+        // grid = new Grid(3, 3, 0, 30, 200, 30, 10);
+        // this.add(botonAnterior, grid);
+        // botonAnterior.addActionListener(this);
         
         botonSiguiente = new BotonFlujo("SIGUIENTE");
-        grid = new Grid(4, 3, 0, 30, -150, 30, 10);
+        grid = new Grid(0, 3, 4, 30, 400, 30, 10);
         this.add(botonSiguiente, grid);
         botonSiguiente.addActionListener(this);
     }

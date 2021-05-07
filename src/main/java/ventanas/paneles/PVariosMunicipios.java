@@ -83,7 +83,7 @@ public class PVariosMunicipios extends PFondoStandard{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonPruebaDeportiva){
             frame.getEvento().setDominioVariosMunicipios(DominioPublicoVariosMunicipios.PRUEBA_DEPORTIVA);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como PRUEBA DEPORTIVA");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como PRUEBA DEPORTIVA");
             // System.out.println(frame.getEvento());
             // pDominioPublicoPortuario = new PDominioPublicoPortuario();
             // frame.add(pDominioPublicoPortuario);
@@ -91,7 +91,7 @@ public class PVariosMunicipios extends PFondoStandard{
         }
         if(e.getSource() == botonMarchaCiclista){
             frame.getEvento().setDominioVariosMunicipios(DominioPublicoVariosMunicipios.MARCHA_CICLISTA);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como MARCHA CICLISTA");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como MARCHA CICLISTA");
             // System.out.println(frame.getEvento());
             // pDominioPublicoPortuario = new PDominioPublicoPortuario();
             // frame.add(pDominioPublicoPortuario);
@@ -99,7 +99,7 @@ public class PVariosMunicipios extends PFondoStandard{
         }
         if(e.getSource() == botonVehiculosClasicos){
             frame.getEvento().setDominioVariosMunicipios(DominioPublicoVariosMunicipios.VEHICULOS_CLASICOS);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como VEHÍCULOS CLASICOS");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como VEHÍCULOS CLASICOS");
             // System.out.println(frame.getEvento());
             // pDominioPublicoPortuario = new PDominioPublicoPortuario();
             // frame.add(pDominioPublicoPortuario);

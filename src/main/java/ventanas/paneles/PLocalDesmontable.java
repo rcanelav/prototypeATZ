@@ -54,14 +54,14 @@ public class PLocalDesmontable extends PFondoStandard{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == licenciaUrbanisticaSi){
             frame.getEvento().setLicenciaUrbanistica(true);
-            JOptionPane.showMessageDialog(null, "Local desmontable habilitado");
+            // JOptionPane.showMessageDialog(null, "Local desmontable habilitado");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }
         if(e.getSource() == licenciaUrbanisticaNo){
             frame.getEvento().setLicenciaUrbanistica(false);
-            JOptionPane.showMessageDialog(null, "Local desmontable que necesita habilitación");
+            // JOptionPane.showMessageDialog(null, "Local desmontable que necesita habilitación");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);

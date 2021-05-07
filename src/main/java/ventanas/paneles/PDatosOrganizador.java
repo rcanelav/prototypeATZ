@@ -80,12 +80,12 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
     }
 
     private void botonesSiguienteAnterior(){
-        botonAnterior = new BotonFlujo("ANTERIOR");
-        grid = new Grid(0, 3, 4, 40, -200, 30, 10);
-        this.add(botonAnterior, grid);
+        // botonAnterior = new BotonFlujo("ANTERIOR");
+        // grid = new Grid(0, 3, 4, 40, -200, 30, 10);
+        // this.add(botonAnterior, grid);
 
         botonSiguiente = new BotonFlujo("SIGUIENTE");
-        grid = new Grid(0, 3, 4, 40, 200, 30, 10);
+        grid = new Grid(0, 3, 4, 40, 50, 30, 10);
         this.add(botonSiguiente, grid);
         botonSiguiente.addActionListener(this);
     }

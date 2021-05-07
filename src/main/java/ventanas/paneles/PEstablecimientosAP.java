@@ -88,28 +88,28 @@ public class PEstablecimientosAP extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonLocalCerrado){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.LOCAL_CERRADO);
-            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un LOCAL CERRADO habilitado");
+            // JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un LOCAL CERRADO habilitado");
             pLocalesCerrados = new PLocalesCerrados();
             frame.add(pLocalesCerrados);
             this.setVisible(false);
         }
         if(e.getSource() == botonLocalDesmontable){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.LOCAL_DESMONTABLE);
-            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un LOCAL DESMONTABLE habilitado");
+            // JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un LOCAL DESMONTABLE habilitado");
             pLocalDesmontable = new PLocalDesmontable();
             frame.add(pLocalDesmontable);
             this.setVisible(false);
         }
         if(e.getSource() == botonInstalacion){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.INSTALACION);
-            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en una INSTALACIÓN habilitada");
+            // JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en una INSTALACIÓN habilitada");
             pInstalacion = new PInstalacion();
             frame.add(pInstalacion);
             this.setVisible(false);
         }
         if(e.getSource() == botonRecinto){
             frame.getEvento().setTipoEstablecimientoAbiertoAlPublico(EstablecimientoAbiertoAlPublico.RECINTO);
-            JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un RECINTO habilitado");
+            // JOptionPane.showMessageDialog(null, "El etablecimiento abierto al público en el que se desarrollará el espectáculo consiste en un RECINTO habilitado");
             pRecintos = new PRecintos();
             frame.add(pRecintos);
             this.setVisible(false);

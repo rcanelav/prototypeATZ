@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class PFormularioJuridico extends PFormulario {
     GridBagConstraints grid = new Grid();
-    private TextoFormulario textoNOrganizadores;
+    // private TextoFormulario textoNOrganizadores;
     private TextoFormulario textoCif;
     private TextoFormulario textoRazonSocial;
     private TextoFormulario textoDireccion;
@@ -34,16 +34,16 @@ public class PFormularioJuridico extends PFormulario {
     private void formulario(){
         this.setLayout(new GridBagLayout());
         
-        LabelFormulario lblNOrganizadores = new LabelFormulario("Nº ORGANIZADORES");
-        grid = new Grid(1, 1, 0, 0, 0);
-        this.add(lblNOrganizadores, grid);
-        textoNOrganizadores = new TextoFormulario("Indique el número de organizadores del evento.", 
-                                                  TipoTextoFormulario.NUMERICO,
-                                                  "Introduzca un nº entero positivo, sin caracteres especiales.");
-        grid = new Grid(1, 1, 0, 0, 250);
-        this.add(textoNOrganizadores, grid);
-        grid = new Grid(2, 1, 0, 0, 4);
-        this.add(textoNOrganizadores.getIconoError(), grid);
+        // LabelFormulario lblNOrganizadores = new LabelFormulario("Nº ORGANIZADORES");
+        // grid = new Grid(1, 1, 0, 0, 0);
+        // this.add(lblNOrganizadores, grid);
+        // textoNOrganizadores = new TextoFormulario("Indique el número de organizadores del evento.", 
+        //                                           TipoTextoFormulario.NUMERICO,
+        //                                           "Introduzca un nº entero positivo, sin caracteres especiales.");
+        // grid = new Grid(1, 1, 0, 0, 250);
+        // this.add(textoNOrganizadores, grid);
+        // grid = new Grid(2, 1, 0, 0, 4);
+        // this.add(textoNOrganizadores.getIconoError(), grid);
 
         LabelFormulario lblCif = new LabelFormulario("CIF");
         grid = new Grid(1, 2, 0, 10, 0);
@@ -189,7 +189,7 @@ public class PFormularioJuridico extends PFormulario {
         this.add(textoCoberturaSeguro.getIconoError(), grid);
 
 
-        textoNOrganizadores.setText("2");
+        // textoNOrganizadores.setText("2");
         textoCif.setText("986574127");
         textoRazonSocial.setText("Valbuena Blake");
         textoDireccion.setText("Avenida del ejercito");
@@ -208,8 +208,8 @@ public class PFormularioJuridico extends PFormulario {
     public boolean validar(){
         boolean valido = true;
         
-        if(!textoNOrganizadores.validar())
-            valido = false;
+        // if(!textoNOrganizadores.validar())
+        //     valido = false;
         if(!textoCif.validar())
             valido = false;
         if(!textoRazonSocial.validar())
@@ -241,7 +241,7 @@ public class PFormularioJuridico extends PFormulario {
     }
 
     public void grabarDatos(Evento evento) {
-        evento.setDatosOrganizadorJuridico(textoNOrganizadores.getText(), textoCif.getText(),
+        evento.setDatosOrganizadorJuridico(textoCif.getText(),
                                          textoRazonSocial.getText(), textoDireccion.getText(),
                                           textoPoblacion.getText(), textoProvincia.getText(),
                                           textoTelefono.getText(), textoMovil.getText(),

@@ -113,7 +113,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.EXTRAORDINARIO);
-                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como EXTRAORDINARIO");
+                                // JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como EXTRAORDINARIO");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
@@ -127,7 +127,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.OCASIONAL);
-                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como OCASIONAL");
+                                // JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como OCASIONAL");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
@@ -141,7 +141,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.PERMANENTE);
-                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como PERMANENTE");
+                                // JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como PERMANENTE");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);
@@ -155,7 +155,7 @@ public class PClasificacion extends PFondoStandard {
                                         JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
                         if (res == 0) {
                                 frame.getEvento().setTipoClasificacion(Clasificacion.TEMPORADA);
-                                JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como DE TEMPORADA");
+                                // JOptionPane.showMessageDialog(null, "Desarrollo del espectáculo establecido como DE TEMPORADA");
                                 pUbicacion = new PUbicacion();
                                 frame.add(pUbicacion);
                                 this.setVisible(false);

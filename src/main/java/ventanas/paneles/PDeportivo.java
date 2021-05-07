@@ -67,7 +67,7 @@ public class PDeportivo extends JPanel implements ActionListener {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonDeportivo){
             frame.getEvento().setTipo(Tipo.DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como DEPORTIVO");
+            // JOptionPane.showMessageDialog(null, "Establecido el tipo de espectáculo como DEPORTIVO");
             pCaracter = new PCaracter();
             frame.add(pCaracter);
             this.setVisible(false);

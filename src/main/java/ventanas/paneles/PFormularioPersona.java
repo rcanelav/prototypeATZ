@@ -10,7 +10,7 @@ import negocio.Evento;
 public class PFormularioPersona extends PFormulario {
     private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
-    private TextoFormulario textoNOrganizadores;
+    // private TextoFormulario textoNOrganizadores;
     private TextoFormulario textoNif;
     private TextoFormulario textoApellidos;
     private TextoFormulario textoNombre;
@@ -34,16 +34,16 @@ public class PFormularioPersona extends PFormulario {
     public void formulario(){
         this.setLayout(new GridBagLayout());
         
-        LabelFormulario lblNOrganizadores = new LabelFormulario("Nº ORGANIZADORES");
-        grid = new Grid(1, 1, 0, 0, 0);
-        this.add(lblNOrganizadores, grid);
-        textoNOrganizadores = new TextoFormulario("Indique el número de organizadores del evento.", 
-                                                  TipoTextoFormulario.NUMERICO, 
-                                                  "Introduzca un número válido.");
-        grid = new Grid(1, 1, 0, 0, 250);
-        this.add(textoNOrganizadores, grid);
-        grid = new Grid(2, 1, 0, 0, 4);
-        this.add(textoNOrganizadores.getIconoError(), grid);
+        // LabelFormulario lblNOrganizadores = new LabelFormulario("Nº ORGANIZADORES");
+        // grid = new Grid(1, 1, 0, 0, 0);
+        // this.add(lblNOrganizadores, grid);
+        // textoNOrganizadores = new TextoFormulario("Indique el número de organizadores del evento.", 
+        //                                           TipoTextoFormulario.NUMERICO, 
+        //                                           "Introduzca un número válido.");
+        // grid = new Grid(1, 1, 0, 0, 250);
+        // this.add(textoNOrganizadores, grid);
+        // grid = new Grid(2, 1, 0, 0, 4);
+        // this.add(textoNOrganizadores.getIconoError(), grid);
 
         LabelFormulario lblNif = new LabelFormulario("NIF/ NIE/ OTRO");
         grid = new Grid(1, 2, 0, 10, 0);
@@ -188,7 +188,7 @@ public class PFormularioPersona extends PFormulario {
         grid = new Grid(2, 14, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
 
-        textoNOrganizadores.setText("2");
+        // textoNOrganizadores.setText("2");
         textoNif.setText("986574127");
         textoApellidos.setText("Valbuena Blake");
         textoNombre.setText("Kensington");
@@ -208,8 +208,8 @@ public class PFormularioPersona extends PFormulario {
     public boolean validar(){
         boolean valido = true;
 
-        if(!textoNOrganizadores.validar())
-            valido = false;
+        // if(!textoNOrganizadores.validar())
+        //     valido = false;
         if(!textoNif.validar())
             valido = false;
         if(!textoApellidos.validar())
@@ -240,7 +240,7 @@ public class PFormularioPersona extends PFormulario {
         return valido;
     }
     public void grabarDatos(Evento evento) {
-        evento.setDatosOrganizadorPersona(textoNOrganizadores.getText(), textoNif.getText(),
+        evento.setDatosOrganizadorPersona(textoNif.getText(),
                                          textoApellidos.getText(), textoNombre.getText(), 
                                          textoDireccion.getText(), textoPoblacion.getText(), 
                                          textoProvincia.getText(), textoTelefono.getText(), 

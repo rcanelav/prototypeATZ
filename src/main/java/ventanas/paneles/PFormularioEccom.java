@@ -33,16 +33,16 @@ public class PFormularioEccom extends PFormulario {
     private void formulario(){
         this.setLayout(new GridBagLayout());
         
-        LabelFormulario lblNRegistro = new LabelFormulario("Nº REGISTRO");
-        grid = new Grid(1, 1, 0, 0, 0);
-        this.add(lblNRegistro, grid);
-        textoNRegistro = new TextoFormulario("Indique el nº de registro de la ECCOM.", 
-                                                  TipoTextoFormulario.NUMERICO,
-                                                  "Indique un numero correcto, sin caracteres especiales.");
-        grid = new Grid(1, 1, 0, 0, 250);
-        this.add(textoNRegistro, grid);
-        grid = new Grid(2, 1, 0, 0, 4);
-        this.add(textoNRegistro.getIconoError(), grid);
+        // LabelFormulario lblNRegistro = new LabelFormulario("Nº REGISTRO");
+        // grid = new Grid(1, 1, 0, 0, 0);
+        // // this.add(lblNRegistro, grid);
+        // textoNRegistro = new TextoFormulario("Indique el nº de registro de la ECCOM.", 
+        //                                           TipoTextoFormulario.NUMERICO,
+        //                                           "Indique un numero correcto, sin caracteres especiales.");
+        // grid = new Grid(1, 1, 0, 0, 250);
+        // // this.add(textoNRegistro, grid);
+        // grid = new Grid(2, 1, 0, 0, 4);
+        // // this.add(textoNRegistro.getIconoError(), grid);
 
         LabelFormulario lblCif = new LabelFormulario("CIF");
         grid = new Grid(1, 2, 0, 10, 0);
@@ -187,7 +187,7 @@ public class PFormularioEccom extends PFormulario {
         grid = new Grid(2, 15, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
 
-        textoNRegistro.setText("2");
+        // textoNRegistro.setText("2");
         textoCif.setText("986574127");
         textoRazonSocial.setText("Valbuena Blake");
         textoDireccion.setText("Avenida del ejercito");
@@ -207,8 +207,8 @@ public class PFormularioEccom extends PFormulario {
     public boolean validar(){
         boolean valido = true;
         
-        if(!textoNRegistro.validar())
-            valido = false;
+        // if(!textoNRegistro.validar())
+        //     valido = false;
         if(!textoCif.validar())
             valido = false;
         if(!textoRazonSocial.validar())
@@ -240,7 +240,7 @@ public class PFormularioEccom extends PFormulario {
     }
 
     public void grabarDatos(Evento evento) {
-        evento.setDatosOrganizadorEccom(textoNRegistro.getText(), textoCif.getText(),
+        evento.setDatosOrganizadorEccom(textoCif.getText(),
                                         textoRazonSocial.getText(), textoDireccion.getText(),
                                         textoPoblacion.getText(), textoProvincia.getText(),
                                         textoTelefono.getText(), textoMovil.getText(),

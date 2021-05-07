@@ -32,15 +32,14 @@ public class Evento {
         PROYECTO_TECNICO, CARTEL_ESPECTACULO, POLIZA_SEGURO_RESPONSABILIDAD_CIVIL, SOLICITUD_LICENCIA_URBANISTICA, AUTORIZACION_MEDIOAMBIENTAL, SOLICITUD_HABILITACION_INSTALACION, CERTIFICADO_INSTALACION, MEMORIA_RECORRIDO_VARIOS_MUNICIPIOS, INFORME_JEFATURA_PROVINCIAL_TRAFICO, COMPROBANTE_PAGO_TASA_SEGURIDAD_PRIVADA,
         COMPROBANTE_PAGO_TASA_ESPECTACULOS, COMPROBANTE_PAGO_TASA_PLAN_AUTOPROTECCION, SOL_AUT_OCUPACION_DOMINIO_PUBLICO, COMPROBANTE_PAGO_TASA_PORTUARIA, INFORME_SUBDELGOB_LANZAMIENTO_FUEGOS_ARTIFICIALES, PROYECTO_TECNICO_INSTALACION_TEMP_BAJA_TENSION, MEMORIA_TEC_DISENO_INSTALACION_TEMP_BAJA_TENSION, CERTIFICADO_DIRECCION_OBRA;
     }
-    // private Tipologia tipologia;
+    // private String nOrganizadores;
+    // private String nRegistro;
+    // private String nTecnicos;
     private Categoria categoria;
-    private String nOrganizadores;
     private PromotorEmpresa pJuridico;
     private PromotorPersona pPersona;
     private Eccom eccom;
-    private String nRegistro;
     private Tecnico tecnico;
-    private String nTecnicos;
     private Tipo tipo;
     private Caracter tipoCaracter;
     private Actividad tipoActividad;
@@ -103,12 +102,12 @@ public class Evento {
         return tipoClasificacion;
     }
 
-    public void setDatosOrganizadorPersona(String nOrganizadores, String nif, String apellidos, String nombre,
+    public void setDatosOrganizadorPersona(String nif, String apellidos, String nombre,
                                            String direccion, String poblacion, String provincia, String telefono,
                                            String movil, String email, String epigrafeIAE, String polizaSeguro,
                                            String numeroSeguro, String coberturaSeguro){
         pPersona = new PromotorPersona();
-        this.nOrganizadores = nOrganizadores;
+        // this.nOrganizadores = nOrganizadores;
         pPersona.setNif(nif);
         pPersona.setApellidos(apellidos);
         pPersona.setNombre(nombre);
@@ -124,13 +123,13 @@ public class Evento {
         pPersona.setCoberturaSeguro(coberturaSeguro);
     }
 
-    public void setDatosOrganizadorJuridico(String nOrganizadores, String cif, String razonSocial,
+    public void setDatosOrganizadorJuridico(String cif, String razonSocial,
                                             String direccion, String poblacion, String provincia, String telefono,
                                             String movil, String email, String representante, String epigrafe,
                                             String polizaSeguro, String numeroSeguro,
                                             String coberturaSeguro){
         pJuridico = new PromotorEmpresa();
-        this.nOrganizadores = nOrganizadores; 
+        // this.nOrganizadores = nOrganizadores; 
         pJuridico.setCif(cif);               
         pJuridico.setRazonSocial(razonSocial);
         pJuridico.setDireccion(direccion);               
@@ -146,13 +145,13 @@ public class Evento {
         pJuridico.setCoberturaSeguro(coberturaSeguro);
     }
 
-    public void setDatosOrganizadorEccom(String nRegistro, String cif, String razonSocial,
+    public void setDatosOrganizadorEccom(String cif, String razonSocial,
                                          String direccion, String poblacion, String provincia, String telefono,
                                          String movil, String email, String representante, String numeroSeguro,
                                          String alcanceCertificacion, String polizaSeguro, 
                                          String coberturaSeguro){
         eccom = new Eccom();
-        this.nRegistro = nRegistro; 
+        // this.nRegistro = nRegistro; 
         eccom.setCif(cif);               
         eccom.setRazonSocial(razonSocial);
         eccom.setDireccion(direccion);               
@@ -168,12 +167,12 @@ public class Evento {
         eccom.setCoberturaSeguro(coberturaSeguro);
     }
 
-    public void setDatosTecnico(String nTecnicos, String nif, String apellidos, String nombre, String direccion,
+    public void setDatosTecnico(String nif, String apellidos, String nombre, String direccion,
                                 String poblacion, String provincia, String telefono, String movil, String email,
                                 boolean certificado, String otraTitulacion, String polizaSeguro, String numeroSeguro,
                                 String coberturaSeguro){
         tecnico = new Tecnico();
-        this.nTecnicos = nTecnicos;
+        // this.nTecnicos = nTecnicos;
         tecnico.setNif(nif);
         tecnico.setApellidos(apellidos);
         tecnico.setNombre(nombre);
@@ -296,7 +295,7 @@ public class Evento {
         sb.append("ACTIVIDAD: " + tipoActividad + "\n");
         sb.append("DESARROLLO: " + tipoClasificacion + "\n");
         sb.append("\n--------------   DATOS DEL ORGANIZADOR --------------\n");
-        sb.append("NÚMERO DE ORGANIZADORES: " + nOrganizadores + "\n");
+        // sb.append("NÚMERO DE ORGANIZADORES: " + nOrganizadores + "\n");
         if(pPersona != null)
             sb.append(pPersona);
         if(pJuridico != null)
@@ -305,7 +304,7 @@ public class Evento {
             sb.append(eccom);
         if(tecnico != null){
             sb.append("\n--------------   DATOS DEL TÉCNICO --------------\n");
-            sb.append("NÚMERO DE TÉCNICOS: " + nTecnicos + "\n");
+            // sb.append("NÚMERO DE TÉCNICOS: " + nTecnicos + "\n");
             sb.append(tecnico);
         }
         sb.append("\n--------------   DATOS DEL LUGAR --------------\n");

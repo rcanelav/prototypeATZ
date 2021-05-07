@@ -63,7 +63,7 @@ public class PDominioPublicoPortuario extends PFondoStandard{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonDominioPortuario){
             frame.getEvento().setDominioPublicoPortuario(DominioPublicoPortuario.DOM_PUBLICO_PORTUARIO);
-            JOptionPane.showMessageDialog(null, "Establecido el dominio público como PORTUARIO");
+            // JOptionPane.showMessageDialog(null, "Establecido el dominio público como PORTUARIO");
             // System.out.println(frame.getEvento());
             // pTitularidad = new PTitularidad();
             // frame.add(pTitularidad);
@@ -71,7 +71,7 @@ public class PDominioPublicoPortuario extends PFondoStandard{
         }
         if(e.getSource() == botonOtro){
             frame.getEvento().setDominioPublicoPortuario(DominioPublicoPortuario.OTRO);
-            JOptionPane.showMessageDialog(null, "No se trata de dominio público PORTUARIO");
+            // JOptionPane.showMessageDialog(null, "No se trata de dominio público PORTUARIO");
             // System.out.println(frame.getEvento());
             // pTitularidad = new PTitularidad();
             // frame.add(pTitularidad);

@@ -90,37 +90,37 @@ public class PLocalesCerrados extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == rbTeatro){
             frame.getEvento().setTipoLocalCerrado(LocalCerrado.TEATRO);
-            JOptionPane.showMessageDialog(null, "Local cerrado habilitado como TEATRO");
+            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como TEATRO");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }else if(e.getSource() == rbAuditorio){
             frame.getEvento().setTipoLocalCerrado(LocalCerrado.AUDITORIO);
-            JOptionPane.showMessageDialog(null, "Local cerrado habilitado como AUDITORIO");
+            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como AUDITORIO");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }else if(e.getSource() == rbCirco){
             frame.getEvento().setTipoLocalCerrado(LocalCerrado.CIRCO);
-            JOptionPane.showMessageDialog(null, "Local cerrado habilitado como CIRCO");
+            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como CIRCO");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }else if(e.getSource() == rbCine){
             frame.getEvento().setTipoLocalCerrado(LocalCerrado.CINE);
-            JOptionPane.showMessageDialog(null, "Local cerrado habilitado como CINE");
+            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como CINE");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }else if(e.getSource() == rbPlazaToros){
             frame.getEvento().setTipoLocalCerrado(LocalCerrado.PLAZA_TOROS);
-            JOptionPane.showMessageDialog(null, "Local cerrado habilitado como PLAZA TOROS");
+            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como PLAZA TOROS");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }else if(e.getSource() == rbEspectaculosDeportivos){
             frame.getEvento().setTipoLocalCerrado(LocalCerrado.ESPECTACULO_DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "Local cerrado habilitado como ESTABLECIMIENTO DE ESPECTÁCULOS DEPORTIVOS");
+            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como ESTABLECIMIENTO DE ESPECTÁCULOS DEPORTIVOS");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);

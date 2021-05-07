@@ -52,14 +52,14 @@ public class PInstalacion extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonHomologado){
             frame.getEvento().setInstalacionHomologada(true);
-            JOptionPane.showMessageDialog(null, "La instalación no requiere proyecto");
+            // JOptionPane.showMessageDialog(null, "La instalación no requiere proyecto");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);
         }
         if(e.getSource() == botonNoHomologado){
             frame.getEvento().setInstalacionHomologada(false);
-            JOptionPane.showMessageDialog(null, "La instalación requiere proyecto");
+            // JOptionPane.showMessageDialog(null, "La instalación requiere proyecto");
             // pEstablecimientosAP = new PEstablecimientosAP();
             // frame.add(pEstablecimientosAP);
             // this.setVisible(false);

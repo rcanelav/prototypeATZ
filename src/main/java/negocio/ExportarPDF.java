@@ -1,16 +1,20 @@
 package negocio;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import org.apache.pdfbox.*;
 import org.apache.pdfbox.pdmodel.*;
 import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDCheckBox;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
 
-import ventanas.paneles.PFormularioAnexos;
 
 public class ExportarPDF {
     
@@ -21,10 +25,23 @@ public class ExportarPDF {
 
     public void guardarPDF(Evento evento){
         try{
+            String solicitudLicencia = "Solicitud de licencia";
+            String declaracion = "Declaracion de responsable";
             PDDocument pDDocument = null;
             if((pDDocument = Loader.loadPDF(new File("src/main/java/imagenes/prueba.pdf")))!= null){
                 System.out.println("documento abierto");
             }
+            //-------------------------SUPERIOR----------------------
+            if(evento.getDatos().getPlanAutoproteccion() || 
+               evento.getUbicacion().getDatosUbicacion().getLicenciaUrbanistica() || 
+               evento.getUbicacion().getDatosUbicacion().getProyectoHabilitacion()||
+               !evento.getUbicacion().getInstalacionHomologada() ||
+               evento.getUbicacion().getDatosUbicacion().getProyectoMontaje())
+                escribirPDF(pDDocument, solicitudLicencia, "tramite");
+            else{
+                escribirPDF(pDDocument, declaracion, "tramite");
+            }
+
             if(evento.getpPersona() != null){
                 checkPDF(pDDocument,"personaFisica");
                 escribirPDF(pDDocument,
@@ -193,9 +210,9 @@ public class ExportarPDF {
                             evento.getDatos().getAforo(),
                             "capacidad");
 
-                if(evento.getDatos().getPlanAutoproteccion())
+                if(evento.getDatos().getPlanAutoproteccion()){
                     checkPDF(pDDocument, "planAutoproteccionSi");
-                else
+                } else
                     checkPDF(pDDocument, "planAutoproteccionNo");
 
                 if(evento.getDatos().getControlAcceso())
@@ -380,22 +397,19 @@ public class ExportarPDF {
                         System.out.println("CASO NO ENCONTRADO - ANEXOS");
                 }
             }
-                
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");  
-            LocalDateTime now = LocalDateTime.now();  
-            File tmpDir = new File("src/main/java/imagenes/SolicitudEspectaculo.pdf");
-            boolean exists = tmpDir.exists();
-            if(exists){
-                pDDocument.save("src/main/java/imagenes/SolicitudEspectaculo-"+dtf.format(now)+ ".pdf");
-            }else{
-                pDDocument.save("src/main/java/imagenes/SolicitudEspectaculo.pdf");
-            }
+            
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("PDF file", "pdf");
+            JFileChooser fc = new JFileChooser("src/main/java/imagenes/");
+            fc.addChoosableFileFilter((javax.swing.filechooser.FileFilter) filter);
+            fc.showSaveDialog(null);
+            File file = fc.getSelectedFile();
+            pDDocument.save(verificarNombrePDF(file));
             System.out.println("PDF GENERADO");
             pDDocument.close();
+            Desktop.getDesktop().open(verificarNombrePDF(file));
         }catch(IOException e){
             System.out.println(e.getMessage());
-        }
-            
+        }   
     }
 
     private void escribirPDF(PDDocument pDDocument, String valor, String campo) throws IOException{
@@ -410,6 +424,14 @@ public class ExportarPDF {
             PDField field = pDAcroForm.getField(campo);
             if(field != null)
                 ((PDCheckBox) field).check();
+    }
+
+    File verificarNombrePDF(File file){
+        if(!file.getAbsolutePath().toLowerCase().endsWith(".pdf")){
+            return new File(file.getAbsolutePath()+".pdf");
+        }else{
+            return file;
+        }
     }
 }
 

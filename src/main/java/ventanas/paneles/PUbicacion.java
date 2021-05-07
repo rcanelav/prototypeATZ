@@ -55,14 +55,14 @@ public class PUbicacion extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonEstablecimiento){
             frame.getEvento().setUbicacion(Ubicacion.ESTABLECIMIENTO);
-            JOptionPane.showMessageDialog(null, "Ubicación del espectáculo establecida en ESTABLECIMIENTO");
+            // JOptionPane.showMessageDialog(null, "Ubicación del espectáculo establecida en ESTABLECIMIENTO");
             pEstablecimientos = new PEstablecimientos();
             frame.add(pEstablecimientos);
             this.setVisible(false);
         }
         if(e.getSource() == botonEspacioAbierto){
             frame.getEvento().setUbicacion(Ubicacion.ESPACIO_ABIERTO);
-            JOptionPane.showMessageDialog(null, "Ubicación del espectáculo establecida en ESPACIO ABIERTO");
+            // JOptionPane.showMessageDialog(null, "Ubicación del espectáculo establecida en ESPACIO ABIERTO");
             pEspacios = new PEspacios();
             frame.add(pEspacios);
             this.setVisible(false);

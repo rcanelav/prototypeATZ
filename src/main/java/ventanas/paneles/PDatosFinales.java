@@ -3,10 +3,7 @@ import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
 import javax.swing.*;
-
-import negocio.Evento;
 import negocio.ExportarPDF;
-
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

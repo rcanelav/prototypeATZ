@@ -2,8 +2,6 @@ package ventanas;
 
 import javax.swing.*;
 import negocio.Evento;
-import negocio.ExportarPDF;
-
 import java.awt.*;
 import ventanas.paneles.*;
 

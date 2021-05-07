@@ -64,7 +64,7 @@ public class PDominioPublico extends PFondoStandard  {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonUnMunicipio){
             frame.getEvento().setDominio(Dominio.UN_MUNICIPIO);
-            JOptionPane.showMessageDialog(null, "El dominio público corresponde a UN MUNICIPIO");
+            // JOptionPane.showMessageDialog(null, "El dominio público corresponde a UN MUNICIPIO");
             // System.out.println(frame.getEvento());
             pDominioPublicoPortuario = new PDominioPublicoPortuario();
             frame.add(pDominioPublicoPortuario);
@@ -72,7 +72,7 @@ public class PDominioPublico extends PFondoStandard  {
         }
         if(e.getSource() == botonVariosMunicipios){
             frame.getEvento().setDominio(Dominio.VARIOS_MUNICIPIOS);
-            JOptionPane.showMessageDialog(null, "El dominio público corresponde a VARIOS MUNICIPIOS");
+            // JOptionPane.showMessageDialog(null, "El dominio público corresponde a VARIOS MUNICIPIOS");
             // System.out.println(frame.getEvento());
             pVariosMunicipios = new PVariosMunicipios();
             frame.add(pVariosMunicipios);

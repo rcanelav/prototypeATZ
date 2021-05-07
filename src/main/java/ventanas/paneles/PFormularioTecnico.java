@@ -268,7 +268,7 @@ public class PFormularioTecnico extends PFormulario implements ActionListener{
     }
 
     public void grabarDatos(Evento evento) {
-        evento.setDatosTecnico(textoNTecnicos.getText(), textoNif.getText(),
+        evento.setDatosTecnico(textoNif.getText(),
                                textoApellidos.getText(), textoNombre.getText(), 
                                textoDireccion.getText(), textoPoblacion.getText(), 
                                textoProvincia.getText(), textoTelefono.getText(), 

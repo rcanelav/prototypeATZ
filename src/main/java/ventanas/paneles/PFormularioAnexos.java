@@ -44,6 +44,7 @@ public class PFormularioAnexos extends PFormulario{
         this.setLayout(new GridBagLayout());
 
         proyectoTecnico = new JCheckBox("Proyecto técnico del espectáculo");
+        proyectoTecnico.setSelected(true);
         proyectoTecnico.setSize(1000, 20);
         proyectoTecnico.setOpaque(false);
         grid = new Grid(0, 1, 0, 0, 0);

@@ -79,42 +79,42 @@ public class PActividad extends PFondoStandard{
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonRepresentacion){
             frame.getEvento().setTipoActividad(Actividad.REPRESENTACION);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como REPRESENTACIÓN");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como REPRESENTACIÓN");
             pClasificacion = new PClasificacion();
             frame.add(pClasificacion);
             this.setVisible(false);
         }
         if(e.getSource() == botonExhibicion){
             frame.getEvento().setTipoActividad(Actividad.EXHIBICION);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como EXHIBICIÓN ");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como EXHIBICIÓN ");
             pClasificacion = new PClasificacion();
             frame.add(pClasificacion);
             this.setVisible(false);
         }
         if(e.getSource() == botonActuacion){
             frame.getEvento().setTipoActividad(Actividad.ACTUACION);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como ACTUACIÓN");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como ACTUACIÓN");
             pClasificacion = new PClasificacion();
             frame.add(pClasificacion);
             this.setVisible(false);
         }
         if(e.getSource() == botonProyeccion){
             frame.getEvento().setTipoActividad(Actividad.PROYECCION);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como PROYECCIÓN");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como PROYECCIÓN");
             pClasificacion = new PClasificacion();
             frame.add(pClasificacion);
             this.setVisible(false);
         }
         if(e.getSource() == botonCompeticion){
             frame.getEvento().setTipoActividad(Actividad.COMPETICION);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como COMPETICIÓN");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como COMPETICIÓN");
             pClasificacion = new PClasificacion();
             frame.add(pClasificacion);
             this.setVisible(false);
         }
         if(e.getSource() == botonAudicion){
             frame.getEvento().setTipoActividad(Actividad.AUDICION);
-            JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como AUDICIÓN");
+            // JOptionPane.showMessageDialog(null, "Establecida la actividad del espectáculo como AUDICIÓN");
             pClasificacion = new PClasificacion();
             frame.add(pClasificacion);
             this.setVisible(false);

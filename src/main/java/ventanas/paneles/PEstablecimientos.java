@@ -63,14 +63,14 @@ public class PEstablecimientos extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonEstablecimientoAP){
             frame.getEvento().setEstablecimiento(Establecimiento.ABIERTO_AL_PUBLICO);
-            JOptionPane.showMessageDialog(null, "Establecimiento con habilitación de ABIERTO AL PÚBLICO");
+            // JOptionPane.showMessageDialog(null, "Establecimiento con habilitación de ABIERTO AL PÚBLICO");
             pEstablecimientosAP = new PEstablecimientosAP();
             frame.add(pEstablecimientosAP);
             this.setVisible(false);
         }
         if(e.getSource() == botonOtro){
             frame.getEvento().setEstablecimiento(Establecimiento.OTRO);
-            JOptionPane.showMessageDialog(null, "Por determinar la habilitación del establecimiento");
+            // JOptionPane.showMessageDialog(null, "Por determinar la habilitación del establecimiento");
             pEstablecimientoOtro = new PEstablecimientoOtro();
             frame.add(pEstablecimientoOtro);
             this.setVisible(false);

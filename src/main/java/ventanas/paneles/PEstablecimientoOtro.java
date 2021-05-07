@@ -61,14 +61,14 @@ public class PEstablecimientoOtro extends PFondoStandard {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == botonAsimilado){
             frame.getEvento().setEstablecimientoAsimiladoOtraCategoria(true);
-            JOptionPane.showMessageDialog(null, "El establecimineto está habilitado.");
+            // JOptionPane.showMessageDialog(null, "El establecimineto está habilitado.");
             pLocalesAsimilados = new PLocalesAsimilados();
             frame.add(pLocalesAsimilados);
             this.setVisible(false);
         }
         if(e.getSource() == botonNoAsimilado){
             frame.getEvento().setEstablecimientoAsimiladoOtraCategoria(false);
-            JOptionPane.showMessageDialog(null, "El establecimiento no está habilitado");
+            // JOptionPane.showMessageDialog(null, "El establecimiento no está habilitado");
             pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
             frame.add(pIdentificacionEspectaculo);
             this.setVisible(false);
