@@ -6,12 +6,13 @@ import ventanas.elementos.TextoFormulario;
 import ventanas.elementos.TextoFormulario.TipoTextoFormulario;
 import java.awt.*;
 import javax.swing.*;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import negocio.DatosUbicacion;
 import negocio.Evento;
 
 
-public class PFormularioUbicacion extends PFormulario {
+public class PFormularioUbicacion extends PFormulario implements ActionListener {
     private static final long serialVersionUID = 1L;
     BotonFlujo botonSiguiente;
     GridBagConstraints grid = new Grid();
@@ -254,12 +255,14 @@ public class PFormularioUbicacion extends PFormulario {
         rbInstalacionesPortatiles = new ButtonGroup();
         rbInstalacionesPortatiles.add(instalacionesPortatilesSi);
         rbInstalacionesPortatiles.add(instalacionesPortatilesNo);
+        instalacionesPortatilesSi.addActionListener(this);
+        instalacionesPortatilesNo.addActionListener(this);
         
         LabelFormulario numeroInstalaciones = new LabelFormulario("Nº de instalaciones");
         grid = new Grid(0, 8, 0, 5, 0);
         this.add(numeroInstalaciones, grid);
         textoNInstalaciones = new TextoFormulario("Indique el nº de instalaciones que se utilizarán", 
-        TipoTextoFormulario.ALFABETICO, 
+        TipoTextoFormulario.NUMERICO, 
         "Introduzca un nombre válido.");
         textoNInstalaciones.setPrefSize(100, 0);
         grid = new Grid(0, 8, 0, 5, -50);
@@ -412,16 +415,18 @@ public class PFormularioUbicacion extends PFormulario {
             valido = false;
         if(!textoProvincia.validar())
             valido = false;
-        if(!textoNInstalaciones.validar())
-            valido = false;
-        if(!textoRelacionInstalaciones.validar())
-            valido = false;
-        if(!textoResponsableMontaje.validar())
-            valido = false;
-        if(!textoMovilResponsable.validar())
-            valido = false;
-        if(!textoEmailResponsable.validar())
-            valido = false;
+        if(instalacionesPortatilesSi.isSelected()){
+            if(!textoNInstalaciones.validar())
+                valido = false;
+            if(!textoRelacionInstalaciones.validar())
+                valido = false;
+            if(!textoResponsableMontaje.validar())
+                valido = false;
+            if(!textoMovilResponsable.validar())
+                valido = false;
+            if(!textoEmailResponsable.validar())
+                valido = false;
+        }
         
         return valido;
     }
@@ -444,15 +449,62 @@ public class PFormularioUbicacion extends PFormulario {
         datosUbicacion.setLicenciaUrbanistica(licenciaUrbanisticaSi.isSelected());
         datosUbicacion.setProyectoHabilitacion(proyectoHabilitacionSi.isSelected());
         datosUbicacion.setInstalacionesPortatilesDemontables(instalacionesPortatilesSi.isSelected());
-        datosUbicacion.setnInstalaciones(textoNInstalaciones.getText());
-        datosUbicacion.setRelInstalacionesUtilizadas(textoRelacionInstalaciones.getText());
+        datosUbicacion.setnInstalaciones(instalacionesPortatilesSi.isSelected() ?       textoNInstalaciones.getText() : "0");
+        datosUbicacion.setRelInstalacionesUtilizadas(instalacionesPortatilesSi.isSelected() ? textoRelacionInstalaciones.getText() : "");
         datosUbicacion.setHomologadas(homologadasSi.isSelected());
         datosUbicacion.setProyectoMontaje(proyectoMontajeSi.isSelected());
-        datosUbicacion.setResponsableMontaje(textoResponsableMontaje.getText());
-        datosUbicacion.setMovilResponsable(textoMovilResponsable.getText());
-        datosUbicacion.setEmailResponsable(textoEmailResponsable.getText());
+        datosUbicacion.setResponsableMontaje(instalacionesPortatilesSi.isSelected() ? textoResponsableMontaje.getText() : "NO REQUIERE");
+        datosUbicacion.setMovilResponsable(instalacionesPortatilesSi.isSelected() ? textoMovilResponsable.getText() : "NO REQUIERE");
+        datosUbicacion.setEmailResponsable(instalacionesPortatilesSi.isSelected() ? textoEmailResponsable.getText() : "NO REQUIERE");
         datosUbicacion.setMultiplesMunicipios(multiplesMunicipiosNo.isSelected());
         
         evento.setDatosUbicacion(datosUbicacion);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == instalacionesPortatilesNo){
+            desabilitarCamposTexto(textoNInstalaciones);
+            desabilitarCamposTexto(textoRelacionInstalaciones);
+            desabilitarCamposTexto(textoResponsableMontaje);
+            desabilitarCamposTexto(textoMovilResponsable);
+            desabilitarCamposTexto(textoEmailResponsable);
+            
+            homologadasNo.setSelected(true);
+            proyectoMontajeNo.setSelected(true);
+            desabilitarRB(homologadasSi);
+            desabilitarRB(homologadasNo);
+            desabilitarRB(proyectoMontajeSi);
+            desabilitarRB(proyectoMontajeNo);
+        }else if(e.getSource() == instalacionesPortatilesSi){
+            habilitarCamposTexto(textoNInstalaciones);
+            habilitarCamposTexto(textoRelacionInstalaciones);
+            habilitarCamposTexto(textoResponsableMontaje);
+            habilitarCamposTexto(textoMovilResponsable);
+            habilitarCamposTexto(textoEmailResponsable);
+
+            habilitarRB(homologadasSi);
+            habilitarRB(homologadasNo);
+            habilitarRB(proyectoMontajeSi);
+            habilitarRB(proyectoMontajeNo);
+        }
+    }
+
+    private void desabilitarCamposTexto(TextoFormulario texto){
+        texto.setText("NO REQUIERE");
+        texto.setEnabled(false);
+        texto.validar();
+    }
+
+    private void habilitarCamposTexto(TextoFormulario texto){
+        texto.setText("");
+        texto.setEnabled(true);
+        texto.validar();
+    }
+    private void desabilitarRB(JRadioButton rb){
+        rb.setEnabled(false);
+    }
+    private void habilitarRB(JRadioButton rb){
+        rb.setEnabled(true);
     }
 }
