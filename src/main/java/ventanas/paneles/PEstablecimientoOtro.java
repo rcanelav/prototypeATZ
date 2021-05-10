@@ -68,8 +68,7 @@ public class PEstablecimientoOtro extends PFondoStandard {
             this.setVisible(false);
         }
         if(e.getSource() == botonNoAsimilado){
-            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
-            + " llevar a cabo espectáculos públicos.";
+            texto = "TEXTO ";
             mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);

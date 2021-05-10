@@ -60,6 +60,8 @@ public class PEspacios extends PFondoStandard {
     @Override
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        String mensaje;
+        Object[] options = { "Continuar", "Cancelar" };
         if(e.getSource() == botonEspacioAbiertoAlPublico){
             frame.getEvento().setEspacio(Espacio.ABIERTO_AL_PUBLICO);
             // JOptionPane.showMessageDialog(null, "Establecida la ubicación del espectáculo en un ESPACIO ABIERTO AL PÚBLICO habilitado");
@@ -69,11 +71,16 @@ public class PEspacios extends PFondoStandard {
             this.setVisible(false);
         }
         if(e.getSource() == botonOtro){
-            frame.getEvento().setEspacio(Espacio.OTRO);
-            // JOptionPane.showMessageDialog(null, "Establecida la ubicación del espectáculo en un ESPACIO no habilitado");
-            pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
-            frame.add(pIdentificacionEspectaculo);
-            this.setVisible(false);
+            texto = "TEXTO ";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setEspacio(Espacio.OTRO);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
         }
     }
 }
