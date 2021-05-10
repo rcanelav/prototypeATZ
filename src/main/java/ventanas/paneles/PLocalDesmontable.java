@@ -52,22 +52,27 @@ public class PLocalDesmontable extends PFondoStandard{
     @Override
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        String mensaje;
+        Object[] options = { "Continuar", "Cancelar" };
         if(e.getSource() == licenciaUrbanisticaSi){
             frame.getEvento().setLicenciaUrbanistica(true);
-            // JOptionPane.showMessageDialog(null, "Local desmontable habilitado");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+            frame.add(pIdentificacionEspectaculo);
+            this.setVisible(false);
         }
         if(e.getSource() == licenciaUrbanisticaNo){
             frame.getEvento().setLicenciaUrbanistica(false);
-            // JOptionPane.showMessageDialog(null, "Local desmontable que necesita habilitación");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
-        }
-        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
-        frame.add(pIdentificacionEspectaculo);
-        this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setLicenciaUrbanistica(false);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
+        } 
     }
 }

@@ -50,22 +50,27 @@ public class PInstalacion extends PFondoStandard {
     @Override
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        String mensaje;
+        Object[] options = { "Continuar", "Cancelar" };
         if(e.getSource() == botonHomologado){
             frame.getEvento().setInstalacionHomologada(true);
-            // JOptionPane.showMessageDialog(null, "La instalación no requiere proyecto");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+            frame.add(pIdentificacionEspectaculo);
+            this.setVisible(false);
         }
         if(e.getSource() == botonNoHomologado){
-            frame.getEvento().setInstalacionHomologada(false);
-            // JOptionPane.showMessageDialog(null, "La instalación requiere proyecto");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setInstalacionHomologada(false);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
         }
-        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
-        frame.add(pIdentificacionEspectaculo);
-        this.setVisible(false);
+        
     }
 }
