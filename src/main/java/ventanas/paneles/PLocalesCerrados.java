@@ -158,7 +158,7 @@ public class PLocalesCerrados extends PFondoStandard {
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
             if (res == 0) {
-                frame.getEvento().setTipoLocalCerrado(LocalCerrado.ESPECTACULO_DEPORTIVO);
+            frame.getEvento().setTipoLocalCerrado(LocalCerrado.ESPECTACULO_DEPORTIVO);
                 pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
                 frame.add(pIdentificacionEspectaculo);
                 this.setVisible(false);

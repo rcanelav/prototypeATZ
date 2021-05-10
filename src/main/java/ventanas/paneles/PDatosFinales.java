@@ -3,18 +3,22 @@ import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
 import javax.swing.*;
+
+import negocio.Evento;
 import negocio.ExportarPDF;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class PDatosFinales extends PFormulario implements ActionListener{
+    Evento evento;
     private static final long serialVersionUID = 1L;
     GridBagConstraints grid = new Grid();
     PFormularioAnexos pFormularioAnexos;
     BotonFlujo botonFinalizar;
 
-    public PDatosFinales(){
+    public PDatosFinales(Evento evento){
+        this.evento = evento;
         colocarTexto();
         formulario();
         botonFinalizar();
@@ -29,7 +33,8 @@ public class PDatosFinales extends PFormulario implements ActionListener{
     }
 
     private void formulario(){
-        pFormularioAnexos = new PFormularioAnexos();
+        // VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        pFormularioAnexos = new PFormularioAnexos(evento);
         grid = new Grid(1, 1, 3, 4, 0, -200);
         this.add(pFormularioAnexos, grid);
     }

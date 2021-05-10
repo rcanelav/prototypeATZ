@@ -58,7 +58,7 @@ public class PDatosUbicacion extends PFormulario implements ActionListener {
             }
             if(isValid){
                 // JOptionPane.showMessageDialog(null, "WIP");
-                pDatosFinales = new PDatosFinales();
+                pDatosFinales = new PDatosFinales(frame.getEvento());
                 frame.add(pDatosFinales);
                 this.setVisible(false);
             }

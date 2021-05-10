@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import negocio.Evento;
 import negocio.Evento.Anexos;
+import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
 
@@ -33,14 +34,19 @@ public class PFormularioAnexos extends PFormulario{
     private JCheckBox memoriaTecnicaDiseñoInstalacionTemporalBajaTension;
     private JCheckBox certificadoDireccionObra;
     private JCheckBox[]  checkBoxes;
+    Evento evento;
 
-    public PFormularioAnexos(){
+
+    public PFormularioAnexos(Evento evento){
         super();
+        this.evento = evento;
         formulario();
         setOpaque(false);
     }
 
     public void formulario(){
+        
+        
         this.setLayout(new GridBagLayout());
 
         proyectoTecnico = new JCheckBox("Proyecto técnico del espectáculo");
@@ -60,10 +66,13 @@ public class PFormularioAnexos extends PFormulario{
         grid = new Grid(0, 2, 0, 0, 28 );
         this.add(polizaSegRespCivil, grid);
         
+        
         solicitudLicenciaUrbanistica = new JCheckBox("Solicitud de licencia urbanística");
         solicitudLicenciaUrbanistica.setOpaque(false);
         grid = new Grid(2, 2, 0, 0, -45);
         this.add(solicitudLicenciaUrbanistica, grid);
+        if(evento.getUbicacion().getDatosUbicacion().getLicenciaUrbanistica())
+            solicitudLicenciaUrbanistica.setSelected(true);
         
         autorizacionMedioambiental = new JCheckBox("Autorización medioambiental");
         autorizacionMedioambiental.setOpaque(false);
@@ -84,6 +93,8 @@ public class PFormularioAnexos extends PFormulario{
         memoriaRecorridoVariosMunicipios.setOpaque(false);
         grid = new Grid(2, 4, 0, 0, 7);
         this.add(memoriaRecorridoVariosMunicipios, grid);
+        if(evento.getUbicacion().getDatosUbicacion().getMultiplesMunicipios())
+            memoriaRecorridoVariosMunicipios.setSelected(true);
         
         informeJefaturaProvincialTrafico = new JCheckBox("Informe Jefatura Provincial de Tráfico");
         informeJefaturaProvincialTrafico.setOpaque(false);
@@ -94,16 +105,22 @@ public class PFormularioAnexos extends PFormulario{
         comprobantePagoTasaSeguridadPrivada.setOpaque(false);
         grid = new Grid(2, 5, 0, 0, 26);
         this.add(comprobantePagoTasaSeguridadPrivada, grid);
+        if(evento.getDatos().getPagoTasa053())
+            comprobantePagoTasaSeguridadPrivada.setSelected(true);
 
         comprobantePagoTasaEspectaculos = new JCheckBox("Justificante de pago tasa Espectáculos");
         comprobantePagoTasaEspectaculos.setOpaque(false);
         grid = new Grid(0, 6, 0, 0, 34);
         this.add(comprobantePagoTasaEspectaculos, grid);
+        if(evento.getDatos().getPagoTasa3045Espectaculos())
+            comprobantePagoTasaEspectaculos.setSelected(true);
 
         comprobantePagoTasaPlanAutoproteccion = new JCheckBox("Justificante de pago tasa plan autoprotección");
         comprobantePagoTasaPlanAutoproteccion.setOpaque(false);
         grid = new Grid(2, 6, 0, 0, 35);
         this.add(comprobantePagoTasaPlanAutoproteccion, grid);
+        if(evento.getDatos().getPagoTasa3045PlanAutop())
+                comprobantePagoTasaPlanAutoproteccion.setSelected(true);
 
         SolAutOcupacionDominioPublico = new JCheckBox("Solicitud / Autorización ocupación dominio publico");
         SolAutOcupacionDominioPublico.setOpaque(false);
@@ -114,7 +131,9 @@ public class PFormularioAnexos extends PFormulario{
         comprobantePagoTasaPortuaria.setOpaque(false);
         grid = new Grid(2, 7, 0, 0, -23);
         this.add(comprobantePagoTasaPortuaria, grid);
-
+        if(evento.getDatos().getPagoTasaE2())
+            comprobantePagoTasaPortuaria.setSelected(true);
+       
         informeSubDelGobiernoLanzamientoFuegosArtificiales = new JCheckBox("Informe Subdelegación Gobierno lanzamiento de fuegos artificiales");
         informeSubDelGobiernoLanzamientoFuegosArtificiales.setOpaque(false);
         grid = new Grid(0, 8, 0, 0, 185);
