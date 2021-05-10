@@ -88,47 +88,84 @@ public class PLocalesCerrados extends PFondoStandard {
     @Override
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        String mensaje;
+        Object[] options = { "Continuar", "Cancelar" };
         if(e.getSource() == rbTeatro){
-            frame.getEvento().setTipoLocalCerrado(LocalCerrado.TEATRO);
-            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como TEATRO");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setTipoLocalCerrado(LocalCerrado.TEATRO);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
+                    
         }else if(e.getSource() == rbAuditorio){
-            frame.getEvento().setTipoLocalCerrado(LocalCerrado.AUDITORIO);
-            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como AUDITORIO");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setTipoLocalCerrado(LocalCerrado.AUDITORIO);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
         }else if(e.getSource() == rbCirco){
-            frame.getEvento().setTipoLocalCerrado(LocalCerrado.CIRCO);
-            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como CIRCO");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setTipoLocalCerrado(LocalCerrado.CIRCO);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
         }else if(e.getSource() == rbCine){
-            frame.getEvento().setTipoLocalCerrado(LocalCerrado.CINE);
-            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como CINE");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setTipoLocalCerrado(LocalCerrado.CINE);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
         }else if(e.getSource() == rbPlazaToros){
-            frame.getEvento().setTipoLocalCerrado(LocalCerrado.PLAZA_TOROS);
-            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como PLAZA TOROS");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setTipoLocalCerrado(LocalCerrado.PLAZA_TOROS);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
         }else if(e.getSource() == rbEspectaculosDeportivos){
-            frame.getEvento().setTipoLocalCerrado(LocalCerrado.ESPECTACULO_DEPORTIVO);
-            // JOptionPane.showMessageDialog(null, "Local cerrado habilitado como ESTABLECIMIENTO DE ESPECTÁCULOS DEPORTIVOS");
-            // pEstablecimientosAP = new PEstablecimientosAP();
-            // frame.add(pEstablecimientosAP);
-            // this.setVisible(false);
+            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
+            + " llevar a cabo espectáculos públicos.";
+            mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setTipoLocalCerrado(LocalCerrado.ESPECTACULO_DEPORTIVO);
+                pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
+                frame.add(pIdentificacionEspectaculo);
+                this.setVisible(false);
+            }
         }else{
             JOptionPane.showMessageDialog(null, "Para otras opciones vaya a ESTABLECIMIENTOS/ OTRO");
         }
-        pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
-        frame.add(pIdentificacionEspectaculo);
-        this.setVisible(false);
+        
     }
 }
