@@ -35,12 +35,16 @@ public class ExportarPDF {
             if(evento.getDatos().getPlanAutoproteccion() || 
                evento.getUbicacion().getDatosUbicacion().getLicenciaUrbanistica() || 
                evento.getUbicacion().getDatosUbicacion().getProyectoHabilitacion()||
-               !evento.getUbicacion().getInstalacionHomologada() ||
+               evento.getUbicacion().getInstalacionHomologada() ||
                evento.getUbicacion().getDatosUbicacion().getProyectoMontaje())
                 escribirPDF(pDDocument, solicitudLicencia, "tramite");
             else{
                 escribirPDF(pDDocument, declaracion, "tramite");
             }
+            
+            escribirPDF(pDDocument,
+                evento.getUbicacion().getDatosUbicacion().getMultiplesMunicipios() ? "AUTONÓMICO" : "MUNICIPAL" , "ambitoespacio");
+         
 
             if(evento.getpPersona() != null){
                 checkPDF(pDDocument,"personaFisica");
@@ -145,6 +149,8 @@ public class ExportarPDF {
                             evento.getTecnico().getEmail(),
                             "emailTecnico");
                 escribirPDF(pDDocument,
+                            evento.getTecnico().getCertificado() ? 
+                            "Técnico Superior Producción Espectáculos" : 
                             evento.getTecnico().getOtraTitulacion(),
                             "tituloTecnico");
                 escribirPDF(pDDocument,
@@ -153,6 +159,7 @@ public class ExportarPDF {
                 escribirPDF(pDDocument,
                             evento.getTecnico().getCoberturaSeguro(),
                             "coberturaTecnico");
+                
             }
 
                 escribirPDF(pDDocument,
