@@ -464,11 +464,11 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == instalacionesPortatilesNo){
-            desabilitarCamposTexto(textoNInstalaciones);
-            desabilitarCamposTexto(textoRelacionInstalaciones);
-            desabilitarCamposTexto(textoResponsableMontaje);
-            desabilitarCamposTexto(textoMovilResponsable);
-            desabilitarCamposTexto(textoEmailResponsable);
+            desabilitarCamposTexto(textoNInstalaciones, 1);
+            desabilitarCamposTexto(textoRelacionInstalaciones, 0);
+            desabilitarCamposTexto(textoResponsableMontaje, 0);
+            desabilitarCamposTexto(textoMovilResponsable, 0);
+            desabilitarCamposTexto(textoEmailResponsable, 0);
             
             homologadasNo.setSelected(true);
             proyectoMontajeNo.setSelected(true);
@@ -490,10 +490,16 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
         }
     }
 
-    private void desabilitarCamposTexto(TextoFormulario texto){
-        texto.setText("NO REQUIERE");
-        texto.setEnabled(false);
-        texto.validar();
+    private void desabilitarCamposTexto(TextoFormulario texto, int tipo){
+        if(tipo == 0){
+            texto.setText("NO REQUIERE");
+            texto.setEnabled(false);
+            texto.validar();
+        }else if(tipo == 1){
+            texto.setText("0");
+            texto.setEnabled(false);
+            texto.validar();
+        }
     }
 
     private void habilitarCamposTexto(TextoFormulario texto){

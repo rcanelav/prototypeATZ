@@ -209,24 +209,27 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(espectaculoEscasaIncidencia, grid);
         escasaIncidenciaSi = new JRadioButton("SI");
         escasaIncidenciaSi.setOpaque(false);
-        escasaIncidenciaSi.setSelected(true);
         grid = new Grid(0, 5, 0, 7, 100);
         this.add(escasaIncidenciaSi, grid);
 
         escasaIncidenciaNo = new JRadioButton("NO");
         escasaIncidenciaNo.setOpaque(false);
+        escasaIncidenciaNo.setSelected(true);
+        
         grid = new Grid(0, 5, 0, 7, 300);
         this.add(escasaIncidenciaNo, grid);
 
         escasaIncidencia = new ButtonGroup();
         escasaIncidencia.add(escasaIncidenciaSi);
         escasaIncidencia.add(escasaIncidenciaNo);
+        escasaIncidenciaSi.addActionListener(this);
+        escasaIncidenciaNo.addActionListener(this);
 
         LabelFormulario capacidad = new LabelFormulario("Capacidad/ Aforo");
         grid = new Grid(0, 6, 0, 5, 0);
         this.add(capacidad, grid);
         textoCapacidad = new TextoFormulario("Indique la capacidad/ afora para el espectáculo", 
-                                                  TipoTextoFormulario.ALFABETICO, 
+                                                  TipoTextoFormulario.NUMERICO, 
                                                   "Introduzca un número de espectadores válido.");
         textoCapacidad.setPrefSize(475, 0);
         grid = new Grid(0, 6, 0, 5, 320);
@@ -567,14 +570,15 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
     @Override
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
+        if(e.getSource() == escasaIncidenciaSi){
+            desabilitarCamposTexto(textoCapacidad, 1);
+        }else if(e.getSource() == escasaIncidenciaNo){
+            habilitarCamposTexto(textoCapacidad);
+        }
         if(e.getSource() == servicioVigilanciaSi){
-            textoEmpresaVigilancia.setEnabled(false);
-            textoEmpresaVigilancia.setText("NO REQUIERE");
-            textoEmpresaVigilancia.validar();
+            desabilitarCamposTexto(textoEmpresaVigilancia, 0);
         }else if(e.getSource() == servicioVigilanciaNo){
-            textoEmpresaVigilancia.setEnabled(true);
-            textoEmpresaVigilancia.setText("");
-            textoEmpresaVigilancia.validar();
+            habilitarCamposTexto(textoEmpresaVigilancia);
         }else if(e.getSource() == botonSiguiente){
             if(validar()){
                 grabarDatos();
@@ -586,6 +590,24 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
             }
         }
             
+    }
+
+    private void desabilitarCamposTexto(TextoFormulario texto, int tipo){
+        if(tipo == 0){
+            texto.setText("NO REQUIERE");
+            texto.setEnabled(false);
+            texto.validar();
+        }else if(tipo == 1){
+            texto.setText("0");
+            texto.setEnabled(false);
+            texto.validar();
+        }
+    }
+
+    private void habilitarCamposTexto(TextoFormulario texto){
+        texto.setText("");
+        texto.setEnabled(true);
+        texto.validar();
     }
 
 }
