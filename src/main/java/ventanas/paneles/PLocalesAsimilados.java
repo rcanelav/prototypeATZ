@@ -144,107 +144,65 @@ public class PLocalesAsimilados extends PFondoStandard{
     public void actionPerformed(ActionEvent e) {
         VentanaPrincipal frame = (VentanaPrincipal) SwingUtilities.getAncestorOfClass(JFrame.class, this);
         if(e.getSource() == estadioDeportivo){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.ESTADIO_DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un ESTADIO DEPORTIVO");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO estadioDeportivo";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == salaFiestas){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_FIESTAS);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a una SALA FIESTAS");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO salaFiestas";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == salonBanquetes){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALON_BANQUETES);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un SALÓN BANQUETES");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO salonBanquetes";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == pub){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PUB);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un PUB");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO pub";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == pabellonDeportivo){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PABELLON_DEPORTIVO);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un PABELLÓN DEPORTIVO");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO pabellonDeportivo";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == cafeEspectaculo){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.CAFE_ESPECTACULO);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un CAFÉ ESPECTÁCULO");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO cafeEspectaculo";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == discoteca){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.DISCOTECA);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a una DISCOTECA");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO discoteca";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == salaConferencias){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_CONFERENCIAS);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a una SALA DE CONFERENCIAS");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO salaConferencias";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == salaConciertos){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_CONCIERTOS);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a una SALA DE CONCIERTOS");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO salaConciertos";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == salaPolivalente){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.SALA_POLIVALENTE);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a una SALA POLIVALENTE");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO salaPolivalente";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == museo){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.MUSEO);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un MUSEO");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO museo";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == parqueAcuatico){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PARQUE_ACUATICO);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un PARQUE ACUÁTICO");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO parqueAcuatico";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == parqueAtraccionesOTematico){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.PARQUE_ATRACCIONES_TEMATICO);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a un PARQUE DE ATRACCIONES / TEMÁTICO");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO parqueAtraccionesOTematico";
+            ventanaConfirmacion(texto, frame);
         }else if(e.getSource() == biblioteca){
-            // frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.BIBLIOTECA);
-            JOptionPane.showMessageDialog(null, "El establecimiento se considera adecuado para el"+ 
-            " desarrollo del espectáculo y corresponde a una BIBLIOTECA");
-            // pEspacios = new PEspacios();
-            // frame.add(pEspacios);
-            // this.setVisible(false);
+            texto = "INSERTE TEXTO biblioteca";
+            ventanaConfirmacion(texto, frame);
         }
+    }
+
+    private void addPanel(VentanaPrincipal frame){
         pIdentificacionEspectaculo = new PIdentificacionEspectaculo();
         frame.add(pIdentificacionEspectaculo);
         this.setVisible(false);
-
     }
+
+    private void ventanaConfirmacion(String texto, VentanaPrincipal frame){
+        Object[] options = { "Continuar", "Cancelar" };
+        String mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
+            int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
+            JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+            if (res == 0) {
+                frame.getEvento().setTipoLocalAsimilado(LocalAsimilado.BIBLIOTECA);
+                addPanel(frame);
+            }
+    }
+    
 }
