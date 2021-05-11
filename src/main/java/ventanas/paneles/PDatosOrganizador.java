@@ -55,7 +55,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         rbJuridico.setText("Persona jurídica");
         rbJuridico.setOpaque(false);
         rbJuridico.addActionListener(this);
-        grid = new Grid(2, 1, 0, 0, 0);
+        grid = new Grid(3, 1, 0, 0, 250);
         this.add(rbJuridico, grid);
         
         //rbEccom.setText("Entidad de Certificación de Conformidad Municipal");
