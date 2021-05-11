@@ -259,16 +259,21 @@ public class ExportarPDF {
                             evento.getDatos().getEmailResponsable(),
                             "emailResponsable");
             }               
-            //--------------------UBICACION--------------------            
-            escribirPDF(pDDocument,
-                        evento.getUbicacion().getTipoUbicacion().toString(),
-                        "ubicacion");
-            if(evento.getUbicacion().getTipoUbicacion() == Ubicacion.ESTABLECIMIENTO){
-                escribirPDF(pDDocument, evento.getUbicacion().getTipoEstablecimiento()
-                .toString(), "tipoUbicacion");
+            //--------------------UBICACION--------------------
+            String texto = evento.getUbicacion().getTipoUbicacion().toString();           
+            if(texto.equals("ESPACIO_ABIERTO")){
+                escribirPDF(pDDocument, texto.substring(0, 7),"ubicacion");
             }else{
-                escribirPDF(pDDocument, evento.getUbicacion().getTipoEspacio()
-                .toString(), "tipoUbicacion");
+                escribirPDF(pDDocument,
+                            evento.getUbicacion().getTipoUbicacion().toString(),
+                            "ubicacion");
+            }
+            if(evento.getUbicacion().getTipoUbicacion() == Ubicacion.ESTABLECIMIENTO){
+                texto = evento.getUbicacion().getTipoEstablecimiento().toString();
+                escribirPDF(pDDocument, texto.replace('_', ' '), "tipoUbicacion");
+            }else{
+                texto = evento.getUbicacion().getTipoEspacio().toString();
+                escribirPDF(pDDocument, texto.replace('_', ' '), "tipoUbicacion");
             }
             if(evento.getUbicacion().getTipoUbicacion() == Ubicacion.ESTABLECIMIENTO){
                 if(evento.getUbicacion().getTipoEstablecimiento() == Establecimiento.ABIERTO_AL_PUBLICO){
@@ -287,9 +292,14 @@ public class ExportarPDF {
                     }
                 }
             }
+            if(evento.getUbicacion().getTipoTitularidad() != null){
+                texto = evento.getUbicacion().getTipoTitularidad().toString();
+            }
             escribirPDF(pDDocument,
-                        evento.getUbicacion().getTipoTitularidad()!= null ? evento.getUbicacion().getTipoTitularidad().toString() : "-" ,
+                        evento.getUbicacion().getTipoTitularidad()!= null ? 
+                        texto.substring(12) : "-" ,
                         "ubicacionTitularidad");
+        
             escribirPDF(pDDocument,
                         evento.getUbicacion().getDatosUbicacion().getNombre(),
                         "nombreUbicacion");
