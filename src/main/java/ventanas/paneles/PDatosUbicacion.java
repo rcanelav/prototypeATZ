@@ -3,11 +3,9 @@ package ventanas.paneles;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import ventanas.VentanaPrincipal;
 import ventanas.botones.BotonFlujo;
 import ventanas.elementos.Grid;
-import javax.swing.*;
 import java.awt.*;
 
 

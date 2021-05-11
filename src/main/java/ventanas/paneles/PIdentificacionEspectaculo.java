@@ -307,7 +307,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
 
         rbDerechoAdmision = new ButtonGroup();
         rbDerechoAdmision.add(derechoAdmisionSi);
-        rbDerechoAdmision.add(derechoAdmisionSi);
+        rbDerechoAdmision.add(derechoAdmisionNo);
 
         LabelFormulario ventaEntradas = new LabelFormulario("Venta de entradas");
         grid = new Grid(0, 10, 0, 5, 0);
@@ -481,7 +481,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         textoFinalizacion.setText("asd");
         textoTiempoDesalojo.setText("asd");
         textoCierre.setText("asd");
-        textoCapacidad.setText("asd");
+        textoCapacidad.setText("123");
         textoEmpresaVigilancia.setText("asd");
         textoResponsable.setText("asd");
         textoMovilResponsable.setText("asd");
@@ -589,7 +589,6 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
                 JOptionPane.showMessageDialog(null, "DEBE COMPLETAR TODOS LOS CAMPOS");
             }
         }
-            
     }
 
     private void desabilitarCamposTexto(TextoFormulario texto, int tipo){

@@ -385,7 +385,7 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
         textoLocalidad.setText("asd");
         textoCP.setText("asd");
         textoProvincia.setText("asd");
-        textoNInstalaciones.setText("asd");
+        textoNInstalaciones.setText("123");
         textoRelacionInstalaciones.setText("asd");
         textoResponsableMontaje.setText("asd");
         textoMovilResponsable.setText("asd");

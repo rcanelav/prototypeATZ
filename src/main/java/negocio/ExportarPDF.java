@@ -2,18 +2,18 @@ package negocio;
 
 import java.awt.Desktop;
 import java.io.File;
-import java.io.FileFilter;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import org.apache.pdfbox.*;
 import org.apache.pdfbox.pdmodel.*;
 import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.pdmodel.interactive.form.PDCheckBox;
 import org.apache.pdfbox.pdmodel.interactive.form.PDField;
+
+import negocio.UbicacionEvento.Espacio;
+import negocio.UbicacionEvento.Establecimiento;
+import negocio.UbicacionEvento.Ubicacion;
 
 
 public class ExportarPDF {
@@ -43,7 +43,7 @@ public class ExportarPDF {
             }
             
             escribirPDF(pDDocument,
-                evento.getUbicacion().getDatosUbicacion().getMultiplesMunicipios() ? "AUTONÓMICO" : "MUNICIPAL" , "ambitoespacio");
+                evento.getUbicacion().getDatosUbicacion().getMultiplesMunicipios() ? "AUTONÓMICO" : "MUNICIPAL" , "ambito");
          
 
             if(evento.getpPersona() != null){
@@ -153,12 +153,12 @@ public class ExportarPDF {
                             "Técnico Superior Producción Espectáculos" : 
                             evento.getTecnico().getOtraTitulacion(),
                             "tituloTecnico");
-                escribirPDF(pDDocument,
-                            evento.getTecnico().getPolizaSeguro(),
-                            "seguroTecnico");
-                escribirPDF(pDDocument,
-                            evento.getTecnico().getCoberturaSeguro(),
-                            "coberturaTecnico");
+                // escribirPDF(pDDocument,
+                //             evento.getTecnico().getPolizaSeguro(),
+                //             "seguroTecnico");
+                // escribirPDF(pDDocument,
+                //             evento.getTecnico().getCoberturaSeguro(),
+                //             "coberturaTecnico");
                 
             }
 
@@ -260,28 +260,48 @@ public class ExportarPDF {
             escribirPDF(pDDocument,
                         evento.getUbicacion().getTipoUbicacion().toString(),
                         "ubicacion");
+            if(evento.getUbicacion().getTipoUbicacion() == Ubicacion.ESTABLECIMIENTO){
+                escribirPDF(pDDocument, evento.getUbicacion().getTipoEstablecimiento()
+                .toString(), "tipoUbicacion");
+            }else{
+                escribirPDF(pDDocument, evento.getUbicacion().getTipoEspacio()
+                .toString(), "tipoUbicacion");
+            }
+            if(evento.getUbicacion().getTipoUbicacion() == Ubicacion.ESTABLECIMIENTO){
+                if(evento.getUbicacion().getTipoEstablecimiento() == Establecimiento.ABIERTO_AL_PUBLICO){
+                    escribirPDF(pDDocument, evento.getUbicacion()
+                .getTipoEstablecimientoAbiertoAlPublico().toString(), "subtipo");
+                escribirPDF(pDDocument, "NO REQUIERE", "detalle");
+                }else{
+                    if(evento.getUbicacion().getEsAsimilado()){
+                        escribirPDF(pDDocument, evento.getUbicacion().getTipoLocalAsimilado().toString(), "detalle");
+                    }else{
+                            escribirPDF(pDDocument, "LOCAL NO ASIMILADO", "detalle");
+                    }
+                }
+            }
             escribirPDF(pDDocument,
-                        evento.getUbicacion().getTipoTitularidad()!= null ? evento.getUbicacion().getTipoTitularidad().toString() : "" ,
-                        "ubicacionTiularidad");
+                        evento.getUbicacion().getTipoTitularidad()!= null ? evento.getUbicacion().getTipoTitularidad().toString() : "-" ,
+                        "ubicacionTitularidad");
             escribirPDF(pDDocument,
                         evento.getUbicacion().getDatosUbicacion().getNombre(),
                         "nombreUbicacion");
             if(evento.getUbicacion().getDatosUbicacion().getAccesibilidadUniversal())
-                checkPDF(pDDocument, "servicioVigilanciaPropioSi");
+                checkPDF(pDDocument, "accesibilidadUniversalSi");
             else
-                checkPDF(pDDocument, "servicioVigilanciaPropioNo");
+                checkPDF(pDDocument, "accesibilidadUniversalNo");
             escribirPDF(pDDocument,
                         evento.getUbicacion().getDatosUbicacion().getDireccion(),
                         "direccionUbicacion");
-            escribirPDF(pDDocument,
-                        evento.getUbicacion().getDatosUbicacion().getNumeroPortal(),
-                        "nUbicacion");
-            escribirPDF(pDDocument,
-                        evento.getUbicacion().getDatosUbicacion().getPlanta(),
-                        "pisoUbicacion");
-            escribirPDF(pDDocument,
-                        evento.getUbicacion().getDatosUbicacion().getPlanta(),
-                        "pisoUbicacion");
+            // escribirPDF(pDDocument,
+            //             evento.getUbicacion().getDatosUbicacion().getNumeroPortal(),
+            //             "nUbicacion");
+            // escribirPDF(pDDocument,
+            //             evento.getUbicacion().getDatosUbicacion().getPlanta(),
+            //             "pisoUbicacion");
+            // escribirPDF(pDDocument,
+            //             evento.getUbicacion().getDatosUbicacion().getPlanta(),
+            //             "pisoUbicacion");
             escribirPDF(pDDocument,
                         evento.getUbicacion().getDatosUbicacion().getPoblacion(),
                         "poblacionUbicacion");
@@ -326,15 +346,15 @@ public class ExportarPDF {
                 checkPDF(pDDocument, "proyectoMontajeNo");
 
 
-            escribirPDF(pDDocument,
-                        evento.getUbicacion().getDatosUbicacion().getResponsableMontaje(),
-                        "responsableMontaje");
-            escribirPDF(pDDocument,
-                        evento.getUbicacion().getDatosUbicacion().getMovilResponsable(),
-                        "movilResponsableMontaje");
-            escribirPDF(pDDocument,
-                        evento.getUbicacion().getDatosUbicacion().getEmailResponsable(),
-                        "emailResponsableMontaje");
+            // escribirPDF(pDDocument,
+            //             evento.getUbicacion().getDatosUbicacion().getResponsableMontaje(),
+            //             "responsableMontaje");
+            // escribirPDF(pDDocument,
+            //             evento.getUbicacion().getDatosUbicacion().getMovilResponsable(),
+            //             "movilResponsableMontaje");
+            // escribirPDF(pDDocument,
+            //             evento.getUbicacion().getDatosUbicacion().getEmailResponsable(),
+            //             "emailResponsableMontaje");
 
             if(evento.getUbicacion().getDatosUbicacion()
                         .getMultiplesMunicipios())
