@@ -41,17 +41,17 @@ public class PFormularioTecnico extends PFormulario implements ActionListener{
 
     public void formulario(){
         
-        LabelFormulario lblNTecnicos = new LabelFormulario("Nº TÉCNICOS");
-        grid.anchor = GridBagConstraints.CENTER;
-        grid = new Grid(2, 1, 0, 0, -180);
-        this.add(lblNTecnicos, grid);
-        textoNTecnicos = new TextoFormulario("Indique el nº de técnicos responsables del desarrollo del espectáculo.", 
-                                             TipoTextoFormulario.NUMERICO, 
-                                             "Introduzca un número válido.");
-        grid = new Grid(2, 1, 0, 0, 100);
-        this.add(textoNTecnicos, grid);
-        grid = new Grid(3, 1, 0, 0, 4);
-        this.add(textoNTecnicos.getIconoError(), grid);
+        //LabelFormulario lblNTecnicos = new LabelFormulario("Nº TÉCNICOS");
+        //grid.anchor = GridBagConstraints.CENTER;
+        //grid = new Grid(2, 1, 0, 0, -180);
+        //this.add(lblNTecnicos, grid);
+        //textoNTecnicos = new TextoFormulario("Indique el nº de técnicos responsables del desarrollo del espectáculo.", 
+        //                                     TipoTextoFormulario.NUMERICO, 
+        //                                     "Introduzca un número válido.");
+        //grid = new Grid(2, 1, 0, 0, 100);
+        //this.add(textoNTecnicos, grid);
+        //grid = new Grid(3, 1, 0, 0, 4);
+        //this.add(textoNTecnicos.getIconoError(), grid);
 
         LabelFormulario lblNif = new LabelFormulario("NIF/ NIE/ OTRO");
         grid = new Grid(2, 2, 0, 10, -180);
@@ -216,27 +216,27 @@ public class PFormularioTecnico extends PFormulario implements ActionListener{
         grid = new Grid(3, 15, 0, 10, 4);
         this.add(textoCoberturaSeguro.getIconoError(), grid);
 
-        textoNTecnicos.setText("2");
-        textoNif.setText("986574127");
-        textoApellidos.setText("Valbuena Blake");
-        textoNombre.setText("Kensington");
-        textoDireccion.setText("Avenida del ejercito");
-        textoPoblacion.setText("A CORUÑA");
-        textoProvincia.setText("Crunha");
-        textoTelefono.setText("3122356623");
-        textoMovil.setText("3122356623");
-        textoEmail.setText("estoesunaprueba@proyecto.com");
-        textoOtraTitulacion.setText("Gerencia de proyectos");
-        textoPolizaSeguro.setText("amanecer");
-        textoNumeroSeguro.setText("AB8342");
-        textoCoberturaSeguro.setText("600000");
+        //textoNTecnicos.setText("2");
+        textoNif.setText("34123456B");
+        textoApellidos.setText("Meléndrez");
+        textoNombre.setText("Carlos");
+        textoDireccion.setText("Calle Una Calle");
+        textoPoblacion.setText("A Coruña");
+        textoProvincia.setText("A Coruña");
+        textoTelefono.setText("686 722 467");
+        textoMovil.setText("686 722 467");
+        textoEmail.setText("info@carlosmelendrez.es");
+        textoOtraTitulacion.setText("Programador de Sistemas Informáticos");
+        textoPolizaSeguro.setText("Aseguradora");
+        textoNumeroSeguro.setText("PRP-2021/1234-ES23");
+        textoCoberturaSeguro.setText("600.000");
     }
 
     @Override
     public boolean validar(){
         boolean valido = true;
-        if(!textoNTecnicos.validar())
-            valido = false;
+        //if(!textoNTecnicos.validar())
+        //    valido = false;
         if(!textoNif.validar())
             valido = false;
         if(!textoApellidos.validar())

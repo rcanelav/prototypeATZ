@@ -41,7 +41,7 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         radiobuttons.add(rbEccom);
         this.setLayout(new GridBagLayout());
 
-        JLabel titulo = new JLabel("TRÁMITE REALIZADO POR", 0);
+        JLabel titulo = new JLabel("ORGANIZADOR", 0);
         grid = new Grid(0, 0, 4, -50, 0);
         this.add(titulo, grid);
 
@@ -58,11 +58,11 @@ public class PDatosOrganizador extends JPanel implements ActionListener {
         grid = new Grid(2, 1, 0, 0, 0);
         this.add(rbJuridico, grid);
         
-        rbEccom.setText("Entidad de Certificación de Conformidad Municipal");
-        rbEccom.setOpaque(false);
-        rbEccom.addActionListener(this);
-        grid = new Grid(3, 1, 0, 0, 0);
-        this.add(rbEccom, grid);
+        //rbEccom.setText("Entidad de Certificación de Conformidad Municipal");
+        //rbEccom.setOpaque(false);
+        //rbEccom.addActionListener(this);
+        //grid = new Grid(3, 1, 0, 0, 0);
+        //this.add(rbEccom, grid);
     }
 
     private void formularios(){

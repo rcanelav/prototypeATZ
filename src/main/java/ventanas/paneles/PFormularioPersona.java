@@ -189,19 +189,19 @@ public class PFormularioPersona extends PFormulario {
         this.add(textoCoberturaSeguro.getIconoError(), grid);
 
         // textoNOrganizadores.setText("2");
-        textoNif.setText("986574127");
-        textoApellidos.setText("Valbuena Blake");
-        textoNombre.setText("Kensington");
-        textoDireccion.setText("Avenida del ejercito");
-        textoPoblacion.setText("A CORUÑA");
-        textoProvincia.setText("Crunha");
-        textoTelefono.setText("3122356623");
-        textoMovil.setText("3122356623");
-        textoEmail.setText("estoesunaprueba@proyecto.com");
-        textoEpigrafe.setText("epigrafe");
-        textoPolizaSeguro.setText("amanecer");
-        textoNumeroSeguro.setText("ASB84");
-        textoCoberturaSeguro.setText("600000");
+        textoNif.setText("12345678A");
+        textoApellidos.setText("Canela");
+        textoNombre.setText("Ramón");
+        textoDireccion.setText("Calle Una calle cualquiera ");
+        textoPoblacion.setText("A Coruña");
+        textoProvincia.setText("A Coruña");
+        textoTelefono.setText("663 569 518");
+        textoMovil.setText("663 569 518");
+        textoEmail.setText("rcanelav@gmail.com");
+        textoEpigrafe.setText("un epígrafe IAE");
+        textoPolizaSeguro.setText("Seguros de Responsabilidad Civil");
+        textoNumeroSeguro.setText("Nº de póliza 12345-abc");
+        textoCoberturaSeguro.setText("600.000");
 
     }
     @Override
