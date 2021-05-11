@@ -273,7 +273,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbControlAcceso.add(controlAccesoSi);
         rbControlAcceso.add(controlAccesoNo);
 
-        LabelFormulario asistenciaMenores = new LabelFormulario("Asistencia de menores");
+        LabelFormulario asistenciaMenores = new LabelFormulario("Espectáculo para menores");
         grid = new Grid(0, 9, 0, 5, 0);
         this.add(asistenciaMenores, grid);
         asistenciaMenoresSi = new JRadioButton("SI");

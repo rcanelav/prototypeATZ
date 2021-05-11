@@ -91,8 +91,9 @@ public class PLocalesCerrados extends PFondoStandard {
         String mensaje;
         Object[] options = { "Continuar", "Cancelar" };
         if(e.getSource() == rbTeatro){
-            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
-            + " llevar a cabo espectáculos públicos.";
+            texto = "- Establecimiento abierto al público destinado a la celebración de espectáculos teatrales" 
+            +" y musicales al aire libre o en una o varias salas, que cuente con escenario, camerinos y localidades" 
+            +" de asiento, así como con servicios e instalaciones adecuadas para su uso.";
             mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -104,8 +105,10 @@ public class PLocalesCerrados extends PFondoStandard {
             }
                     
         }else if(e.getSource() == rbAuditorio){
-            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
-            + " llevar a cabo espectáculos públicos.";
+            texto = "- Establecimiento abierto al público destinado a la celebración de espectáculos teatrales" 
+            +" y musicales y actividades culturales al aire libre o en una o varias salas, que cuente con escenario,"
+            +" camerinos, localidades de asiento y locales auxiliares, así como con servicios e instalaciones adecuadas" 
+            +" para su uso.";
             mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -116,8 +119,9 @@ public class PLocalesCerrados extends PFondoStandard {
                 this.setVisible(false);
             }
         }else if(e.getSource() == rbCirco){
-            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
-            + " llevar a cabo espectáculos públicos.";
+            texto = "- Establecimiento abierto al público destinado exclusivamente a la celebración de espectáculos" 
+            +" circenses, que cuenten con, por lo menos, una pista para la celebración de éstos y bancadas para las" 
+            +" personas que asisten al espectáculo.";
             mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -128,8 +132,9 @@ public class PLocalesCerrados extends PFondoStandard {
                 this.setVisible(false);
             }
         }else if(e.getSource() == rbCine){
-            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
-            + " llevar a cabo espectáculos públicos.";
+            texto = "- Establecimiento abierto al público preparado especialmente para la proyección de películas" 
+            +" cinematográficas al aire libre o en una o varias salas de exhibición, con independencia de los" 
+            +" procedimientos técnicos que se empleen.";
             mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -140,8 +145,9 @@ public class PLocalesCerrados extends PFondoStandard {
                 this.setVisible(false);
             }
         }else if(e.getSource() == rbPlazaToros){
-            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
-            + " llevar a cabo espectáculos públicos.";
+            texto = "- Establecimiento abierto al público regulado y definido en la normativa específica" 
+            +" taurina que se destinen a la celebración de espectáculos taurinos y festejos taurinos populares,"
+            +" en los términos establecidos en la normativa específica.";
             mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
@@ -152,8 +158,9 @@ public class PLocalesCerrados extends PFondoStandard {
                 this.setVisible(false);
             }
         }else if(e.getSource() == rbEspectaculosDeportivos){
-            texto = "- Establecimiento abierto al público: local, instalación o recinto    dedicado a"
-            + " llevar a cabo espectáculos públicos.";
+            texto = "- Establecimiento abierto al público cerrado o al aire libre, destinado a la exhibición" 
+            +" en público de espectáculos deportivos en cualquiera de sus modalidades, con los requisitos y" 
+            +" condiciones que establezca la normativa sectorial específica.";
             mensaje = String.format("<html> <div style='text-align: justify;' WIDTH=%d> %s </div></html>",400, texto);
             int res = JOptionPane.showOptionDialog(null, mensaje, "DEFINICIÓN:", JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE, null, options, options[0]);

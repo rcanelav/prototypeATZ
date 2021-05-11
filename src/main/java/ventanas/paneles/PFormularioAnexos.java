@@ -57,11 +57,15 @@ public class PFormularioAnexos extends PFormulario{
         this.add(proyectoTecnico, grid);
 
         cartelEspectaculo = new JCheckBox("Cartel del espectáculo");
+        cartelEspectaculo.setSelected(true);
+        cartelEspectaculo.setSize(1000, 20);
         cartelEspectaculo.setOpaque(false);
         grid = new Grid(2, 1, 0, 0, -100);
         this.add(cartelEspectaculo, grid);
         
         polizaSegRespCivil = new JCheckBox("Póliza seguro de Responsabilidad Civil");
+        polizaSegRespCivil.setSelected(true);
+        polizaSegRespCivil.setSize(1000, 20);
         polizaSegRespCivil.setOpaque(false);
         grid = new Grid(0, 2, 0, 0, 28 );
         this.add(polizaSegRespCivil, grid);
