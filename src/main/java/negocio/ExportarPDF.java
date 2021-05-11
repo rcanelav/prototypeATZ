@@ -271,7 +271,8 @@ public class ExportarPDF {
                 if(evento.getUbicacion().getTipoEstablecimiento() == Establecimiento.ABIERTO_AL_PUBLICO){
                     escribirPDF(pDDocument, evento.getUbicacion()
                 .getTipoEstablecimientoAbiertoAlPublico().toString(), "subtipo");
-                escribirPDF(pDDocument, "NO REQUIERE", "detalle");
+                escribirPDF(pDDocument, evento.getUbicacion().getTipoLocalCerrado()
+                    .toString(), "detalle");
                 }else{
                     if(evento.getUbicacion().getEsAsimilado()){
                         escribirPDF(pDDocument, evento.getUbicacion().getTipoLocalAsimilado().toString(), "detalle");
