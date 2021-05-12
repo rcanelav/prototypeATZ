@@ -163,7 +163,7 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
         grid = new Grid(0, 5, 0, 5, 0);
         this.add(cp, grid);
         textoCP = new TextoFormulario("Indique el Código Postal que corresponde", 
-                                                  TipoTextoFormulario.ALFABETICO, 
+                                                  TipoTextoFormulario.NUMERICO, 
                                                   "Introduzca un nº válido.");
         textoCP.setPrefSize(220, 0);
         grid = new Grid(0, 5, 0, 5, 0);
@@ -375,21 +375,21 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
 
 
         //PRUEBAS
-        textoNombre.setText("asd");
-        textoDireccion.setText("asd");
-        textoNumeroPortal.setText("asd");
-        textoEdificio.setText("asd");
-        textoPlanta.setText("asd");
-        textoLocal.setText("asd");
-        textoPoblacion.setText("asd");
-        textoLocalidad.setText("asd");
-        textoCP.setText("asd");
-        textoProvincia.setText("asd");
-        textoNInstalaciones.setText("123");
-        textoRelacionInstalaciones.setText("asd");
-        textoResponsableMontaje.setText("asd");
-        textoMovilResponsable.setText("asd");
-        textoEmailResponsable.setText("asd");
+        textoNombre.setText("Teatro Colón");
+        textoDireccion.setText("Avenida de la Marina");
+        textoNumeroPortal.setText("7A");
+        textoEdificio.setText("");
+        textoPlanta.setText("");
+        textoLocal.setText("");
+        textoPoblacion.setText("A Coruña");
+        textoLocalidad.setText("A Coruña");
+        textoCP.setText("15001");
+        textoProvincia.setText("A Coruña");
+        textoNInstalaciones.setText("");
+        textoRelacionInstalaciones.setText("");
+        textoResponsableMontaje.setText("");
+        textoMovilResponsable.setText("");
+        textoEmailResponsable.setText("");
     }
 
     @Override

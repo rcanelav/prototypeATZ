@@ -108,7 +108,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         grid = new Grid(0, 2, 0, -5, 400);
         this.add(nJornadas, grid);
         textoNJornadas = new TextoFormulario("Indique el nº de jornadas de duración", 
-                                       TipoTextoFormulario.ALFABETICO,
+                                       TipoTextoFormulario.NUMERICO,
                                        "Introduzca un nº de jornadas válido.");
         textoNJornadas.setPrefSize(70, 0);
         grid = new Grid(0, 2, 0, -5, 240);
@@ -379,7 +379,7 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         grid = new Grid(0, 13, 0, 5, 0);
         this.add(movilResponsable, grid);
         textoMovilResponsable = new TextoFormulario("Indique el móvil des responsable de seguridad", 
-                                                  TipoTextoFormulario.ALFABETICO, 
+                                                  TipoTextoFormulario.NUMERICO, 
                                                   "Introduzca un nombre válido.");
         textoMovilResponsable.setPrefSize(450, 0);
         grid = new Grid(0, 13, 0, 5, 340);
@@ -471,21 +471,21 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         rbPagoTasaE2.add(pagoTasaE2Si);
         rbPagoTasaE2.add(pagoTasaE2No);
 
-        textoNombreEspectaculo.setText("asd");
-        textoFechaInicio.setText("asd");
-        textoNJornadas.setText("asd");
-        textoFechaMontaje.setText("asd");
-        textoApertura.setText("asd");
-        textoAccesoPublico.setText("asd");
-        textoComienzo.setText("asd");
-        textoFinalizacion.setText("asd");
-        textoTiempoDesalojo.setText("asd");
-        textoCierre.setText("asd");
-        textoCapacidad.setText("123");
-        textoEmpresaVigilancia.setText("asd");
-        textoResponsable.setText("asd");
-        textoMovilResponsable.setText("asd");
-        textoEmailResponsable.setText("asd");
+        textoNombreEspectaculo.setText("PEÑA LATIN JAZZ");
+        textoFechaInicio.setText("21/07/2021");
+        textoNJornadas.setText("1");
+        textoFechaMontaje.setText("21/0772021");
+        textoApertura.setText("16:00h");
+        textoAccesoPublico.setText("19:15h");
+        textoComienzo.setText("20:00h");
+        textoFinalizacion.setText("21:45h");
+        textoTiempoDesalojo.setText("45m");
+        textoCierre.setText("24:00h");
+        textoCapacidad.setText("845");
+        textoEmpresaVigilancia.setText("SEGUREVENTOS");
+        textoResponsable.setText("Responsable seguridad");
+        textoMovilResponsable.setText("666777888");
+        textoEmailResponsable.setText("correoe@segureventos.com");
 
     }
 
