@@ -25,8 +25,8 @@ public class ExportarPDF {
 
     public void guardarPDF(Evento evento){
         try{
-            String solicitudLicencia = "Solicitud de licencia";
-            String declaracion = "Declaracion de responsable";
+            String solicitudLicencia = "Solicitud de licencia para espectáculo público";
+            String declaracion = "Declaracion responsable para espectáculos público";
             PDDocument pDDocument = null;
             if((pDDocument = Loader.loadPDF(new File("src/main/java/imagenes/prueba.pdf")))!= null){
                 System.out.println("documento abierto");
