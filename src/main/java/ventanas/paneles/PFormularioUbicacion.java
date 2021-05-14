@@ -336,7 +336,7 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
         grid = new Grid(2, 10, 0, 5, -205);
         this.add(movilResponsable, grid);
         textoMovilResponsable = new TextoFormulario("Indique el móvil del responsable", 
-                                                  TipoTextoFormulario.ALFABETICO, 
+                                                  TipoTextoFormulario.NUMERICO, 
                                                   "Introduzca un nombre válido.");
         textoMovilResponsable.setPrefSize(220, 0);
         grid = new Grid(2, 10, 0, 5, -100);
