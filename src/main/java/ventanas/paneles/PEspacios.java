@@ -32,7 +32,9 @@ public class PEspacios extends PFondoStandard {
         this.add(textoTitulo, grid);
 
         texto = "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  "+
-        "actividades recreativas de Galicia.";
+        "actividades recreativas de Galicia."
+        +"\n\nTIPO DE UBICACIÓN"
+        ;
         PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
         grid = new Grid(0, 1, 2, -50, 0);
         this.add(textoLey, grid);
@@ -48,12 +50,12 @@ public class PEspacios extends PFondoStandard {
     private void colocarBotones(){
         botonEspacioAbiertoAlPublico = new BotonPrincipal("ABIERTO AL PÚBLICO");
         botonEspacioAbiertoAlPublico.addActionListener(this);
-        grid = new Grid(0, 3, 0, 10, 0, 30, 40);
+        grid = new Grid(0, 3, 0, 10, 0, 30, 20);
         this.add(botonEspacioAbiertoAlPublico, grid);
 
         botonOtro = new BotonPrincipal("OTRO");
         botonOtro.addActionListener(this);
-        grid = new Grid(1, 3, 0, 10, 0, 240, 40);
+        grid = new Grid(1, 3, 0, 10, 0, 240, 20);
         this.add(botonOtro, grid);
     }
 

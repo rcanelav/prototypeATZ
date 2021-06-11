@@ -49,12 +49,12 @@ public class PDominioPublicoPortuario extends PFondoStandard{
     private void colocarBotones(){
         botonDominioPortuario = new BotonPrincipal("DOMINIO PÚBLICO PORTUARIO");
         botonDominioPortuario.addActionListener(this);
-        grid = new Grid(0, 3, 0, 10, 50, 40, 40);
+        grid = new Grid(0, 3, 0, 10, 50, 40, 20);
         this.add(botonDominioPortuario, grid);
 
         botonOtro = new BotonPrincipal("OTRO");
         botonOtro.addActionListener(this);
-        grid = new Grid(1, 3, 0, 10, 0, 285, 40);
+        grid = new Grid(1, 3, 0, 10, 0, 285, 20);
         this.add(botonOtro, grid);
     }
 

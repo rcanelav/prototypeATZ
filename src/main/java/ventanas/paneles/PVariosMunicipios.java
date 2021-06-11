@@ -64,17 +64,17 @@ public class PVariosMunicipios extends PFondoStandard{
     private void colocarBotones(){
         botonPruebaDeportiva = new BotonPrincipal("PRUEBA DEPORTIVA");
         botonPruebaDeportiva.addActionListener(this);
-        grid = new Grid(0, 3, 0, 10, 0, 40, 30);
+        grid = new Grid(0, 3, 0, 10, 0, 40, 20);
         this.add(botonPruebaDeportiva, grid);
 
         botonMarchaCiclista = new BotonPrincipal("MARCHA CICLISTA");
         botonMarchaCiclista.addActionListener(this);
-        grid = new Grid(1, 3, 0, 10, 60, 70, 30);
+        grid = new Grid(1, 3, 0, 10, 60, 70, 20);
         this.add(botonMarchaCiclista, grid);
         
         botonVehiculosClasicos = new BotonPrincipal("VEHÍCULOS CLÁSICOS");
         botonVehiculosClasicos.addActionListener(this);
-        grid = new Grid(0, 5, 2, -20, 0, 40, 30);
+        grid = new Grid(0, 5, 2, -20, 0, 40, 20);
         this.add(botonVehiculosClasicos, grid);
     }
 

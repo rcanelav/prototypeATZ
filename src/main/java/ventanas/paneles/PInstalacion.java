@@ -38,12 +38,12 @@ public class PInstalacion extends PFondoStandard {
     private void colocarBotones(){
         botonHomologado = new BotonPrincipal("SIN MODIFICACINES");
         botonHomologado.addActionListener(this);
-        grid = new Grid(0, 3, 0, 50, 200, 80, 40);
+        grid = new Grid(0, 3, 0, 50, 200, 80, 20);
         this.add(botonHomologado, grid);
 
         botonNoHomologado = new BotonPrincipal("SUFRIRÁ MODIFICACIONES");
         botonNoHomologado.addActionListener(this);
-        grid = new Grid(1, 3, 0, 50, 40, 30, 40);
+        grid = new Grid(1, 3, 0, 50, 40, 30, 20);
         this.add(botonNoHomologado, grid);
     }
 

@@ -15,7 +15,7 @@ public class PFondoStandard extends JPanel implements ActionListener {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        ImageIcon img = new ImageIcon("src/main/java/imagenes/fondo.jpg");
+        ImageIcon img = new ImageIcon("src/main/java/imagenes/fondo02.jpg");
         g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
     }
 

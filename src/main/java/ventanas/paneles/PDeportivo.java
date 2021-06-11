@@ -36,20 +36,22 @@ public class PDeportivo extends JPanel implements ActionListener {
         this.setLayout(new GridBagLayout());
 
         texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 16, 1150, 70);
         grid = new Grid(0, 0, 0, -150, 0);
         this.add(textoTitulo, grid);
 
         texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  "+
                 "Catálogo  de espectáculos  públicos,  actividades  recreativas  y  establecimientos"+
                 " abiertos  al público  de la  Comunidad  Autónoma  de  Galicia  y  se  establecen  "+
-                "determinadas disposiciones generales de aplicación en la materia.";
-        PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
+                "determinadas disposiciones generales de aplicación en la materia."
+                +"\n\nTIPO DE ESPECTÁCULO"
+                ;
+        PanelTexto textoLey = new PanelTexto(texto, 1, 16, 1150, 100);
         grid = new Grid(0, 1, 0, -50, 0);
         this.add(textoLey, grid);
 
-        texto = "Exhibición en público del ejercicio de cualquier modalidad o especialidad deportiva,"+
-                " competitiva o no.";
+        texto = "Exhibición en público del ejercicio de cualquier modalidad o especialidad deportiva"
+                ;
         PanelTexto textoDeportivo = new PanelTexto(texto, 0, 18, 600, 100);
         grid = new Grid(0, 2, 0, 20, 0);
         this.add(textoDeportivo, grid);
@@ -58,7 +60,7 @@ public class PDeportivo extends JPanel implements ActionListener {
     private void colocarBoton(){
         botonDeportivo = new BotonPrincipal("DEPORTIVO");
         botonDeportivo.addActionListener(this);
-        grid = new Grid(0, 3, 0, 10, 0, 30, 40);
+        grid = new Grid(0, 3, 0, 10, 0, 30, 20);
         this.add(botonDeportivo, grid);
     }
 

@@ -35,24 +35,26 @@ public class PArtistico extends JPanel implements ActionListener {
         this.setLayout(new GridBagLayout());
 
         texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
-        grid = new Grid(0, 0, 2, -200, 0);
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 16, 1150, 40);
+        grid = new Grid(0, 0, 2, -300, 0);
         grid.fill = SwingConstants.HORIZONTAL;
         this.add(textoTitulo, grid);
 
-        texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo"+
-                "  de espectáculos  públicos,  actividades  recreativas  y  establecimientos  abiertos"+
-                " al público  de la  Comunidad  Autónoma  de  Galicia y  se  establecen  determinadas "+
-                "disposiciones generales de aplicación en la materia.";
-        PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
-        grid = new Grid(0, 1, 2, -50, 0);
+        texto = "Decreto  124/2019, Catálogo"+
+                "  de espectáculos públicos, actividades recreativas y establecimientos abiertos"+
+                " al público de la Comunidad Autónoma de Galicia y se establecen determinadas "+
+                "disposiciones generales de aplicación en la materia."
+                +"\n\nTIPO DE ESPECTÁCULO"
+                ;
+        PanelTexto textoLey = new PanelTexto(texto, 1, 16, 1150, 100);
+        grid = new Grid(0, 0, 2, -150, 0);
         grid.fill = SwingConstants.HORIZONTAL;
         this.add(textoLey, grid);
 
         texto = "Representación pública de obras teatrales, artísticas o escénicas, mediante la utilización, "+
                 "aislada o conjuntamente, del lenguaje, de la mímica, de la música, del cómic, de marionetas u"+
                 " otros objetos a cargo de artistas, intérpretes o ejecutantes.";
-        PanelTexto textoTeatral = new PanelTexto(texto, 0, 18, 500, 105);
+        PanelTexto textoTeatral = new PanelTexto(texto, 0, 16, 500, 105);
         grid = new Grid(0, 2, 0, 0, 50);
         this.add(textoTeatral, grid);
 
@@ -60,7 +62,7 @@ public class PArtistico extends JPanel implements ActionListener {
                 "danza, mediante la utilización, aislada o conjuntamente, de instrumentos musicales, música"+
                 " grabada y enviada por medios mecánicos o de la voz humana a cargo de artistas, intérpretes "+
                 "o ejecutantes.";
-        PanelTexto textoMusical = new PanelTexto(texto, 0, 18, 500, 105);
+        PanelTexto textoMusical = new PanelTexto(texto, 0, 16, 500, 105);
         grid = new Grid(1, 2, 0, 0, 10);
         this.add(textoMusical, grid);
     }
@@ -68,13 +70,13 @@ public class PArtistico extends JPanel implements ActionListener {
     private void colocarBotones(){
         botonTeatral = new BotonPrincipal("TEATRAL");
         botonTeatral.addActionListener(this);
-        grid = new Grid(0, 3, 0, 30, 50, 40, 30);
+        grid = new Grid(0, 3, 0, 30, 50, 40, 20);
         this.add(botonTeatral, grid);
 
 
         botonMusical = new BotonPrincipal("MUSICAL");
         botonMusical.addActionListener(this);
-        grid = new Grid(1, 3, 0, 30, 10, 40, 30);
+        grid = new Grid(1, 3, 0, 30, 10, 40, 20);
         this.add(botonMusical, grid);
     }
 

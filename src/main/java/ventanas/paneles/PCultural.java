@@ -28,29 +28,31 @@ public class PCultural extends PFondoStandard {
         this.setLayout(new GridBagLayout());
 
         texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
-        grid = new Grid(0, 0, 2, -80, 0);
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 16, 1150, 70);
+        grid = new Grid(0, 0, 2, -120, 0);
         this.add(textoTitulo, grid);
 
         texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  "+
                 "el  Catálogo  de espectáculos  públicos,  actividades  recreativas  y"+
                 " establecimientos  abiertos  al público  de la  Comunidad  Autónoma  de"+
-                " Galicia y  se  establecen  determinadas disposiciones generales de aplicación en la materia.";
-        PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
-        grid = new Grid(0, 1, 2, -20, 0);
+                " Galicia y  se  establecen  determinadas disposiciones generales de aplicación en la materia."
+                +"\n\nTIPO DE ESPECTÁCULO"
+                ;
+        PanelTexto textoLey = new PanelTexto(texto, 1, 16, 1150, 100);
+        grid = new Grid(0, 1, 2, -60, 0);
         this.add(textoLey, grid);
 
         texto = "Exhibición o proyección pública de películas cinematográficas y otros contenidos"+
                 " susceptibles de ser proyectados en pantalla, con independencia de los medios técnicos"+
                 " utilizados.";
         PanelTexto textoCinematoGrafico = new PanelTexto(texto, 0, 18, 500, 105);
-        grid = new Grid(0, 2, 0, -20, 40);
+        grid = new Grid(0, 2, 0, 0, 40);
         this.add(textoCinematoGrafico, grid);
         
         texto = "Presentación en público de productos naturales o\n artificiales derivados de las plantas, "+
                 "animales o naturaleza.";
         PanelTexto textoFeria = new PanelTexto(texto, 0, 18, 500, 100);
-        grid = new Grid(1, 2, 0, -20, 45);
+        grid = new Grid(1, 2, 0, 0, 45);
         this.add(textoFeria, grid);
 
         texto = "Realización en público de bailes, exhibiciones,\n cabalgatas o desfiles de "+
@@ -63,17 +65,17 @@ public class PCultural extends PFondoStandard {
     private void colocarBotones(){
         botonCinematografico = new BotonPrincipal("CINEMATOGRÁFICO");
         botonCinematografico.addActionListener(this);
-        grid = new Grid(0, 3, 0, 20, 30, 40, 30);
+        grid = new Grid(0, 3, 0, 20, 30, 40, 20);
         this.add(botonCinematografico, grid);
 
          botonFeria = new BotonPrincipal("FERIA");
         botonFeria.addActionListener(this);
-        grid = new Grid(1, 3, 0, 20, 50, 180, 30);
+        grid = new Grid(1, 3, 0, 20, 50, 180, 20);
         this.add(botonFeria, grid);
 
         botonExhibicion = new BotonPrincipal("EXHIBICIÓN");
         botonExhibicion.addActionListener(this);
-        grid = new Grid(0, 5, 2, 20, 0, 180, 30);
+        grid = new Grid(0, 5, 2, 20, 0, 180, 20);
         this.add(botonExhibicion, grid);
     }
 

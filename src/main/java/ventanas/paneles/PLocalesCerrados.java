@@ -48,32 +48,32 @@ public class PLocalesCerrados extends PFondoStandard {
         
         rbTeatro = new RadioBut("TEATRO", 16);
         rbTeatro.addActionListener(this);
-        grid = new Grid(0, 3, 0, 0, 50, 30, 40);
+        grid = new Grid(0, 3, 0, 0, 50, 30, 20);
         this.add(rbTeatro, grid);
 
         rbAuditorio = new RadioBut("AUDITORIO", 16);
         rbAuditorio.addActionListener(this);
-        grid = new Grid(0, 3, 0, 0, 450, 30, 40);
+        grid = new Grid(0, 3, 0, 0, 450, 30, 20);
         this.add(rbAuditorio, grid);
 
         rbCirco = new RadioBut("CIRCO", 16);
         rbCirco.addActionListener(this);
-        grid = new Grid(1, 3, 2, 0, -300, 30, 40);
+        grid = new Grid(1, 3, 2, 0, -300, 30, 20);
         this.add(rbCirco, grid);
         
         rbCine = new RadioBut("CINE", 16);
         rbCine.addActionListener(this);
-        grid = new Grid(1, 3, 2, 0, 0, 30, 40);
+        grid = new Grid(1, 3, 2, 0, 0, 30, 20);
         this.add(rbCine, grid);
         
         rbPlazaToros = new RadioBut("PLAZA DE TOROS", 16);
         rbPlazaToros.addActionListener(this);
-        grid = new Grid(0, 4, 0, 0, 120, 30, 40);
+        grid = new Grid(0, 4, 0, 0, 120, 30, 20);
         this.add(rbPlazaToros, grid);
         
         rbEspectaculosDeportivos = new RadioBut("ESTABLECIMIENTO ESPECTÁCULOS DEPORTIVOS", 16);
         rbEspectaculosDeportivos.addActionListener(this);
-        grid = new Grid(0, 4, 2, 0, 265, 30, 40);
+        grid = new Grid(0, 4, 2, 0, 265, 30, 20);
         this.add(rbEspectaculosDeportivos, grid);
         radioButtons = new ButtonGroup();
         radioButtons.add(rbTeatro);

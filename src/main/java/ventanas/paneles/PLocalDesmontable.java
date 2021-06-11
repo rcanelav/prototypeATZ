@@ -40,12 +40,12 @@ public class PLocalDesmontable extends PFondoStandard{
     private void colocarBotones(){
         licenciaUrbanisticaSi = new BotonPrincipal("SIN MODIFICACIONES");
         licenciaUrbanisticaSi.addActionListener(this);
-        grid = new Grid(0, 3, 0, 50, 130, 30, 40);
+        grid = new Grid(0, 3, 0, 50, 130, 30, 20);
         this.add(licenciaUrbanisticaSi, grid);
 
         licenciaUrbanisticaNo = new BotonPrincipal("SUFRIRÁ MODIFICACIONES");
         licenciaUrbanisticaNo.addActionListener(this);
-        grid = new Grid(1, 3, 0, 50, 50, 40, 40);
+        grid = new Grid(1, 3, 0, 50, 50, 40, 20);
         this.add(licenciaUrbanisticaNo, grid);
     }
 

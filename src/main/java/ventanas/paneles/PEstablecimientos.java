@@ -27,13 +27,15 @@ public class PEstablecimientos extends PFondoStandard {
         this.setLayout(new GridBagLayout());
 
         texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 16, 1150, 70);
         grid = new Grid(0, 0, 2, -150, 0);
         this.add(textoTitulo, grid);
 
         texto = "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  "+
-                "actividades recreativas de Galicia.";
-        PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
+                "actividades recreativas de Galicia."
+                +"\n\nTIPO DE ESTABLECIMIENTO"
+                ;
+        PanelTexto textoLey = new PanelTexto(texto, 1, 16, 1150, 100);
         grid = new Grid(0, 1, 2, -50, 0);
         this.add(textoLey, grid);
 
@@ -49,12 +51,12 @@ public class PEstablecimientos extends PFondoStandard {
     private void colocarBotones(){
         botonEstablecimientoAP = new BotonPrincipal("ABIERTO AL PÚBLICO ");
         botonEstablecimientoAP.addActionListener(this);
-        grid = new Grid(0, 3, 0, 10, 80, 30, 40);
+        grid = new Grid(0, 3, 0, 10, 80, 30, 20);
         this.add(botonEstablecimientoAP, grid);
 
         botonOtro = new BotonPrincipal("OTRO");
         botonOtro.addActionListener(this);
-        grid = new Grid(1, 3, 0, 10, -50, 200, 40);
+        grid = new Grid(1, 3, 0, 10, -50, 200, 20);
         this.add(botonOtro, grid);
     }
 

@@ -26,14 +26,15 @@ public class PCaracter extends PFondoStandard {
         this.setLayout(new GridBagLayout());
 
         texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
-        grid = new Grid(0, 0, 0, -300, 0);
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 16, 1150, 70);
+        grid = new Grid(0, 0, 0, -400, 0);
         this.add(textoTitulo, grid);
         
         texto = "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  actividades"+
-                "recreativas de Galicia.";
-        PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
-        grid = new Grid(0, 1, 0, -100, 0);
+                "recreativas de Galicia."
+                +"\n\n\nCARÁCTER DEL ESPECTÁCULO";
+        PanelTexto textoLey = new PanelTexto(texto, 1, 16, 1150, 100);
+        grid = new Grid(0, 1, 0, -300, 0);
         this.add(textoLey, grid);
     
     }
@@ -41,12 +42,12 @@ public class PCaracter extends PFondoStandard {
     private void colocarBotones(){
         botonProfesional = new BotonPrincipal("PROFESIONAL");
         botonProfesional.addActionListener(this);
-        grid = new Grid(0, 2, 0, 0, -500, 30, 40);
+        grid = new Grid(0, 2, 0, 0, -500, 30, 20);
         this.add(botonProfesional, grid);
 
         botonAficionado = new BotonPrincipal("AFICIONADO");
         botonAficionado.addActionListener(this);
-        grid = new Grid(0, 2, 0, 0, 500, 50, 40);
+        grid = new Grid(0, 2, 0, 0, 500, 50, 20);
         this.add(botonAficionado, grid);
     }
 

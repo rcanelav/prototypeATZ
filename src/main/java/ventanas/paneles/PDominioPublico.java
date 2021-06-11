@@ -50,12 +50,12 @@ public class PDominioPublico extends PFondoStandard  {
     private void colocarBotones(){
         botonUnMunicipio = new BotonPrincipal("UN MUNICIPIO");
         botonUnMunicipio.addActionListener(this);
-        grid = new Grid(0, 3, 0, 10, 200, 40, 40);
+        grid = new Grid(0, 3, 0, 10, 200, 40, 20);
         this.add(botonUnMunicipio, grid);
         
         botonVariosMunicipios = new BotonPrincipal("VARIOS MUNICIPIOS");
         botonVariosMunicipios.addActionListener(this);
-        grid = new Grid(1, 3, 0, 10, 100, 40, 40);
+        grid = new Grid(1, 3, 0, 10, 100, 40, 20);
         this.add(botonVariosMunicipios, grid);
     }
 
