@@ -206,12 +206,13 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
         this.add(licenciaUrbanistica, grid);
         licenciaUrbanisticaSi = new JRadioButton("SI");
         licenciaUrbanisticaSi.setOpaque(false);
-        licenciaUrbanisticaSi.setSelected(true);
+        //licenciaUrbanisticaSi.setSelected(true);
         grid = new Grid(1, 6, 2, 5, -140);
         this.add(licenciaUrbanisticaSi, grid);
 
         licenciaUrbanisticaNo = new JRadioButton("NO");
         licenciaUrbanisticaNo.setOpaque(false);
+        licenciaUrbanisticaNo.setSelected(true);
         grid = new Grid(1, 6, 2, 5, -30);
         this.add(licenciaUrbanisticaNo, grid);
 
@@ -224,12 +225,13 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
         this.add(proyectoHabilitacion, grid);
         proyectoHabilitacionSi = new JRadioButton("SI");
         proyectoHabilitacionSi.setOpaque(false);
-        proyectoHabilitacionSi.setSelected(true);
+        //proyectoHabilitacionSi.setSelected(true);
         grid = new Grid(0, 7, 0, 5, -50);
         this.add(proyectoHabilitacionSi, grid);
         
         proyectoHabilitacionNo = new JRadioButton("NO");
         proyectoHabilitacionNo.setOpaque(false);
+        proyectoHabilitacionNo.setSelected(true);
         grid = new Grid(0, 7, 0, 5, 40);
         this.add(proyectoHabilitacionNo, grid);
         
@@ -306,12 +308,13 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
         this.add(proyectoMontaje, grid);
         proyectoMontajeSi = new JRadioButton("SI");
         proyectoMontajeSi.setOpaque(false);
-        proyectoMontajeSi.setSelected(true);
+        //proyectoMontajeSi.setSelected(true);
         grid = new Grid(1, 9, 2, 5, -140);
         this.add(proyectoMontajeSi, grid);
 
         proyectoMontajeNo = new JRadioButton("NO");
         proyectoMontajeNo.setOpaque(false);
+        proyectoMontajeNo.setSelected(true);
         grid = new Grid(1, 9, 2, 5, -30);
         this.add(proyectoMontajeNo, grid);
 
@@ -375,15 +378,15 @@ public class PFormularioUbicacion extends PFormulario implements ActionListener 
 
 
         //PRUEBAS
-        textoNombre.setText("Teatro Colón");
-        textoDireccion.setText("Avenida de la Marina");
-        textoNumeroPortal.setText("7A");
-        textoEdificio.setText("");
-        textoPlanta.setText("");
-        textoLocal.setText("");
+        textoNombre.setText("Anfiteatro Parque Santa Margarita");
+        textoDireccion.setText("Glorieta de América");
+        textoNumeroPortal.setText("s/n");
+        textoEdificio.setText("-");
+        textoPlanta.setText("-");
+        textoLocal.setText("-");
         textoPoblacion.setText("A Coruña");
         textoLocalidad.setText("A Coruña");
-        textoCP.setText("15001");
+        textoCP.setText("15005");
         textoProvincia.setText("A Coruña");
         textoNInstalaciones.setText("");
         textoRelacionInstalaciones.setText("");

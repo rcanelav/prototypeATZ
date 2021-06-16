@@ -198,7 +198,7 @@ public class PFormularioPersona extends PFormulario {
         textoTelefono.setText("663 569 518");
         textoMovil.setText("663 569 518");
         textoEmail.setText("rcanelav@gmail.com");
-        textoEpigrafe.setText("un epígrafe IAE");
+        textoEpigrafe.setText("9521. Espectáculos fuera de establecimiento");
         textoPolizaSeguro.setText("Seguros de Responsabilidad Civil");
         textoNumeroSeguro.setText("Nº de póliza 12345-abc");
         textoCoberturaSeguro.setText("600.000");

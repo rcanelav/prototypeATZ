@@ -242,12 +242,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(planAutoproteccion, grid);
         planAutoProteccionSi = new JRadioButton("SI");
         planAutoProteccionSi.setOpaque(false);
-        planAutoProteccionSi.setSelected(true);
+        //planAutoProteccionSi.setSelected(true);
         grid = new Grid(0, 7, 0, 5, -30);
         this.add(planAutoProteccionSi, grid);
 
         planAutoProteccionNo = new JRadioButton("NO");
         planAutoProteccionNo.setOpaque(false);
+        planAutoProteccionNo.setSelected(true);
         grid = new Grid(0, 7, 0, 5, 80);
         this.add(planAutoProteccionNo, grid);
 
@@ -278,12 +279,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(asistenciaMenores, grid);
         asistenciaMenoresSi = new JRadioButton("SI");
         asistenciaMenoresSi.setOpaque(false);
-        asistenciaMenoresSi.setSelected(true);
+        //asistenciaMenoresSi.setSelected(true);
         grid = new Grid(0, 9, 0, 5, -30);
         this.add(asistenciaMenoresSi, grid);
 
         asistenciaMenoresNo = new JRadioButton("NO");
         asistenciaMenoresNo.setOpaque(false);
+        asistenciaMenoresNo.setSelected(true);
         grid = new Grid(0, 9, 0, 5, 80);
         this.add(asistenciaMenoresNo, grid);
 
@@ -296,12 +298,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(derechoAdmision, grid);
         derechoAdmisionSi = new JRadioButton("SI");
         derechoAdmisionSi.setOpaque(false);
-        derechoAdmisionSi.setSelected(true);
+        //derechoAdmisionSi.setSelected(true);
         grid = new Grid(1, 9, 0, 5, -410);
         this.add(derechoAdmisionSi, grid);
 
         derechoAdmisionNo = new JRadioButton("NO");
         derechoAdmisionNo.setOpaque(false);
+        derechoAdmisionNo.setSelected(true);
         grid = new Grid(1, 9, 0, 5, -320);
         this.add(derechoAdmisionNo, grid);
 
@@ -314,12 +317,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(ventaEntradas, grid);
         ventaEntradasSi = new JRadioButton("SI");
         ventaEntradasSi.setOpaque(false);
-        ventaEntradasSi.setSelected(true);
+        //ventaEntradasSi.setSelected(true);
         grid = new Grid(0, 10, 0, 5, -30);
         this.add(ventaEntradasSi, grid);
 
         ventaEntradasNo = new JRadioButton("NO");
         ventaEntradasNo.setOpaque(false);
+        ventaEntradasNo.setSelected(true);
         grid = new Grid(0, 10, 0, 5, 80);
         this.add(ventaEntradasNo, grid);
 
@@ -404,12 +408,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(pagoTasasPlanAutop, grid);
         pagoTasaPlanAutopSi = new JRadioButton("SI");
         pagoTasaPlanAutopSi.setOpaque(false);
-        pagoTasaPlanAutopSi.setSelected(true);
+        //pagoTasaPlanAutopSi.setSelected(true);
         grid = new Grid(0, 15, 0, 5, 30);
         this.add(pagoTasaPlanAutopSi, grid);
 
         pagoTasaPlanAutopNo = new JRadioButton("NO");
         pagoTasaPlanAutopNo.setOpaque(false);
+        pagoTasaPlanAutopNo.setSelected(true);
         grid = new Grid(0, 15, 0, 5, 120);
         this.add(pagoTasaPlanAutopNo, grid);
 
@@ -422,12 +427,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(pagoTasa053, grid);
         pagoTasa053Si = new JRadioButton("SI");
         pagoTasa053Si.setOpaque(false);
-        pagoTasa053Si.setSelected(true);
+       // pagoTasa053Si.setSelected(true);
         grid = new Grid(1, 15, 0, 5, -410);
         this.add(pagoTasa053Si, grid);
 
         pagoTasa053No = new JRadioButton("NO");
         pagoTasa053No.setOpaque(false);
+        pagoTasa053No.setSelected(true);
         grid = new Grid(1, 15, 0, 5, -320);
         this.add(pagoTasa053No, grid);
 
@@ -440,12 +446,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(pagoTasa3045Espectaculos, grid);
         pagoTasaEspectaculosSi = new JRadioButton("SI");
         pagoTasaEspectaculosSi.setOpaque(false);
-        pagoTasaEspectaculosSi.setSelected(true);
+        //pagoTasaEspectaculosSi.setSelected(true);
         grid = new Grid(0, 16, 0, 5, 30);
         this.add(pagoTasaEspectaculosSi, grid);
 
         pagoTasaEspectaculosNo = new JRadioButton("NO");
         pagoTasaEspectaculosNo.setOpaque(false);
+        pagoTasaEspectaculosNo.setSelected(true);
         grid = new Grid(0, 16, 0, 5, 120);
         this.add(pagoTasaEspectaculosNo, grid);
 
@@ -458,12 +465,13 @@ public class PIdentificacionEspectaculo extends PFormulario implements ActionLis
         this.add(pagoTasaE2, grid);
         pagoTasaE2Si = new JRadioButton("SI");
         pagoTasaE2Si.setOpaque(false);
-        pagoTasaE2Si.setSelected(true);
+        //pagoTasaE2Si.setSelected(true);
         grid = new Grid(1, 16, 0, 5, -410);
         this.add(pagoTasaE2Si, grid);
 
         pagoTasaE2No = new JRadioButton("NO");
         pagoTasaE2No.setOpaque(false);
+        pagoTasaE2No.setSelected(true);
         grid = new Grid(1, 16, 0, 5, -320);
         this.add(pagoTasaE2No, grid);
 
