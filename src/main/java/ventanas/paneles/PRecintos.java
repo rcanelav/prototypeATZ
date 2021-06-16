@@ -47,7 +47,7 @@ public class PRecintos extends PFondoStandard {
         rbRecintoFerial = new RadioBut("RECINTO FERIAL");
         rbRecintoFerial.addActionListener(this);
         rbRecintoFerial.setFont(new Font("Times New Roman", 0, 16));
-        grid = new Grid(0, 4, 2, 10, 0, 30, 40);
+        grid = new Grid(0, 4, 2, 10, 0, 30, 20);
         this.add(rbRecintoFerial, grid);
     }
 

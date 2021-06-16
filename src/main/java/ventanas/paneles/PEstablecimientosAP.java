@@ -30,13 +30,15 @@ public class PEstablecimientosAP extends PFondoStandard {
         this.setLayout(new GridBagLayout());
 
         texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
-        PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
+        PanelTexto textoTitulo = new PanelTexto(texto, 1, 16, 1150, 70);
         grid = new Grid(0, 0, 2, -80, 0);
         this.add(textoTitulo, grid);
 
         texto = "Ley  10/2017,  del  27  de  diciembre,  de  espectáculos  públicos  y  "+
-                "actividades recreativas de Galicia.";
-        PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
+                "actividades recreativas de Galicia."
+                +"\n\nSUPTIPO DE ESTABLECIMIENTO"
+                ;
+        PanelTexto textoLey = new PanelTexto(texto, 1, 16, 1150, 100);
         grid = new Grid(0, 1, 2, -20, 0);
         this.add(textoLey, grid);
 
@@ -64,22 +66,22 @@ public class PEstablecimientosAP extends PFondoStandard {
     private void colocarBotones(){
         botonLocalCerrado = new BotonPrincipal("LOCAL CERRADO");
         botonLocalCerrado.addActionListener(this);
-        grid = new Grid(0, 3, 0, 15, 0, 70, 40);
+        grid = new Grid(0, 3, 0, 15, 0, 70, 20);
         this.add(botonLocalCerrado, grid);
 
         botonLocalDesmontable = new BotonPrincipal("LOCAL DESMONTABLE");
         botonLocalDesmontable.addActionListener(this);
-        grid = new Grid(1, 3, 0, 15, 70, 30, 40);
+        grid = new Grid(1, 3, 0, 15, 70, 30, 20);
         this.add(botonLocalDesmontable, grid);
 
         botonInstalacion = new BotonPrincipal("INSTALACIÓN");
         botonInstalacion.addActionListener(this);
-        grid = new Grid(0, 5, 0, 0, 0, 110, 40);
+        grid = new Grid(0, 5, 0, 0, 0, 110, 20);
         this.add(botonInstalacion, grid);
 
         botonRecinto = new BotonPrincipal("RECINTO");
         botonRecinto.addActionListener(this);
-        grid = new Grid(1, 5, 0, 0, 70, 170, 40);
+        grid = new Grid(1, 5, 0, 0, 70, 170, 20);
         this.add(botonRecinto, grid);
     }
 

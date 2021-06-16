@@ -49,7 +49,7 @@ public class VentanaPrincipal extends JFrame {
         setLocation(anchoPantalla/4, alturaPantalla/4);
         setVisible(true);
         setResizable(true);
-        setTitle("Espectáculos públicos: Xestión/ Gestión Administrativa");
+        setTitle("AutoZAD | Espectáculos públicos | Galicia");
         Image miIcono = miPantalla.getImage("src/main/java/imagenes/logo.png");
         setIconImage(miIcono);
         setLocationRelativeTo(null);  //opcional

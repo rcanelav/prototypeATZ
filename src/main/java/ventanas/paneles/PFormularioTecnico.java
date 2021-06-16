@@ -226,7 +226,7 @@ public class PFormularioTecnico extends PFormulario implements ActionListener{
         textoTelefono.setText("686 722 467");
         textoMovil.setText("686 722 467");
         textoEmail.setText("info@carlosmelendrez.es");
-        textoOtraTitulacion.setText("Programador de Sistemas Informáticos");
+        textoOtraTitulacion.setText("");
         textoPolizaSeguro.setText("Aseguradora");
         textoNumeroSeguro.setText("PRP-2021/1234-ES23");
         textoCoberturaSeguro.setText("600.000");

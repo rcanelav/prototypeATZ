@@ -30,43 +30,45 @@ public class PClasificacion extends PFondoStandard {
                 this.setLayout(new GridBagLayout());
 
                 texto = "GENERANDO DECLARACIÓN RESPONSABLE/ SOLICITUD DE LICENCIA";
-                PanelTexto textoTitulo = new PanelTexto(texto, 1, 20, 1150, 70);
-                grid = new Grid(0, 0, 3, -90, 0);
+                PanelTexto textoTitulo = new PanelTexto(texto, 1, 16, 1150, 70);
+                grid = new Grid(0, 0, 3, -150, 0);
 
                 this.add(textoTitulo, grid);
 
-                texto = "Decreto  124/2019,  del  5  de  sepitembre,  por el que se  aprueba  el  Catálogo"+
-                "  de espectáculos  públicos,  actividades  recreativas  y  establecimientos  abiertos"+
-                " al público  de la  Comunidad  Autónoma  de  Galicia y  se  establecen  determinadas "+
-                "disposiciones generales de aplicación en la materia.";
-                PanelTexto textoLey = new PanelTexto(texto, 0, 18, 1150, 100);
-                grid = new Grid(0, 1, 3, -40, 0);
+                texto = "Decreto 124/2019, Catálogo"+
+                "  de espectáculos públicos, actividades recreativas y establecimientos abiertos"+
+                " al público de la Comunidad Autónoma de Galicia y se establecen determinadas "+
+                "disposiciones generales de aplicación en la materia."
+                +"\n\nDESARROLLO DEL ESPECTÁCULO"
+                ;
+                PanelTexto textoLey = new PanelTexto(texto, 1, 16, 1150, 100);
+                grid = new Grid(0, 1, 3, -80, 0);
                 this.add(textoLey, grid);
 
                 texto = "Se celebrará de forma habitual en un establecimiento abierto al público al"
                                 + " que se refiere el artículo 3.d).1º de la Ley 10/2017, del 27 de diciembre.";
-                PanelTexto textoPermanente = new PanelTexto(texto, 0, 18, 500, 100);
+                PanelTexto textoPermanente = new PanelTexto(texto, 0, 16, 500, 100);
                 grid = new Grid(0, 2, 0, 0, 50);
                 this.add(textoPermanente, grid);
 
                 texto = "Se celebrará durante un período de tiempo superior a 3 meses e inferior a 1 año, en cómputo "+
                 "global anual, en un establecimiento abierto al público al que se refiere el artículo 3.d) de la Ley "+
                 "10/2017, del 27 de diciembre.";
-                PanelTexto textoTemporada = new PanelTexto(texto, 0, 18, 500, 100);
+                PanelTexto textoTemporada = new PanelTexto(texto, 0, 16, 500, 100);
                 grid = new Grid(2, 2, 0, 0, 0);
                 this.add(textoTemporada, grid);
 
                 texto = "Se celebrará durante un período de tiempo igual o inferior a 3 meses, en cómputo global anual, "+
                 "en un establecimiento abierto al público o espacio abierto al público a los que se refeire el artículo 3.d) "+
                 "y 3.e) de la Ley 10/2017, del 27 de diciembre.";
-                PanelTexto textoOcasional = new PanelTexto(texto, 0, 18, 500, 150);
+                PanelTexto textoOcasional = new PanelTexto(texto, 0, 16, 500, 150);
                 grid = new Grid(0, 4, 0, 30, 50);
                 this.add(textoOcasional, grid);
 
                 texto = "Se desarrollará esporádicamente en un establecimiento abierto al público que pueda "
                                 + "albergar un espectáculo público diferente al de la actividad "
                                 + "propia del establecimiento.";
-                PanelTexto textoExtraordinario = new PanelTexto(texto, 0, 18, 500, 150);
+                PanelTexto textoExtraordinario = new PanelTexto(texto, 0, 16, 500, 150);
                 grid = new Grid(2, 4, 0, 30, 0);
                 this.add(textoExtraordinario, grid);
         }
@@ -74,22 +76,22 @@ public class PClasificacion extends PFondoStandard {
         private void colocarBotones() {
                 botonPermanente = new BotonPrincipal("PERMANENTE");
                 botonPermanente.addActionListener(this);
-                grid = new Grid(0, 3, 0, 0, 0, 70, 40);
+                grid = new Grid(0, 3, 0, -20, 0, 70, 20);
                 this.add(botonPermanente, grid);
 
                 botonTemporada = new BotonPrincipal("DE TEMPORADA");
                 botonTemporada.addActionListener(this);
-                grid = new Grid(2, 3, 0, 0, 0, 50, 40);
+                grid = new Grid(2, 3, 0, -20, 0, 50, 20);
                 this.add(botonTemporada, grid);
 
                 botonOcasional = new BotonPrincipal("OCASIONAL");
                 botonOcasional.addActionListener(this);
-                grid = new Grid(0, 5, 0, -40, 0, 100, 40);
+                grid = new Grid(0, 5, 0, -50, 0, 100, 20);
                 this.add(botonOcasional, grid);
 
                 botonExtraordinario = new BotonPrincipal("EXTRAORDINARIO");
                 botonExtraordinario.addActionListener(this);
-                grid = new Grid(2, 5, 0, -40, 0, 30, 40);
+                grid = new Grid(2, 5, 0, -50, 0, 30, 20);
                 this.add(botonExtraordinario, grid);
         }
 

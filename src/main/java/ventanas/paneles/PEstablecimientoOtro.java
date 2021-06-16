@@ -47,12 +47,12 @@ public class PEstablecimientoOtro extends PFondoStandard {
     private void colocarBotones(){
         botonAsimilado = new BotonPrincipal("ASIMILADO A OTRA CATEGORÍA");
         botonAsimilado.addActionListener(this);
-        grid = new Grid(0, 3, 0, -10, 0, 30, 40);
+        grid = new Grid(0, 3, 0, -10, 0, 30, 20);
         this.add(botonAsimilado, grid);
 
         botonNoAsimilado = new BotonPrincipal("NO ASIMILADO");
         botonNoAsimilado.addActionListener(this);
-        grid = new Grid(1, 3, 0, -10, 0, 220, 40);
+        grid = new Grid(1, 3, 0, -10, 0, 220, 20);
         this.add(botonNoAsimilado, grid);
     }
 
